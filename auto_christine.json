@@ -1,0 +1,126 @@
+{
+"chapitre1": [
+    {
+        "id":1,
+        "question":"You type a command into bash and pass a long filename to it, but after you enter the command, you receive a File not found error message because of a typo in the filename. \n How might you proceed? \n A. Retype the command, and be sure you type the filename correctly, letter by letter. \n B. Retype the command, but press the Tab key after typing a few letters of the long filename to ensure that the filename is entered correctly.\n C. Press the Up arrow key, and use bash’s editing features to correct the typo.\n D. Any of the above.\n E. None of the above",
+        "answer":"D",
+        "explanation":"Any of these approaches will work, or at least might work. (You might err when performing any of them.) \n Option B or C is likely to be the most efficient approach; with a long filename to type, option A is likely to be tedious."
+    },
+
+    {
+        "id":2,
+        "question":"Which of the following commands is implemented as an internal command in bash? A. cat B. less C. tee D. sed E. echo",
+        "answer":"E",
+        "explanation":"The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
+    },
+    {
+        "id":3,
+        "question":"You type echo $PROC, and the computer replies Go away. What does this mean? A. No currently running processes are associated with your shell, so you may log out without terminating them. B. The remote computer PROC isn’t accepting connections; you should contact its administrator to correct the problem. C. Your computer is handling too many processes; you must kill some of them to regain control of the computer. D. Your central processing unit (CPU) is defective and must be replaced as soon as possible. E. You, one of your configuration files, or a program you’ve run has set the $PROC environment variable to Go away.",
+        "answer":"E",
+        "explanation":"The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
+    },
+    {
+        "id":4,
+        "question":"What does the pwd command accomplish? A. It prints the name of the working directory. B. It changes the current working directory. C. It prints wide displays on narrow paper. D. It parses web page URLs for display. E. It prints the terminal’s width in characters.",
+        "answer":"A",
+        "explanation":"The pwd command prints (to standard output) the name of the current working directory. The remaining options are simply incorrect, although option B describes the cd command, and various tools can be used to reformat wide text for display or printing in fewer columns, as in option C."
+    },
+    {
+        "id":5,
+        "question":"What is the surest way to run a program (say, myprog) that’s located in the current working directory? A. Type ./ followed by the program name: ./myprog. B. Type the program name alone: myprog. Review Questions 43 C. Type run followed by the program name: run myprog. D. Type /. followed by the program name: /.myprog. E. Type the program name followed by an ampersand (&): myprog &.",
+        "answer":"A",
+        "explanation":"The dot (.) character refers to the current working directory, and the slash (/) is a directory separator. Thus preceding a program name by ./ unambiguously identifies the intention to run the program that’s stored in the current directory. Option B will run the first instance of the program that’s found on the current path. Because paths often omit the current directory for security reasons, this option is likely to fail. The run command isn’t a standard Linux command, so option C is unlikely to do anything, much less what the question specifies. Option D would be correct except that it reverses the order of the two characters. The effect is to attempt to run the .myprog file in the root (/) directory. This file probably doesn’t exist, and even if it did, it’s not the file the question specifies should be run. Option E runs the first instance of myprog found on the path, and additionally it runs the program in the background. (Chapter 2 covers background execution in more detail.)"
+    },
+    {
+        "id":6,
+        "question":"How does man display information by default on most Linux systems? A. Using a custom X-based application B. Using the Firefox web browser C. Using the info browser D. Using the vi editor E. Using the less pager",
+        "answer":"E",
+        "explanation":"By default, man uses the less pager to display information on most Linux systems, so option E is correct. Although an X-based version of man does exist (xman), the basic man doesn’t use a custom X-based application (option A), nor does it use Firefox (option B) or the vi editor (option D). The info command and man are competing documentation systems, so option C is incorrect."
+    },
+    {
+        "id":7,
+        "question":"You want to store the standard output of the ifconfig command in a text file (file.txt) for future reference, and you want to wipe out any existing data in the file. You do not want to store standard error in this file. How can you accomplish these goals? A. ifconfig < file.txt B. ifconfig >> file.txt C. ifconfig > file.txt D. ifconfig | file.txt E. ifconfig 2> file.txt",
+        "answer":"C",
+        "explanation":"The > redirection operator stores a command’s standard output in a file, overwriting the contents of any existing file by the specified name, so option C is correct. Option A specifies the standard input redirection so that ifconfig will take the contents of file.txt as input. Option B is almost correct: the >> redirection operator redirects standard output, as requested, but it appends data to the specified file rather than overwriting it. Option D specifies a pipe; the output of ifconfig is sent through the file.txt program, if it exists. (Chances are it doesn’t, so you’d get a command not found error message.) Option E redirects standard error, rather than standard output, to file.txt and so is incorrect."
+    },
+    {
+        "id":8,
+        "question":"What is the effect of the following command? $ myprog &> input.txt A. Standard error to myprog is taken from input.txt. B. Standard input to myprog is taken from input.txt. C. Standard output and standard error from myprog are written to input.txt. D. All of the above. E. None of the above.",
+        "answer":"C",
+        "explanation":"The &> redirection operator sends both standard output and standard error to the specified file, as option C states. (The name of the file, input.txt, is intentionally deceptive, but the usage is still valid.) Option A mentions standard error but describes it as if it were an input stream, which it’s not; it’s an output stream. Option B mentions standard input, but the &> operator doesn’t affect standard input. Because only option C is correct, neither option D nor E can be correct"
+    },
+    {
+        "id":9,
+        "question":"How many commands can you pipe together at once? A. 2 B. 3 C. 4 D. 16 E. >16",
+        "answer":"E",
+        "explanation":"In principle, you can pipe together as many commands as you like. (In practice, of course, there will be limits based on input buffer size, memory, and so on, but these limits are far higher than the 2, 3, 4, or 16 commands specified in options A, B, C, and D.)."
+    },
+    {
+        "id":10,
+        "question":"You want to run an interactive script, gabby, which produces a lot of output in response to the user’s inputs. To facilitate future study of this script, you want to copy its output to a file. How might you do this? A. gabby > gabby-out.txt B. gabby | tee gabby-out.txt C. gabby < gabby-out.txt D. gabby &> gabby-out.txt E. gabby `gabby-out.txt`",
+        "answer":"B",
+        "explanation":"The tee command sends its output both to standard output and to a named file. Thus, placing the tee command (with an output filename) after another command and a pipe will achieve the desired effect. Options A and D redirect gabby’s output to a file, which means you won’t be able to see the output and interact with it. Option C sends the contents of gabby-out.txt to gabby as input, which isn’t what’s desired, either. Option E attempts to run gabby-out.txt as a program and use its output as commandline arguments to gabby, which is not what’s desired."
+    },
+    {
+        "id":11,
+        "question":"A text-mode program, verbose, prints a lot of bogus “error” messages to standard error. How might you get rid of those messages while still interacting with the program? A. verbose | quiet B. verbose &> /dev/null C. verbose 2> /dev/null D. verbose > junk.txt E. quiet-mode verbose",
+        "answer":"C",
+        "explanation":"The 2> redirection operator redirects standard error only, leaving standard output unaffected. Sending standard error to /dev/null gets rid of it. Thus option C is correct. Option A pipes the standard output of verbose through the quiet program, which isn’t a standard Linux program. Option B sends both standard output and standard error to /dev/null, so you won’t be able to interact with the program as the question specifies you must be able to do. Option D redirects standard output only to the junk.txt file, so once again, interaction will be impossible—and you’ll see the unwanted error messages on the screen. Option E’s quiet-mode program is fictitious (or at least nonstandard), so this option is incorrect."
+    },
+
+    {
+        "id":12,
+        "question":"How do the > and >> redirection operators differ? A. The > operator creates a new file or overwrites an existing one; the >> operator creates a new file or appends to an existing one. B. The > operator creates a new file or overwrites an existing one; the >> operator appends to an existing file or issues an error message if the specified file doesn’t exist. C. The > operator redirects standard output; the >> operator redirects standard error. D. The > operator redirects standard output; the >> operator redirects standard input. E. The > operator writes to an existing file but fails if the file doesn’t exist; the >> operator writes to an existing file or creates a new one if it doesn’t already exist.",
+        "answer":"A",
+        "explanation":"Option A correctly describes the difference between these two redirection operators. Option B is almost correct, but the >> operator will create a new file if one doesn’t already exist. The >> operator does not redirect standard error (as stated in option C) or standard input (as stated in option D). Both operators will create a new file if one doesn’t already exist, contrary to what option E states."
+    },
+    {
+        "id":13,
+        "question":"What program would you use to display the end of a configuration file? A. uniq B. cut C. tail D. wc E. fmt",
+        "answer":"C",
+        "explanation":"The tail command displays the final 10 lines of a file, so option C is correct. (You can change the number of lines displayed with the -n option.) The uniq command (option A) removes duplicate lines from a list. The cut command (option B) echoes the specified characters or fields from an input text file. The wc command (option D) 578 Appendix ■ Answers displays counts of the number of characters, words, and lines in a file. The fmt command (option E) is a plain-text formatter."
+    },
+    {
+        "id":14,
+        "question":"What is the effect of the following command? $ pr report.txt | lpr A. The file report.txt is formatted for printing and sent to the lpr program. B. The files report.txt and lpr are combined together into one file and sent to standard output. C. Tabs are converted to spaces in report.txt, and the result is saved in lpr. D. The file report.txt is printed, and any error messages are stored in the file lpr. E. None of the above",
+        "answer":"A",
+        "explanation":"The pr program takes a text file as input and adds formatting features intended for printing, such as a header and blank lines, to separate pages. The command also pipes the output through lpr (which is a Linux printing command). Option A describes these effects and so is correct. Option B describes the effect of the cat program and so is incorrect. The conversion of tabs to spaces can be done by the expand program, so option C is incorrect. Although the specified command does print report.txt, error messages are not stored in the lpr file, so option D is incorrect. Because option A is correct, option E is incorrect."
+    },
+    {
+        "id":15,
+        "question":"Which of the following commands will number the lines in aleph.txt? (Select three.) A. fmt aleph.txt B. nl aleph.txt C. cat -b aleph.txt D. cat -n aleph.txt E. od -nl aleph.txt",
+        "answer":"B,C,D",
+        "explanation":"The nl command numbers lines, so it does this task without any special options, and option B is correct. (Its options can fine-tune the way it numbers lines, though.) The cat command can also number lines via its -b and -n options; -b numbers non-blank lines, whereas -n numbers all lines (including blank lines). Thus options C and D are both correct. Neither the fmt command nor the od command will number the lines of the input file, so options A and E are both incorrect."
+    },
+    {
+        "id":16,
+        "question":"You have a data file, data.txt, to be processed by a particular program. However, the program cannot handle data separated by tabs. The data.txt file’s data is separated by a tab stop at every eight characters. What command should you use before processing the data file with the program? A. od data.txt > data1.txt B. expand data.txt >> data.txt C. fmt --remove-tabs data.txt D. expand data.txt > data1.txt E. unexpand -t 8 data.txt",
+        "answer":"D",
+        "explanation":"The expand command will remove tab stops at every eight characters. With newly formatted data stored in data1.txt via the > redirection symbol, option D is the correct choice. The od command will not remove tabs. Therefore, option A is incorrect. Option B does remove the tabs; however, the resulting data fi le, data.txt, will contain duplicate data records (due to the >> redirection option), some with tabs and some without. Therefore, option B is incorrect. There is not a --remove-tabs option on the fmt command, and thus option C is incorrect. The unexpand command does the opposite of the expand command, adding tab stops instead of removing them. Therefore, option E is incorrect."
+    },
+    {
+        "id":17,
+        "question":"Which of the following commands will change all occurrences of dog in the file animals. txt to mutt in the screen display? A. sed –s \"dog\" \"mutt\" animals.txt B. grep –s \"dog||mutt\" animals.txt C. sed 's/dog/mutt/g' animals.txt D. cat animals.txt | grep –c \"dog\" \"mutt\" E. fmt animals.txt | cut 'dog' > 'mutt'",
+        "answer":"C",
+        "explanation":"The sed utility can be used to “stream” text and change one value to another. In this case, the s option is used to replace dog with mutt, making option C correct. The syntax in option A is incorrect, and choices B and D are incorrect because grep doesn’t include the functionality needed to make the changes. Option E combines fmt, cut, and redirection in a way that simply won’t work to achieve the desired goal."
+    },
+    {
+        "id":18,
+        "question":"You’ve received an ASCII text file (longlines.txt) that uses no carriage returns within paragraphs but two carriage returns between paragraphs. The result is that your preferred text editor displays each paragraph as a very long line. How can you reformat this file so that you can more easily edit it (or a copy)? A. sed 's/Ctrl-M/NL/' longlines.txt B. fmt longlines.txt > longlines2.txt C. cat longlines.txt > longlines2.txt D. pr longlines.txt > longlines2.txt E. grep longlines.txt > longlines2.txt",
+        "answer":"B",
+        "explanation":"The fmt command performs the desired task of shortening long lines by inserting carriage returns. It sends its results to standard output, so option B uses output redirection to save the results in a new file. The sed command of option A won’t accomplish anything useful; it only replaces the string Ctrl-M with the string NL. Although these strings are both sometimes used as abbreviations for carriage returns or new lines, the replacement of these literal strings isn’t what’s required. Option C creates an exact copy of the original file, with the long single-line paragraphs intact. Although option D’s pr command is a formatting tool, it won’t reformat individual paragraphs. It will also add headers that you probably don’t want. Option E’s grep command searches for text within files; it won’t reformat text files."
+    },
+    {
+        "id":19,
+        "question":"Which of the following commands will print lines from the file world.txt that contain matches to changes and changed? A. grep change[ds] world.txt B. sed change[d-s] world.txt C. od \"change'd|s'\" world.txt D. cat world.txt changes changed E. find world.txt 'change(d|s)'",
+        "answer":"A",
+        "explanation":"The grep utility is used to find matching text within a file and print those lines. It accepts regular expressions, which means you can place in brackets the two characters that differ in the words for which you’re looking. Thus option A is correct. The syntax for sed, od, cat, and find wouldn’t perform the specified task, so options B through E are all incorrect."
+    },
+    {
+        "id":20,
+        "question":"Which of the following regular expressions will match the strings dog, dug, and various other strings but not dig? \n A. d.g \n B. d[ou]g \n C. d[o-u]g \n D. di*g \n E. d.ig",
+        "answer":"C",
+        "explanation":"The bracket expression within the d[o-u]g regular expression in option C means that any three-character string beginning in d, ending in g, and with the middle character being between o and u will match. These results meet the question’s criteria. Option A’s dot matches any single character, so d.g matches all three words. The bracket expression [ou] in option B matches the characters o and u, but no other values. Since the question specifies that some other matches will be made, this option is incorrect. Option D’s di*g matches dig, diig, diiig, or any other word that begins with d, ends with g, and contains any number of i letters in between. Thus option D matches dig but not dog or dug as required. Option E, like option A, uses a dot to match any character, so it will actually match certain four-letter words but not dog or dug."
+    }
+]
+}
