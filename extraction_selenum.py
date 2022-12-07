@@ -60,33 +60,47 @@ chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
 
-browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
-browser.maximize_window()
-
-browser.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-file-should-be-modified-to-disable-the-ctrl-alt-delete-key-combination-2/")
 
 """elements =  browser.find_element(By.XPATH, value=xpath2)
 data = elements.get_attribute('innerHTML')
 print(data)"""
 
-#nbquestion = range(1,120)
+nbquestion = range(1,120)
 
-"""
-#for keki in nbquestion :
-xpathquestion = print(f"/html/body/div/div/aside/div[2]/div/ul/li[2]")
-browser.find_element(By.XPATH, value="/html/body/div/div/aside/div[2]/div/ul/li[2]").click"""
+for keki in nbquestion :
 
-kek1 = browser.find_element(By.XPATH, value=xpath1).text
-print(kek1)
-kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
-print(kek2)
-kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
-print(kek3)
-kek4 = browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML')
-print(kek4)
-kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
-print(kek5)
+  browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+  browser.maximize_window()
+
+  browser.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-file-should-be-modified-to-disable-the-ctrl-alt-delete-key-combination-2/")
+
+  browser.find_element(By.XPATH,value="//*[@id=\"first-step\"]/header/i").click
+  xpathquestion = "/html/body/div/div/aside/div[2]/div/ul/li["+str(keki)+"]"
+  print(xpathquestion)
+  print("kek1")
+  xpathquestion = str(xpathquestion)
+  print(xpathquestion)
+  print("keké")
+  browser.find_element(By.XPATH, value=xpathquestion).click
+  #browser.find_element(By.CSS_SELECTOR, "nav.navigation:nth-child(1) > div:nth-child(2) > div:nth-child(2) > a:nth-child(1) > strong:nth-child(1)").click
+
+
+  kek1 = browser.find_element(By.XPATH, value=xpath1).text
+  print(kek1)
+  kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
+  print(kek2)
+  kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
+  print(kek3)
+  kek4 = browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML')
+  print(kek4)
+  kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
+  print(kek5)
+  print("SUIVANT")
+
+  browser.quit()
+
+
 
 
 
