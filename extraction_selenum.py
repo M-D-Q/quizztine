@@ -46,6 +46,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver import *
 from selenium.webdriver.support.ui import Select
 import time
+import re
 from datetime import date
 from selenium.webdriver.chrome.options import Options
 
@@ -80,24 +81,38 @@ kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML
 print(kek5)
 print("C'était le n°"+str(i)+"... Passage à la question suivante ...")
 i += 1
-
+r = 1
 
 nbquestion = range(1,120)
+pattern1 = r'<br>'
+pattern2 = r'<font color="#333333">'
+pattern3 = r'</font>'
+pattern4 = r'<span.+span>'
+
 
 for keki in nbquestion :
   #bouton next
   browser.find_element(By.CSS_SELECTOR, ".single-top .nav-next strong").click()
   kek1 = browser.find_element(By.XPATH, value=xpath1).text
-  print(kek1)
+  r = 1
+  for r in range(1,4):
+    pattern = pattern+str(r)
+    kekmod1 = re.sub(pattern, '', kek1)
+
+
   kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
   print(kek2)
+  print(re.sub('<.+>', '', kek2))
   try :
     kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
     print(kek3)
+    print(re.sub('<.+>', '', kek3))
     kek4 = browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML')
     print(kek4)
+    print(re.sub('<.+>', '', kek4))
     kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
     print(kek5)
+    print(re.sub('<.+>', '', kek5))
   except :
     print(" yavait qu'une réponse ici ")
 
