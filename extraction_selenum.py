@@ -70,9 +70,12 @@ browser.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-fi
 data = elements.get_attribute('innerHTML')
 print(data)"""
 
-nbquestion = 1
-xpathquestion = print(f"/html/body/div/div/aside/div[2]/div/ul/li[{nbquestion}]")
-browser.find_element(By.XPATH, value=xpathquestion).click
+#nbquestion = range(1,120)
+
+"""
+#for keki in nbquestion :
+xpathquestion = print(f"/html/body/div/div/aside/div[2]/div/ul/li[2]")
+browser.find_element(By.XPATH, value="/html/body/div/div/aside/div[2]/div/ul/li[2]").click"""
 
 kek1 = browser.find_element(By.XPATH, value=xpath1).text
 print(kek1)
