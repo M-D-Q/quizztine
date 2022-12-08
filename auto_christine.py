@@ -36,7 +36,7 @@ elif choix == "2":
     score = 0
     i = 0
     for john in data['questionnaire2018']:
-        print(f"Question #{john['id']}/{len(data['chapitre1'])}")
+        print(f"Question #{john['id']}/{len(data['questionnaire2018'])}")
         print(john['question'])
         response = str(input("Your answer is (no spaces, only capital letters. :"))
         if response != john['answer']:
@@ -49,4 +49,11 @@ elif choix == "2":
         osef = input("Press enter to continue...")
         os.system('cls' if os.name == 'nt' else 'clear')
 
+    #ICI faire une variante pour le questionnaire à input, en mettant une liste des réponses possibles via un split à la virgule des trucs avec plusieurs variantes, puis un if response in liste_answers
+
+    # AUSSI , Variante shuffle avec 20 fois un chiffre random qui fetch l'id du même chiffre et on évite que ça se répète.
+
+    # Et de l'esthétique bien sur.
+
+    
 

@@ -37,6 +37,7 @@ browser.find_element(By.CSS_SELECTOR, "#first-step .icon-close").click()
 
 nbquestion = range(1,120)
 i = 1
+k = 1
 
 for iteration in nbquestion :
   #reinit variables
@@ -46,7 +47,7 @@ for iteration in nbquestion :
   if i != 1 :
     browser.find_element(By.CSS_SELECTOR, ".single-top .nav-next strong").click()
   #EXTRACTION
-  kek1 = browser.find_element(By.XPATH, value=xpath1).text
+  kek1 = browser.find_element(By.XPATH, value=xpath1).get_attribute('innerHTML')
   kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
   try :
     kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
@@ -62,9 +63,18 @@ for iteration in nbquestion :
     print("Only réponse A ")
     print("Ca veut dire que c'est une réponse en commande libre ?")
     templist.extend((kek1, kek2))
-    
+    wrapping_input(templist, dico_answers, k, liste_patterns)
+    k += 1
+    issou = 1
+    print("Question spéciale numéro "+str(k)+" !")
+  if issou != 1 :
+    wrapping_normal(templist, dico_answers, i, liste_patterns)
+    print("C'était le n°"+str(i)+"... Passage à la question suivante ...")
+    i += 1
+print('Finito !')
+browser.quit()
 
-  print("Mettage good answers")
+"""print("Mettage good answers")
   print("==========================================")
   mettage_answers(templist, dico_answers, i, liste_patterns )
   print(dico_answers)
@@ -86,15 +96,7 @@ for iteration in nbquestion :
             "answer":(','.join(dico_answers[i])),
             "explanation":" "
         }
-  insertion_json(y, 'auto_christine.json')
-
-
-  print("C'était le n°"+str(i)+"... Passage à la question suivante ...")
-  i += 1
-print('Finito !')
-browser.quit()
-
-
+  insertion_json(y, 'auto_christine.json',"questionnaire2018")"""
 
 
 
