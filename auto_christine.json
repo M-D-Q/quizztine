@@ -1,126 +1,840 @@
 {
-"chapitre1": [
-    {
-        "id":1,
-        "question":"You type a command into bash and pass a long filename to it, but after you enter the command, you receive a File not found error message because of a typo in the filename. \n How might you proceed? \n A. Retype the command, and be sure you type the filename correctly, letter by letter. \n B. Retype the command, but press the Tab key after typing a few letters of the long filename to ensure that the filename is entered correctly.\n C. Press the Up arrow key, and use bash’s editing features to correct the typo.\n D. Any of the above.\n E. None of the above",
-        "answer":"D",
-        "explanation":"Any of these approaches will work, or at least might work. (You might err when performing any of them.) \n Option B or C is likely to be the most efficient approach; with a long filename to type, option A is likely to be tedious."
-    },
-
-    {
-        "id":2,
-        "question":"Which of the following commands is implemented as an internal command in bash? A. cat B. less C. tee D. sed E. echo",
-        "answer":"E",
-        "explanation":"The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
-    },
-    {
-        "id":3,
-        "question":"You type echo $PROC, and the computer replies Go away. What does this mean? A. No currently running processes are associated with your shell, so you may log out without terminating them. B. The remote computer PROC isn’t accepting connections; you should contact its administrator to correct the problem. C. Your computer is handling too many processes; you must kill some of them to regain control of the computer. D. Your central processing unit (CPU) is defective and must be replaced as soon as possible. E. You, one of your configuration files, or a program you’ve run has set the $PROC environment variable to Go away.",
-        "answer":"E",
-        "explanation":"The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
-    },
-    {
-        "id":4,
-        "question":"What does the pwd command accomplish? A. It prints the name of the working directory. B. It changes the current working directory. C. It prints wide displays on narrow paper. D. It parses web page URLs for display. E. It prints the terminal’s width in characters.",
-        "answer":"A",
-        "explanation":"The pwd command prints (to standard output) the name of the current working directory. The remaining options are simply incorrect, although option B describes the cd command, and various tools can be used to reformat wide text for display or printing in fewer columns, as in option C."
-    },
-    {
-        "id":5,
-        "question":"What is the surest way to run a program (say, myprog) that’s located in the current working directory? A. Type ./ followed by the program name: ./myprog. B. Type the program name alone: myprog. Review Questions 43 C. Type run followed by the program name: run myprog. D. Type /. followed by the program name: /.myprog. E. Type the program name followed by an ampersand (&): myprog &.",
-        "answer":"A",
-        "explanation":"The dot (.) character refers to the current working directory, and the slash (/) is a directory separator. Thus preceding a program name by ./ unambiguously identifies the intention to run the program that’s stored in the current directory. Option B will run the first instance of the program that’s found on the current path. Because paths often omit the current directory for security reasons, this option is likely to fail. The run command isn’t a standard Linux command, so option C is unlikely to do anything, much less what the question specifies. Option D would be correct except that it reverses the order of the two characters. The effect is to attempt to run the .myprog file in the root (/) directory. This file probably doesn’t exist, and even if it did, it’s not the file the question specifies should be run. Option E runs the first instance of myprog found on the path, and additionally it runs the program in the background. (Chapter 2 covers background execution in more detail.)"
-    },
-    {
-        "id":6,
-        "question":"How does man display information by default on most Linux systems? A. Using a custom X-based application B. Using the Firefox web browser C. Using the info browser D. Using the vi editor E. Using the less pager",
-        "answer":"E",
-        "explanation":"By default, man uses the less pager to display information on most Linux systems, so option E is correct. Although an X-based version of man does exist (xman), the basic man doesn’t use a custom X-based application (option A), nor does it use Firefox (option B) or the vi editor (option D). The info command and man are competing documentation systems, so option C is incorrect."
-    },
-    {
-        "id":7,
-        "question":"You want to store the standard output of the ifconfig command in a text file (file.txt) for future reference, and you want to wipe out any existing data in the file. You do not want to store standard error in this file. How can you accomplish these goals? A. ifconfig < file.txt B. ifconfig >> file.txt C. ifconfig > file.txt D. ifconfig | file.txt E. ifconfig 2> file.txt",
-        "answer":"C",
-        "explanation":"The > redirection operator stores a command’s standard output in a file, overwriting the contents of any existing file by the specified name, so option C is correct. Option A specifies the standard input redirection so that ifconfig will take the contents of file.txt as input. Option B is almost correct: the >> redirection operator redirects standard output, as requested, but it appends data to the specified file rather than overwriting it. Option D specifies a pipe; the output of ifconfig is sent through the file.txt program, if it exists. (Chances are it doesn’t, so you’d get a command not found error message.) Option E redirects standard error, rather than standard output, to file.txt and so is incorrect."
-    },
-    {
-        "id":8,
-        "question":"What is the effect of the following command? $ myprog &> input.txt A. Standard error to myprog is taken from input.txt. B. Standard input to myprog is taken from input.txt. C. Standard output and standard error from myprog are written to input.txt. D. All of the above. E. None of the above.",
-        "answer":"C",
-        "explanation":"The &> redirection operator sends both standard output and standard error to the specified file, as option C states. (The name of the file, input.txt, is intentionally deceptive, but the usage is still valid.) Option A mentions standard error but describes it as if it were an input stream, which it’s not; it’s an output stream. Option B mentions standard input, but the &> operator doesn’t affect standard input. Because only option C is correct, neither option D nor E can be correct"
-    },
-    {
-        "id":9,
-        "question":"How many commands can you pipe together at once? A. 2 B. 3 C. 4 D. 16 E. >16",
-        "answer":"E",
-        "explanation":"In principle, you can pipe together as many commands as you like. (In practice, of course, there will be limits based on input buffer size, memory, and so on, but these limits are far higher than the 2, 3, 4, or 16 commands specified in options A, B, C, and D.)."
-    },
-    {
-        "id":10,
-        "question":"You want to run an interactive script, gabby, which produces a lot of output in response to the user’s inputs. To facilitate future study of this script, you want to copy its output to a file. How might you do this? A. gabby > gabby-out.txt B. gabby | tee gabby-out.txt C. gabby < gabby-out.txt D. gabby &> gabby-out.txt E. gabby `gabby-out.txt`",
-        "answer":"B",
-        "explanation":"The tee command sends its output both to standard output and to a named file. Thus, placing the tee command (with an output filename) after another command and a pipe will achieve the desired effect. Options A and D redirect gabby’s output to a file, which means you won’t be able to see the output and interact with it. Option C sends the contents of gabby-out.txt to gabby as input, which isn’t what’s desired, either. Option E attempts to run gabby-out.txt as a program and use its output as commandline arguments to gabby, which is not what’s desired."
-    },
-    {
-        "id":11,
-        "question":"A text-mode program, verbose, prints a lot of bogus “error” messages to standard error. How might you get rid of those messages while still interacting with the program? A. verbose | quiet B. verbose &> /dev/null C. verbose 2> /dev/null D. verbose > junk.txt E. quiet-mode verbose",
-        "answer":"C",
-        "explanation":"The 2> redirection operator redirects standard error only, leaving standard output unaffected. Sending standard error to /dev/null gets rid of it. Thus option C is correct. Option A pipes the standard output of verbose through the quiet program, which isn’t a standard Linux program. Option B sends both standard output and standard error to /dev/null, so you won’t be able to interact with the program as the question specifies you must be able to do. Option D redirects standard output only to the junk.txt file, so once again, interaction will be impossible—and you’ll see the unwanted error messages on the screen. Option E’s quiet-mode program is fictitious (or at least nonstandard), so this option is incorrect."
-    },
-
-    {
-        "id":12,
-        "question":"How do the > and >> redirection operators differ? A. The > operator creates a new file or overwrites an existing one; the >> operator creates a new file or appends to an existing one. B. The > operator creates a new file or overwrites an existing one; the >> operator appends to an existing file or issues an error message if the specified file doesn’t exist. C. The > operator redirects standard output; the >> operator redirects standard error. D. The > operator redirects standard output; the >> operator redirects standard input. E. The > operator writes to an existing file but fails if the file doesn’t exist; the >> operator writes to an existing file or creates a new one if it doesn’t already exist.",
-        "answer":"A",
-        "explanation":"Option A correctly describes the difference between these two redirection operators. Option B is almost correct, but the >> operator will create a new file if one doesn’t already exist. The >> operator does not redirect standard error (as stated in option C) or standard input (as stated in option D). Both operators will create a new file if one doesn’t already exist, contrary to what option E states."
-    },
-    {
-        "id":13,
-        "question":"What program would you use to display the end of a configuration file? A. uniq B. cut C. tail D. wc E. fmt",
-        "answer":"C",
-        "explanation":"The tail command displays the final 10 lines of a file, so option C is correct. (You can change the number of lines displayed with the -n option.) The uniq command (option A) removes duplicate lines from a list. The cut command (option B) echoes the specified characters or fields from an input text file. The wc command (option D) 578 Appendix ■ Answers displays counts of the number of characters, words, and lines in a file. The fmt command (option E) is a plain-text formatter."
-    },
-    {
-        "id":14,
-        "question":"What is the effect of the following command? $ pr report.txt | lpr A. The file report.txt is formatted for printing and sent to the lpr program. B. The files report.txt and lpr are combined together into one file and sent to standard output. C. Tabs are converted to spaces in report.txt, and the result is saved in lpr. D. The file report.txt is printed, and any error messages are stored in the file lpr. E. None of the above",
-        "answer":"A",
-        "explanation":"The pr program takes a text file as input and adds formatting features intended for printing, such as a header and blank lines, to separate pages. The command also pipes the output through lpr (which is a Linux printing command). Option A describes these effects and so is correct. Option B describes the effect of the cat program and so is incorrect. The conversion of tabs to spaces can be done by the expand program, so option C is incorrect. Although the specified command does print report.txt, error messages are not stored in the lpr file, so option D is incorrect. Because option A is correct, option E is incorrect."
-    },
-    {
-        "id":15,
-        "question":"Which of the following commands will number the lines in aleph.txt? (Select three.) A. fmt aleph.txt B. nl aleph.txt C. cat -b aleph.txt D. cat -n aleph.txt E. od -nl aleph.txt",
-        "answer":"B,C,D",
-        "explanation":"The nl command numbers lines, so it does this task without any special options, and option B is correct. (Its options can fine-tune the way it numbers lines, though.) The cat command can also number lines via its -b and -n options; -b numbers non-blank lines, whereas -n numbers all lines (including blank lines). Thus options C and D are both correct. Neither the fmt command nor the od command will number the lines of the input file, so options A and E are both incorrect."
-    },
-    {
-        "id":16,
-        "question":"You have a data file, data.txt, to be processed by a particular program. However, the program cannot handle data separated by tabs. The data.txt file’s data is separated by a tab stop at every eight characters. What command should you use before processing the data file with the program? A. od data.txt > data1.txt B. expand data.txt >> data.txt C. fmt --remove-tabs data.txt D. expand data.txt > data1.txt E. unexpand -t 8 data.txt",
-        "answer":"D",
-        "explanation":"The expand command will remove tab stops at every eight characters. With newly formatted data stored in data1.txt via the > redirection symbol, option D is the correct choice. The od command will not remove tabs. Therefore, option A is incorrect. Option B does remove the tabs; however, the resulting data fi le, data.txt, will contain duplicate data records (due to the >> redirection option), some with tabs and some without. Therefore, option B is incorrect. There is not a --remove-tabs option on the fmt command, and thus option C is incorrect. The unexpand command does the opposite of the expand command, adding tab stops instead of removing them. Therefore, option E is incorrect."
-    },
-    {
-        "id":17,
-        "question":"Which of the following commands will change all occurrences of dog in the file animals. txt to mutt in the screen display? A. sed –s \"dog\" \"mutt\" animals.txt B. grep –s \"dog||mutt\" animals.txt C. sed 's/dog/mutt/g' animals.txt D. cat animals.txt | grep –c \"dog\" \"mutt\" E. fmt animals.txt | cut 'dog' > 'mutt'",
-        "answer":"C",
-        "explanation":"The sed utility can be used to “stream” text and change one value to another. In this case, the s option is used to replace dog with mutt, making option C correct. The syntax in option A is incorrect, and choices B and D are incorrect because grep doesn’t include the functionality needed to make the changes. Option E combines fmt, cut, and redirection in a way that simply won’t work to achieve the desired goal."
-    },
-    {
-        "id":18,
-        "question":"You’ve received an ASCII text file (longlines.txt) that uses no carriage returns within paragraphs but two carriage returns between paragraphs. The result is that your preferred text editor displays each paragraph as a very long line. How can you reformat this file so that you can more easily edit it (or a copy)? A. sed 's/Ctrl-M/NL/' longlines.txt B. fmt longlines.txt > longlines2.txt C. cat longlines.txt > longlines2.txt D. pr longlines.txt > longlines2.txt E. grep longlines.txt > longlines2.txt",
-        "answer":"B",
-        "explanation":"The fmt command performs the desired task of shortening long lines by inserting carriage returns. It sends its results to standard output, so option B uses output redirection to save the results in a new file. The sed command of option A won’t accomplish anything useful; it only replaces the string Ctrl-M with the string NL. Although these strings are both sometimes used as abbreviations for carriage returns or new lines, the replacement of these literal strings isn’t what’s required. Option C creates an exact copy of the original file, with the long single-line paragraphs intact. Although option D’s pr command is a formatting tool, it won’t reformat individual paragraphs. It will also add headers that you probably don’t want. Option E’s grep command searches for text within files; it won’t reformat text files."
-    },
-    {
-        "id":19,
-        "question":"Which of the following commands will print lines from the file world.txt that contain matches to changes and changed? A. grep change[ds] world.txt B. sed change[d-s] world.txt C. od \"change'd|s'\" world.txt D. cat world.txt changes changed E. find world.txt 'change(d|s)'",
-        "answer":"A",
-        "explanation":"The grep utility is used to find matching text within a file and print those lines. It accepts regular expressions, which means you can place in brackets the two characters that differ in the words for which you’re looking. Thus option A is correct. The syntax for sed, od, cat, and find wouldn’t perform the specified task, so options B through E are all incorrect."
-    },
-    {
-        "id":20,
-        "question":"Which of the following regular expressions will match the strings dog, dug, and various other strings but not dig? \n A. d.g \n B. d[ou]g \n C. d[o-u]g \n D. di*g \n E. d.ig",
-        "answer":"C",
-        "explanation":"The bracket expression within the d[o-u]g regular expression in option C means that any three-character string beginning in d, ending in g, and with the middle character being between o and u will match. These results meet the question’s criteria. Option A’s dot matches any single character, so d.g matches all three words. The bracket expression [ou] in option B matches the characters o and u, but no other values. Since the question specifies that some other matches will be made, this option is incorrect. Option D’s di*g matches dig, diig, diiig, or any other word that begins with d, ends with g, and contains any number of i letters in between. Thus option D matches dig but not dog or dug as required. Option E, like option A, uses a dot to match any character, so it will actually match certain four-letter words but not dog or dug."
-    }
-]
+    "chapitre1": [
+        {
+            "id": 1,
+            "question": "You type a command into bash and pass a long filename to it, but after you enter the command, you receive a File not found error message because of a typo in the filename. \n How might you proceed? \n A. Retype the command, and be sure you type the filename correctly, letter by letter. \n B. Retype the command, but press the Tab key after typing a few letters of the long filename to ensure that the filename is entered correctly.\n C. Press the Up arrow key, and use bash\u2019s editing features to correct the typo.\n D. Any of the above.\n E. None of the above",
+            "answer": "D",
+            "explanation": "Any of these approaches will work, or at least might work. (You might err when performing any of them.) \n Option B or C is likely to be the most efficient approach; with a long filename to type, option A is likely to be tedious."
+        },
+        {
+            "id": 2,
+            "question": "Which of the following commands is implemented as an internal command in bash? A. cat B. less C. tee D. sed E. echo",
+            "answer": "E",
+            "explanation": "The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
+        },
+        {
+            "id": 3,
+            "question": "You type echo $PROC, and the computer replies Go away. What does this mean? A. No currently running processes are associated with your shell, so you may log out without terminating them. B. The remote computer PROC isn\u2019t accepting connections; you should contact its administrator to correct the problem. C. Your computer is handling too many processes; you must kill some of them to regain control of the computer. D. Your central processing unit (CPU) is defective and must be replaced as soon as possible. E. You, one of your configuration files, or a program you\u2019ve run has set the $PROC environment variable to Go away.",
+            "answer": "E",
+            "explanation": "The echo command is implemented internally to bash, although an external version is also available on most systems. The cat, less, tee, and sed commands are not implemented internally to bash, although they can be called from bash as external commands."
+        },
+        {
+            "id": 4,
+            "question": "What does the pwd command accomplish? A. It prints the name of the working directory. B. It changes the current working directory. C. It prints wide displays on narrow paper. D. It parses web page URLs for display. E. It prints the terminal\u2019s width in characters.",
+            "answer": "A",
+            "explanation": "The pwd command prints (to standard output) the name of the current working directory. The remaining options are simply incorrect, although option B describes the cd command, and various tools can be used to reformat wide text for display or printing in fewer columns, as in option C."
+        },
+        {
+            "id": 5,
+            "question": "What is the surest way to run a program (say, myprog) that\u2019s located in the current working directory? A. Type ./ followed by the program name: ./myprog. B. Type the program name alone: myprog. Review Questions 43 C. Type run followed by the program name: run myprog. D. Type /. followed by the program name: /.myprog. E. Type the program name followed by an ampersand (&): myprog &.",
+            "answer": "A",
+            "explanation": "The dot (.) character refers to the current working directory, and the slash (/) is a directory separator. Thus preceding a program name by ./ unambiguously identifies the intention to run the program that\u2019s stored in the current directory. Option B will run the first instance of the program that\u2019s found on the current path. Because paths often omit the current directory for security reasons, this option is likely to fail. The run command isn\u2019t a standard Linux command, so option C is unlikely to do anything, much less what the question specifies. Option D would be correct except that it reverses the order of the two characters. The effect is to attempt to run the .myprog file in the root (/) directory. This file probably doesn\u2019t exist, and even if it did, it\u2019s not the file the question specifies should be run. Option E runs the first instance of myprog found on the path, and additionally it runs the program in the background. (Chapter 2 covers background execution in more detail.)"
+        },
+        {
+            "id": 6,
+            "question": "How does man display information by default on most Linux systems? A. Using a custom X-based application B. Using the Firefox web browser C. Using the info browser D. Using the vi editor E. Using the less pager",
+            "answer": "E",
+            "explanation": "By default, man uses the less pager to display information on most Linux systems, so option E is correct. Although an X-based version of man does exist (xman), the basic man doesn\u2019t use a custom X-based application (option A), nor does it use Firefox (option B) or the vi editor (option D). The info command and man are competing documentation systems, so option C is incorrect."
+        },
+        {
+            "id": 7,
+            "question": "You want to store the standard output of the ifconfig command in a text file (file.txt) for future reference, and you want to wipe out any existing data in the file. You do not want to store standard error in this file. How can you accomplish these goals? A. ifconfig < file.txt B. ifconfig >> file.txt C. ifconfig > file.txt D. ifconfig | file.txt E. ifconfig 2> file.txt",
+            "answer": "C",
+            "explanation": "The > redirection operator stores a command\u2019s standard output in a file, overwriting the contents of any existing file by the specified name, so option C is correct. Option A specifies the standard input redirection so that ifconfig will take the contents of file.txt as input. Option B is almost correct: the >> redirection operator redirects standard output, as requested, but it appends data to the specified file rather than overwriting it. Option D specifies a pipe; the output of ifconfig is sent through the file.txt program, if it exists. (Chances are it doesn\u2019t, so you\u2019d get a command not found error message.) Option E redirects standard error, rather than standard output, to file.txt and so is incorrect."
+        },
+        {
+            "id": 8,
+            "question": "What is the effect of the following command? $ myprog &> input.txt A. Standard error to myprog is taken from input.txt. B. Standard input to myprog is taken from input.txt. C. Standard output and standard error from myprog are written to input.txt. D. All of the above. E. None of the above.",
+            "answer": "C",
+            "explanation": "The &> redirection operator sends both standard output and standard error to the specified file, as option C states. (The name of the file, input.txt, is intentionally deceptive, but the usage is still valid.) Option A mentions standard error but describes it as if it were an input stream, which it\u2019s not; it\u2019s an output stream. Option B mentions standard input, but the &> operator doesn\u2019t affect standard input. Because only option C is correct, neither option D nor E can be correct"
+        },
+        {
+            "id": 9,
+            "question": "How many commands can you pipe together at once? A. 2 B. 3 C. 4 D. 16 E. >16",
+            "answer": "E",
+            "explanation": "In principle, you can pipe together as many commands as you like. (In practice, of course, there will be limits based on input buffer size, memory, and so on, but these limits are far higher than the 2, 3, 4, or 16 commands specified in options A, B, C, and D.)."
+        },
+        {
+            "id": 10,
+            "question": "You want to run an interactive script, gabby, which produces a lot of output in response to the user\u2019s inputs. To facilitate future study of this script, you want to copy its output to a file. How might you do this? A. gabby > gabby-out.txt B. gabby | tee gabby-out.txt C. gabby < gabby-out.txt D. gabby &> gabby-out.txt E. gabby `gabby-out.txt`",
+            "answer": "B",
+            "explanation": "The tee command sends its output both to standard output and to a named file. Thus, placing the tee command (with an output filename) after another command and a pipe will achieve the desired effect. Options A and D redirect gabby\u2019s output to a file, which means you won\u2019t be able to see the output and interact with it. Option C sends the contents of gabby-out.txt to gabby as input, which isn\u2019t what\u2019s desired, either. Option E attempts to run gabby-out.txt as a program and use its output as commandline arguments to gabby, which is not what\u2019s desired."
+        },
+        {
+            "id": 11,
+            "question": "A text-mode program, verbose, prints a lot of bogus \u201cerror\u201d messages to standard error. How might you get rid of those messages while still interacting with the program? A. verbose | quiet B. verbose &> /dev/null C. verbose 2> /dev/null D. verbose > junk.txt E. quiet-mode verbose",
+            "answer": "C",
+            "explanation": "The 2> redirection operator redirects standard error only, leaving standard output unaffected. Sending standard error to /dev/null gets rid of it. Thus option C is correct. Option A pipes the standard output of verbose through the quiet program, which isn\u2019t a standard Linux program. Option B sends both standard output and standard error to /dev/null, so you won\u2019t be able to interact with the program as the question specifies you must be able to do. Option D redirects standard output only to the junk.txt file, so once again, interaction will be impossible\u2014and you\u2019ll see the unwanted error messages on the screen. Option E\u2019s quiet-mode program is fictitious (or at least nonstandard), so this option is incorrect."
+        },
+        {
+            "id": 12,
+            "question": "How do the > and >> redirection operators differ? A. The > operator creates a new file or overwrites an existing one; the >> operator creates a new file or appends to an existing one. B. The > operator creates a new file or overwrites an existing one; the >> operator appends to an existing file or issues an error message if the specified file doesn\u2019t exist. C. The > operator redirects standard output; the >> operator redirects standard error. D. The > operator redirects standard output; the >> operator redirects standard input. E. The > operator writes to an existing file but fails if the file doesn\u2019t exist; the >> operator writes to an existing file or creates a new one if it doesn\u2019t already exist.",
+            "answer": "A",
+            "explanation": "Option A correctly describes the difference between these two redirection operators. Option B is almost correct, but the >> operator will create a new file if one doesn\u2019t already exist. The >> operator does not redirect standard error (as stated in option C) or standard input (as stated in option D). Both operators will create a new file if one doesn\u2019t already exist, contrary to what option E states."
+        },
+        {
+            "id": 13,
+            "question": "What program would you use to display the end of a configuration file? A. uniq B. cut C. tail D. wc E. fmt",
+            "answer": "C",
+            "explanation": "The tail command displays the final 10 lines of a file, so option C is correct. (You can change the number of lines displayed with the -n option.) The uniq command (option A) removes duplicate lines from a list. The cut command (option B) echoes the specified characters or fields from an input text file. The wc command (option D) 578 Appendix \u25a0 Answers displays counts of the number of characters, words, and lines in a file. The fmt command (option E) is a plain-text formatter."
+        },
+        {
+            "id": 14,
+            "question": "What is the effect of the following command? $ pr report.txt | lpr A. The file report.txt is formatted for printing and sent to the lpr program. B. The files report.txt and lpr are combined together into one file and sent to standard output. C. Tabs are converted to spaces in report.txt, and the result is saved in lpr. D. The file report.txt is printed, and any error messages are stored in the file lpr. E. None of the above",
+            "answer": "A",
+            "explanation": "The pr program takes a text file as input and adds formatting features intended for printing, such as a header and blank lines, to separate pages. The command also pipes the output through lpr (which is a Linux printing command). Option A describes these effects and so is correct. Option B describes the effect of the cat program and so is incorrect. The conversion of tabs to spaces can be done by the expand program, so option C is incorrect. Although the specified command does print report.txt, error messages are not stored in the lpr file, so option D is incorrect. Because option A is correct, option E is incorrect."
+        },
+        {
+            "id": 15,
+            "question": "Which of the following commands will number the lines in aleph.txt? (Select three.) A. fmt aleph.txt B. nl aleph.txt C. cat -b aleph.txt D. cat -n aleph.txt E. od -nl aleph.txt",
+            "answer": "B,C,D",
+            "explanation": "The nl command numbers lines, so it does this task without any special options, and option B is correct. (Its options can fine-tune the way it numbers lines, though.) The cat command can also number lines via its -b and -n options; -b numbers non-blank lines, whereas -n numbers all lines (including blank lines). Thus options C and D are both correct. Neither the fmt command nor the od command will number the lines of the input file, so options A and E are both incorrect."
+        },
+        {
+            "id": 16,
+            "question": "You have a data file, data.txt, to be processed by a particular program. However, the program cannot handle data separated by tabs. The data.txt file\u2019s data is separated by a tab stop at every eight characters. What command should you use before processing the data file with the program? A. od data.txt > data1.txt B. expand data.txt >> data.txt C. fmt --remove-tabs data.txt D. expand data.txt > data1.txt E. unexpand -t 8 data.txt",
+            "answer": "D",
+            "explanation": "The expand command will remove tab stops at every eight characters. With newly formatted data stored in data1.txt via the > redirection symbol, option D is the correct choice. The od command will not remove tabs. Therefore, option A is incorrect. Option B does remove the tabs; however, the resulting data fi le, data.txt, will contain duplicate data records (due to the >> redirection option), some with tabs and some without. Therefore, option B is incorrect. There is not a --remove-tabs option on the fmt command, and thus option C is incorrect. The unexpand command does the opposite of the expand command, adding tab stops instead of removing them. Therefore, option E is incorrect."
+        },
+        {
+            "id": 17,
+            "question": "Which of the following commands will change all occurrences of dog in the file animals. txt to mutt in the screen display? A. sed \u2013s \"dog\" \"mutt\" animals.txt B. grep \u2013s \"dog||mutt\" animals.txt C. sed 's/dog/mutt/g' animals.txt D. cat animals.txt | grep \u2013c \"dog\" \"mutt\" E. fmt animals.txt | cut 'dog' > 'mutt'",
+            "answer": "C",
+            "explanation": "The sed utility can be used to \u201cstream\u201d text and change one value to another. In this case, the s option is used to replace dog with mutt, making option C correct. The syntax in option A is incorrect, and choices B and D are incorrect because grep doesn\u2019t include the functionality needed to make the changes. Option E combines fmt, cut, and redirection in a way that simply won\u2019t work to achieve the desired goal."
+        },
+        {
+            "id": 18,
+            "question": "You\u2019ve received an ASCII text file (longlines.txt) that uses no carriage returns within paragraphs but two carriage returns between paragraphs. The result is that your preferred text editor displays each paragraph as a very long line. How can you reformat this file so that you can more easily edit it (or a copy)? A. sed 's/Ctrl-M/NL/' longlines.txt B. fmt longlines.txt > longlines2.txt C. cat longlines.txt > longlines2.txt D. pr longlines.txt > longlines2.txt E. grep longlines.txt > longlines2.txt",
+            "answer": "B",
+            "explanation": "The fmt command performs the desired task of shortening long lines by inserting carriage returns. It sends its results to standard output, so option B uses output redirection to save the results in a new file. The sed command of option A won\u2019t accomplish anything useful; it only replaces the string Ctrl-M with the string NL. Although these strings are both sometimes used as abbreviations for carriage returns or new lines, the replacement of these literal strings isn\u2019t what\u2019s required. Option C creates an exact copy of the original file, with the long single-line paragraphs intact. Although option D\u2019s pr command is a formatting tool, it won\u2019t reformat individual paragraphs. It will also add headers that you probably don\u2019t want. Option E\u2019s grep command searches for text within files; it won\u2019t reformat text files."
+        },
+        {
+            "id": 19,
+            "question": "Which of the following commands will print lines from the file world.txt that contain matches to changes and changed? A. grep change[ds] world.txt B. sed change[d-s] world.txt C. od \"change'd|s'\" world.txt D. cat world.txt changes changed E. find world.txt 'change(d|s)'",
+            "answer": "A",
+            "explanation": "The grep utility is used to find matching text within a file and print those lines. It accepts regular expressions, which means you can place in brackets the two characters that differ in the words for which you\u2019re looking. Thus option A is correct. The syntax for sed, od, cat, and find wouldn\u2019t perform the specified task, so options B through E are all incorrect."
+        },
+        {
+            "id": 20,
+            "question": "Which of the following regular expressions will match the strings dog, dug, and various other strings but not dig? \n A. d.g \n B. d[ou]g \n C. d[o-u]g \n D. di*g \n E. d.ig",
+            "answer": "C",
+            "explanation": "The bracket expression within the d[o-u]g regular expression in option C means that any three-character string beginning in d, ending in g, and with the middle character being between o and u will match. These results meet the question\u2019s criteria. Option A\u2019s dot matches any single character, so d.g matches all three words. The bracket expression [ou] in option B matches the characters o and u, but no other values. Since the question specifies that some other matches will be made, this option is incorrect. Option D\u2019s di*g matches dig, diig, diiig, or any other word that begins with d, ends with g, and contains any number of i letters in between. Thus option D matches dig but not dog or dug as required. Option E, like option A, uses a dot to match any character, so it will actually match certain four-letter words but not dog or dug."
+        }
+    ],
+    "questionnaire2018": [
+        {
+            "id": 0,
+            "question": "Which SysV init configuration file should be modified to disable the ctrl-alt-delete key combination? \n A. /proc/keys \n B. /etc/inittab \n C. /proc/inittab \n D. /etc/reboot \n E. /etc/keys \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 1,
+            "question": "what program is executed after the BIOS completes its tasks? \n A. The init program \n B. The kernel \n C. The inetd program \n D. The bootloader \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 2,
+            "question": "Which run levels should never be declared as the default run level when using SysV init? \n A. 1 \n B. 3 \n C. 5 \n D. 6 \n E. 0 \n",
+            "answer": "D,E",
+            "explanation": " "
+        },
+        {
+            "id": 3,
+            "question": "Which of the following statements is correct when talking about /proc/? \n A. All changes to files in /proc/ are stored in /etc/proc.d/ and restored on reboot. \n B. All files within /proc/ are only readable by the root user. \n C. All files within /proc/ are read-only and their contents cannot be changed. \n D. All changes to files in /proc/ are immediately recognized by the kernel. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 4,
+            "question": "What of the following statements are true regarding /dev/ when using udev? \n A. Entries for all possible devices get created on boot even if those devices are not connected. \n B. Additional rules for udev can be created by adding them to /etc/udev/rules.d/. \n C. When using udev, it is not possible to create block or character devices in /dev/ using mknod. \n D. The /dev/ directory is a filesystem of type tmpfs and is mounted by udev during system startup. \n E. The content of /dev/ is stored in /etc/udev/dev and is restored during system startup. \n",
+            "answer": "B,D",
+            "explanation": " "
+        },
+        {
+            "id": 5,
+            "question": "Which of the following information is stored within the BIOS? \n A. Boot device order \n B. Linux kernel version \n C. Timezone \n D. Hardware configuration \n E. The system\u2019s hostname \n",
+            "answer": "A,D",
+            "explanation": " "
+        },
+        {
+            "id": 6,
+            "question": "Which of the following commands reboots the system when using SysV init? \n A. telinit 0 \n B. telinit 6 \n C. shutdown -r \u201crebooting\u201d \n D. shutdown -r now \n E. shutdown -k now \u201crebooting\u201d \n",
+            "answer": "B,D",
+            "explanation": " "
+        },
+        {
+            "id": 7,
+            "question": "Which of the following are init systems used within Linux systems? \n A. SysV init \n B. startd \n C. systemd \n D. Upstart \n E. SysInit \n",
+            "answer": "A,C,D",
+            "explanation": " "
+        },
+        {
+            "id": 8,
+            "question": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? \n A. cmdline, /proc/cmdline \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 9,
+            "question": "What information can the lspci command display about the system hardware? \n A. PCI bus speed \n B. System battery type \n C. Device vendor identification \n D. Ethernet MAC address \n E. Device IRQ settings \n",
+            "answer": "A,C,E",
+            "explanation": " "
+        },
+        {
+            "id": 10,
+            "question": "which it is safe to perform maintenance tasks? \n A. shutdown -single now \n B. runlevel 1 \n C. telinit 1 \n D. shutdown -R 1 now \n E. init 1 \n",
+            "answer": "C,E",
+            "explanation": " "
+        },
+        {
+            "id": 11,
+            "question": "What is the first program that is usually started, at boot time, by the Linux kernel when using SysV init? \n A. /boot/init \n B. /lib/init.so \n C. /sbin/init \n D. /etc/rc.d/rcinit \n E. /proc/sys/kernel/init \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 12,
+            "question": "Which command will display messages from the kernel that were output during the normal boot sequence? \n A. dmesg, /bin/dmesg \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 13,
+            "question": "Which of the following commands will write a message to the terminals of all logged in users? \n A. mesg \n B. print \n C. wall \n D. yell \n E. bcast \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 14,
+            "question": "Which of the following kernel parameters instructs the kernel to suppress most boot messages? \n A. verbose=0 \n B. nomesg \n C. silent \n D. quiet \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 15,
+            "question": "Which of the following options for the kernel\u2019s command line changes the systemd boot target to rescue.t \n A. systemd.target=rescue.target \n B. systemd.runlevel=rescue.target \n C. systemd.service=rescue.target \n D. systemd.default=rescue.target \n E. systemd.unit=rescue.target \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 16,
+            "question": "which command must be run for the changes to take effect? \n A. kill -HUP $(pidof grub) \n B. grub-install \n C. grub \n D. No action is required \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 17,
+            "question": "Which of the following commands is used to update the list of available packages when using dpkg based package \n A. apt-get refresh \n B. apt-cache upgrade \n C. apt-get upgrade \n D. apt-get update \n E. apt-cache update \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 18,
+            "question": "Which of the following commands lists the dependencies of a given dpkg package? \n A. apt-cache depends-on package \n B. apt-cache dependencies package \n C. apt-cache depends package \n D. apt-cache requires package \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 19,
+            "question": "Which of the following options is used in a GRUB Legacy configuration file to define the amount of time that t \n A. splash \n B. timeout \n C. hidemenu \n D. showmenu \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 20,
+            "question": "What can the Logical Volume Manager (LVM) be used for? \n A. To create RAID 9 arrays. \n B. To dynamically change the size of logical volumes. \n C. To encrypt logical volumes. \n D. To create snapshots. \n E. To dynamically create or delete logical volumes. \n",
+            "answer": "B,D,E",
+            "explanation": " "
+        },
+        {
+            "id": 21,
+            "question": "Which of the following commands updates the linker cache of shared libraries? \n A. soconfig \n B. ldconfig \n C. mkldconfig \n D. mkcache \n E. lddconfig \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 22,
+            "question": "Which of the following commands lists all currently installed packages when using RPM package management? \n A. yum \u2013query \u2013all \n B. yum \u2013list \u2013installed \n C. rpm \u2013query \u2013all \n D. rpm \u2013list \u2013installed \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 23,
+            "question": "Which of the following commands can be used to download the RPM package kernel without installing it? \n A. yumdownloader kernel \n B. rpm \u2013download \u2013package kernel \n C. yum download \u2013no-install kernel \n D. rpmdownload kernel \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 24,
+            "question": "which of the following information is taken into consideration? \n A. GnuPG signatures \n B. Timestamps \n C. MD5 checksums \n D. Inodes \n E. File sizes \n",
+            "answer": "B,C,E",
+            "explanation": " "
+        },
+        {
+            "id": 25,
+            "question": "Which of the following is correct when talking about mount points? \n A. Files within a directory are deleted when the directory is used as a mount point. \n B. Directories need to have the SetUID flag set to be used as a mount point. \n C. Every existing directory can be used as a mount point. \n D. Only empty directories can be used as a mount point. \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 26,
+            "question": "Which function key is used to start Safe Mode in Windows NT? \n A. F10 \n B. F8 \n C. F6 \n D. Windows NT does not support Safe Mode \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 27,
+            "question": "Which of the following environment variables overrides or extends the list of directories holding shared libra \n A. LD_LOAD_PATH \n B. LD_LIB_PATH \n C. LD_LIBRARY_PATH \n D. LD_SHARE_PATH \n E. LD_RUN_PATH \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 28,
+            "question": "Which world-writable directory should be placed on a separate partition in order to prevent users from being a \n A. /tmp, tmp, /var/tmp, /tmp/, /var/tmp/ \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 29,
+            "question": "which supplied the file /etc/exports? \n A. rpm -qf /etc/exports \n B. rpm -qi /etc/exports \n C. rpm -F /etc/exports \n D. rpm -qp /etc/exports \n E. rpm -Kl /etc/exports \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 30,
+            "question": "which directory must definition files be placed to add additional repositories to yum? \n A. /etc/yum.repos.d, /etc/yum.repos.d/, yum.repos.d, yum.repos.d/ \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 31,
+            "question": "What is the name of the main configuration file for GNU GRUB? \n A. menu.lst, grub.conf, grub.cfg \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 32,
+            "question": "which of the following dpkg options will completely remove the files including configuration files? \n A. \u2013clean \n B. \u2013delete \n C. \u2013purge \n D. \u2013remove \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 33,
+            "question": "which Debian installation package files are loaded? \n A. /etc/dpkg/dselect.cfg \n B. /etc/dpkg/dpkg.cfg \n C. /etc/apt/apt.conf \n D. /etc/apt/apt.conf.d \n E. /etc/apt/sources.list \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 34,
+            "question": "Which option to the yum command will update the entire system? \n A. update, upgrade \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 35,
+            "question": "Which command will disable swapping on a device? \n A. swapoff, /sbin/swapoff \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 36,
+            "question": "Which Debian package management tool asks the configuration questions for a specific already installed packa \n already installed package just as if the package were being installed for the first time?(Specify ONLY the command without any path or parameters.) \n",
+            "answer": "",
+            "explanation": " "
+        },
+        {
+            "id": 37,
+            "question": "Which of the following commands overwrites the bootloader located on /dev/sda without overwriting the partitio \n A. dd if=/dev/zero of=/dev/sda bs=512 \n B. dd if=/dev/zero of=/dev/sda bs=512 count=1 \n C. dd if=/dev/zero of=/dev/sda bs=440 count=1 \n D. dd if=/dev/zero of=/dev/sda bs=440 \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 38,
+            "question": "Which of the following commands can be used to create a USB storage media from a disk image? \n A. gdisk \n B. dd \n C. cc \n D. fdisk \n E. mount \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 39,
+            "question": "In Bash, inserting 1>&2 after a command redirects \n A. standard output to standard input. \n B. standard error to standard output. \n C. standard input to standard error. \n D. standard error to standard input. \n E. standard output to standard error. \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 40,
+            "question": "What command will generate a list of user names from /etc/passwd along with their login shell? \n A. column -s : 1,7 /etc/passwd \n B. chop -c 1,7 /etc/passwd \n C. colrm 1,7 /etc/passwd \n D. cut -d: -f1,7 /etc/passwd \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 41,
+            "question": "which find command line option would be used to restrict the command to searching down a particular number of \n A. -dirmax \n B. -maxdepth \n C. -maxlevels \n D. -n \n E. -s \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 42,
+            "question": "Which of the following statements is correct regarding the command foo 1> bar? \n A. The command foo receives its stdin from the stdout of the command bar. \n B. The stderr from the command foo is saved to the file bar. \n C. The stdout from the command foo overwrites the file bar. \n D. The stdout from the command foo is appended to the file bar. \n E. The command foo receives its stdin from the file bar. \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 43,
+            "question": "Which of the following commands kills the process with the PID 123 but allows the process to \"clean up&qu \n A. kill -KILL 123 \n B. kill -STOP 123 \n C. kill -TERM 123 \n D. kill -PIPE 123 \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 44,
+            "question": "Which signal is missing from the following command that is commonly used to instruct a daemon to reinitialize \n A. HUP, SIGHUP, 1 \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 45,
+            "question": "What is the maximum niceness value that a regular user can assign to a process with the nice command when exec \n A. 9 \n B. 99 \n C. 19 \n D. 49 \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 46,
+            "question": "which single character command will insert the deleted content below the current line? \n A. i (lowercase) \n B. P (uppercase) \n C. p (lowercase) \n D. U (uppercase) \n E. u (lowercase) \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 47,
+            "question": "Which of the following commands will remove that directory? \n A. rmdir ~/\u2019dir\u2019 \n B. rmdir ~/\\\\dir \n C. rmdir \u2018~/\\\\dir\u2019 \n D. rmdir \u201c~/\\\\dir\u201d \n E. rmdir ~/\\\\\\\\dir \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 48,
+            "question": "which of the directories are man pages found? \n A. /usr/share/man \n B. /opt/man \n C. /usr/doc/ \n D. /var/pkg/man \n E. /var/man \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 49,
+            "question": "Which of the following commands will send output from the program myapp to both standard output (stdout) and t \n A. cat &lt; myapp | cat &gt; file1.log \n B. myapp 0&gt;&amp;1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 50,
+            "question": "What is the purpose of the Bash built-in export command? \n A. It makes the command history available to subshells. \n B. It sets up environment variables for applications. \n C. It runs a command as a process in a subshell. \n D. It allows disks to be mounted remotely. \n E. It shares NFS partitions for use by other systems on the network. \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 51,
+            "question": "What is the output of the following command? \n A. Hello World \n B. eoo \n C. Hll Wrld \n D. eoo Hll Wrld \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 52,
+            "question": "which is on a separate line and without any trailing spaces, is reached? \n A. &lt;| \n B. !&lt; \n C. &lt;&lt; \n D. &amp;&lt; \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 53,
+            "question": "Which of the following commands will NOT update the modify timestamp on the file /tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d &gt;/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d &gt;&gt;/tmp/myfile.txt \n E. touch /tmp/myfile.txt \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 54,
+            "question": "What is the default nice level when a process is started using the nice command? \n A. -10 \n B. 0 \n C. 10 \n D. 20 \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 55,
+            "question": "What is the default action of the split command on an input file? \n A. t will break the file into new files of 1,024 byte pieces each. \n B. It will break the file into new files of 1,000 line pieces each. \n C. It will break the file into new files of 1,024 kilobyte pieces each. \n D. It will break the file into new files that are no more than 5% of the size of the original file. \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 56,
+            "question": "What is the difference between the i and a commands of the vi editor? \n A. i (insert) inserts text before the current cursor position whereas a (append) inserts text after the cursor. \n B. i (independent rows) starts every new line at the first character whereas a (aligned rows) keeps the indentation of the previous line. \n C. i (interactive) requires the user to explicitly switch between vi modes whereas a (automatic) switches modes automatically. \n D. i (interrupt) temporarily suspends editing of a file to the background whereas a (abort) terminates editing. \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 57,
+            "question": "Which command displays a list of all background tasks running in the current shell? \n A. jobs \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 58,
+            "question": "Which of the following commands moves and resumes in the background the last stopped shell job? \n A. back \n B. run \n C. bg \n D. fg \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 59,
+            "question": "What is the effect of the egrep command when the -v option is used? \n A. It changes the output order showing the last matching line first. \n B. It shows the command\u2019s version information. \n C. It enables color to highlight matching parts. \n D. It only outputs non-matching lines. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 60,
+            "question": "What does the ? symbol within regular expressions represent? \n A. Match the preceding qualifier one or more times. \n B. Match the preceding qualifier zero or more times. \n C. Match the preceding qualifier zero or one times. \n D. Match a literal ? character. \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 61,
+            "question": "how can commands such as moving the cursor or copying lines into the buffer be issued multiple times or applie \n A. By using the command :repeat followed by the number and the command. \n B. By specifying the number right in front of a command such as 4l or 2yj. \n C. By selecting all affected lines using the shift and cursor keys before applying the command. \n D. By issuing a command such as :set repetition=4 which repeats every subsequent command 4 times. \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 62,
+            "question": "Which of the following files, located in the user home directory, is used to store the Bash history? \n A. .history_bash \n B. .bash_history \n C. .bash_histfile \n D. .bashrc_history \n E. .history \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 63,
+            "question": "which file the user history is stored when exiting a Bash process? \n A. HISTFILE \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 64,
+            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A. gzip archive.tgz | tar xvf \u2013 \n B. tar ztf archive.tgz \n C. gzip -d archive.tgz | tar tvf \u2013 \n D. tar cf archive.tgz \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 65,
+            "question": "Which grep command will print only the lines that do not end with a / in the file foo? \n A. grep \u2018/#\u2019 foo \n B. grep -v \u2018/$\u2019 foo \n C. grep \u2018/$\u2019 foo \n D. grep -v \u2018/#\u2019 foo \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 66,
+            "question": "Which of the following commands is used to change options and positional parameters for a running Bash? \n A. envsetup \n B. history \n C. set \n D. bashconf \n E. setsh \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 67,
+            "question": "Which of the following commands replaces each occurrence of \u2018bob\u2019 in the file letter with \u2018B \n A. sed \u2018s/bob/Bob/g\u2019 letter &gt; newletter \n B. sed \u2018s/bob, Bob/\u2019 letter &gt; newletter \n C. sed \u2018s/bob/Bob\u2019 letter &gt; newletter \n D. sed \u2018/bob/Bob\u2019 letter &gt; newletter \n E. sed s/bob/Bob/ letter &lt; newletter \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 68,
+            "question": "which of the following commands directly executes the instruction from the file /usr/local/bin/runme.sh withou \n A. source /usr/local/bin/runme.sh \n B. . /usr/local/bin/runme.sh \n C. /bin/bash /usr/local/bin/runme.sh \n D. /usr/local/bin/runme.sh \n E. run /usr/local/bin/runme.sh \n",
+            "answer": "A,B",
+            "explanation": " "
+        },
+        {
+            "id": 69,
+            "question": "Which of the following statements is correct? \n A. /usr/bin/prog is executed with a nice level of -5. \n B. /usr/bin/prog is executed with a nice level of 5. \n C. /usr/bin/prog is executed with a priority of -5. \n D. /usr/bin/prog is executed with a priority of 5. \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 70,
+            "question": "Which shell command is used to continue background execution of a suspended command? \n A. exec \n B. cont \n C. bg \n D. &amp; \n E. :&amp; \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 71,
+            "question": "Which of the following shell redirections will write standard output and standard error output to a file named \n A. 2&gt;&amp;1 &gt;filename \n B. &gt;filename 2&gt;&amp;1 \n C. 1&gt;&amp;2&gt;filename \n D. &gt;&gt;filename \n E. 1&amp;2&gt;filename \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 72,
+            "question": "which of the following commands will copy the current line into the vi buffer? \n A. c \n B. cc \n C. 1c \n D. yy \n E. 1y \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 73,
+            "question": "Which of the following sequences in the vi editor saves the opened document and exits the editor? \n A. esc :wq! \n B. ctrl XX \n C. ctrl :w! \n D. esc ZZ \n E. esc zz \n",
+            "answer": "A,D",
+            "explanation": " "
+        },
+        {
+            "id": 74,
+            "question": "which nice level is set for the resulting process? \n A. 0 \n B. 10 \n C. 20 \n D. -10 \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 75,
+            "question": "Which of the following commands will reduce all consecutive spaces down to a single space? \n A. tr -c \u2018 \u2018 &lt; a.txt &gt; b.txt \n B. tr -s \u2018 \u2018 &lt; a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 &lt; a.txt &gt; b.txt \n D. tr \u2018\\\\s\u2019 \u2018 \u2018 &lt; a.txt &gt; b.txt \n E. tr -r \u2018 \u2018 \u2018\\\\n\u2019 &lt; a.txt &gt; b.txt \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 76,
+            "question": "Which character, added to the end of a command, runs that command in the background as a child process of the \n A. # \n B. ! \n C. + \n D. &amp; \n E. % \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 77,
+            "question": "Which of the following commands will print the last 10 lines of a text file to the standard output? \n A. tail -n 10 filename \n B. head -n 10 filename \n C. cat -n 10 filename \n D. dump -n 10 filename \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 78,
+            "question": "Which of the following commands prints a list of usernames (first column) and their primary group (fourth co \n group (fourth column) from the /etc/passwd file? \n A. fmt -f 1,4 /etc/passwd \n B. split -c 1,4 /etc/passwd \n C. cut -d : -f 1,4 /etc/passwd \n D. paste -f 1,4 /etc/passwd \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 79,
+            "question": "Which of the following signals is sent to a process when the key combination CTRL+C is pressed on the keyboard \n A. SIGINT \n B. SIGSTOP \n C. SIGTERM \n D. SIGKILL \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 80,
+            "question": "What happens after issuing the command vi without any additional parameters? \n A. vi starts and loads the last file used and moves the cursor to the position where vi was when it last exited. \n B. vi starts and requires the user to explicitly either create a new or load an existing file. \n C. vi exits with an error message as it cannot be invoked without a file name to operate on. \n D. vi starts in command mode and opens a new empty file. \n E. vi starts and opens a new file which is filled with the content of the vi buffer if the buffer contains text. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 81,
+            "question": "Which of the following command sets the Bash variable named TEST with the content FOO? \n A. set TEST=\u201dFOO\u201d \n B. TEST=\u201dFOO\u201d \n C. TEST = \u201cFOO\u201d \n D. var TEST=\u201dFOO\u201d \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 82,
+            "question": "which a Bash shell searches for executable commands? \n commands? \n A. BASHEXEC \n B. BASHRC \n C. PATH \n D. EXECPATH \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 83,
+            "question": "which contains information about all common file types? \n A. magic \n B. hash \n C. pmagic \n D. type \n E. file \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 84,
+            "question": "Which command is used in a Linux environment to create a new directory? \n the command without any path or parameters.) \n",
+            "answer": "",
+            "explanation": " "
+        },
+        {
+            "id": 85,
+            "question": "which are also owned by the user root? \n A. find /tmp -uid root -print \n B. find -path /tmp -user root \u2013print \n C. find /tmp -user root \n D. find /tmp -user root -print \n E. find -path /tmp -uid root \n",
+            "answer": "C,D",
+            "explanation": " "
+        },
+        {
+            "id": 86,
+            "question": "why is /tmp/file empty afterwards? \n A. The file order is incorrect. The destination file must be mentioned before the command to ensure redirection. \n B. The command sed did not match anything in that file therefore the output is empty. \n C. When the shell establishes the redirection it overwrites the target file before the redirected command starts and opens it for reading. \n D. Redirection for shell commands do not work using the &gt; character. It only works using the | character instead. \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 87,
+            "question": "Which of the following output is created? \n A. cat \n B. foo bar \n C. tee bar \n D. bar \n E. foo \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 88,
+            "question": "Which of the following commands can be used to determine how long the system has been running? \n A. top \n B. uname -u \n C. uptime \n D. up \n E. time \u2013up \n",
+            "answer": "A,C",
+            "explanation": " "
+        },
+        {
+            "id": 89,
+            "question": "Which of the following are valid stream redirection operators within Bash? \n A. %&gt; \n B. &lt; \n C. &lt;&lt;&lt; \n D. &gt; \n E. &gt;&gt;&gt; \n",
+            "answer": "B,C,D",
+            "explanation": " "
+        },
+        {
+            "id": 90,
+            "question": "Which of the following describes the resulting situation? \n A. The user is prompted whether bar should be removed, too. \n B. Both foo and bar would remain accessible. \n C. foo would be removed. bar would still exist but would be unusable. \n D. foo and bar would both be removed. \n E. foo would be removed while bar would remain accessible. \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 91,
+            "question": "how can the former path of the data be kept intact in order to avoid reconfiguration of existing applications? \n A. By creating an ACL redirection from the old to the new path of the data. \n B. By mounting the new filesystem on the original path of the data. \n C. By running the command touch on the old path. \n D. By creating a symbolic link from the old to the new path of the data. \n E. By creating a hard link from the old to the new path of the data. \n",
+            "answer": "B,D",
+            "explanation": " "
+        },
+        {
+            "id": 92,
+            "question": "Which of the following commands changes the ownership of file.txt to the user dan and the group staff? \n A. chown dan/staff file.txt \n B. chown dan:staff file.txt \n C. chown -u dan -g staff file.txt \n D. chown dan -g staff file.txt \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 93,
+            "question": "Which of the following commands makes /bin/foo executable by everyone but writable only by its owner? \n A. chmod o+rwx,a+rx /bin/foo \n B. chmod 577 /bin/foo \n C. chmod u=rwx,go=rx /bin/foo \n D. chmod 775 /bin/foo \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 94,
+            "question": "Which of the following commands can be used to search for the executable file foo when it has been placed in a \n A. whereis \n B. apropos \n C. which \n D. find \n E. query \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 95,
+            "question": "What does the command mount -a do? \n A. It ensures that all file systems listed in /etc/fstab are mounted regardless of their options. \n B. It ensures that all file systems listed with the option auto in /etc/fstab are mounted. \n C. It opens an editor with root privileges and loads /etc/fstab for editing. \n D. It ensures that all file systems listed with the option noauto in /etc/fstab are mounted. \n E. It shows all mounted file systems that have been automatically mounted. \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 96,
+            "question": "Which of the following settings for umask ensures that new files have the default permissions -rw-r\u2014R \n A. 0017 \n B. 0640 \n C. 0038 \n D. 0027 \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 97,
+            "question": "Which of the following is the device file name for the second partition on the only SCSI drive? \n A. /dev/hda1 \n B. /dev/sda2 \n C. /dev/sd0a2 \n D. /dev/sd1p2 \n",
+            "answer": "B",
+            "explanation": " "
+        },
+        {
+            "id": 98,
+            "question": "which of the following commands could be used? \n A. free \n B. cat /proc/filesystems \n C. cat /proc/self/mounts \n D. lsmounts \n E. mount \n",
+            "answer": "C,E",
+            "explanation": " "
+        },
+        {
+            "id": 99,
+            "question": "Which of the following commands can be used to locate programs and their corresponding man pages and configura \n A. dirname \n B. which \n C. basename \n D. query \n E. whereis \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 100,
+            "question": "Which of the following commands changes the number of days before the ext3 filesystem on /dev/sda1 has to run \n A. tune2fs -d 200 /dev/sda1 \n B. tune2fs -c 200 /dev/sda1 \n C. tune2fs -i 200 /dev/sda1 \n D. tune2fs -n 200 /dev/sda1 \n E. tune2fs \u2013days 200 /dev/sda1 \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 101,
+            "question": "Which type of filesystem is created by mkfs when it is executed with the block device name only and without an \n A. ext3 \n B. VFAT \n C. ext4 \n D. ext2 \n E. XFS \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 102,
+            "question": "How many fields are in a syntactically correct line of /etc/fstab? \n A. 3 \n B. 4 \n C. 5 \n D. 6 \n E. 7 \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 103,
+            "question": "Which command is used to create and initialize the files used to store quota information? \n A. quotacheck \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 104,
+            "question": "Which of the following file permissions belong to a symbolic link? \n A. -rwxrwxrwx \n B. +rwxrwxrwx \n C. lrwxrwxrwx \n D. srwxrwxrwx \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 105,
+            "question": "What could be the reason for this? \n A. The source file is a shell script. \n B. The source file is already a hard link. \n C. The source file is hidden. \n D. The source file is read-only. \n E. The source and the target are on different filesystems. \n",
+            "answer": "E",
+            "explanation": " "
+        },
+        {
+            "id": 106,
+            "question": "Which of the following commands creates an ext3 filesystem on /dev/sdb1? \n A. /sbin/mke2fs -j /dev/sdb1 \n B. /sbin/mkfs -t ext3 /dev/sdb1 \n C. /sbin/mkfs -c ext3 /dev/sdb1 \n D. /sbin/mke3fs -j /dev/sdb1 \n",
+            "answer": "A,B",
+            "explanation": " "
+        },
+        {
+            "id": 107,
+            "question": "Which of the following commands will change the quota for a specific user? \n A. repquota \n B. quota -e \n C. edquota \n D. quota \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 108,
+            "question": "Which utility would be used to change how often a filesystem check is performed on an ext2 filesystem without \n A. fixe2fs \n B. mod2fs \n C. fsck \n D. tune2fs \n E. mke2fs \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 109,
+            "question": "Which of the following Linux filesystems preallocates a fixed number of inodes at the filesystem\u2019s make/ \n A. procfs \n B. XFS \n C. ext2 \n D. ext3 \n E. JFS \n",
+            "answer": "C,D",
+            "explanation": " "
+        },
+        {
+            "id": 110,
+            "question": "What is the purpose of the Filesystem Hierarchy Standard? \n A. It is a security model used to ensure files are organized according to their permissions and accessibility. \n B. It provides unified tools to create, maintain and manage multiple filesystems in a common way. \n C. It defines a common internal structure of inodes for all compliant filesystems. \n D. It is a distribution neutral description of locations of files and directories. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 111,
+            "question": "Which umask value will result in the default access permissions of 600 (rw\u2014\u2014-) for files and 700 ( \n A. 0077, 077 \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 112,
+            "question": "what other options may be used to identify the intended partition? \n A. UUID \n B. FIND \n C. ID \n D. LABEL \n E. NAME \n",
+            "answer": "A,D",
+            "explanation": " "
+        },
+        {
+            "id": 113,
+            "question": "What is a common reason for this message? \n A. The kernel thinks that a process is about to open a file in /mnt for reading. \n B. The files in /mnt have been scanned and added to the locate database. \n C. The kernel has not finished flushing disk writes to the mounted device. \n D. A user has a file open in the /mnt directory. \n E. Another file system still contains a symlink to a file inside /mnt. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 114,
+            "question": "What does the command mount -a do? \n A. It mounts all available filesystems onto the current directory. \n B. It shows all mounted filesystems. \n C. It mounts all user mountable filesystems for the current user. \n D. It mounts all filesystems listed in /etc/fstab which have the option auto set. \n E. It mounts all filesystems listed in /etc/fstab which have the option noauto set. \n",
+            "answer": "D",
+            "explanation": " "
+        },
+        {
+            "id": 115,
+            "question": "Which of the following commands set the sticky bit for the directory /tmp? \n A. chmod +s /tmp \n B. chmod +t /tmp \n C. chmod 1775 /tmp \n D. chmod 4775 /tmp \n E. chmod 2775 /tmp \n",
+            "answer": "B,C",
+            "explanation": " "
+        },
+        {
+            "id": 116,
+            "question": "Which of the following commands can be used to display the inode number of a given file? \n A. ls \n B. ln \n C. inode \n D. cp \n",
+            "answer": "A",
+            "explanation": " "
+        },
+        {
+            "id": 117,
+            "question": "Which of the following commands shows the definition of a given shell command? \n A. where \n B. stat \n C. type \n D. case \n",
+            "answer": "C",
+            "explanation": " "
+        },
+        {
+            "id": 118,
+            "question": "What do the permissions -rwSr-xr-x mean for a binary file when it is executed as a command? \n A. The command is SetUID and it will be executed with the effective rights of the owner. \n B. The command will be executed with the effective rights of the group instead of the owner. \n C. The execute flag is not set for the owner. Therefore the SetUID flag is ignored. \n D. The command will be executed with the effective rights of the owner and group. \n",
+            "answer": "C",
+            "explanation": " "
+        }
+    ]
 }

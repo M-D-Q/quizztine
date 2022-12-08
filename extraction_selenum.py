@@ -1,40 +1,3 @@
-"""
-import time
-import json
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
-class TestTestcomplet(webdriver.Chrome):
-  def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    super(TestTestcomplet,self).__init__()
-    self.implicitly_wait(15)
-    self.maximize_window()
-    self.vars = {}
-  
-  def teardown_method(self, method):
-    self.driver.quit()
-  
-  def test_testcomplet(self):
-    self.driver.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-file-should-be-modified-to-disable-the-ctrl-alt-delete-key-combination-2/")
-    kek = self.driver.find_element(By.CSS_SELECTOR, "#post-content > div").getText()
-    print(kek)
-
-kek2 = webdriver.Chrome()
-
-#kekk = TestTestcomplet()
-
-#kekk.test_testcomplet()
-
-kek2.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-file-should-be-modified-to-disable-the-ctrl-alt-delete-key-combination-2/")
-kek = self.driver.find_element(By.CSS_SELECTOR, "#post-content > div").getText()
-print(kek)"""
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -49,14 +12,18 @@ import time
 import re
 from datetime import date
 from selenium.webdriver.chrome.options import Options
+from some_functions import *
 
-xpath1= "/html/body/div/div/section/div[2]/article/header/h1"
+
+liste_patterns =['<br>','<font color="#333333">', '</font>', '<span.+span>', '\\n(.+)?']
+dico_answers = {}
+#xpath1= "/html/body/div/div/section/div[2]/article/header/h1"
+xpath1="/html/body/div/div/section/div[2]/article/div/p[1]"
 xpath2 = "/html/body/div/div/section/div[2]/article/div/p[2]"
 xpath3 = "/html/body/div/div/section/div[2]/article/div/p[3]"
 xpath4 = "/html/body/div/div/section/div[2]/article/div/p[4]"
 xpath5 = "/html/body/div/div/section/div[2]/article/div/p[5]"
-
-
+xpath6 = "/html/body/div/div/section/div[2]/article/div/p[6]"
 
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
@@ -68,57 +35,62 @@ browser.maximize_window()
 browser.get("https://www.briefmenow.org/comptia/which-sysv-init-configuration-file-should-be-modified-to-disable-the-ctrl-alt-delete-key-combination-2/")
 browser.find_element(By.CSS_SELECTOR, "#first-step .icon-close").click()
 
-i = 1 
-kek1 = browser.find_element(By.XPATH, value=xpath1).text
-print(kek1)
-kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
-print(kek2)
-kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
-print(kek3)
-kek4 = browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML')
-print(kek4)
-kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
-print(kek5)
-print("C'était le n°"+str(i)+"... Passage à la question suivante ...")
-i += 1
-r = 1
-
 nbquestion = range(1,120)
-pattern1 = r'<br>'
-pattern2 = r'<font color="#333333">'
-pattern3 = r'</font>'
-pattern4 = r'<span.+span>'
+i = 1
 
-
-for keki in nbquestion :
-  #bouton next
-  browser.find_element(By.CSS_SELECTOR, ".single-top .nav-next strong").click()
+for iteration in nbquestion :
+  #reinit variables
+  templist=[]
+  kek1, kek2, kek3, kek4, kek5, kek6 = 0, 0, 0, 0, 0, 0
+  #NEXT BUTTON (AFTER FIRST PAGE)
+  if i != 1 :
+    browser.find_element(By.CSS_SELECTOR, ".single-top .nav-next strong").click()
+  #EXTRACTION
   kek1 = browser.find_element(By.XPATH, value=xpath1).text
-  r = 1
-  for r in range(1,4):
-    pattern = pattern+str(r)
-    kekmod1 = re.sub(pattern, '', kek1)
-
-
   kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
-  print(kek2)
-  print(re.sub('<.+>', '', kek2))
   try :
     kek3 = browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML')
-    print(kek3)
-    print(re.sub('<.+>', '', kek3))
     kek4 = browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML')
-    print(kek4)
-    print(re.sub('<.+>', '', kek4))
-    kek5 = str(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
-    print(kek5)
-    print(re.sub('<.+>', '', kek5))
+    kek5 = browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML')
+    try :  
+      kek6 = browser.find_element(By.XPATH, value=xpath6).get_attribute('innerHTML')
+      templist.extend((kek1, kek2, kek3, kek4, kek5, kek6))
+    except :
+      print("pas de réponse E")
+      templist.extend((kek1, kek2, kek3, kek4, kek5))
   except :
-    print(" yavait qu'une réponse ici ")
+    print("Only réponse A ")
+    print("Ca veut dire que c'est une réponse en commande libre ?")
+    templist.extend((kek1, kek2))
+    
+
+  print("Mettage good answers")
+  print("==========================================")
+  mettage_answers(templist, dico_answers, i, liste_patterns )
+  print(dico_answers)
+  print("==========================================")
+
+  print("Nettoyage...")
+  nettoyage_regex(liste_patterns, templist)
+  print("==========================================")
+  print("==========================================")
+
+  print("ajout d'un saut de ligne")
+  ajout_sautligne(templist)
+  print(templist)
+
+  print("Insertion dans le JSON")
+  y = {
+            "id":i,
+            "question":(' '.join(templist)),
+            "answer":(','.join(dico_answers[i])),
+            "explanation":" "
+        }
+  insertion_json(y, 'auto_christine.json')
+
 
   print("C'était le n°"+str(i)+"... Passage à la question suivante ...")
   i += 1
-
 print('Finito !')
 browser.quit()
 
