@@ -33,8 +33,7 @@ def mettage_answers(liste_occurences, liste_answers, nbquestion,liste_patterns):
     liste_answers[nbquestion] = templist1   
 
 def by_splitting(liste_occurences):
-    for chocolat in range(0, len(liste_occurences)):
-        liste_occurences = liste_occurences[int(chocolat)].split(", ")
+    liste_occurences = str(liste_occurences[0]).split(", ")
 
 def mettage_answers_libre(liste_occurences, liste_answers, nbquestion,liste_patterns): ###
     templist1=[]
@@ -43,7 +42,7 @@ def mettage_answers_libre(liste_occurences, liste_answers, nbquestion,liste_patt
             templist1.append(liste_occurences[int(chocolat)])
     nettoyage_regex(liste_patterns, templist1)
     elimination_premierelettre(templist1)
-    by_splitting(templist1)
+    #by_splitting(templist1)
     liste_answers[nbquestion] = templist1 
 
 def ajout_sautligne(liste_occurences):
@@ -63,7 +62,7 @@ def insertion_json(new_data, nom_fichier,nom_questionnaire):
 
 
 def wrapping_normal(liste_occurences, dict_answers, nbquestion, liste_patterns): 
-    mettage_answers_libre(liste_occurences, dict_answers, nbquestion, liste_patterns)
+    mettage_answers(liste_occurences, dict_answers, nbquestion, liste_patterns)
     print(dict_answers)
     nettoyage_regex(liste_patterns, liste_occurences)
     ajout_sautligne(liste_occurences)
@@ -77,7 +76,7 @@ def wrapping_normal(liste_occurences, dict_answers, nbquestion, liste_patterns):
     insertion_json(y, 'auto_christine.json',"questionnaire2018")
 
 def wrapping_input(liste_occurences, dict_answers, nbquestion, liste_patterns): 
-    mettage_answers(liste_occurences, dict_answers, nbquestion, liste_patterns)
+    mettage_answers_libre(liste_occurences, dict_answers, nbquestion, liste_patterns)
     print(dict_answers)
     nettoyage_regex(liste_patterns, liste_occurences)
     ajout_sautligne(liste_occurences)

@@ -47,6 +47,7 @@ for iteration in nbquestion :
   if i != 1 :
     browser.find_element(By.CSS_SELECTOR, ".single-top .nav-next strong").click()
   #EXTRACTION
+  issou = 0
   kek1 = browser.find_element(By.XPATH, value=xpath1).get_attribute('innerHTML')
   kek2 = browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML')
   try :
@@ -97,8 +98,3 @@ browser.quit()
             "explanation":" "
         }
   insertion_json(y, 'auto_christine.json',"questionnaire2018")"""
-
-
-
-
-
