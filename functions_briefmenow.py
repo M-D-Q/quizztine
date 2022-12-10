@@ -1,12 +1,18 @@
 import re
 import json
-###liste_patterns2 =['<br>','<font color="#333333">', '</font>', '<span.+span>']
-#kek1 = "A.<br> /proc/keys"
-#kek2 = """B.<br><font color="#333333"> /etc/inittab</font>"""
-#kek3 = "C.<br> /proc/inittab font color"
-#kek4 = "D.<br> /etc/reboot"
-#liste_occurences2 = [kek1, kek2, kek3, kek4]
-#liste_answers = {}
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
+from selenium.webdriver import ActionChains
+from selenium.webdriver import *
+from selenium.webdriver.support.ui import Select
+
+from selenium.webdriver.chrome.options import Options
 
 def nettoyage_regex(liste_patterns,liste_occurences):
     for chocolat in range(0, len(liste_patterns)):
@@ -21,7 +27,7 @@ def gardage_premiere_lettre(liste_occurences):
  
 def elimination_premierelettre(liste_occurences):
     for john in range(0, len(liste_occurences)):
-        liste_occurences[int(john)] = str(liste_occurences[int(john)])[2:]
+        liste_occurences[int(john)] = str(liste_occurences[int(john)])[3:]
 
 def mettage_answers(liste_occurences, liste_answers, nbquestion,liste_patterns): ###
     templist1=[]
@@ -30,7 +36,7 @@ def mettage_answers(liste_occurences, liste_answers, nbquestion,liste_patterns):
             templist1.append(liste_occurences[int(chocolat)])
     nettoyage_regex(liste_patterns, templist1)
     gardage_premiere_lettre(templist1)
-    liste_answers[nbquestion] = templist1   
+    liste_answers[nbquestion] = templist1
 
 def by_splitting(liste_occurences):
     liste_occurences = str(liste_occurences[0]).split(", ")
@@ -60,34 +66,61 @@ def insertion_json(new_data, nom_fichier,nom_questionnaire):
             # convert back to json.
             json.dump(file_data, file, indent = 4)
 
+def pop_derniere_occurence(liste_occurences): 
+    liste_occurences.pop()
 
-def wrapping_normal(liste_occurences, dict_answers, nbquestion, liste_patterns): 
+def check_if_comments(browser):
+    browser.implicitly_wait(0)
+    if len(browser.find_elements(By.XPATH, value="/html/body/div/div/section/div[2]/div[1]/h2")) != 0 :
+        browser.implicitly_wait(3)
+        return True
+    else : 
+        browser.implicitly_wait(3)
+        return False
+
+def wrapping_normal(liste_occurences, dict_answers, nbquestion, liste_patterns, browser, nom_questionnaire, explanation="", typedequestion="choix"): 
     mettage_answers(liste_occurences, dict_answers, nbquestion, liste_patterns)
     print(dict_answers)
     nettoyage_regex(liste_patterns, liste_occurences)
     ajout_sautligne(liste_occurences)
     print(liste_occurences)
+    if check_if_comments(browser) == True : 
+        warning = "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY"
+    else :
+        warning = "All appears to be good"
     y = {
               "id":nbquestion,
               "question":(' '.join(liste_occurences)),
               "answer":(','.join(dict_answers[nbquestion])),
-              "explanation":" "
+              "explanation":str(explanation),
+              "url":str(browser.current_url),
+              "warning":str(warning),
+              "type":str(typedequestion)
           }
-    insertion_json(y, 'auto_christine.json',"questionnaire2018")
+    insertion_json(y, 'auto_christine.json', nom_questionnaire)
 
-def wrapping_input(liste_occurences, dict_answers, nbquestion, liste_patterns): 
+def wrapping_input(liste_occurences, dict_answers, nbquestion, liste_patterns, browser, nom_questionnaire, explanation="", typedequestion="input"): 
     mettage_answers_libre(liste_occurences, dict_answers, nbquestion, liste_patterns)
     print(dict_answers)
     nettoyage_regex(liste_patterns, liste_occurences)
     ajout_sautligne(liste_occurences)
+    pop_derniere_occurence(liste_occurences)
     print(liste_occurences)
+    if check_if_comments(browser) == True : 
+        warning = "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY"
+    else :
+        warning = "All appears to be good"
+
     y = {
               "id":nbquestion,
               "question":(' '.join(liste_occurences)),
               "answer":(','.join(dict_answers[nbquestion])),
-              "explanation":" "
+              "explanation":str(explanation),
+              "url":str(browser.current_url),
+              "warning":str(warning),
+              "type":str(typedequestion)
           }
-    insertion_json(y, 'auto_christine.json',"questionnairelibre")
+    insertion_json(y, 'auto_christine.json',nom_questionnaire)
 
 #mettage_answers(liste_occurences2, liste_answers, nbquestion)
 #print(liste_answers)

@@ -1,0 +1,255 @@
+Answers to the Assessment Test
+1. B. The Monitor section defines the monitor options and settings but doesn’t combine it
+with the video card, so option A is incorrect. The Modeline line defines the available video
+modes in the Monitor section, but it doesn’t define video cards, so option C is incorrect.
+Option D, the Device section, is also incorrect; it defines the video card but doesn’t match
+it with a monitor on the system. Option E is incorrect because the Module section defines
+which X server modules (or drivers) are loaded but it doesn’t match monitors and video
+cards. Option B, the Screen section, tells the X server about the combination of video
+cards and monitors that you’re using, so it’s the correct answer. For more information, see
+Chapter 6, “Configuring the X Window System, Localization, and Printing.”
+
+2. A, C. Examining a process listing (obtained from ps) for signs of the super server is the
+most reliable way to determine which one is actually running, so option A is correct.
+The presence of the super server’s configuration file or files (as in option C) is also a good
+diagnostic, although some older systems that have been upgraded may have both sets of
+configuration files. There is no standard superserver utility to report on which one is
+used, so option B is incorrect. Most distributions launch the super server through a SysV
+startup script; the /etc/inittab file isn’t directly involved in this process, so examining it
+would be pointless, and option D is incorrect. Although the output of netstat -ap,
+when typed as root, will include an indication of any instance of inetd or xinetd that’s
+listening for connections, option E omits the critical -p option, which causes the program
+to display process names. Thus, option E is incorrect. For more information, see Chapter
+10, “Securing Your System.”
+
+3. D. The lpc utility is used to start, stop, change the priority of, and otherwise control jobs
+in a print queue. CUPS ships with an lpc utility, but it’s quite rudimentary compared to
+the lpc utilities of BSD LPD and LPRng. Instead, CUPS relies on its Web-based interface
+to provide the ability to control print jobs. Thus, option D is correct, and the remaining
+options must logically all be incorrect. For more information, see Chapter 6.
+
+4. C. The /etc/security/limits.conf file defines various limits on user resources,
+including the number of simultaneous logins individual users are permitted. Thus, option C
+is correct. The /etc/pam.d/login-limits file (option A) is fictitious, although login limits
+do rely on the pam_limits module to the Pluggable Authentication System (PAM). The
+/etc/bashrc file (option B) is a global bash startup script file, but it’s not normally used
+to impose login limits. The /etc/inittab file (option D) is a key Linux startup file, but it
+doesn’t have any direct bearing on imposing login limits. The /etc/passwd file (option E)
+defines many key account features, but login limits are not among these. For more information, see Chapter 10.
+
+5. C, D. The computer’s IP address (option C) and network mask (aka subnet mask or
+netmask; option D) are the most critical components in TCIP/IP network configuration.
+(Additional information that you may need to provide on many networks includes the IP
+addresses of one to three DNS servers, the hostname or IP address of a router, and
+the computer’s hostname.) You shouldn’t need the IP address of a Dynamic Host
+
+flast.indd 03/26/2015 Page xliv
+
+flast.indd 03/26/2015 Page xliv
+
+Answers to the Assessment Test
+
+xlv
+
+Configuration Protocol (DHCP) server (option A)—and if a DHCP server is present,
+chances are you should be using DHCP rather than static IP address assignment. A NetBIOS Name Service (NBNS) server (option B) converts between names and IP addresses
+on NetBIOS networks. The hostname of such a computer isn’t likely to be a critical configuration element, although you may need to provide this information to Samba for some
+operations to function correctly when sharing files. A Network Time Protocol (NTP) server
+(option E) helps you maintain system time on all of your computers, but this isn’t required
+for basic network configuration. For more information, see Chapter 8, “Configuring Basic
+Networking.”
+
+6. E. The wc command displays a count of newlines, words, and bytes in the specified file
+(report.txt). Piping this data through tee causes a copy of the output to be stored in the
+new file (wc in this example—you shouldn’t run this command in the same directory as the
+wc executable file!). Thus, option E is correct. Contrary to option A, wc is not an editor, and
+the remaining syntax wouldn’t cause two files to open in separate windows even if wc were
+an editor. Contrary to option B, wc doesn’t count windows or open a new window. Option
+C describes the effect of wc report | wc—that is, it overlooks the tee command. Contrary to option D, wc has nothing to do with cleaning up memory leaks, and tee doesn’t
+directly use the report.txt file. For more information, see Chapter 1, “Exploring Linux
+Command-Line Tools.”
+
+7. C. The grub.cfg filename indicates a GRUB 2 configuration file. In such files, each OS
+or kernel stanza begins with a menuentry line and an open curly brace ({) and ends with
+a close curly brace (}). Thus, option C is correct. Some configuration files and programming languages use semicolons (;) at the end of most lines, but this isn’t true of GRUB 2,
+so option A is incorrect. Although close parentheses ()) are used to terminate some types
+of options in some configuration files, including disk identifiers in GRUB 2’s configuration
+file, they aren’t used to terminate whole OS or kernel definitions in this file, so option B is
+incorrect. The string */ terminates comments in C program files but isn’t commonly used
+in GRUB 2 configuration files, so option D is incorrect. Option E would be correct if the
+question had asked about a GRUB Legacy configuration file (menu.lst or grub.conf), but
+the question specifies a GRUB 2 configuration file (grub.cfg); the two boot loaders terminate their OS/kernel stanzas differently, so option E is incorrect. For more information, see
+Chapter 5, “Booting Linux and Editing Files.”
+
+8. E. The third field of /etc/passwd entries holds the UID number for the account, so option
+E is correct. Linux doesn’t use any standard identifier called a human ID (HID; option
+A), although the acronym HID stands for human interface device, a class of USB devices.
+Accounts don’t have PID numbers (option B); those belong to running processes. The
+account’s GID number (option C) is stored in the fourth field of /etc/passwd—100 in this
+example. Linux accounts don’t use globally unique ID (GUID) numbers, so option D is
+incorrect. For more information, see Chapter 7, “Administering the System.”
+
+9. B. The grep command scans files to find those that contain a specified string or pattern,
+as described by option B. In the case of text files, grep displays the matching line or lines;
+for binary files, it reports that the file matches the pattern. The method of creating a pipeline (option A) involves separating two commands with a vertical bar (|). The grep command can be used in a pipeline, but it doesn’t create one. The command that concatenates files (option C) is cat, and the command that displays the last several lines of a file (option D) is tail. Several commands, such as find, locate, and whereis locate files (option E), but grep is not among them. For more information, see Chapter 1.
+
+10. B, D, E. ReiserFS (option B) was written from scratch for Linux. The Third Extended
+Filesystem (ext3fs; option D) is a journaling filesystem based on the older non-journaling
+Second Extended Filesystem (ext2fs; option C). The Extents Filesystem (XFS; option E) is
+a journaling filesystem written by SGI for Irix and later ported to Linux. The Virtual File
+Allocation Table (vfat; option A) is a non-journaling filesystem designed by Microsoft for
+Windows. For more information, see Chapter 3, “Configuring Hardware.”
+
+11. A. Option A correctly describes the features of SSH and GPG in this context. Option B
+is incorrect because SSH should do a fine job of encrypting your email so that it can’t be
+decoded between your system and your ISP’s email server. Option C has it backward; email
+transferred via SSH will be completely encrypted, including both headers and body. GPG
+doesn’t encrypt headers, just message bodies. Option D is incorrect because GPG isn’t a
+virus scanner, just an encryption tool. Option E is incorrect because the SSH tunnel will
+encrypt everything in the SMTP transfer, including email attachments. For more information, see Chapter 10.
+
+12. A, D. Port 110 (option A) is assigned to the Post Office Protocol (POP), and port 143
+(option D) is assigned to the Internet Message Access Protocol (IMAP), both of which
+may be used to retrieve email messages from an email server system. Port 119 (option B) is
+assigned to the Network News Transfer Protocol (NNTP), port 139 (option C) is assigned
+to the Server Message Block/Common Internet File System (SMB/CIFS) protocol, and
+port 443 (option E) is assigned to the Hypertext Transfer Protocol with SSL encryption
+(HTTPS), none of which is commonly used for email retrieval. For more information, see Chapter 8.
+
+13. C. Log files, such as /var/log/messages and sometimes others in /var/log, often
+contain useful information concerning server errors. The tail program displays the last
+few lines of a file, so using it to examine log files immediately after a problem occurs can
+be a useful diagnostic procedure. Option C correctly combines these features. The http://
+localhost:631 URL of option A accesses the Common Unix Printing System (CUPS) configuration utility, which has nothing to do with SSH. There is no standard diagnose utility
+(option B) to help diagnose server problems, and there is no standard /dev/ssh file (option
+D). The sshd program is the SSH server itself, so option E will simply launch the server. For more information, see Chapter 5.
+14. B. The ~./profile file is one of several bash startup scripts, as stated in option B. It has
+nothing to do with the ProFTP server (option A) or the tcsh shell (option D). The ProFile
+file manager mentioned in option C is fictitious. Users’ encrypted passwords (option E) are
+usually stored in /etc/shadow. For more information, see Chapter 9, “Writing Scripts,
+Configuring Email, and Using Databases.”
+15. E. The at utility was created to run programs at one specified point in the future. Thus,
+option E will accomplish the stated goal. Options A and C might also work, but neither is
+the best way to accomplish this goal. Option A will tie up CPU time, and if the program
+
+flast.indd 03/26/2015 Page xlvi
+
+Answers to the Assessment Test
+
+xlvii
+
+crashes or the system is shut down during the intervening two years, the message will never
+be displayed. Option C would be more reliable, but it adds unnecessary complexity to your
+hourly cron job schedule. The cal program displays a text-mode calendar, enabling you
+to identify the days of a week for a given month; it doesn’t schedule future jobs, as option
+B suggests. A GUI calendar program, as specified in option D, might work, but NTP is
+the Network Time Protocol, a protocol and like-named program for synchronizing clocks
+across a network. Thus, NTP isn’t the tool for the job, and option D is incorrect. For more
+information, see Chapter 7.
+16. D. Option D provides the correct command to add 172.24.21.1 as the default gateway.
+Options A and B both use the fictitious gateway command, which doesn’t exist and therefore won’t work unless you create a script of this name. Option C uses the correct route
+command, but there is no gateway option to route; you must use add default gw, as in
+option D. There is no standard gw command, so option E is incorrect. For more information, see Chapter 8.
+17. B, C. The BRLTTY package is an add-on daemon for handling a Braille display device,
+and some features for using these devices have been added to the 2.6.26 kernel, so options
+B and C are correct. Emacspeak (option A) is speech-synthesis software; it can be used to
+“speak” a text display to a user, but it doesn’t interface with Braille displays. GOK (option
+D) is an onscreen keyboard, not a Braille display tool. Framebuffer drivers (option E) are
+kernel drivers for managing conventional video cards; they aren’t used to drive Braille
+displays. For more information, see Chapter 6.
+18. C. Some dependencies result from dynamically linking binaries to libraries at compile time,
+and so they can be overcome by recompiling the software from a source RPM, so option
+C is correct. Option A describes Debian source packages, not RPM packages. Recompiling a source RPM requires only issuing an appropriate command, although you must also
+have appropriate compilers and libraries installed. Thus, option B is overly pessimistic.
+Source tarballs can also be used to compile software for RPM systems, although this
+results in none of RPM’s advantages. Thus, option D is overly restrictive. The RPM format
+doesn’t impose any licensing requirements, contrary to option E. For more information, see Chapter 2.
+19. D. The mv utility can be used to rename files as well as move them from one location to
+another, so option D is correct. The dd utility (option A) is used to copy files to backups, rm
+(option B) is used to remove (delete) files, cp (option C) copies files, and ln (option E)
+creates links. For more information, see Chapter 4.
+20. B. Appending an ampersand (&) to a command causes that command to execute in the
+background. The program so launched still consumes CPU time, but it won’t monopolize
+the shell you used to launch it. Thus, option B is correct. The start (option A) and
+background (option D) commands are fictitious. Although bg (option C) does place a job
+into the background, it doesn’t launch a program that way; it places a process that has
+already been suspended (by pressing Ctrl+Z) into the background. The nice utility (option E) launches a program with modified priority, but a program so launched still monopolizes
+its shell unless you take additional steps. For more information, see Chapter 2.
+
+flast.indd 03/26/2015 Page xlvii
+
+xlviii
+
+Answers to the Assessment Test
+
+21. A, B. The -Uvh parameter (option A) issues an upgrade command (which installs the
+program whether or not an earlier version is installed) and creates a series of hash marks
+to display the command’s progress. The -i parameter (option B) installs the program if it’s
+not already installed but causes no progress display. Option C uses a package name, not a
+complete filename, and so it will fail to install the package file. The -e option (option D)
+removes a package. Option E’s -Vp option verifies the package file but doesn’t install it. For
+more information, see Chapter 2.
+22. B. Option B, fsck, is Linux’s filesystem check utility. It’s similar in purpose to the DOS and
+Windows CHKDSK and ScanDisk utilities (similar to options C and D), but these DOS and
+Windows utilities don’t work on Linux filesystems like ext2fs or ReiserFS. Option A, mkfs,
+creates new filesystems; it doesn’t diagnose or fix filesystem problems. Option E, fdisk, is
+a tool for creating or modifying disk partitions; it doesn’t manage the filesystems they contain. For more information, see Chapter 3.
+23. A. A freshly installed MySQL database is unlikely to have a ready-made database of animals, so your first task is to create that database with the CREATE DATABASE command, as
+shown in option A. (You could call the database something other than animals, of course.)
+The USE command in option B will be useful only once the database has been created. Once
+the database is created, you can use CREATE TABLE, as in option C, to create a table; however, you’ll need an existing database first, and this command also requires information
+about the type of data to be stored, which option C doesn’t provide. Option D’s INSERT
+INTO command stores data into a table once it’s been created, so it’s far from the first command you’ll use. It also requires additional specification of the data to be stored, so it’s
+incomplete. Option E’s UPDATE command modifies existing entries, so you’ll use this command only after you’ve created the database and added at least one animal to it. (Option E
+is also an incomplete command even then.) For more information, see Chapter 9.
+24. B, D. The correct answers, man and info (options B and D), are two common Linux help
+packages. Although ? (option C) is a common help command within certain interactive programs, it isn’t a help command in bash or other common Linux shells. There is no common
+command called manual (option A), nor is hint (option E) a valid bash command or common program name. For more information, see Chapter 1.
+25. A, C. Unix systems traditionally store time in UTC (aka Greenwich mean time), and Linux
+may do so as well. Thus, option A is correct. Most other x86 PC OSs traditionally store
+time as the local time, however, so Linux also supports this option and option C is also
+correct. Internet Time (option B) is an alternative to the 24-hour clock in which the day is
+broken into 1,000 “beats.” Standard PC BIOSs don’t support this time format. Likewise,
+a 12-hour clock isn’t terribly useful to computers because it doesn’t differentiate a.m. from
+p.m., making option D incorrect. Although the length of the Martian day is similar to that
+of Earth (24 hours and 37 minutes), those wanting to colonize Mars will have to wait for
+PC clocks to support setting time for the Red Planet; option E is incorrect. For more information, see Chapter 7.
+26. D. Typing lsmod (option D) produces a list of the modules that are currently loaded. The
+insmod (option A) and modprobe (option C) programs both load modules—either a single
+module or a single module and all those on which it depends, respectively. The depmod
+command (option B) generates the modules.dep file that contains module dependency
+
+flast.indd 03/26/2015 Page xlviii
+
+Answers to the Assessment Test
+
+xlix
+
+information. The modinfo command (option E) displays information, such as its
+version number and author, on a single module. For more information, see Chapter 3.
+27. B, E. The chgrp and chown commands can both change the group ownership of a file.
+The chgrp command takes a group name and a filename as parameters, as in option B.
+The chown command normally changes a file’s owner; but if you provide a group name
+preceded by a dot (.) or a colon (:), as in option E, it changes the group of a file. The chown
+command as used in option A, will change the primary ownership of the file to the music
+user, if such a user exists on the system; it won’t change the group ownership. There is no
+standard chgroup command, as in option C. Option D will change the permissions to 0600
+(-rw-------), which will be a step backward with respect to the goal stated. For more
+information, see Chapter 4.
+28. E. Hard links to directories are not permitted by most filesystems, so you’ll probably have
+to create a symbolic link, as noted in option E. Links don’t rely on a filesystem journal, so
+option A is incorrect. Contrary to option B, anybody may create a link, not just the original’s owner. Option C describes a restriction of hard links, but because this link will probably have to be a symbolic link, this restriction is unimportant and option C is incorrect.
+Option D describes a more severe restriction than option B, but it’s incorrect for the same
+reasons. For more information, see Chapter 4.
+29. B, E. The colon (:) starts ex mode, from which you can enter commands. In ex mode, r
+includes a file in an existing one, w writes a file, e loads an entirely new file, and q quits the
+program. Thus the desired combination is :wq (option B). As a special case, ZZ does the
+same thing, so option E is also correct. For more information, see Chapter 5.
+30. C. The ~/.forward file is a user email forwarding file. The vertical bar character (|) at the
+start of such a file is a code to send the email through the specified program file, so option
+C is correct. To do as option A describes, the file would need to read junkme or junkme@
+hostname, where hostname is the computer’s hostname. To do as option B describes, the
+leading vertical bar would have to be omitted. It’s conceivable that the ~/junkme script does
+as option D describes, but there’s no way of knowing this for certain. To do as option E
+describes, the file would have to read user@junkme, where user is the username. For more
+information, see Chapter 9.

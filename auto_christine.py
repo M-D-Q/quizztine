@@ -5,7 +5,7 @@ import time
 #TO DO : ajouter ascii art, sound "lets get started"
 # ajouter score dans le json
 # ajouter menu choix du chapitre avec score atteint par chapitre aussi
-# 
+
 
 with open ("auto_christine.json", "r", encoding='utf-8') as dico:
     dataset = dico.read()
@@ -13,7 +13,9 @@ with open ("auto_christine.json", "r", encoding='utf-8') as dico:
 
 choix = str(input("""What do you you want to study ?
 1 = Chapitre 1
-2 = Dump de 2018"""))
+2 = Dump de 2018
+3 = Dump de questions avec input libre
+Enter chosen number here -> """))
 
 if choix == "1" :
     score = 0
@@ -48,6 +50,24 @@ elif choix == "2":
         print(f"Current score : {int((score/i)*100)}%")
         osef = input("Press enter to continue...")
         os.system('cls' if os.name == 'nt' else 'clear')
+elif choix == "3":
+    score = 0
+    i = 02
+    for john in data['questionnairelibre']:
+        print(f"Question #{john['id']}/{len(data['questionnairelibre'])}")
+        print(john['question'])
+        response = str(input("Input answer : "))
+        if response in john['answer'].split(", "):
+            print(f"""Well done ! {response} is correct !
+            You could have answered any of these : {john['answer']}""")
+        else : 
+            print(f" Incorrect, the answer was any of these : {john['answer']}")
+            score += 1
+        i += 1
+        print(f"Current score : {int((score/i)*100)}%")
+        osef = input("Press enter to continue...")
+        os.system('cls' if os.name == 'nt' else 'clear')
+
 
     #ICI faire une variante pour le questionnaire à input, en mettant une liste des réponses possibles via un split à la virgule des trucs avec plusieurs variantes, puis un if response in liste_answers
 
