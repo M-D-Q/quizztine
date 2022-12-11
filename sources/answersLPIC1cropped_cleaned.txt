@@ -61,6 +61,7 @@ the contents of any existing file by the specified name, so option C is correct.
  
 
  
+
  
 
 Option A specifies the standard input redirection so that ifconfig will take the contents of file.txt as input. Option B is almost correct: the >> redirection operator
@@ -159,6 +160,7 @@ text within files; it won’t reformat text files.
  
 
  
+
  
 
 £19. A. The grep utility is used to find matching text within a file and print those
@@ -175,7 +177,8 @@ Option D’s di*g matches dig, diig, diiig, or any other word that begins with d
 with g, and contains any number of i letters in between. Thus option D matches dig
 but not dog or dug as required. Option E, like option A, uses a dot to match any character, so it will actually match certain four-letter words but not dog or dug.
 
- £1.
+ 
+£1.
 
 D. Because they must be compiled prior to installation, source packages require more
 time to install than binary packages, contrary to option D’s assertion, thus making
@@ -276,6 +279,7 @@ option D. This option is perfectly valid, contrary to option A’s assertion.
  
 
  
+
  
 
 The apt-get program doesn’t permit you to upload information to the Internet repositories, so option B is incorrect. Option C describes the effect of the upgrade or distupgrade options, not the update option. The upgrade or dist-upgrade options can
@@ -363,6 +367,7 @@ Similarly, only root may increase the priority of a process in order to prevent 
  
 
  
+
  
 
 from setting their processes to maximum priority, thus stealing CPU time from others,
@@ -371,7 +376,8 @@ point of renice is to be able to change the priorities of existing processes. Co
 option B, renice doesn’t care about the shell from which renice or the target program
 was launched. Users may use renice to decrease their own processes’ priorities, contrary to option C.
 
- £1.
+ 
+£1.
 
 B, C. IRQs 3 and 4 are common defaults for RS-232 serial ports, so options B and C
 are both correct. IRQ 1 is reserved for the keyboard, so option A is incorrect. IRQ 8
@@ -480,6 +486,7 @@ therefore making existing files inaccessible, as stated in option E. This comman
  
 
  
+
  
 
 doesn’t set the partition type code in the partition table, so option A is incorrect. The
@@ -551,7 +558,8 @@ to write a script that calls umount and call it usbdrive-remove, pulling the fla
 quickly, as option D describes, would be exactly the wrong thing to do. The fsck command of option E checks a filesystem for errors. It’s not necessary to do this before
 removing a disk, and it won’t unmount the disk, so option E is incorrect.
 
- £1.
+ 
+£1.
 
 B. The touch utility updates a file’s time stamps, as option B specifies. (If the specified file doesn’t exist, touch creates an empty file.) You can’t move files with touch;
 that’s the job of the mv command, so option A is incorrect. Various tools can convert
@@ -578,6 +586,7 @@ remaining options are all incorrect.
  
 
  
+
  
 
 £4.
@@ -687,6 +696,7 @@ between 0 and 7.
  
 
  
+
  
 
 £14. E. Using quotas requires kernel support, the usrquota or grpquota (for user or group
@@ -750,7 +760,8 @@ may not be true of others because the path can vary from one user to another, th
 option C is incorrect. The which program doesn’t reveal file ownership information,
 so option E is incorrect.
 
- Editing Files
+ 
+Editing Files
 £1.
 
 C. The Master Boot Record (MBR) can contain a boot loader that is up to 446 bytes
@@ -785,6 +796,7 @@ information that could explain why a disk isn’t responding.
  
 
  
+
  
 
 £4.
@@ -893,6 +905,7 @@ incorrect. Option B would be correct if this command was typed while in vi’s i
  
 
  
+
  
 
 mode, but the question specifies that command mode is in use. To achieve option C,
@@ -918,7 +931,8 @@ that character into the file, so option A is incorrect. The Ctrl+X, Ctrl+C key c
 The F10 key and the Shift+Insert key combination also aren’t defined in vi, so options
 D and E are both incorrect.
 
- System, Localization, and Printing
+ 
+System, Localization, and Printing
 £1.
 
 A. On most Linux systems, some runlevels don’t run X by default, so using one of them
@@ -1006,6 +1020,7 @@ specifying it in a configuration file, as option C states. Option A describes on
  
 
  
+
  
 
 advantages of the Secure Shell (SSH) as a remote-access protocol. Option B describes a
@@ -1100,6 +1115,7 @@ the -Pqueue option to specify the queue and a print job number or various other
  
 
  
+
  
 
 parameters to specify which jobs to delete. BSD LPD, LPRng, and CUPS all implement the lprm command, so you can use it with any of these systems, making option A
@@ -1120,7 +1136,8 @@ a company that produces commercial sound drivers for Linux. The route command
 (option D) is used to display or configure a Linux routing table. The 411toppm program
 (option E) converts files from Sony’s 411 image file format to the PPM image file format; it doesn’t do the specified task.
 
- £1.
+ 
+£1.
 
 E. When the usermod -L username command is used, the username record in the
 /etc/shadow file has its password field modified. An exclamation point (!) is placed in
@@ -1205,6 +1222,7 @@ causes it to delete the user’s home directory and mail spool, thus satisfying 
  
 
  
+
  
 
 the question. Option A deletes the account but leaves the user’s home directory intact.
@@ -1301,6 +1319,7 @@ job twice a day, as the question specifies, whereas options A, C, and D all get 
  
 
  
+
  
 
 £18. B. The anacron program is a supplement to cron that helps ensure that log rotation,
@@ -1328,7 +1347,8 @@ basis (such as daily). Option D’s run-parts utility is used by some distributi
 tool to help run programs in the /etc/cron.* subdirectories, but it’s not used to schedule jobs. Although the crontab program can maintain user crontabs, it’s not used as
 shown in option E and it has no -d parameter at all.
 
- Networking
+ 
+Networking
 £1.
 
 A, B, E. Ethernet (option B) is currently the most common type of wired network hardware for local networks. Linux supports it very well, and Linux also includes support
@@ -1415,6 +1435,7 @@ lookup. There is no standard dnslookup program (option B), although the nslookup
  
 
  
+
  
 
 program is a deprecated program for performing DNS lookups. pump (option C) is a
@@ -1511,6 +1532,7 @@ files. A DHCP client sends a broadcast to locate a DHCP server; there is no clie
  
 
  
+
  
 
 configuration file that holds the DHCP server’s address, as option C describes. The
@@ -1529,7 +1551,8 @@ server isn’t likely to be installed on most Linux systems, and even if it is, 
 described in option C is invalid. Like option B’s nslookup, option E’s dig looks up
 hostname-to-IP-address mappings, so option E will display such mappings for the computers called local and dns, if they exist.
 
- Email, and Using Databases
+ 
+Email, and Using Databases
 £1.
 
 D. The PS1 environment variable contains various formatting codes preceded by a
@@ -1619,6 +1642,7 @@ execute permissions on the a_script file. Thus Option B is the correct choice si
  
 
  
+
  
 
 would not work. Option A uses the bash command to execute a script, and this will
@@ -1715,12 +1739,14 @@ does so as option C describes. Option B also describes an update operation, but 
  
 
  
+
  
 
 confused and incorrect way. Options A and D both describe database retrieval operations, but UPDATE doesn’t retrieve data. Option E mistakenly identifies stars as a database name, but it’s a table name, and it mistakenly identifies the operation as adding a
 new entry (INSERT in SQL) rather than as modifying an existing entry (UPDATE in SQL).
 
- £1.
+ 
+£1.
 
 E. The server names alone are insufficient to determine whether they’re legitimate.
 The computer in question may or may not need to run any of these servers, and their
@@ -1830,6 +1856,7 @@ program, and you can’t control that. Thus option E is incorrect.
  
 
  
+
  
 
 £11. B. Option B correctly describes how to accomplish this goal. Option A is incorrect
