@@ -64,7 +64,7 @@ def extraction_questions(txt_source,txt_cible, patterns_to_remove=[r"(.+)?Assess
     for line in linelist:
         i += 1
         line = re.sub(r'([A-B-C-D-E]\.)', r"§\1", line)
-        line = re.sub(r'([1-9][0-9]?\. )', r"£\1", line)
+        line = re.sub(r'^([ ]+)?([1-9][0-9]?\. )', r"£\2", line)
         line = re.sub(r'\"', r'\\"', line)
         for patternos in range(0,len(patterns_to_remove)): 
             pattern = patterns_to_remove[int(patternos)]

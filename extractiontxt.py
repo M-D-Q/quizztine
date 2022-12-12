@@ -25,10 +25,10 @@ from functions_txt import *
 #####
 
 #### FAIT EXTRACTION QUESTIONS
-#paterns_to_remove_questiongeneral = [r"(.+)?c[0-9][0-9].indd.+", r"(.+)?Review Questions(.+)?", "(.*)Chapter(.+)", r"(\n)|(\\n)", r"  [ ]*"]
+#patterns_to_remove_questiongeneral = [r"(.+)?c[0-9][0-9].indd.+", r"(.+)?Review Questions(.+)?", "(.*)Chapter(.+)", r"(\n)|(\\n)", r"  [ ]*"]
 #doc_source_questions = "sources\\questionsLPIC1_cropped.txt"
 doc_cible_questions = "sources\\questionsLPIC1_cropped_cleaned.txt"
-#extraction_questions(doc_source_questions, doc_cible_questions, paterns_to_remove_questiongeneral)
+#extraction_questions(doc_source_questions, doc_cible_questions, patterns_to_remove_questiongeneral)
 ####
 
 # retirer les trucs indésirables, mettre les livres sterling au num des question, concatener tous avec un espace entre lines concaténées

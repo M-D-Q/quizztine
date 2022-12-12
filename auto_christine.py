@@ -31,7 +31,7 @@ i = 0
 for john in data[liste_questionnaires[int(choix)]]:
     print(f"Question #{john['id']}/{len(data[liste_questionnaires[int(choix)]])}")
     print(john['question'])
-    response = str(input("Your answer is (no spaces, only capital letters, commas) :"))
+    response = str(input("Your answer is (only capital letters, space after commas) :"))
     if response != john['answer']:
         print(f""" 
         
