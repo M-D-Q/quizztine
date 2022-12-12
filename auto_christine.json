@@ -181,7 +181,7 @@
             "explanation": "The ~/.forward file is a user email forwarding file. The vertical bar character (|) at the start of such a file is a code to send the email through the specified program file, so option C is correct. To do as option A describes, the file would need to read junkme or junkme@ hostname, where hostname is the computer\u2019s hostname. To do as option B describes, the leading vertical bar would have to be omitted. It\u2019s conceivable that the ~/junkme script does as option D describes, but there\u2019s no way of knowing this for certain. To do as option E describes, the file would have to read user@junkme, where user is the username. For more information, see Chapter 9. \n"
         }
     ],
-    "questionnaire2018": [
+    "LX0-103(v.1)": [
         {
             "id": 1,
             "question": "Which SysV init configuration file should be modified to disable the ctrl-alt-delete keycombination? \n A. /proc/keys \n B. /etc/inittab \n C. /proc/inittab \n D. /etc/reboot \n E. /etc/keys \n",
@@ -813,7 +813,7 @@
             "explanation": "https://www.briefmenow.org/comptia/what-do-the-permissions-rwsr-xr-x-mean-for-a-binary-file-when-it-is-executed-as-a-command-2/"
         }
     ],
-    "questionnairelibre": [
+    "LX0-103(v.1)-input": [
         {
             "id": 1,
             "question": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel?(Specify the file name only without any path.) \n",
