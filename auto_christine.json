@@ -370,7 +370,7 @@
         },
         {
             "id": 32,
-            "question": "In Bash, inserting 1&gt;&amp;2 after a command redirects \n A. standard output to standard input. \n B. standard error to standard output. \n C. standard input to standard error. \n D. standard error to standard input. \n E. standard output to standard error. \n",
+            "question": "In Bash, inserting >&2 after a command redirects \n A. standard output to standard input. \n B. standard error to standard output. \n C. standard input to standard error. \n D. standard error to standard input. \n E. standard output to standard error. \n",
             "answer": "E",
             "explanation": "https://www.briefmenow.org/comptia/in-bash-inserting-1ampgtampamp2-after-a-command-redirects-7/"
         },
@@ -388,7 +388,7 @@
         },
         {
             "id": 35,
-            "question": "Which of the following statements is correct regarding the command foo 1&gt; bar? \n A. The command foo receives its stdin from the stdout of the command bar. \n B. The stderr from the command foo is saved to the file bar. \n C. The stdout from the command foo overwrites the file bar. \n D. The stdout from the command foo is appended to the file bar. \n E. The command foo receives its stdin from the file bar. \n",
+            "question": "Which of the following statements is correct regarding the command foo > bar? \n A. The command foo receives its stdin from the stdout of the command bar. \n B. The stderr from the command foo is saved to the file bar. \n C. The stdout from the command foo overwrites the file bar. \n D. The stdout from the command foo is appended to the file bar. \n E. The command foo receives its stdin from the file bar. \n",
             "answer": "C",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-statements-is-correct-regarding-the-command-foo-1ampgt-bar-2/"
         },
@@ -424,7 +424,7 @@
         },
         {
             "id": 41,
-            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat &lt; myapp | cat &gt; file1.log \n B. myapp 0&gt;&amp;1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-will-send-output-from-the-program-myapp-to-both-standard-output-stdout-and-the-file-file1log-5/"
         },
@@ -442,7 +442,7 @@
         },
         {
             "id": 44,
-            "question": "Which of the following characters can be combined with a separator string in order to readfrom the current input source until the separator string, which is on a separate line andwithout any trailing spaces, is reached? \n A. &lt;| \n B. !&lt; \n C. &lt;&lt; \n D. &amp;&lt; \n",
+            "question": "Which of the following characters can be combined with a separator string in order to readfrom the current input source until the separator string, which is on a separate line andwithout any trailing spaces, is reached? \n A. <| \n B. !< \n C. << \n D. &< \n",
             "answer": "C",
             "explanation": "https://www.briefmenow.org/comptia/which-is-on-a-separate-line-and-without-any-trailing-spaces-is-reached-2/"
         },
@@ -520,7 +520,7 @@
         },
         {
             "id": 57,
-            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018s/bob/Bob/g' letter &gt; newletter \n B. sed \u2018s/bob, Bob/' letter &gt; newletter \n C. sed \u2018s/bob/Bob' letter &gt; newletter \n D. sed \u2018/bob/Bob' letter &gt; newletter \n E. sed s/bob/Bob/ letter &lt; newletter \n",
+            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018s/bob/Bob/g' letter &gt; newletter \n B. sed \u2018s/bob, Bob/' letter &gt; newletter \n C. sed \u2018s/bob/Bob' letter &gt; newletter \n D. sed \u2018/bob/Bob' letter &gt; newletter \n E. sed s/bob/Bob/ letter < newletter \n",
             "answer": "A",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-replaces-each-occurrence-of-bob-in-the-file-letter-with-bob-and-writes-the-result-to-the-file-newletter-2/"
         },
@@ -538,13 +538,13 @@
         },
         {
             "id": 60,
-            "question": "Which shell command is used to continue background execution of a suspendedcommand? \n A. exec \n B. cont \n C. bg \n D. &amp; \n E. :&amp; \n",
+            "question": "Which shell command is used to continue background execution of a suspendedcommand? \n A. exec \n B. cont \n C. bg \n D. & \n E. :& \n",
             "answer": "C",
             "explanation": "https://www.briefmenow.org/comptia/which-shell-command-is-used-to-continue-background-execution-of-a-suspended-command-2/"
         },
         {
             "id": 61,
-            "question": "Which of the following shell redirections will write standard output and standard error outputto a file named filename? \n A. 2&gt;&amp;1 &gt;filename \n B. &gt;filename 2&gt;&amp;1 \n C. 1&gt;&amp;2&gt;filename \n D. &gt;&gt;filename \n E. 1&amp;2&gt;filename \n",
+            "question": "Which of the following shell redirections will write standard output and standard error outputto a file named filename? \n A. 2&gt;&1 &gt;filename \n B. &gt;filename 2&gt;&1 \n C. >&2&gt;filename \n D. &gt;&gt;filename \n E. 1&2&gt;filename \n",
             "answer": "B",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-shell-redirections-will-write-standard-output-and-standard-error-output-to-a-file-named-filename-2/"
         },
@@ -568,13 +568,13 @@
         },
         {
             "id": 65,
-            "question": "Which of the following commands will reduce all consecutive spaces down to a singlespace? \n A. tr -c \u2018 \u2018 &lt; a.txt &gt; b.txt \n B. tr -s \u2018 \u2018 &lt; a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 &lt; a.txt &gt; b.txt \n D. tr \u2018\\\\s' \u2018 \u2018 &lt; a.txt &gt; b.txt \n E. tr -r \u2018 \u2018 \u2018\\\n' &lt; a.txt &gt; b.txt \n",
+            "question": "Which of the following commands will reduce all consecutive spaces down to a singlespace? \n A. tr -c \u2018 \u2018 < a.txt &gt; b.txt \n B. tr -s \u2018 \u2018 < a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 < a.txt &gt; b.txt \n D. tr \u2018\\\\s' \u2018 \u2018 < a.txt &gt; b.txt \n E. tr -r \u2018 \u2018 \u2018\\\n' < a.txt &gt; b.txt \n",
             "answer": "B",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-will-reduce-all-consecutive-spaces-down-to-a-single-space-2/"
         },
         {
             "id": 66,
-            "question": "Which character, added to the end of a command, runs that command in the background asa child process of the current shell? \n A. # \n B. ! \n C. + \n D. &amp; \n E. % \n",
+            "question": "Which character, added to the end of a command, runs that command in the background asa child process of the current shell? \n A. # \n B. ! \n C. + \n D. & \n E. % \n",
             "answer": "D",
             "explanation": "https://www.briefmenow.org/comptia/which-character-added-to-the-end-of-a-command-runs-that-command-in-the-background-as-a-child-process-of-the-current-shell-2/"
         },
@@ -646,7 +646,7 @@
         },
         {
             "id": 78,
-            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. %&gt; \n B. &lt; \n C. &lt;&lt;&lt; \n D. &gt; \n E. &gt;&gt;&gt; \n",
+            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. %&gt; \n B. < \n C. <<< \n D. &gt; \n E. &gt;&gt;&gt; \n",
             "answer": "B,C,D",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-are-valid-stream-redirection-operators-within-bash-2/"
         },
@@ -993,7 +993,7 @@
         },
         {
             "id": 11,
-            "question": "Which of the following statements is correct regarding the command foo 1&gt; bar? \n A. The stdout from the command foo is appended to the file bar. \n B. The stdout from the command foo overwrites the file bar. \n C. The command foo receives its stdin from the file bar. \n D. The command foo receives its stdin from the stdout of the command bar. \n E. The stderr from the command foo is saved to the file bar. \n",
+            "question": "Which of the following statements is correct regarding the command foo > bar? \n A. The stdout from the command foo is appended to the file bar. \n B. The stdout from the command foo overwrites the file bar. \n C. The command foo receives its stdin from the file bar. \n D. The command foo receives its stdin from the stdout of the command bar. \n E. The stderr from the command foo is saved to the file bar. \n",
             "answer": "B",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-statements-is-correct-regarding-3/",
@@ -1038,7 +1038,7 @@
         },
         {
             "id": 16,
-            "question": "Which character, added to the end of a command, runs that command in the background asa child process of the current shell? \n A. ! \n B. + \n C. &amp; \n D. % \n E. # \n",
+            "question": "Which character, added to the end of a command, runs that command in the background asa child process of the current shell? \n A. ! \n B. + \n C. & \n D. % \n E. # \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-character-added-to-the-end-of-a-command-runs-th-3/",
@@ -1065,7 +1065,7 @@
         },
         {
             "id": 19,
-            "question": "Which of the following command lines creates or, in case it already exists, overwrites a filecalled data with the output of ls? \n A. ls 3&gt; data \n B. ls &gt;&amp; data \n C. ls &gt; data \n D. ls &gt;&gt; data \n",
+            "question": "Which of the following command lines creates or, in case it already exists, overwrites a filecalled data with the output of ls? \n A. ls 3&gt; data \n B. ls &gt;& data \n C. ls &gt; data \n D. ls &gt;&gt; data \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-command-lines-creates-or-in-cas/",
@@ -1191,7 +1191,7 @@
         },
         {
             "id": 33,
-            "question": "In Bash, inserting 1&gt;&amp;2 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
+            "question": "In Bash, inserting >&2 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/in-bash-inserting-1ampgtampamp2-after-a-command-3/",
@@ -1218,7 +1218,7 @@
         },
         {
             "id": 36,
-            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat &lt; myapp | cat &gt; file1.log \n B. myapp 0&gt;&amp;1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-send-output-from-t-5/",
@@ -1245,7 +1245,7 @@
         },
         {
             "id": 39,
-            "question": "Which of the following commands will change all CR-LF pairs in an imported text file,userlist.txt, to Linux standard LF characters and store it as newlist.txt? \n A. tr \u2018\\\\r\\\n' \u201d &lt; userlist.txt &gt; newlist.txt \n B. tr -c \u2018\\\n\\\\r' \u201d &lt; newlist.txt &gt; userlist.txt \n C. tr -d \u2018\\\\r' &lt; userlist.txt &gt; newlist.txt \n D. tr \u2018\\\\r' \u2018\\\n' userlist.txt newlist.txt \n E. tr -s \u2018^M' \u2018^J' userlist.txt newlist.txt \n",
+            "question": "Which of the following commands will change all CR-LF pairs in an imported text file,userlist.txt, to Linux standard LF characters and store it as newlist.txt? \n A. tr \u2018\\\\r\\\n' \u201d < userlist.txt &gt; newlist.txt \n B. tr -c \u2018\\\n\\\\r' \u201d < newlist.txt &gt; userlist.txt \n C. tr -d \u2018\\\\r' < userlist.txt &gt; newlist.txt \n D. tr \u2018\\\\r' \u2018\\\n' userlist.txt newlist.txt \n E. tr -s \u2018^M' \u2018^J' userlist.txt newlist.txt \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-change-all-cr-lf-p-2/",
@@ -1263,7 +1263,7 @@
         },
         {
             "id": 41,
-            "question": "Which of the following shell redirections will write standard output and standard erroroutput to a file named filename? \n A. 2&gt;&amp;1 &gt;filename \n B. &gt;filename 2&gt;&amp;1 \n C. 1&gt;&amp;2&gt;filename \n D. &gt;&gt;filename \n E. 1&amp;2&gt;filename \n",
+            "question": "Which of the following shell redirections will write standard output and standard erroroutput to a file named filename? \n A. 2&gt;&1 &gt;filename \n B. &gt;filename 2&gt;&1 \n C. >&2&gt;filename \n D. &gt;&gt;filename \n E. 1&2&gt;filename \n",
             "answer": "B",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-shell-redirections-will-write-st-4/",
@@ -1353,7 +1353,7 @@
         },
         {
             "id": 51,
-            "question": "In Bash, inserting 2&gt;&amp;1 after a command redirects: \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard outputto standard input. \n",
+            "question": "In Bash, inserting 2&gt;&1 after a command redirects: \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard outputto standard input. \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/in-bash-inserting-2ampgtampamp1-after-a-command-3/",
@@ -1785,7 +1785,7 @@
         },
         {
             "id": 99,
-            "question": "Which of the following commands will reduce all consecutive spaces down to a single space? \n A. tr \u2018\\\\s' \u2018 \u2018 &lt; a.txt &gt; b.txt \n B. tr -c \u2018 \u2018 &lt; a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 &lt; a.txt &gt; b.txt \n D. tr -r \u2018 \u2018 \u2018\\\n' &lt; a.txt &gt; b.txt \n E. tr -s \u2018 \u2018 &lt; a.txt &gt; b.txt \n",
+            "question": "Which of the following commands will reduce all consecutive spaces down to a single space? \n A. tr \u2018\\\\s' \u2018 \u2018 < a.txt &gt; b.txt \n B. tr -c \u2018 \u2018 < a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 < a.txt &gt; b.txt \n D. tr -r \u2018 \u2018 \u2018\\\n' < a.txt &gt; b.txt \n E. tr -s \u2018 \u2018 < a.txt &gt; b.txt \n",
             "answer": "E",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-reduce-all-consecu-3/",
@@ -1830,7 +1830,7 @@
         },
         {
             "id": 104,
-            "question": "Which of the following characters can be combined with a separator string in order to readfrom the current input source until the separator string, which is on a separate line and without anytrailing spaces, is reached? \n A. &lt;&lt; \n B. &lt;| \n C. !&lt; \n D. &amp;&lt; \n",
+            "question": "Which of the following characters can be combined with a separator string in order to readfrom the current input source until the separator string, which is on a separate line and without anytrailing spaces, is reached? \n A. << \n B. <| \n C. !< \n D. &< \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-is-on-a-separate-line-and-without-any-trailing-sp-3/",
@@ -1875,7 +1875,7 @@
         },
         {
             "id": 109,
-            "question": "Which of the following statements is correct for a command line ending with a &amp; character? \n A. The command's output is redirected to/dev/null. \n B. The result of the command defines if the next command will be run. \n C. Thecommand is run in background of the current shell. \n D. The command is run as a direct child of theinitprocess. \n",
+            "question": "Which of the following statements is correct for a command line ending with a & character? \n A. The command's output is redirected to/dev/null. \n B. The result of the command defines if the next command will be run. \n C. Thecommand is run in background of the current shell. \n D. The command is run as a direct child of theinitprocess. \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-statements-is-correct-for-a-comm/",
@@ -2001,7 +2001,7 @@
         },
         {
             "id": 123,
-            "question": "Which shell command is used to continue background execution of a suspended command? \n A. &amp; \n B. bg \n C. cont \n D. exec \n E. :&amp; \n",
+            "question": "Which shell command is used to continue background execution of a suspended command? \n A. & \n B. bg \n C. cont \n D. exec \n E. :& \n",
             "answer": "B",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-shell-command-is-used-to-continue-background-exec-4/",
@@ -2055,7 +2055,7 @@
         },
         {
             "id": 129,
-            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. &lt; \n B. &lt;&lt;&lt; \n C. &gt; \n D. &gt;&gt;&gt; \n E. %&gt; \n",
+            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. < \n B. <<< \n C. &gt; \n D. &gt;&gt;&gt; \n E. %&gt; \n",
             "answer": "A,B,C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-are-valid-stream-redirection-ope-3/",
@@ -2262,7 +2262,7 @@
         },
         {
             "id": 152,
-            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018/bob/Bob' letter &gt; newletter \n B. sed s/bob/Bob/ letter &lt; newletter \n C. sed's/bob/Bob' letter &gt; newletter \n D. sed \u2018s/bob/Bob/g' letter &gt; newletter \n E. sed \u2018s/bob, Bob/' letter &gt; newletter \n",
+            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018/bob/Bob' letter &gt; newletter \n B. sed s/bob/Bob/ letter < newletter \n C. sed's/bob/Bob' letter &gt; newletter \n D. sed \u2018s/bob/Bob/g' letter &gt; newletter \n E. sed \u2018s/bob, Bob/' letter &gt; newletter \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-replaces-each-occurrenc-3/",
@@ -2644,7 +2644,7 @@
         },
         {
             "id": 15,
-            "question": "In order to use the output of ls to overwrite a file called bazz, which of the following command lines wouldyou use? \n A. ls&gt;bazz \n B. ls&gt;&amp;bazz \n C. ls&amp;&gt;bazz \n D. ls&gt;&gt;bazz \n",
+            "question": "In order to use the output of ls to overwrite a file called bazz, which of the following command lines wouldyou use? \n A. ls&gt;bazz \n B. ls&gt;&bazz \n C. ls&&gt;bazz \n D. ls&gt;&gt;bazz \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-command-lines-would-you-use-3/",
@@ -2671,7 +2671,7 @@
         },
         {
             "id": 18,
-            "question": "Which shell command is used to continue background execution of a suspended command? \n A. &amp; \n B. bg \n C. cont \n D. exec \n E. :&amp; \n",
+            "question": "Which shell command is used to continue background execution of a suspended command? \n A. & \n B. bg \n C. cont \n D. exec \n E. :& \n",
             "answer": "B",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-shell-command-is-used-to-continue-background-exec/",
@@ -2806,7 +2806,7 @@
         },
         {
             "id": 33,
-            "question": "In bash, inserting 2&gt;&amp;1 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
+            "question": "In bash, inserting 2&gt;&1 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/in-bash-inserting-2ampgtampamp1-after-a-command/",
@@ -2833,7 +2833,7 @@
         },
         {
             "id": 36,
-            "question": "You have created a long letter and after you are done you notice that you used the name \u201cBob\u201d many timesbut you forgot to capitalize it in many instances. Which command would replace \u201cbob\u201d with \u201cBob\u201d in allinstances and generate a new letter for printing? \n A. sed \u2018/bob/Bob' letter &gt;newletter \n B. sed s/bob/Bob/ letter &lt;newletter \n C. sed \u2018s/bob/Bob' letter &gt;newletter \n D. sed \u2018s/bob/Bob/g' letter &gt;newletter \n E. sed \u2018s/bob, Bob/' letter &gt;newletter \n",
+            "question": "You have created a long letter and after you are done you notice that you used the name \u201cBob\u201d many timesbut you forgot to capitalize it in many instances. Which command would replace \u201cbob\u201d with \u201cBob\u201d in allinstances and generate a new letter for printing? \n A. sed \u2018/bob/Bob' letter &gt;newletter \n B. sed s/bob/Bob/ letter <newletter \n C. sed \u2018s/bob/Bob' letter &gt;newletter \n D. sed \u2018s/bob/Bob/g' letter &gt;newletter \n E. sed \u2018s/bob, Bob/' letter &gt;newletter \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-would-replace-ampquotbobampquot-wit/",
@@ -2842,7 +2842,7 @@
         },
         {
             "id": 37,
-            "question": "In the command foo &lt; bar | foobar, which ONE of the following statements is correct? \n A. The stdout from the command foobar is saved to the file foo. \n B. The stdout from the command foo is saved to the file foobar. \n C. The command foobar receives its stdin from the stderr of foo. \n D. The command foobar receives its stdin from the stdout of foo. \n E. The command bar receives its stdin from the contents of the file foobar. \n",
+            "question": "In the command foo < bar | foobar, which ONE of the following statements is correct? \n A. The stdout from the command foobar is saved to the file foo. \n B. The stdout from the command foo is saved to the file foobar. \n C. The command foobar receives its stdin from the stderr of foo. \n D. The command foobar receives its stdin from the stdout of foo. \n E. The command bar receives its stdin from the contents of the file foobar. \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-one-of-the-following-statements-is-correct-2/",
@@ -2869,7 +2869,7 @@
         },
         {
             "id": 40,
-            "question": "Given the following output:prompt&gt;myapp[1]+ Stoppedmyappprompt&gt;Which of the following commands will resume executing the stopped process and make it the current job? \n A. bgmyapp \n B. continue myapp \n C. exec myapp \n D. fgmyapp \n E. myapp&amp; \n",
+            "question": "Given the following output:prompt&gt;myapp[1]+ Stoppedmyappprompt&gt;Which of the following commands will resume executing the stopped process and make it the current job? \n A. bgmyapp \n B. continue myapp \n C. exec myapp \n D. fgmyapp \n E. myapp& \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-resume-executing-t/",
@@ -2941,7 +2941,7 @@
         },
         {
             "id": 48,
-            "question": "What command line redirection characters instruct the shell to read from the current input source until aspecific word, on a separate line and without any trailing spaces, is reached? \n A. &lt;&lt; \n B. &lt;| \n C. !&lt; \n D. &amp;&lt; \n",
+            "question": "What command line redirection characters instruct the shell to read from the current input source until aspecific word, on a separate line and without any trailing spaces, is reached? \n A. << \n B. <| \n C. !< \n D. &< \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-command-line-redirection-characters-instruct-the-s/",
@@ -2950,7 +2950,7 @@
         },
         {
             "id": 49,
-            "question": "Which of the following commands will send output from the program myapp to both standard output (stdout)and the file file1.log? \n A. cat &lt;myapp | cat &gt; file1.log \n B. myapp 0&gt;&amp;1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to both standard output (stdout)and the file file1.log? \n A. cat <myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-send-output-from-t/",
@@ -4638,5 +4638,44 @@
             "answer": "D",
             "explanation": "Option D provides the correct command to import fredkey.pub prior to use. The inspect-gpg, import-gpg, and gpg-import commands of options A, C, and E are fictitious, and there is no --readkey option to gpg, as option B suggests.  \n"
         }
+    ],
+    "Exam-Topics 101 - Paywall breached": [
+        {
+            "id":"1",
+            "question":"Which wildcards will match the following filenames? (Choose two.) \n Patterns to match : ttyS0 ttyS1 ttyS2 \n A. ttyS[1-5] \n B. tty?[0-5] \n C. tty*2 \n D. tty[A-Z][012] \n E. tty[Ss][02]",
+            "answer":"B,D",
+            "explanation":"We are talking about file globbing (limité à la console bash) and not about Regular Expressions here. \n Check ça : https://askubuntu.com/questions/714503/regular-expressions-vs-filename-globbing/714520#714520 \n Traditional glob wildcards support a very narrow set of metacharacters — * is 'anything', ? is an arbitrary single character; Bourne shell also supports [a-z123] for a single character out of a set of alternatives, and [!x-z789] any one except those listed.   Regex obviously is much richer, supporting repetitions, and (in ERE) alternation and specific numbers of repetitions. Perl-style regex further extends the formalism to the point where multiple books have been written, and more will be. "
+        },
+        {
+            "id":"2",
+            "question":"Which of the following commands redirects the output of ls to standard error? \n A. ls >-1 \n B. ls <<ERR \n C. ls >&2 \n D. ls >>2 \n E. ls |error",
+            "answer":"C",
+            "explanation":"C is correct: ls>&2 sends the ls output to the 2 (stderr) location \n A, B, D, and E are wrong : \n ls>-1 creates a file -1 that is the output of ls \n <<ERR sets the ERR string as the end of input \n ls>>2 would append to a file '2' \n ls |error is an invalid command"
+        },
+        {
+            "id":"3",
+            "question":"Which of the following commands displays the contents of a gzip compressed tar archive? \n A. gzip archive.tgz | tar xvf - \nB. tar ג€'fzt archive.tgz \n C. gzip ג€'d archive.tgz | tar tvf - \nD. tar cf archive.tgz \nE. tar ztf archive.tgz \n",
+            "answer":"E",
+            "explanation":"-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE."
+        },
+        {
+            "id":"4",
+            "question":"Which of the following regular expressions represents a single upper-case letter?\nA. :UPPER:\n B. [A-Z]\n C. !a-z\n D. %C\n E. {AZ}",
+            "answer":"B",
+            "explanation":"Pas besoin d'explication, c'est la base."
+        },
+        {
+            "id":"5",
+            "question":"Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
+            "answer":"nice",
+            "explanation":"nice = lancer un prog avec une priorité spécifiée. Renice = pariel mais sur un programme déjà en route."
+        },
+        {
+            "id":"6",
+            "question":"Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
+            "answer":"nice",
+            "explanation":"nice = lancer un prog avec une priorité spécifiée. Renice = pareil mais sur un programme déjà en route."
+        }
+
     ]
-}
+} 
