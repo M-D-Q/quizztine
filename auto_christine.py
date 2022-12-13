@@ -25,7 +25,6 @@ choix = str(input("""
 What do you want to study ?
 0 - Assessment Test & Chapters w/ explanations from LPIC-1 Study Guide book ?
 1 - Dumps questionnaires - Choice answers
-2 - Dumps questionnaires free input
 
 Enter chosen number here ->"""))
 
