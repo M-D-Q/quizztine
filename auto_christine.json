@@ -424,7 +424,7 @@
         },
         {
             "id": 41,
-            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat > file1.log \n B. myapp 0>&1 | cat > file1.log \n C. myapp | cat > file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-will-send-output-from-the-program-myapp-to-both-standard-output-stdout-and-the-file-file1log-5/"
         },
@@ -448,7 +448,7 @@
         },
         {
             "id": 45,
-            "question": "Which of the following commands will NOT update the modify timestamp on the file/tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d &gt;/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d &gt;&gt;/tmp/myfile.txt \n E. touch /tmp/myfile.txt \n",
+            "question": "Which of the following commands will NOT update the modify timestamp on the file/tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d >/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d >>/tmp/myfile.txt \n E. touch /tmp/myfile.txt \n",
             "answer": "A",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-will-not-update-the-modify-timestamp-on-the-file-tmpmyfiletxt-2/"
         },
@@ -520,7 +520,7 @@
         },
         {
             "id": 57,
-            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018s/bob/Bob/g' letter &gt; newletter \n B. sed \u2018s/bob, Bob/' letter &gt; newletter \n C. sed \u2018s/bob/Bob' letter &gt; newletter \n D. sed \u2018/bob/Bob' letter &gt; newletter \n E. sed s/bob/Bob/ letter < newletter \n",
+            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018s/bob/Bob/g' letter > newletter \n B. sed \u2018s/bob, Bob/' letter > newletter \n C. sed \u2018s/bob/Bob' letter > newletter \n D. sed \u2018/bob/Bob' letter > newletter \n E. sed s/bob/Bob/ letter < newletter \n",
             "answer": "A",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-replaces-each-occurrence-of-bob-in-the-file-letter-with-bob-and-writes-the-result-to-the-file-newletter-2/"
         },
@@ -544,7 +544,7 @@
         },
         {
             "id": 61,
-            "question": "Which of the following shell redirections will write standard output and standard error outputto a file named filename? \n A. 2&gt;&1 &gt;filename \n B. &gt;filename 2&gt;&1 \n C. >&2&gt;filename \n D. &gt;&gt;filename \n E. 1&2&gt;filename \n",
+            "question": "Which of the following shell redirections will write standard output and standard error outputto a file named filename? \n A. 2>&1 >filename \n B. >filename 2>&1 \n C. >&2>filename \n D. >>filename \n E. 1&2>filename \n",
             "answer": "B",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-shell-redirections-will-write-standard-output-and-standard-error-output-to-a-file-named-filename-2/"
         },
@@ -568,7 +568,7 @@
         },
         {
             "id": 65,
-            "question": "Which of the following commands will reduce all consecutive spaces down to a singlespace? \n A. tr -c \u2018 \u2018 < a.txt &gt; b.txt \n B. tr -s \u2018 \u2018 < a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 < a.txt &gt; b.txt \n D. tr \u2018\\\\s' \u2018 \u2018 < a.txt &gt; b.txt \n E. tr -r \u2018 \u2018 \u2018\\\n' < a.txt &gt; b.txt \n",
+            "question": "Which of the following commands will reduce all consecutive spaces down to a singlespace? \n A. tr -c \u2018 \u2018 < a.txt > b.txt \n B. tr -s \u2018 \u2018 < a.txt > b.txt \n C. tr -d \u2018 \u2018 < a.txt > b.txt \n D. tr \u2018\\\\s' \u2018 \u2018 < a.txt > b.txt \n E. tr -r \u2018 \u2018 \u2018\\\n' < a.txt > b.txt \n",
             "answer": "B",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-will-reduce-all-consecutive-spaces-down-to-a-single-space-2/"
         },
@@ -628,7 +628,7 @@
         },
         {
             "id": 75,
-            "question": "When running the command sed -e \u201cs/a/b/\u201d /tmp/file &gt;/tmp/file While /tmp/file contains data,why is /tmp/file empty afterwards? \n A. The file order is incorrect. The destination file must be mentioned before the command to ensure redirection. \n B. The command sed did not match anything in that file therefore the output is empty. \n C. When the shell establishes the redirection it overwrites the target file before the redirected command starts and opens it for reading. \n D. Redirection for shell commands do not work using the &gt; character. It only works using the | character instead. \n",
+            "question": "When running the command sed -e \u201cs/a/b/\u201d /tmp/file >/tmp/file While /tmp/file contains data,why is /tmp/file empty afterwards? \n A. The file order is incorrect. The destination file must be mentioned before the command to ensure redirection. \n B. The command sed did not match anything in that file therefore the output is empty. \n C. When the shell establishes the redirection it overwrites the target file before the redirected command starts and opens it for reading. \n D. Redirection for shell commands do not work using the > character. It only works using the | character instead. \n",
             "answer": "C",
             "explanation": "https://www.briefmenow.org/comptia/why-is-tmpfile-empty-afterwards-2/"
         },
@@ -646,7 +646,7 @@
         },
         {
             "id": 78,
-            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. %&gt; \n B. < \n C. <<< \n D. &gt; \n E. &gt;&gt;&gt; \n",
+            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. %> \n B. < \n C. <<< \n D. > \n E. >>> \n",
             "answer": "B,C,D",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-are-valid-stream-redirection-operators-within-bash-2/"
         },
@@ -1065,7 +1065,7 @@
         },
         {
             "id": 19,
-            "question": "Which of the following command lines creates or, in case it already exists, overwrites a filecalled data with the output of ls? \n A. ls 3&gt; data \n B. ls &gt;& data \n C. ls &gt; data \n D. ls &gt;&gt; data \n",
+            "question": "Which of the following command lines creates or, in case it already exists, overwrites a filecalled data with the output of ls? \n A. ls 3> data \n B. ls >& data \n C. ls > data \n D. ls >> data \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-command-lines-creates-or-in-cas/",
@@ -1218,7 +1218,7 @@
         },
         {
             "id": 36,
-            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to bothstandard output (stdout) and the file file1.log? \n A. cat < myapp | cat > file1.log \n B. myapp 0>&1 | cat > file1.log \n C. myapp | cat > file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-send-output-from-t-5/",
@@ -1245,7 +1245,7 @@
         },
         {
             "id": 39,
-            "question": "Which of the following commands will change all CR-LF pairs in an imported text file,userlist.txt, to Linux standard LF characters and store it as newlist.txt? \n A. tr \u2018\\\\r\\\n' \u201d < userlist.txt &gt; newlist.txt \n B. tr -c \u2018\\\n\\\\r' \u201d < newlist.txt &gt; userlist.txt \n C. tr -d \u2018\\\\r' < userlist.txt &gt; newlist.txt \n D. tr \u2018\\\\r' \u2018\\\n' userlist.txt newlist.txt \n E. tr -s \u2018^M' \u2018^J' userlist.txt newlist.txt \n",
+            "question": "Which of the following commands will change all CR-LF pairs in an imported text file,userlist.txt, to Linux standard LF characters and store it as newlist.txt? \n A. tr \u2018\\\\r\\\n' \u201d < userlist.txt > newlist.txt \n B. tr -c \u2018\\\n\\\\r' \u201d < newlist.txt > userlist.txt \n C. tr -d \u2018\\\\r' < userlist.txt > newlist.txt \n D. tr \u2018\\\\r' \u2018\\\n' userlist.txt newlist.txt \n E. tr -s \u2018^M' \u2018^J' userlist.txt newlist.txt \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-change-all-cr-lf-p-2/",
@@ -1263,7 +1263,7 @@
         },
         {
             "id": 41,
-            "question": "Which of the following shell redirections will write standard output and standard erroroutput to a file named filename? \n A. 2&gt;&1 &gt;filename \n B. &gt;filename 2&gt;&1 \n C. >&2&gt;filename \n D. &gt;&gt;filename \n E. 1&2&gt;filename \n",
+            "question": "Which of the following shell redirections will write standard output and standard erroroutput to a file named filename? \n A. 2>&1 >filename \n B. >filename 2>&1 \n C. >&2>filename \n D. >>filename \n E. 1&2>filename \n",
             "answer": "B",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-shell-redirections-will-write-st-4/",
@@ -1353,7 +1353,7 @@
         },
         {
             "id": 51,
-            "question": "In Bash, inserting 2&gt;&1 after a command redirects: \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard outputto standard input. \n",
+            "question": "In Bash, inserting 2>&1 after a command redirects: \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard outputto standard input. \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/in-bash-inserting-2ampgtampamp1-after-a-command-3/",
@@ -1425,7 +1425,7 @@
         },
         {
             "id": 59,
-            "question": "When running the commandsed -e \u201cs/a/b/\u201d /tmp/file &gt;/tmp/fileWhile /tmp/file contains data, why is /tmp/file empty afterwards? \n A. The file order is incorrect. The destination file must be mentioned before the command to ensure redirection. \n B. The command sed did not match anything in that file therefore the output is empty. \n C. When the shell establishes the redirection it overwrites the target file before the redirected command starts and opens itfor reading. \n D. Redirection for shell commands do not work using the &gt; character. It only works using the | character instead. \n",
+            "question": "When running the commandsed -e \u201cs/a/b/\u201d /tmp/file >/tmp/fileWhile /tmp/file contains data, why is /tmp/file empty afterwards? \n A. The file order is incorrect. The destination file must be mentioned before the command to ensure redirection. \n B. The command sed did not match anything in that file therefore the output is empty. \n C. When the shell establishes the redirection it overwrites the target file before the redirected command starts and opens itfor reading. \n D. Redirection for shell commands do not work using the > character. It only works using the | character instead. \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/why-is-tmpfile-empty-afterwards-3/",
@@ -1785,7 +1785,7 @@
         },
         {
             "id": 99,
-            "question": "Which of the following commands will reduce all consecutive spaces down to a single space? \n A. tr \u2018\\\\s' \u2018 \u2018 < a.txt &gt; b.txt \n B. tr -c \u2018 \u2018 < a.txt &gt; b.txt \n C. tr -d \u2018 \u2018 < a.txt &gt; b.txt \n D. tr -r \u2018 \u2018 \u2018\\\n' < a.txt &gt; b.txt \n E. tr -s \u2018 \u2018 < a.txt &gt; b.txt \n",
+            "question": "Which of the following commands will reduce all consecutive spaces down to a single space? \n A. tr \u2018\\\\s' \u2018 \u2018 < a.txt > b.txt \n B. tr -c \u2018 \u2018 < a.txt > b.txt \n C. tr -d \u2018 \u2018 < a.txt > b.txt \n D. tr -r \u2018 \u2018 \u2018\\\n' < a.txt > b.txt \n E. tr -s \u2018 \u2018 < a.txt > b.txt \n",
             "answer": "E",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-reduce-all-consecu-3/",
@@ -1839,7 +1839,7 @@
         },
         {
             "id": 105,
-            "question": "Which of the following commands will NOT update the modify timestamp on the file/tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d &gt;/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d &gt;&gt;/tmp/myfile.txt \n E. touch/tmp/myfile.txt \n",
+            "question": "Which of the following commands will NOT update the modify timestamp on the file/tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d >/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d >>/tmp/myfile.txt \n E. touch/tmp/myfile.txt \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-not-update-the-mod-5/",
@@ -2055,7 +2055,7 @@
         },
         {
             "id": 129,
-            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. < \n B. <<< \n C. &gt; \n D. &gt;&gt;&gt; \n E. %&gt; \n",
+            "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. < \n B. <<< \n C. > \n D. >>> \n E. %> \n",
             "answer": "A,B,C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-are-valid-stream-redirection-ope-3/",
@@ -2235,7 +2235,7 @@
         },
         {
             "id": 149,
-            "question": "Which of the following is true for hard linked files? (Choose three.) \n A. The output ofstatwill reporthardinstead ofregular file. \n B. The hard linked files have the same permissions and owner. \n C. The hard linked files share the same inode. \n D. The hard linked files are indicated by a -&gt; when listed withls -1. \n E. The hard linked files must be on the same filesystem. \n",
+            "question": "Which of the following is true for hard linked files? (Choose three.) \n A. The output ofstatwill reporthardinstead ofregular file. \n B. The hard linked files have the same permissions and owner. \n C. The hard linked files share the same inode. \n D. The hard linked files are indicated by a -> when listed withls -1. \n E. The hard linked files must be on the same filesystem. \n",
             "answer": "B,C,E",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-is-true-for-hard-linked-files/",
@@ -2262,7 +2262,7 @@
         },
         {
             "id": 152,
-            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018/bob/Bob' letter &gt; newletter \n B. sed s/bob/Bob/ letter < newletter \n C. sed's/bob/Bob' letter &gt; newletter \n D. sed \u2018s/bob/Bob/g' letter &gt; newletter \n E. sed \u2018s/bob, Bob/' letter &gt; newletter \n",
+            "question": "Which of the following commands replaces each occurrence of \u2018bob' in the file letter with\u2018Bob' and writes the result to the file newletter? \n A. sed \u2018/bob/Bob' letter > newletter \n B. sed s/bob/Bob/ letter < newletter \n C. sed's/bob/Bob' letter > newletter \n D. sed \u2018s/bob/Bob/g' letter > newletter \n E. sed \u2018s/bob, Bob/' letter > newletter \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-replaces-each-occurrenc-3/",
@@ -2644,7 +2644,7 @@
         },
         {
             "id": 15,
-            "question": "In order to use the output of ls to overwrite a file called bazz, which of the following command lines wouldyou use? \n A. ls&gt;bazz \n B. ls&gt;&bazz \n C. ls&&gt;bazz \n D. ls&gt;&gt;bazz \n",
+            "question": "In order to use the output of ls to overwrite a file called bazz, which of the following command lines wouldyou use? \n A. ls>bazz \n B. ls>&bazz \n C. ls&>bazz \n D. ls>>bazz \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-command-lines-would-you-use-3/",
@@ -2734,7 +2734,7 @@
         },
         {
             "id": 25,
-            "question": "Which of the following is true when hard-linked files are present? \n A. The output of stat will report \u201chard\u201d instead of \u201cregular file\u201d \n B. The hard-linked files may not be empty \n C. Both files will share the same inode \n D. Issuing a long directory listing with ls -l will indicate the link with \u201c-&gt;\u201d \n E. The file permissions will be prefixed by an \u201ch\u201d, eg. hrwxr-x-r-x \n",
+            "question": "Which of the following is true when hard-linked files are present? \n A. The output of stat will report \u201chard\u201d instead of \u201cregular file\u201d \n B. The hard-linked files may not be empty \n C. Both files will share the same inode \n D. Issuing a long directory listing with ls -l will indicate the link with \u201c->\u201d \n E. The file permissions will be prefixed by an \u201ch\u201d, eg. hrwxr-x-r-x \n",
             "answer": "C",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-is-true-when-hard-linked-files-a/",
@@ -2770,7 +2770,7 @@
         },
         {
             "id": 29,
-            "question": "Which of the following sed commands will replace all instances of the string foo with the string foobarchanging the file file1.txt in place? \n A. sed \u2018s/foo/foobar/g' file1.txt \n B. sed \u2018s/foo/foobar/g' file1.txt &gt; file1.txt \n C. sed \u2018s/foo/foobar/g' file1.txt | file1.txt \n D. sed -i \u2018s/foo/foobar/g' file1.txt \n E. sed -i \u2018s/foo/foobar/g' file1.txt &gt; file1.txt \n",
+            "question": "Which of the following sed commands will replace all instances of the string foo with the string foobarchanging the file file1.txt in place? \n A. sed \u2018s/foo/foobar/g' file1.txt \n B. sed \u2018s/foo/foobar/g' file1.txt > file1.txt \n C. sed \u2018s/foo/foobar/g' file1.txt | file1.txt \n D. sed -i \u2018s/foo/foobar/g' file1.txt \n E. sed -i \u2018s/foo/foobar/g' file1.txt > file1.txt \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-sed-commands-will-replace-all-in/",
@@ -2806,7 +2806,7 @@
         },
         {
             "id": 33,
-            "question": "In bash, inserting 2&gt;&1 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
+            "question": "In bash, inserting 2>&1 after a command redirects \n A. standard error to standard input. \n B. standard input to standard error. \n C. standard output to standard error. \n D. standard error to standard output. \n E. standard output to standard input. \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/in-bash-inserting-2ampgtampamp1-after-a-command/",
@@ -2815,7 +2815,7 @@
         },
         {
             "id": 34,
-            "question": "Which of the following commands will NOT update the Modify timestamp on the file /tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d &gt;/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d &gt;/tmp/myfile.txt \n E. touch /tmp/myfile.txt \n",
+            "question": "Which of the following commands will NOT update the Modify timestamp on the file /tmp/myfile.txt? \n A. file /tmp/myfile.txt \n B. echo \u201cHello\u201d >/tmp/myfile.txt \n C. sed -ie \u201cs/1/2/\u201d /tmp/myfile.txt \n D. echo -n \u201cHello\u201d >/tmp/myfile.txt \n E. touch /tmp/myfile.txt \n",
             "answer": "A",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-not-update-the-mod/",
@@ -2833,7 +2833,7 @@
         },
         {
             "id": 36,
-            "question": "You have created a long letter and after you are done you notice that you used the name \u201cBob\u201d many timesbut you forgot to capitalize it in many instances. Which command would replace \u201cbob\u201d with \u201cBob\u201d in allinstances and generate a new letter for printing? \n A. sed \u2018/bob/Bob' letter &gt;newletter \n B. sed s/bob/Bob/ letter <newletter \n C. sed \u2018s/bob/Bob' letter &gt;newletter \n D. sed \u2018s/bob/Bob/g' letter &gt;newletter \n E. sed \u2018s/bob, Bob/' letter &gt;newletter \n",
+            "question": "You have created a long letter and after you are done you notice that you used the name \u201cBob\u201d many timesbut you forgot to capitalize it in many instances. Which command would replace \u201cbob\u201d with \u201cBob\u201d in allinstances and generate a new letter for printing? \n A. sed \u2018/bob/Bob' letter >newletter \n B. sed s/bob/Bob/ letter <newletter \n C. sed \u2018s/bob/Bob' letter >newletter \n D. sed \u2018s/bob/Bob/g' letter >newletter \n E. sed \u2018s/bob, Bob/' letter >newletter \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-would-replace-ampquotbobampquot-wit/",
@@ -2869,7 +2869,7 @@
         },
         {
             "id": 40,
-            "question": "Given the following output:prompt&gt;myapp[1]+ Stoppedmyappprompt&gt;Which of the following commands will resume executing the stopped process and make it the current job? \n A. bgmyapp \n B. continue myapp \n C. exec myapp \n D. fgmyapp \n E. myapp& \n",
+            "question": "Given the following output:prompt>myapp[1]+ Stoppedmyappprompt>Which of the following commands will resume executing the stopped process and make it the current job? \n A. bgmyapp \n B. continue myapp \n C. exec myapp \n D. fgmyapp \n E. myapp& \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-resume-executing-t/",
@@ -2950,7 +2950,7 @@
         },
         {
             "id": 49,
-            "question": "Which of the following commands will send output from the program myapp to both standard output (stdout)and the file file1.log? \n A. cat <myapp | cat &gt; file1.log \n B. myapp 0&gt;&1 | cat &gt; file1.log \n C. myapp | cat &gt; file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
+            "question": "Which of the following commands will send output from the program myapp to both standard output (stdout)and the file file1.log? \n A. cat <myapp | cat > file1.log \n B. myapp 0>&1 | cat > file1.log \n C. myapp | cat > file1.log \n D. myapp | tee file1.log \n E. tee myapp file1.log \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-send-output-from-t/",
@@ -4641,41 +4641,382 @@
     ],
     "Exam-Topics 101 - Paywall breached": [
         {
-            "id":"1",
-            "question":"Which wildcards will match the following filenames? (Choose two.) \n Patterns to match : ttyS0 ttyS1 ttyS2 \n A. ttyS[1-5] \n B. tty?[0-5] \n C. tty*2 \n D. tty[A-Z][012] \n E. tty[Ss][02]",
-            "answer":"B,D",
-            "explanation":"We are talking about file globbing (limité à la console bash) and not about Regular Expressions here. \n Check ça : https://askubuntu.com/questions/714503/regular-expressions-vs-filename-globbing/714520#714520 \n Traditional glob wildcards support a very narrow set of metacharacters — * is 'anything', ? is an arbitrary single character; Bourne shell also supports [a-z123] for a single character out of a set of alternatives, and [!x-z789] any one except those listed.   Regex obviously is much richer, supporting repetitions, and (in ERE) alternation and specific numbers of repetitions. Perl-style regex further extends the formalism to the point where multiple books have been written, and more will be. "
+            "id": 0,
+            "question": "Which wildcards will match the following filenames? (Choose two.) ttyS0 ttyS1 ttyS2 \n A.ttyS[1-5] \n B.tty?[0-5] \n C.tty*2 \n D.tty[A-Z][012] \n E.tty[Ss][02]",
+            "answer": "BD",
+            "explanation": "We are talking about file globbing (limit\u00e9 \u00e0 la console bash) and not about Regular Expressions here. \n Check \u00e7a : https://askubuntu.com/questions/714503/regular-expressions-vs-filename-globbing/714520#714520 \n Traditional glob wildcards support a very narrow set of metacharacters \u2014 * is 'anything', ? is an arbitrary single character; Bourne shell also supports [a-z123] for a single character out of a set of alternatives, and [!x-z789] any one except those listed.   Regex obviously is much richer, supporting repetitions, and (in ERE) alternation and specific numbers of repetitions. Perl-style regex further extends the formalism to the point where multiple books have been written, and more will be. ",
+            "url": "https://www.examtopics.com/discussions/lpi/view/21425-exam-101-500-topic-1-question-54-discussion"
         },
         {
-            "id":"2",
-            "question":"Which of the following commands redirects the output of ls to standard error? \n A. ls >-1 \n B. ls <<ERR \n C. ls >&2 \n D. ls >>2 \n E. ls |error",
-            "answer":"C",
-            "explanation":"C is correct: ls>&2 sends the ls output to the 2 (stderr) location \n A, B, D, and E are wrong : \n ls>-1 creates a file -1 that is the output of ls \n <<ERR sets the ERR string as the end of input \n ls>>2 would append to a file '2' \n ls |error is an invalid command"
+            "id": 1,
+            "question": "Which of the following commands redirects the output of ls to standard error? \n A.ls >-1 \n B.ls <<ERR \n C.ls >&2 \n D.ls >>2 \n E.ls |error",
+            "answer": "C",
+            "explanation": "C is correct: ls>&2 sends the ls output to the 2 (stderr) location \n A, B, D, and E are wrong : \n ls>-1 creates a file -1 that is the output of ls \n <<ERR sets the ERR string as the end of input \n ls>>2 would append to a file '2' \n ls |error is an invalid command",
+            "url": "https://www.examtopics.com/discussions/lpi/view/49920-exam-101-500-topic-1-question-55-discussion"
         },
         {
-            "id":"3",
-            "question":"Which of the following commands displays the contents of a gzip compressed tar archive? \n A. gzip archive.tgz | tar xvf - \nB. tar ג€'fzt archive.tgz \n C. gzip ג€'d archive.tgz | tar tvf - \nD. tar cf archive.tgz \nE. tar ztf archive.tgz \n",
-            "answer":"E",
-            "explanation":"-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE."
+            "id": 2,
+            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A.gzip archive.tgz | tar xvf - \n B.tar \u05d2\u20ac\"fzt archive.tgz \n C.gzip \u05d2\u20ac\"d archive.tgz | tar tvf - \n D.tar cf archive.tgz \n E.tar ztf archive.tgz",
+            "answer": "E",
+            "explanation": "-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/30630-exam-101-500-topic-1-question-56-discussion"
         },
         {
-            "id":"4",
-            "question":"Which of the following regular expressions represents a single upper-case letter?\nA. :UPPER:\n B. [A-Z]\n C. !a-z\n D. %C\n E. {AZ}",
-            "answer":"B",
-            "explanation":"Pas besoin d'explication, c'est la base."
+            "id": 3,
+            "question": "Which of the following regular expressions represents a single upper-case letter? \n A.:UPPER: \n B.[A-Z] \n C.!a-z \n D.%C \n E.{AZ}",
+            "answer": "B",
+            "explanation": "Pas besoin d'explication, c'est la base.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/59718-exam-101-500-topic-1-question-58-discussion"
         },
         {
-            "id":"5",
-            "question":"Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
-            "answer":"nice",
-            "explanation":"nice = lancer un prog avec une priorité spécifiée. Renice = pariel mais sur un programme déjà en route."
+            "id": 5,
+            "question": "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to identify the intended partition? (Choose two.) \n A.LABEL \n B.ID \n C.FIND \n D.NAME \n E.UUID",
+            "answer": "AE",
+            "explanation": "If you want to automatically mount a partition to a specific location using /etc/fstab file, then you must put an entry there.\nFor example : '/dev/sdb1 /storage/disk2p1 ext4 defaults 0 0' \nHere, /dev/sdb1 is set to mount at the path /storage/disk2p1. This is alright and it works. But there is a problem. /dev/sdb1 is the first partition of the second hard drive of your computer. Similarly, /dev/sda1 is the first partition of the first hard drive. There is no guarantee that /dev/sdb1 will always be /dev/sdb1. Depending on the order of how you connected the hard drives to your motherboard, it may change. If that happens, your hard drives may be mounted in the wrong mount points resulting data loss or data corruption.\nTo solve this, we can use UUID or LABEL. UUID is a better choice as it is unique throughout the system. Even if it\u2019s different computer system, the probability of duplicate UUID is almost zero.\nLABEL on the other hand is a short name that you can put it when you format a partition to identify the disk. Many people can use the same LABEL. So, the uniqueness of LABEL depends on how creative you are at naming your partitions.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/63822-exam-101-500-topic-1-question-61-discussion"
         },
         {
-            "id":"6",
-            "question":"Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
-            "answer":"nice",
-            "explanation":"nice = lancer un prog avec une priorité spécifiée. Renice = pareil mais sur un programme déjà en route."
+            "id": 6,
+            "question": "A yum repository can declare sets of related packages. Which yum command installs all packages belonging to the group admintools? \n A.yum pkgsel --install admintools \n B.yum install admintools/* \n C.yum groupinstall admintools \n D.yum taskinstall admintools \n E.yum collection install admintools",
+            "answer": "C",
+            "explanation": "For more info about YUM, please read the pdf at 'sources\\originals\\lpic-1_linux_professional_institute_certification_study_guide_exam_101-400_and_exam_102-400_4th_edi.pdf' at page 111 - 'Using YUM'",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58554-exam-101-500-topic-1-question-62-discussion"
+        },
+        {
+            "id": 8,
+            "question": "Which of the following commands installs the GRUB boot files into the currently active file systems and the boot loader into the first partition of the first disk? \n A.grub-install /dev/sda \n B.grub-install /dev/sda1 \n C.grub-install current /dev/sda0 \n D.grub-install /dev/sda0 \n E.grub-install current /dev/sda1",
+            "answer": "B",
+            "explanation": "Ca devrait être la B, car il est bien demandé 'first partition of the first disk'. La wiki CentOS dirige vers la réponse B : https://wiki.centos.org/HowTos/GrubInstallation#Installing_Grub_using_grub-install \n On peut aussi lire le pdf : 'sources\\originals\\lpic-1_linux_professional_institute_certification_study_guide_exam_101-400_and_exam_102-400_4th_edi.pdf' à la page 296. ' ",
+            "url": "https://www.examtopics.com/discussions/lpi/view/26508-exam-101-500-topic-1-question-64-discussion"
+        },
+        {
+            "id": 9,
+            "question": "Which of the following files are found in the /boot/ file system? (Choose two.) \n A.Linux kernel images \n B.Bash shell binaries \n C.systemd target and service units \n D.Initial ramdisk images \n E.fsck binaries",
+            "answer": "AD",
+            "explanation": "C'est bien AD, il suffit de vérifier en faisant la commande ls -la /boot.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/17478-exam-101-500-topic-1-question-65-discussion"
+        },
+        {
+            "id": 10,
+            "question": "Which file defines the network locations from where the Debian package manager downloads software packages? \n A./etc/dpkg/dpkg.cfg \n B./etc/apt/apt.conf.d \n C./etc/apt/apt.conf \n D./etc/dpkg/dselect.cfg \n E./etc/apt/sources.list",
+            "answer": "E",
+            "explanation": "",
+            "url": "https://www.examtopics.com/discussions/lpi/view/67131-exam-101-500-topic-1-question-66-discussion"
+        },
+        {
+            "id": 11,
+            "question": "When removing a package on a system using dpkg package management, which dpkg option ensures configuration files are removed as well? \n A.--clean \n B.--purge \n C.--vacuum \n D.--remove \n E.--declare",
+            "answer": "B",
+            "explanation": "-r will remove package but keep config files.\n -p --purge will remove all including config files.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58556-exam-101-500-topic-1-question-67-discussion"
+        },
+        {
+            "id": 12,
+            "question": "Which of the following statements are correct when comparing Linux containers with traditional virtual machines (e.g. LXC vs. KVM)? (Choose three.) \n A.Containers are a lightweight virtualization method where the kernel controls process isolation and resource management. \n B.Fully virtualized machines can run any operating system for a specific hardware architecture within the virtual machine. \n C.Containers are completely decoupled from the host system's physical hardware and can only use emulated virtual hardware devices. \n D.The guest environment for fully virtualized machines is created by a hypervisor which provides virtual and emulated hardware devices. \n E.Containers on the same host can use different operating systems, as the container hypervisor creates separate kernel execution.",
+            "answer": "ABD",
+            "explanation": "A, B, and D are right.\n C is for traditional KVM. For E, it would be yes if hypervisor was replaced with container namespace and the same kernel execution were referenced, then this would be accurate. So choice E is wrong. However, LXC does focus on OS containerization and the goal is to not need a separate kernel.\n Check this :https://linuxcontainers.org/lxc/manpages/man5/lxc.container.conf.5.html",
+            "url": "https://www.examtopics.com/discussions/lpi/view/47287-exam-101-500-topic-1-question-68-discussion"
+        },
+        {
+            "id": 13,
+            "question": "The installation of a local Debian package failed due to unsatisfied dependencies. Which of the following commands installs missing dependencies and completes the interrupted package installation? \n A.dpkg --fix --all \n B.apt-get autoinstall \n C.dpkg-reconfigure --all \n D.apt-get all \n E.apt-get install -f",
+            "answer": "E",
+            "explanation": "man apt-get: -f, --fix-broken - Fix; attempt to correct a system with broken dependencies in place.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/63647-exam-101-500-topic-1-question-69-discussion"
+        },
+        {
+            "id": 14,
+            "question": "Which of the following commands lists all currently installed packages when using RPM package management? \n A.yum --query --all \n B.yum --list --installed \n C.rpm --query --list \n D.rpm --list --installed \n E.rpm --query --all",
+            "answer": "E",
+            "explanation": "Et la version short sera rpm -qa",
+            "url": "https://www.examtopics.com/discussions/lpi/view/86949-exam-101-500-topic-1-question-70-discussion"
+        },
+        {
+            "id": 15,
+            "question": "Which of the following commands are valid in the GRUB 2 configuration file? (Choose two.) \n A.menuentry \n B.uefi \n C.pxe-ifconfig \n D.insmod \n E.kpartx",
+            "answer": "AD",
+            "explanation": "menuentry: 'From the GRUB 2 menu at boot, the user can also determine which Ubuntu is controlling the boot on a multi-OS system. By default, the first menuentry always lists an option from the installation which is in charge of GRUB 2. For example, if the first menuentry contains 'on sda5, then the GRUB installed on sda5 OS is controlling the menu/boot.' (https://help.ubuntu.com/community/Grub2/Setup) \n insmod : Insert the dynamic GRUB module called module. \n pxe-ifconfig is invalid \n kpartx is related but not specifically in the grub2 config file (https://linux.die.net/man/8/kpartx).",
+            "url": "https://www.examtopics.com/discussions/lpi/view/57049-exam-101-500-topic-1-question-71-discussion"
+        },
+        {
+            "id": 16,
+            "question": "What is the purpose of the ldd command? \n A.It lists which shared libraries a binary needs to run. \n B.It installs and updates installed shared libraries. \n C.It turns a dynamically linked binary into a static binary. \n D.It defines which version of a library should be used by default. \n E.It runs a binary with an alternate library search path.",
+            "answer": "A",
+            "explanation": "man ldd: ldd prints the shared libraries required by each program or shared library specified on the command line.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/63648-exam-101-500-topic-1-question-72-discussion"
+        },
+        {
+            "id": 17,
+            "question": "What can the Logical Volume Manager (LVM) be used for? (Choose three.) \n A.To create snapshots. \n B.To dynamically change the size of logical volumes. \n C.To dynamically create or delete logical volumes. \n D.To create RAID 9 arrays. \n E.To encrypt logical volumes.",
+            "answer": "ABC",
+            "explanation": "",
+            "url": "https://www.examtopics.com/discussions/lpi/view/63823-exam-101-500-topic-1-question-73-discussion"
+        },
+        {
+            "id": 18,
+            "question": "What are the main differences between GPT and MBR partition tables regarding maximum number and size of partitions? (Choose two.) \n A.MBR can handle partition sizes up to 4 TB, whereas GPT supports partition sizes up to 128 ZB. \n B.By default, GPT can manage up to 128 partitions while MBR only supports four primary partitions. \n C.By default, GPT can manage up to 64 partitions while MBR only supports 16 primary partitions. \n D.MBR can handle partition sizes up to 2.2 TB, whereas GPT supports sizes up to 9.4 ZB. \n E.Both GPT and MBR support up to four primary partitions, each with up to 4096 TB.",
+            "answer": "BD",
+            "explanation": "Bcp de détails ici : https://www.freecodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/#:~:text=Differences%20between%20MBR%20vs%20GPT%20partitions&text=You%20can%20use%20a%20drive,maximum%20capacity%20of%209.7%20zetabytes.",
+            "url": "https://www.examtopics.com/discussions/lpi/view/65464-exam-101-500-topic-1-question-74-discussion"
+        },
+        {
+            "id": 19,
+            "question": "A backup software heavily uses hard links between files which have not been changed in between two backup runs. Which benefits are realized due to these hard links? (Choose two.) \n A.The old backups can be moved to slow backup media, such as tapes, while still serving as hard link target in new backups. \n B.The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time. \n C.The backup is guaranteed to be uncharged because a hard linked file cannot be modified after its creation. \n D.The backup consumes less space because the hard links point to the same data on disk instead of storing redundant copies. \n E.The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data.",
+            "answer": "DE",
+            "explanation": "A is wrong because Hard Links cannot cross filesystem boundaries or span across partitions.\n B : sounds weird \n C: lie: a hardlink can be modified as long as the inode number is same as the 'original file', (which is really the original index entry to the data) \n  ",
+            "url": "https://www.examtopics.com/discussions/lpi/view/27153-exam-101-500-topic-1-question-75-discussion"
+        },
+        {
+            "id": 21,
+            "question": "How many fields are in a syntactically correct line of /etc/fstab? \n A.3 \n B.4 \n C.5 \n D.6 \n E.7",
+            "answer": "D",
+            "explanation": "<device> / <mount point> / <file system type> / <options> / <dump> / <pass num> \n Device - Device / partition that contains a file system. \n Mount point - The point where it can access the device / partition (the /) \n File system type - eg. ntfs, ext4,3,2, vfat \n Options - rg. dmask=027, fmask=137 (Cause umask=000 would make everything executable)\n Dump - Enable / disable backup of the device (Default is 0)\n Pass num - Order of whick fsck will check the device/partition (Root should be 1, other partitions should be 2.)",
+            "url": "https://www.examtopics.com/discussions/lpi/view/48585-exam-101-500-topic-1-question-77-discussion"
+        },
+        {
+            "id": 22,
+            "question": "Running chmod 640 filea.txt as a regular user doesn't update filea.txt's permission. What might be a reason why chmod cannot modify the permissions? (Choose two.) \n A.filea.txt is owned by another user and a regular user cannot change the permissions of another user's file. \n B.filea.txt is a symbolic link whose permissions are a fixed value which cannot be changed. \n C.filea.txt has the sticky bit set and a regular user cannot remove this permission. \n D.filea.txt is a hard link whose permissions are inherited from the target and cannot be set directly. \n E.filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.",
+            "answer": "AB",
+            "explanation": "About hardlinks : When you create a new filename (that(s what a hardlink is) pointing to the exact same data as the old filename. This means that the two filenames, though different, point to identical data. [...] When changes are made to one filename, the other reflects those changes. The permissions, link count, ownership, timestamps, and file content are the exact same. If the original file is deleted, the data still exists under the secondary hard link. The data is only removed from your drive when all links to the data have been removed. If you find two files with identical properties but are unsure if they are hard-linked, use the ls -i command to view the inode number. \n About the sticky bit, it doesn't prevent 'regular users' from modifying if they are owner, so it's like A. \n For SetUID, setuid: a bit that makes an executable run with the privileges of the owner of the file. So not related. ",
+            "url": "https://www.examtopics.com/discussions/lpi/view/37539-exam-101-500-topic-1-question-78-discussion"
+        },
+        {
+            "id": 23,
+            "question": "Which of the following Linux filesystems preallocate a fixed number of inodes when creating a new filesystem instead of generating them as needed? (Choose two.) \n A.JFS \n B.ext3 \n C.XFS \n D.ext2 \n E.procfs",
+            "answer": "BD",
+            "explanation": "XFS dynamically allocates inodes.\n JFS dynamically allocates space for disk inodes as required, freeing the space when it is no longer required. This is a radical improvement over Ext2, which reserves a fixed amount of space for disk inodes at file system creation time. \n Ext2 doesnt dynamically allocate inodes, and Ext3 is the same as Ext4 with an added journal thingy. \n Procfs is also doing it",
+            "url": "https://www.examtopics.com/discussions/lpi/view/69361-exam-101-500-topic-1-question-79-discussion"
+        },
+        {
+            "id": 24,
+            "question": "Which of the following commands sets the SetUID permission on the executable /bin/foo? \n A.chmod 4755 /bin/foo \n B.chmod 1755 /bin/foo \n C.chmod u-s /bin/foo \n D.chmod 755+s /bin/foo \n E.chmod 2755 /bin/foo",
+            "answer": "A",
+            "explanation": "For the special permissions, you need to prepend these numbers with another number where 4 is setuid, 2 is setgid, and 1 is the sticky bit =^._.^=",
+            "url": "https://www.examtopics.com/discussions/lpi/view/39885-exam-101-500-topic-1-question-80-discussion"
+        },
+        {
+            "id": 25,
+            "question": "Which of the following commands can be used to display the inode number of a given file? (Choose two.) \n A.inode \n B.ln \n C.ls \n D.cp \n E.stat",
+            "answer": "CE",
+            "explanation": "ls -i [filename] and stat [filename]",
+            "url": "https://www.examtopics.com/discussions/lpi/view/50750-exam-101-500-topic-1-question-81-discussion"
+        },
+        {
+            "id": 26,
+            "question": "Which of the following settings for umask ensures that new files have the default permissions -rw-r-----? \n A.0017 \n B.0640 \n C.0038 \n D.0227 \n E.0027",
+            "answer": "E",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/20505-exam-101-500-topic-1-question-82-discussion"
+        },
+        {
+            "id": 27,
+            "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \n A.echo \"${PWD}\" \n B.echo \"${WD}\" \n C.printwd \n D.pwd \n E.echo \"${pwd}\"",
+            "answer": "AC",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/15174-exam-101-500-topic-1-question-82-discussion"
+        },
+        {
+            "id": 28,
+            "question": "After a power outage, the XFS file system of /dev/sda3 is inconsistent. How can the existing file system errors be fixed? \n A.By using mount -f to force a mount of the file system \n B.By running xfsck on the file system \n C.By mounting the file system with the option xfs_repair \n D.By running xfsadmin repair on the file system \n E.By running xfs_repair on the file system",
+            "answer": "E",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58912-exam-101-500-topic-1-question-83-discussion"
+        },
+        {
+            "id": 29,
+            "question": "Which of the following properties of an existing file changes when a hard link pointing to that file is created? \n A.File size \n B.Link count \n C.Modify timestamp \n D.Inode number \n E.Permissions",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/50751-exam-101-500-topic-1-question-84-discussion"
+        },
+        {
+            "id": 31,
+            "question": "Which of the following commands show how the shell handles a specific command? \n A.where \n B.type \n C.stat \n D.case \n E.fileinfo",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/44996-exam-101-500-topic-1-question-86-discussion"
+        },
+        {
+            "id": 32,
+            "question": "When in Normal mode in vi, which character can be used to begin a reverse search of the text? \n A.r \n B./ \n C.F \n D.? \n E.s",
+            "answer": "D",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58864-exam-101-500-topic-1-question-87-discussion"
+        },
+        {
+            "id": 33,
+            "question": "Which of the following commands displays the manual page command from section 1? \n A.man command(1) \n B.man command@1 \n C.man 1 command \n D.man 1.command \n E.man -s 1 command",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/34900-exam-101-500-topic-1-question-88-discussion"
+        },
+        {
+            "id": 34,
+            "question": "Which of the following commands creates or, in case it already exists, overwrites a file called data with the output of ls? \n A.ls 3> data \n B.ls >& data \n C.ls > data \n D.ls >> data \n E.ls >>> data",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58558-exam-101-500-topic-1-question-89-discussion"
+        },
+        {
+            "id": 35,
+            "question": "Which of the following commands is used to change options and positional parameters within a running Bash shell? \n A.history \n B.setsh \n C.bashconf \n D.set \n E.envsetup",
+            "answer": "D",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/41465-exam-101-500-topic-1-question-90-discussion"
+        },
+        {
+            "id": 36,
+            "question": "Which of the following commands display the IDs of all processes owned by root? (Choose two.) \n A.pgrep -c root \n B.pgrep -u root \n C.pgrep -f root \n D.pgrep -U 0 \n E.pgrep -c 0",
+            "answer": "BD",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/19054-exam-101-500-topic-1-question-91-discussion"
+        },
+        {
+            "id": 37,
+            "question": "Which of the following sequences in the vi editor saves the opened document and exits the editor? (Choose two.) \n A.Ctrl XX \n B.Ctrl :W \n C.Esc zz \n D.Esc :wq \n E.Esc ZZ",
+            "answer": "DE",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/21241-exam-101-500-topic-1-question-92-discussion"
+        },
+        {
+            "id": 38,
+            "question": "What is the effect of the -v option for the grep command? \n A.It enables color to highlight matching parts. \n B.It shows the command's version information. \n C.It only outputs non-matching lines. \n D.It changes the output order showing the last matching line first. \n E.It outputs all lines and prefixes matching lines with a+.",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/37476-exam-101-500-topic-1-question-93-discussion"
+        },
+        {
+            "id": 39,
+            "question": "Which of the following tools can show the complete path of an executable file that the current shell would execute when starting a command without specifying its complete path? (Choose two.) \n A.find \n B.pwd \n C.which \n D.locate \n E.type",
+            "answer": "CE",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/34903-exam-101-500-topic-1-question-94-discussion"
+        },
+        {
+            "id": 40,
+            "question": "In Bash, inserting 1>&2 after a command redirects\"\u00a6 \n A.\"\u00a6standard error to standard input. \n B.\"\u00a6standard output to standard error. \n C.\"\u00a6standard input to standard error. \n D.\"\u00a6standard error to standard output. \n E.\"\u00a6standard output to standard input.",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58863-exam-101-500-topic-1-question-95-discussion"
+        },
+        {
+            "id": 41,
+            "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \n A.ABxxbc \n B.xxCxxc \n C.xxxxxx \n D.ABCabc \n E.Axxaxx",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
+        },
+        {
+            "id": 42,
+            "question": "Which of the following commands outputs test to the shell? \n A.cat <!EOT test EOT \n B.cat <|EOT test EOT \n C.cat !<EOT test EOT \n D.cat &<EOT test EOT \n E.cat <<EOT test EOT",
+            "answer": "E",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/22426-exam-101-500-topic-1-question-98-discussion"
+        },
+        {
+            "id": 43,
+            "question": "What is the default nice level when a process is started using the nice command? \n A.-10 \n B.0 \n C.10 \n D.15 \n E.20",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/15139-exam-101-500-topic-1-question-99-discussion"
+        },
+        {
+            "id": 44,
+            "question": "Which of the following commands can perform searches on file contents using regular expressions? \n A.find \n B.locate \n C.grep \n D.reggrep \n E.pgrep",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58861-exam-101-500-topic-1-question-101-discussion"
+        },
+        {
+            "id": 45,
+            "question": "In a nested directory structure, which find command line option would be used to restrict the command to searching down a particular number of subdirectories? \n A.-maxdepth \n B.-dirmax \n C.-maxlevels \n D.-s \n E.-n",
+            "answer": "A",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/16147-exam-101-500-topic-1-question-102-discussion"
+        },
+        {
+            "id": 46,
+            "question": "Which of the following commands determines a file's format by using a definition database file which contains information about all common file types? \n A.type \n B.file \n C.magic \n D.pmagic \n E.hash",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58562-exam-101-500-topic-1-question-103-discussion"
+        },
+        {
+            "id": 47,
+            "question": "Which of the following commands generates a list of user names from /etc/passwd along with their login shell? \n A.column -s : 1,7 /etc/passwd \n B.chop -c 1,7 /etc/passwd \n C.colrm 1,7 /etc/passwd \n D.sort -t: -k1,7 /etc/passwd \n E.cut -d: -f1,7 /etc/passwd",
+            "answer": "E",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/83398-exam-101-500-topic-1-question-104-discussion"
+        },
+        {
+            "id": 48,
+            "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \n A.Only a.txt, b.txt, and texts.tgz \n B.Only texts.tar and texts.tgz \n C.Only a.txt.gz and b.txt.gz \n D.Only a.txt and b.txt \n E.Only texts.tar",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
+        },
+        {
+            "id": 49,
+            "question": "In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be issued multiple times or applied to multiple rows? \n A.By using the command :repeat followed by the number and the command \n B.By specifying the number right in front of a command such as 41 or 2yj. \n C.By selecting all affected lines using the shit and cursor keys before applying the command. \n D.By issuing a command such as :set repetition=4 with repeats every subsequent command 4 times. \n E.By specifying the number after a command such as 14 or yj2 followed by escape.",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/31068-exam-101-500-topic-1-question-106-discussion"
+        },
+        {
+            "id": 50,
+            "question": "Which of the following statements is correct for a command ending with an & character? \n A.The command's output is redirected to /dev/null. \n B.The command is run in background of the current shell. \n C.The command's output is executed by the shell. \n D.The command is run as a direct child of the init process. \n E.The command's input is read from /dev/null.",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58862-exam-101-500-topic-1-question-107-discussion"
+        },
+        {
+            "id": 51,
+            "question": "What is the purpose of the xargs command? \n A.It passes arguments to an X server. \n B.It repeats the execution of a command using different parameters for each invocation. \n C.It reads standard input and builds up commands to execute. \n D.It asks a question, graphically, and returns the answer to the shell. \n E.It allows specifying long options (like --help) for commands that normally only accept short options (like -h)",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/55278-exam-101-500-topic-1-question-109-discussion"
+        },
+        {
+            "id": 53,
+            "question": "In Bash, inserting 1>&2 after a command redirects`\u00a6 \n A.\u05d2\u20ac\u00a6standard error to standard input. \n B.\u05d2\u20ac\u00a6standard output to standard error. \n C.\u05d2\u20ac\u00a6standard input to standard error. \n D.\u05d2\u20ac\u00a6standard error to standard output. \n E.\u05d2\u20ac\u00a6standard output to standard input.",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/88119-exam-101-500-topic-1-question-112-discussion"
+        },
+        {
+            "id": 54,
+            "question": "When booting from the hard disk, a computer successfully loads the Linux kernel and initramfs but hangs during the subsequent startup tasks. The system is booted using a Linux based rescue CD to investigate the problem. Which of the following methods helps to identify the root cause of the problem? \n A.Using the dmesg command from the rescue CD's shell to view the original system's boot logs. \n B.Investigating the file /proc/kmsg on the computer's hard disk for possible errors. \n C.Investigating the file /var/log on the computer's hard disk for possible errors. \n D.Using chroot to switch to the file system on the hard disk and use dmesg to view the logs. \n E.Rebooting again from the hard drive since the system successfully booted from the rescue CD.",
+            "answer": "C",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/31339-exam-101-500-topic-1-question-113-discussion"
+        },
+        {
+            "id": 55,
+            "question": "What is the correct way to set the default systemd boot target to multi-user? \n A.systemctl isolate multi-user.target \n B.systemctl set-runlevel multi-user.target \n C.systemctl set-boot multi-user.target \n D.systemctl set-default multi-user.target \n E.systemctl boot -p multi-user.target",
+            "answer": "D",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/72794-exam-101-500-topic-1-question-115-discussion"
+        },
+        {
+            "id": 56,
+            "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \n A.An initramfs is a compressed file system archive, which can be unpacked to examine its contents. \n B.An initramfs file contains the MBR, the bootloader and the Linux kernel. \n C.After a successful boot, the initramfs contents are available in /run/initramfs/. \n D.The kernel uses the initramfs temporarily before accessing the real root file system. \n E.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
+            "answer": "AC",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/19402-exam-101-500-topic-1-question-116-discussion"
+        },
+        {
+            "id": 57,
+            "question": "Which of the following commands loads a kernel module along with any required dependency modules? \n A.depmod \n B.modprobe \n C.module_install \n D.insmod \n E.loadmod",
+            "answer": "B",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/70996-exam-101-500-topic-1-question-117-discussion"
+        },
+        {
+            "id": 58,
+            "question": "What information can the lspci command display about the system hardware? (Choose three.) \n A.System battery type \n B.Device IRQ settings \n C.PCI bus speed \n D.Ethernet MAC address \n E.Device vendor identification",
+            "answer": "BCE",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/66020-exam-101-500-topic-1-question-118-discussion"
         }
-
     ]
-} 
+}

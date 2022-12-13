@@ -27,7 +27,7 @@ url = "https://www.briefmenow.org/linux/which-of-the-following-commands-updates-
 
 liste_patterns =['<br>','<font color="#333333">', '</font>', '<span.+span>', '\\n(.+)?']
 dico_answers = {}
-xpath1="/html/body/div/div/section/div[2]/article/div/p[1]"
+xpath1= "/html/body/div/div/section/div[2]/article/div/p[1]"
 xpath2 = "/html/body/div/div/section/div[2]/article/div/p[2]"
 xpath3 = "/html/body/div/div/section/div[2]/article/div/p[3]"
 xpath4 = "/html/body/div/div/section/div[2]/article/div/p[4]"
