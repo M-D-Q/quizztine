@@ -75,9 +75,13 @@ Your answer is (no spaces, no commas, only capital letters) :
             print(f"""
 Incorrect, the answer was {john['answer']} !
              """)
+            if john ['explanation'] != "":
+                print(f"""
+Some explanation : {john['explanation']}
+""")
             try : 
                 print(f"""
-
+    
 Fiabilité de la réponse : {john['warning']}
 URL : {john['url']})
             """)
@@ -87,6 +91,10 @@ URL : {john['url']})
             print(f"""
 Well done ! {response} is correct ! 
             """)
+            if john ['explanation'] != "":
+                print(f"""
+Some explanation : {john['explanation']}
+""")
             try : 
                 print(f"""
                 
