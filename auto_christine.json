@@ -9,7 +9,7 @@
         {
             "id": "2",
             "question": "How can you tell whether your system is using inetd or xinetd as a super server?  (Select two.)  \n A. Type ps ax | grep inetd, and examine the output for signs of inetd or xinetd.  \n B. Type superserver to see a report on which super server is running.  \n C. Look for the /etc/inetd.conf file or /etc/xinetd.d subdirectory, which are signs of  inetd or xinetd, respectively.  \n D. Examine the /etc/inittab file to see which super server is launched by init, which is  responsible for this task.  \n E. Type netstat -a | grep inet and examine the output for signs of inetd or xinetd.  ",
-            "answer": "A, C",
+            "answer": "AC",
             "explanation": "Examining a process listing (obtained from ps) for signs of the super server is the most reliable way to determine which one is actually running, so option A is correct. The presence of the super server\u2019s configuration file or files (as in option C) is also a good diagnostic, although some older systems that have been upgraded may have both sets of configuration files. There is no standard superserver utility to report on which one is used, so option B is incorrect. Most distributions launch the super server through a SysV startup script; the /etc/inittab file isn\u2019t directly involved in this process, so examining it would be pointless, and option D is incorrect. Although the output of netstat -ap, when typed as root, will include an indication of any instance of inetd or xinetd that\u2019s listening for connections, option E omits the critical -p option, which causes the program to display process names. Thus, option E is incorrect. For more information, see Chapter 10, \u201cSecuring Your System.\u201d   \n"
         },
         {
@@ -27,7 +27,7 @@
         {
             "id": "5",
             "question": "Which of the following are required when configuring a computer to use a static IP  address? (Select two.)  \n A. The IP address of the DHCP server  \n B. The hostname of the NBNS server  \n C. The computer\u2019s IP address  \n D. The network mask  \n E. The IP address of the NTP server           ",
-            "answer": "C, D",
+            "answer": "CD",
             "explanation": "The computer\u2019s IP address (option C) and network mask (aka subnet mask or netmask; option D) are the most critical components in TCIP/IP network configuration. (Additional information that you may need to provide on many networks includes the IP addresses of one to three DNS servers, the hostname or IP address of a router, and the computer\u2019s hostname.) You shouldn\u2019t need the IP address of a Dynamic Host             Configuration Protocol (DHCP) server (option A)\u2014and if a DHCP server is present, chances are you should be using DHCP rather than static IP address assignment. A NetBIOS Name Service (NBNS) server (option B) converts between names and IP addresses on NetBIOS networks. The hostname of such a computer isn\u2019t likely to be a critical configuration element, although you may need to provide this information to Samba for some operations to function correctly when sharing files. A Network Time Protocol (NTP) server (option E) helps you maintain system time on all of your computers, but this isn\u2019t required for basic network configuration. For more information, see Chapter 8, \u201cConfiguring Basic Networking.\u201d   \n"
         },
         {
@@ -57,7 +57,7 @@
         {
             "id": "10",
             "question": "Which of the following are journaling filesystems for Linux? (Select three.)  \n A. vfat  \n B. ReiserFS  \n C. Ext2fs           \n D. Ext3fs  \n E. XFS  ",
-            "answer": "B, D, E",
+            "answer": "BDE",
             "explanation": "ReiserFS (option B) was written from scratch for Linux. The Third Extended Filesystem (ext3fs; option D) is a journaling filesystem based on the older non-journaling Second Extended Filesystem (ext2fs; option C). The Extents Filesystem (XFS; option E) is a journaling filesystem written by SGI for Irix and later ported to Linux. The Virtual File Allocation Table (vfat; option A) is a non-journaling filesystem designed by Microsoft for Windows. For more information, see Chapter 3, \u201cConfiguring Hardware.\u201d   \n"
         },
         {
@@ -69,7 +69,7 @@
         {
             "id": "12",
             "question": "Which of the following ports are commonly used to retrieve email from an email server  computer? (Select two.)  \n A. 110  \n B. 119  \n C. 139  \n D. 143  \n E. 443  ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "Port 110 (option A) is assigned to the Post Office Protocol (POP), and port 143 (option D) is assigned to the Internet Message Access Protocol (IMAP), both of which may be used to retrieve email messages from an email server system. Port 119 (option B) is assigned to the Network News Transfer Protocol (NNTP), port 139 (option C) is assigned to the Server Message Block/Common Internet File System (SMB/CIFS) protocol, and port 443 (option E) is assigned to the Hypertext Transfer Protocol with SSL encryption (HTTPS), none of which is commonly used for email retrieval. For more information, see Chapter 8.   \n"
         },
         {
@@ -99,7 +99,7 @@
         {
             "id": "17",
             "question": "What software can you use to drive a Braille display device? (Select two.)  \n A. Emacspeak  \n B. BRLTTY  \n C. A 2.6.26 or later kernel  \n D. GOK  \n E. A framebuffer driver   ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "The BRLTTY package is an add-on daemon for handling a Braille display device, and some features for using these devices have been added to the 2.6.26 kernel, so options B and C are correct. Emacspeak (option A) is speech-synthesis software; it can be used to \u201cspeak\u201d a text display to a user, but it doesn\u2019t interface with Braille displays. GOK (option D) is an onscreen keyboard, not a Braille display tool. Framebuffer drivers (option E) are kernel drivers for managing conventional video cards; they aren\u2019t used to drive Braille displays. For more information, see Chapter 6.  \n"
         },
         {
@@ -123,7 +123,7 @@
         {
             "id": "21",
             "question": "Which of the following commands will install an RPM package file called  theprogram-1.2.3-4.i386.rpm on a computer? (Select two.)  \n A. rpm -Uvh theprogram-1.2.3-4.i386.rpm  \n B. rpm -i theprogram-1.2.3-4.i386.rpm  \n C. rpm -U theprogram  \n D. rpm -e theprogram-1.2.3-4.i386.rpm  \n E. rpm -Vp theprogram-1.2.3-4.i386.rpm  ",
-            "answer": "A, B",
+            "answer": "AB",
             "explanation": "The -Uvh parameter (option A) issues an upgrade command (which installs the program whether or not an earlier version is installed) and creates a series of hash marks to display the command\u2019s progress. The -i parameter (option B) installs the program if it\u2019s not already installed but causes no progress display. Option C uses a package name, not a complete filename, and so it will fail to install the package file. The -e option (option D) removes a package. Option E\u2019s -Vp option verifies the package file but doesn\u2019t install it. For more information, see Chapter 2.  \n"
         },
         {
@@ -141,13 +141,13 @@
         {
             "id": "24",
             "question": "Which of the following commands displays help on topic, when typed in a Linux  shell? (Select two.)  \n A. manual topic  \n B. man topic           \n C. ? topic  \n D. info topic  \n E. hint topic   ",
-            "answer": "B, D",
+            "answer": "BD",
             "explanation": "The correct answers, man and info (options B and D), are two common Linux help packages. Although ? (option C) is a common help command within certain interactive programs, it isn\u2019t a help command in bash or other common Linux shells. There is no common command called manual (option A), nor is hint (option E) a valid bash command or common program name. For more information, see Chapter 1.  \n"
         },
         {
             "id": "25",
             "question": "A computer\u2019s hardware clock keeps track of the time while the computer is powered off.  In what formats may this time be stored on an x86 Linux system? (Select two.)  \n A. Coordinated Universal Time (UTC)  \n B. Internet Time  \n C. Local time  \n D. 12-hour time  \n E. Mars time   ",
-            "answer": "A, C",
+            "answer": "AC",
             "explanation": "Unix systems traditionally store time in UTC (aka Greenwich mean time), and Linux may do so as well. Thus, option A is correct. Most other x86 PC OSs traditionally store time as the local time, however, so Linux also supports this option and option C is also correct. Internet Time (option B) is an alternative to the 24-hour clock in which the day is broken into 1,000 \u201cbeats.\u201d Standard PC BIOSs don\u2019t support this time format. Likewise, a 12-hour clock isn\u2019t terribly useful to computers because it doesn\u2019t differentiate a.m. from p.m., making option D incorrect. Although the length of the Martian day is similar to that of Earth (24 hours and 37 minutes), those wanting to colonize Mars will have to wait for PC clocks to support setting time for the Red Planet; option E is incorrect. For more information, see Chapter 7.  \n"
         },
         {
@@ -159,7 +159,7 @@
         {
             "id": "27",
             "question": "You want to enable all members of the music group to read the instruments.txt file,  which currently has 0640 (-rw-r-----) permissions, ownership by root, and group  ownership by root. How might you accomplish this goal? (Select two.)  \n A. Type chown music instruments.txt in the file\u2019s directory.  \n B. Type chgrp music instruments.txt in the file\u2019s directory.  \n C. Type chgroup music instruments.txt in the file\u2019s directory.  \n D. Type chmod 0600 instruments.txt in the file\u2019s directory.  \n E. Type chown :music instruments.txt in the file\u2019s directory.   ",
-            "answer": "B, E",
+            "answer": "BE",
             "explanation": "The chgrp and chown commands can both change the group ownership of a file. The chgrp command takes a group name and a filename as parameters, as in option B. The chown command normally changes a file\u2019s owner; but if you provide a group name preceded by a dot (.) or a colon (:), as in option E, it changes the group of a file. The chown command as used in option A, will change the primary ownership of the file to the music user, if such a user exists on the system; it won\u2019t change the group ownership. There is no standard chgroup command, as in option C. Option D will change the permissions to 0600 (-rw-------), which will be a step backward with respect to the goal stated. For more information, see Chapter 4.  \n"
         },
         {
@@ -171,7 +171,7 @@
         {
             "id": "29",
             "question": "Which of the following, when typed in vi\u2019s command mode, saves a file and quits the  program? (Select two.)  \n A. :rq  \n B. :wq           \n C. :re  \n D. :we  \n E. ZZ  ",
-            "answer": "B, E",
+            "answer": "BE",
             "explanation": "The colon (:) starts ex mode, from which you can enter commands. In ex mode, r includes a file in an existing one, w writes a file, e loads an entirely new file, and q quits the program. Thus the desired combination is :wq (option B). As a special case, ZZ does the same thing, so option E is also correct. For more information, see Chapter 5.  \n"
         },
         {
@@ -197,7 +197,7 @@
         {
             "id": 3,
             "question": "Which run levels should never be declared as the default run level when using SysV init?(Choose TWO correct answers.) \n A. 1 \n B. 3 \n C. 5 \n D. 6 \n E. 0 \n",
-            "answer": "D,E",
+            "answer": "DE",
             "explanation": "https://www.briefmenow.org/comptia/which-run-levels-should-never-be-declared-as-the-default-run-level-when-using-sysv-init-2/"
         },
         {
@@ -209,37 +209,37 @@
         {
             "id": 5,
             "question": "What of the following statements are true regarding /dev/ when using udev? (Choose TWOcorrect answers.) \n A. Entries for all possible devices get created on boot even if those devices are not connected. \n B. Additional rules for udev can be created by adding them to /etc/udev/rules.d/. \n C. When using udev, it is not possible to create block or character devices in /dev/ using mknod. \n D. The /dev/ directory is a filesystem of type tmpfs and is mounted by udev during system startup. \n E. The content of /dev/ is stored in /etc/udev/dev and is restored during system startup. \n",
-            "answer": "B,D",
+            "answer": "BD",
             "explanation": "https://www.briefmenow.org/comptia/what-of-the-following-statements-are-true-regarding-dev-when-using-udev-2/"
         },
         {
             "id": 6,
             "question": "Which of the following information is stored within the BIOS? (Choose TWO correctanswers.) \n A. Boot device order \n B. Linux kernel version \n C. Timezone \n D. Hardware configuration \n E. The system's hostname \n",
-            "answer": "A,D",
+            "answer": "AD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-information-is-stored-within-the-bios-2/"
         },
         {
             "id": 7,
             "question": "Which of the following commands reboots the system when using SysV init? (Choose TWOcorrect answers.) \n A. telinit 0 \n B. telinit 6 \n C. shutdown -r \u201crebooting\u201d \n D. shutdown -r now \n E. shutdown -k now \u201crebooting\u201d \n",
-            "answer": "B,D",
+            "answer": "BD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-reboots-the-system-when-using-sysv-init-2/"
         },
         {
             "id": 8,
             "question": "Which of the following are init systems used within Linux systems? (Choose THREE correctanswers.) \n A. SysV init \n B. startd \n C. systemd \n D. Upstart \n E. SysInit \n",
-            "answer": "A,C,D",
+            "answer": "ACD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-are-init-systems-used-within-linux-systems-2/"
         },
         {
             "id": 9,
             "question": "What information can the lspci command display about the system hardware? (ChooseTHREE correct answers.) \n A. PCI bus speed \n B. System battery type \n C. Device vendor identification \n D. Ethernet MAC address \n E. Device IRQ settings \n",
-            "answer": "A,C,E",
+            "answer": "ACE",
             "explanation": "https://www.briefmenow.org/comptia/what-information-can-the-lspci-command-display-about-the-system-hardware-2/"
         },
         {
             "id": 10,
             "question": "Which of the following commands brings a system running SysV init into a state in which itis safe to perform maintenance tasks? (Choose TWO correct answers.) \n A. shutdown -single now \n B. runlevel 1 \n C. telinit 1 \n D. shutdown -R 1 now \n E. init 1 \n",
-            "answer": "C,E",
+            "answer": "CE",
             "explanation": "https://www.briefmenow.org/comptia/which-it-is-safe-to-perform-maintenance-tasks-2/"
         },
         {
@@ -293,7 +293,7 @@
         {
             "id": 19,
             "question": "What can the Logical Volume Manager (LVM) be used for? (Choose THREE correctanswers.) \n A. To create RAID 9 arrays. \n B. To dynamically change the size of logical volumes. \n C. To encrypt logical volumes. \n D. To create snapshots. \n E. To dynamically create or delete logical volumes. \n",
-            "answer": "B,D,E",
+            "answer": "BDE",
             "explanation": "https://www.briefmenow.org/comptia/what-can-the-logical-volume-manager-lvm-be-used-for-2/"
         },
         {
@@ -317,7 +317,7 @@
         {
             "id": 23,
             "question": "When using rpm \u2013verify to check files created during the installation of RPM packages,which of the following information is taken into consideration? (Choose THREE correctanswers.) \n A. GnuPG signatures \n B. Timestamps \n C. MD5 checksums \n D. Inodes \n E. File sizes \n",
-            "answer": "B,C,E",
+            "answer": "BCE",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-information-is-taken-into-consideration-2/"
         },
         {
@@ -527,7 +527,7 @@
         {
             "id": 58,
             "question": "From a Bash shell, which of the following commands directly executes the instruction fromthe file /usr/local/bin/runme.sh without starting a subshell? (Please select TWO answers.) \n A. source /usr/local/bin/runme.sh \n B. . /usr/local/bin/runme.sh \n C. /bin/bash /usr/local/bin/runme.sh \n D. /usr/local/bin/runme.sh \n E. run /usr/local/bin/runme.sh \n",
-            "answer": "A,B",
+            "answer": "AB",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-directly-executes-the-instruction-from-the-file-usrlocalbinrunmesh-without-starting-a-subshell-2/"
         },
         {
@@ -557,7 +557,7 @@
         {
             "id": 63,
             "question": "Which of the following sequences in the vi editor saves the opened document and exits theeditor? (Choose TWO correct answers.) \n A. esc :wq! \n B. ctrl XX \n C. ctrl :w! \n D. esc ZZ \n E. esc zz \n",
-            "answer": "A,D",
+            "answer": "AD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-sequences-in-the-vi-editor-saves-the-opened-document-and-exits-the-editor-2/"
         },
         {
@@ -623,7 +623,7 @@
         {
             "id": 74,
             "question": "Which of the following commands prints all files and directories within the /tmp directory orits subdirectories which are also owned by the user root? (Choose TWO correct answers.) \n A. find /tmp -uid root -print \n B. find -path /tmp -user root \u2013print \n C. find /tmp -user root \n D. find /tmp -user root -print \n E. find -path /tmp -uid root \n",
-            "answer": "C,D",
+            "answer": "CD",
             "explanation": "https://www.briefmenow.org/comptia/which-are-also-owned-by-the-user-root-2/"
         },
         {
@@ -641,13 +641,13 @@
         {
             "id": 77,
             "question": "Which of the following commands can be used to determine how long the system has beenrunning? (Choose TWO correct answers.) \n A. top \n B. uname -u \n C. uptime \n D. up \n E. time \u2013up \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-can-be-used-to-determine-how-long-the-system-has-been-running-2/"
         },
         {
             "id": 78,
             "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. %> \n B. < \n C. <<< \n D. > \n E. >>> \n",
-            "answer": "B,C,D",
+            "answer": "BCD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-are-valid-stream-redirection-operators-within-bash-2/"
         },
         {
@@ -659,7 +659,7 @@
         {
             "id": 80,
             "question": "After moving data to a new filesystem, how can the former path of the data be kept intact inorder to avoid reconfiguration of existing applications? (Choose TWO correct answers.) \n A. By creating an ACL redirection from the old to the new path of the data. \n B. By mounting the new filesystem on the original path of the data. \n C. By running the command touch on the old path. \n D. By creating a symbolic link from the old to the new path of the data. \n E. By creating a hard link from the old to the new path of the data. \n",
-            "answer": "B,D",
+            "answer": "BD",
             "explanation": "https://www.briefmenow.org/comptia/how-can-the-former-path-of-the-data-be-kept-intact-in-order-to-avoid-reconfiguration-of-existing-applications-2/"
         },
         {
@@ -701,7 +701,7 @@
         {
             "id": 87,
             "question": "In order to display all currently mounted filesystems, which of the following commands couldbe used? (Choose TWO correct answers.) \n A. free \n B. cat /proc/filesystems \n C. cat /proc/self/mounts \n D. lsmounts \n E. mount \n",
-            "answer": "C,E",
+            "answer": "CE",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-could-be-used-4/"
         },
         {
@@ -743,7 +743,7 @@
         {
             "id": 94,
             "question": "Which of the following commands creates an ext3 filesystem on /dev/sdb1? (Choose TWOcorrect answers.) \n A. /sbin/mke2fs -j /dev/sdb1 \n B. /sbin/mkfs -t ext3 /dev/sdb1 \n C. /sbin/mkfs -c ext3 /dev/sdb1 \n D. /sbin/mke3fs -j /dev/sdb1 \n",
-            "answer": "A,B",
+            "answer": "AB",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-creates-an-ext3-filesystem-on-devsdb1-2/"
         },
         {
@@ -761,7 +761,7 @@
         {
             "id": 97,
             "question": "Which of the following Linux filesystems preallocates a fixed number of inodes at thefilesystem's make/creation time and does NOT generate them as needed? (Choose TWOcorrect answers.) \n A. procfs \n B. XFS \n C. ext2 \n D. ext3 \n E. JFS \n",
-            "answer": "C,D",
+            "answer": "CD",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-linux-filesystems-preallocates-a-fixed-number-of-inodes-at-the-filesystems-makecreation-time-and-does-not-generate-them-as-needed-2/"
         },
         {
@@ -773,7 +773,7 @@
         {
             "id": 99,
             "question": "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may beused to identify the intended partition? (Choose TWO correct answers.) \n A. UUID \n B. FIND \n C. ID \n D. LABEL \n E. NAME \n",
-            "answer": "A,D",
+            "answer": "AD",
             "explanation": "https://www.briefmenow.org/comptia/what-other-options-may-be-used-to-identify-the-intended-partition-2/"
         },
         {
@@ -791,7 +791,7 @@
         {
             "id": 102,
             "question": "Which of the following commands set the sticky bit for the directory /tmp? (Choose TWOcorrect answers.) \n A. chmod +s /tmp \n B. chmod +t /tmp \n C. chmod 1775 /tmp \n D. chmod 4775 /tmp \n E. chmod 2775 /tmp \n",
-            "answer": "B,C",
+            "answer": "BC",
             "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-set-the-sticky-bit-for-the-directory-tmp-2/"
         },
         {
@@ -1003,7 +1003,7 @@
         {
             "id": 12,
             "question": "Which of the following commands prints all files and directories within the /tmp directory orits subdirectories which are also owned by the user root? (Choose TWO correct answers.) \n A. find /tmp -uid root -print \n B. find -path /tmp -uid root \n C. find /tmp -user root -print \n D. find /tmp -user root \n E. find -path /tmp -user root -print \n",
-            "answer": "C,D",
+            "answer": "CD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-are-also-owned-by-the-user-root-3/",
             "warning": "All appears to be good",
@@ -1021,7 +1021,7 @@
         {
             "id": 14,
             "question": "Which of the following are init systems used within Linux systems? (Choose THREE correctanswers.) \n A. startd \n B. systemd \n C. Upstart \n D. SysInit \n E. SysV init \n",
-            "answer": "B,C,E",
+            "answer": "BCE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-are-init-systems-used-within-lin-3/",
             "warning": "All appears to be good",
@@ -1057,7 +1057,7 @@
         {
             "id": 18,
             "question": "Which of the following information is stored within the BIOS? (Choose TWO correctanswers.) \n A. Boot device order \n B. Linux kernel version \n C. Timezone \n D. Hardware configuration \n E. The system's hostname \n",
-            "answer": "A,D",
+            "answer": "AD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-information-is-stored-within-the-3/",
             "warning": "All appears to be good",
@@ -1102,7 +1102,7 @@
         {
             "id": 23,
             "question": "What information can the lspci command display about the system hardware? (ChooseTHREE correct answers.) \n A. Device IRQ settings \n B. PCI bus speed \n C. System battery type \n D. Device vendor identification \n E. Ethernet MAC address \n",
-            "answer": "A,B,D",
+            "answer": "ABD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-information-can-the-lspci-command-display-about-th-3/",
             "warning": "All appears to be good",
@@ -1156,7 +1156,7 @@
         {
             "id": 29,
             "question": "In order to display all currently mounted filesystems, which of the following commands couldbe used? (Choose TWO correct answers.) \n A. cat /proc/self/mounts \n B. free \n C. mount \n D. lsmounts \n E. cat /proc/filesystems \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-could-be-used-7/",
             "warning": "All appears to be good",
@@ -1210,7 +1210,7 @@
         {
             "id": 35,
             "question": "Which of the following commands creates an ext3 filesystem on /dev/sdb1? (Choose TWOcorrect answers.) \n A. /sbin/mke2fs -j /dev/sdb1 \n B. /sbin/mkfs -t ext3 /dev/sdb1 \n C. /sbin/mkfs -c ext3 /dev/sdb1 \n D. /sbin/mke3fs -j /dev/sdb1 \n",
-            "answer": "A,B",
+            "answer": "AB",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-creates-an-ext3-filesys-3/",
             "warning": "All appears to be good",
@@ -1300,7 +1300,7 @@
         {
             "id": 45,
             "question": "What can the Logical Volume Manager (LVM) be used for? (Choose THREE correct answers.) \n A. To create RAID 9 arrays. \n B. To dynamically change the size of logical volumes. \n C. To encrypt logical volumes. \n D. To create snapshots. \n E. To dynamically create or delete logical volumes. \n",
-            "answer": "B,D,E",
+            "answer": "BDE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-can-the-logical-volume-manager-lvm-be-used-for-2/",
             "warning": "All appears to be good",
@@ -1345,7 +1345,7 @@
         {
             "id": 50,
             "question": "Which of the following commands reboots the system when using SysV init? (Choose TWOcorrect answers.) \n A. shutdown -r now \n B. shutdown -r \u201crebooting\u201d \n C. telinit 6 \n D. telinit 0 \n E. shutdown -k now \u201crebooting\u201d \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-reboots-the-system-when-3/",
             "warning": "All appears to be good",
@@ -1372,7 +1372,7 @@
         {
             "id": 53,
             "question": "Which of the following are filesystems which can be used on Linux root partitions? (Choosetwo.) \n A. NTFS \n B. ext3 \n C. XFS \n D. VFAT \n E. swap \n",
-            "answer": "B,E",
+            "answer": "BE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-can-be-used-on-linux-root-partitions/",
             "warning": "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY",
@@ -1480,7 +1480,7 @@
         {
             "id": 65,
             "question": "Which of the following Linux filesystems preallocates a fixed number of inodes at thefilesystem's make/creation time and does NOT generate them as needed? (Choose TWO correctanswers.) \n A. ext3 \n B. JFS \n C. ext2 \n D. XFS \n E. procfs \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-linux-filesystems-preallocates-a-3/",
             "warning": "All appears to be good",
@@ -1651,7 +1651,7 @@
         {
             "id": 84,
             "question": "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may beused to identify the intended partition? (Choose TWO correct answers.) \n A. FIND \n B. ID \n C. LABEL \n D. NAME \n E. UUID \n",
-            "answer": "C,E",
+            "answer": "CE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-other-options-may-be-used-to-identify-the-intended-4/",
             "warning": "All appears to be good",
@@ -1714,7 +1714,7 @@
         {
             "id": 91,
             "question": "From a Bash shell, which of the following commands directly executes the instruction from thefile /usr/local/bin/runme.sh without starting a subshell? (Please select TWO answers.) \n A. source /usr/local/bin/runme.sh \n B. . /usr/local/bin/runme.sh \n C. /bin/bash /usr/local/bin/runme.sh \n D. /usr/local/bin/runme.sh \n E. run /usr/local/bin/runme.sh \n",
-            "answer": "A,B",
+            "answer": "AB",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-directly-executes-the-i-3/",
             "warning": "All appears to be good",
@@ -1849,7 +1849,7 @@
         {
             "id": 106,
             "question": "What of the following statements are true regarding /dev/ when using udev? (Choose TWOcorrect answers.) \n A. Entries for all possible devices get created on boot even if those devices are not connected. \n B. Additional rules for udev can be created by adding them to /etc/udev/rules.d/. \n C. When using udev, it is not possible to create block orcharacter devices in /dev/ using mknod. \n D. The /dev/ directory is a filesystem of type tmpfs and is mounted by udev during system startup. \n E. The content of /dev/ is stored in /etc/udev/dev and is restored during system startup. \n",
-            "answer": "B,D",
+            "answer": "BD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-of-the-following-statements-are-true-regarding-de-2/",
             "warning": "All appears to be good",
@@ -1939,7 +1939,7 @@
         {
             "id": 116,
             "question": "Which of the following commands set the sticky bit for the directory /tmp? (Choose TWOcorrect answers.) \n A. chmod +s /tmp \n B. chmod +t /tmp \n C. chmod 1775 /tmp \n D. chmod 4775 /tmp \n E. chmod 2775 /tmp \n",
-            "answer": "B,C",
+            "answer": "BC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-set-the-sticky-bit-for-2/",
             "warning": "All appears to be good",
@@ -1948,7 +1948,7 @@
         {
             "id": 117,
             "question": "Which of the following are modes of the vi editor? (Choose two.) \n A. edit mode \n B. insert mode \n C. change mode \n D. review mode \n E. command mode \n",
-            "answer": "B,E",
+            "answer": "BE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-are-modes-of-the-vi-editor/",
             "warning": "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY",
@@ -2011,7 +2011,7 @@
         {
             "id": 124,
             "question": "Which of the following commands brings a system running SysV init into a state in which it issafe to perform maintenance tasks? (Choose TWO correct answers.) \n A. shutdown -R 1 now \n B. shutdown -single now \n C. init 1 \n D. telinit 1 \n E. runlevel 1 \n",
-            "answer": "C,D",
+            "answer": "CD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-it-is-safe-to-perform-maintenance-tasks-3/",
             "warning": "All appears to be good",
@@ -2029,7 +2029,7 @@
         {
             "id": 126,
             "question": "Which of the following commands are common Linux commands for file management?(Choose three correct answers.) \n A. copy \n B. mv \n C. move \n D. cp \n E. mkdir \n",
-            "answer": "B,D,E",
+            "answer": "BDE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-are-common-linux-comman/",
             "warning": "All appears to be good",
@@ -2056,7 +2056,7 @@
         {
             "id": 129,
             "question": "Which of the following are valid stream redirection operators within Bash? (Choose THREEcorrect answers.) \n A. < \n B. <<< \n C. > \n D. >>> \n E. %> \n",
-            "answer": "A,B,C",
+            "answer": "ABC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-are-valid-stream-redirection-ope-3/",
             "warning": "All appears to be good",
@@ -2119,7 +2119,7 @@
         {
             "id": 136,
             "question": "After moving data to a new filesystem, how can the former path of the data be kept intact inorder to avoid reconfiguration of existing applications? (Choose TWO correct answers.) \n A. By creating an ACL redirection from the old to the new path of the data. \n B. By creatinga hard link from the old to the new path of the data. \n C. By creating a symbolic link from the old to the new path of the data. \n D. By running the command touch on the old path. \n E. By mounting the new filesystem on the original path of the data. \n",
-            "answer": "C,E",
+            "answer": "CE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/how-can-the-former-path-of-the-data-be-kept-intact-in-o-3/",
             "warning": "All appears to be good",
@@ -2173,7 +2173,7 @@
         {
             "id": 142,
             "question": "Which of the following commands can be used to determine how long the system has beenrunning? (Choose TWO correct answers.) \n A. uptime \n B. up \n C. top \n D. uname -u \n E. time -up \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-can-be-used-to-determin-4/",
             "warning": "All appears to be good",
@@ -2182,7 +2182,7 @@
         {
             "id": 143,
             "question": "When using rpm \u2013verify to check files created during the installation of RPM packages, whichof the following information is taken into consideration? (Choose THREE correct answers.) \n A. Timestamps \n B. MD5 checksums \n C. Inodes \n D. File sizes \n E. GnuPG signatures \n",
-            "answer": "A,B,D",
+            "answer": "ABD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-information-is-taken-into-consid-3/",
             "warning": "All appears to be good",
@@ -2227,7 +2227,7 @@
         {
             "id": 148,
             "question": "Which of the following examples for Bash file globbing matches a file named root-can-dothis.txt when used in the directory holding that file? (Choose three correct answers.) \n A. root*can?do-this.{txt,odt} \n B. r[oOoO]t-can-do*.txt \n C. {root,user,admin}-can-??-this.txt \n D. root*can*do??this.txt \n E. root***{can,may}-do-this.[tT][xX][tT] \n",
-            "answer": "A,B,C",
+            "answer": "ABC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-examples-for-bash-file-globbing/",
             "warning": "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY",
@@ -2236,7 +2236,7 @@
         {
             "id": 149,
             "question": "Which of the following is true for hard linked files? (Choose three.) \n A. The output ofstatwill reporthardinstead ofregular file. \n B. The hard linked files have the same permissions and owner. \n C. The hard linked files share the same inode. \n D. The hard linked files are indicated by a -> when listed withls -1. \n E. The hard linked files must be on the same filesystem. \n",
-            "answer": "B,C,E",
+            "answer": "BCE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-is-true-for-hard-linked-files/",
             "warning": "All appears to be good",
@@ -2290,7 +2290,7 @@
         {
             "id": 155,
             "question": "Which of the following sequences in the vi editor saves the opened document and exits theeditor? (Choose TWO correct answers.) \n A. esc ZZ \n B. ctrl :w! \n C. esc zz \n D. esc :wq! \n E. ctrl XX \n",
-            "answer": "A,D",
+            "answer": "AD",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-sequences-in-the-vi-editor-saves-3/",
             "warning": "COMMENTS ON THE WEBSITE, PLEASE REVIEW MANUALLY",
@@ -2537,7 +2537,7 @@
         {
             "id": 3,
             "question": "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to identifythe intended partition? (Select TWO correct answers) \n A. FIND \n B. ID \n C. LABEL \n D. NAME \n E. UUID \n",
-            "answer": "C,E",
+            "answer": "CE",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-other-options-may-be-used-to-identify-the-intended/",
             "warning": "All appears to be good",
@@ -2618,7 +2618,7 @@
         {
             "id": 12,
             "question": "What does the Filesystem Hierarchy Standard enable? (Select TWO answers) \n A. software to predict the location of installed files and directories \n B. software to predict the ownership and access rights to files and directories \n C. users to predict the location of installed files and directories \n D. users to predict how the filesystem should be formatted according to need \n",
-            "answer": "A,C",
+            "answer": "AC",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-does-the-filesystem-hierarchy-standard-enable-5/",
             "warning": "All appears to be good",
@@ -3507,7 +3507,7 @@
         {
             "id": "15",
             "question": "Which of the following commands will number the lines in aleph.txt? (Select three.)  \n A. fmt aleph.txt  \n B. nl aleph.txt  \n C. cat -b aleph.txt  \n D. cat -n aleph.txt  \n E. od -nl aleph.txt          ",
-            "answer": "B, C, D",
+            "answer": "BCD",
             "explanation": "The nl command numbers lines, so it does this task without any special options, and option B is correct. (Its options can fine-tune the way it numbers lines, though.) The cat command can also number lines via its -b and -n options; -b numbers non-blank lines, whereas -n numbers all lines (including blank lines). Thus options C and D are both correct. Neither the fmt command nor the od command will number the lines of the input file, so options A and E are both incorrect.  \n"
         },
         {
@@ -3599,7 +3599,7 @@
         {
             "id": "10",
             "question": "Which of the following commands would you type to update the unzip program on a  Fedora system to the latest version? (Select all that apply.)  \n A. yum update unzip  \n B. yum upgrade unzip  \n C. yum -u unzip  \n D. yum -U unzip  \n E. yum check-update unzip  ",
-            "answer": "A, B",
+            "answer": "AB",
             "explanation": "The Yum utility\u2019s update and upgrade options are nearly identical in effect, and either can be used to upgrade an individual package, such as unzip, so options A and B are both correct. The primary command options to yum don\u2019t use dashes, so options C and D are both incorrect. The check-update option to yum checks for the availability of updates, but it does not install them, so option E is incorrect.  \n"
         },
         {
@@ -3629,7 +3629,7 @@
         {
             "id": "15",
             "question": "What programs might you use to learn what your system\u2019s load average is? (Select two.)  \n A. ld  \n B. load  \n C. top  \n D. uptime  \n E. la  ",
-            "answer": "C, D",
+            "answer": "CD",
             "explanation": "The top utility displays a dynamic list of processes ordered according to their CPU use along with additional system information, including load averages, so option C is correct. If you want only the load average at a specific moment, uptime (option D) may be better because it presents less extraneous information\u2014it shows the current time, the time since the system was booted, the number of active users, and the load averages. Option A\u2019s ld command has nothing to do with displaying load averages. (It\u2019s a programming tool that links together program modules into an executable program.) There are no standard Linux programs called load (option B) or la (option E).  \n"
         },
         {
@@ -3653,13 +3653,13 @@
         {
             "id": "19",
             "question": "Which of the following commands are equivalent to one another? (Select two.)  \n A. nice --value 10 crunch  \n B. nice -n -10 crunch  \n C. nice -10 crunch  \n D. nice 10 crunch  \n E. nice crunch  ",
-            "answer": "C, E",
+            "answer": "CE",
             "explanation": "The nice command launches a program (crunch in this example) with increased or decreased priority. The default priority when none is specified is 10, and the nice -10 crunch command also sets the priority to 10, so options C and E are equivalent. Option A isn\u2019t a valid nice command because nice has no --value option. Option B is a valid nice command, but it sets the priority to \u201310 rather than 10. Despite the similarity in the form of options C and D, option D is not a valid nice command, and so it is incorrect. (When passing a numeric value to nice, you must use a preceding dash, -, or -n.)  \n"
         },
         {
             "id": "20",
             "question": "Which of the following are restrictions on ordinary users\u2019 abilities to run renice?  (Select two.)  \n A. Users may not modify the priorities of processes that are already running.  \n B. Users may not modify the priority of their programs launched from anything but their  current shells.  \n C. Users may not decrease the priority (that is, increase the priority value) of their own  processes.  \n D. Users may not modify the priorities of other users\u2019 processes.  \n E. Users may not increase the priority (that is, decrease the priority value) of their own  processes.            ",
-            "answer": "D, E",
+            "answer": "DE",
             "explanation": "Linux insulates users\u2019 actions from one another, and this rule applies to renice; only root may modify the priority of other users\u2019 processes, so option D is correct. Similarly, only root may increase the priority of a process in order to prevent users from setting their processes to maximum priority, thus stealing CPU time from others, so option E is correct. Option A correctly describes nice, but not renice. The whole point of renice is to be able to change the priorities of existing processes. Contrary to option B, renice doesn\u2019t care about the shell from which renice or the target program was launched. Users may use renice to decrease their own processes\u2019 priorities, contrary to option C.  \n"
         }
     ],
@@ -3667,7 +3667,7 @@
         {
             "id": "1",
             "question": "What are common IRQs for RS-232 serial ports? (Select two.)  \n A. 1  \n B. 3  \n C. 4  \n D. 8  \n E. 16  ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "IRQs 3 and 4 are common defaults for RS-232 serial ports, so options B and C are both correct. IRQ 1 is reserved for the keyboard, so option A is incorrect. IRQ 8 is reserved for use by the real-time clock, so option D is incorrect. Although IRQ 16 exists on modern systems, it didn\u2019t exist on early x86 systems, and its purpose isn\u2019t standardized.  \n"
         },
         {
@@ -3691,7 +3691,7 @@
         {
             "id": "5",
             "question": "Which files contain essential system information such as IRQs, direct-memory access chan-  nels, and I/O addresses? (Select three.)  \n A. /proc/ioports  \n B. /proc/ioaddresses  \n C. /proc/dma  \n D. /proc/interrupts  \n E. /proc/hardware          ",
-            "answer": "A, C, D",
+            "answer": "ACD",
             "explanation": "There are no files called /proc/ioaddresses or /proc/hardware, so options B and E are both incorrect. All the other files listed contain useful information; /proc/ ioports holds information about I/O ports, /proc/dma holds information about DMA port usage, and /proc/interrupts holds information about IRQs. \u25a0  \n"
         },
         {
@@ -3775,7 +3775,7 @@
         {
             "id": "19",
             "question": "What filesystem options might you specify in /etc/fstab to make a removable disk (such  as a USB flash drive) mountable by an ordinary user with a UID of 1000? (Select three.)  \n A. user  \n B. users  \n C. owner  \n D. owners  \n E. uid=1000          ",
-            "answer": "A, B, C",
+            "answer": "ABC",
             "explanation": "The user, users, and owner options in /etc/fstab all enable ordinary users to mount a filesystem, but with slightly different implications: user enables anybody to mount a filesystem\u2014and only that user may unmount it; users enables anybody to mount a filesystem, and anybody may unmount it; and owner enables only the owner of the mount point to mount or unmount a filesystem. Thus, options A, B, and C are all correct. The owners parameter of option D doesn\u2019t exist. The uid=1000 parameter of option E tells Linux to set the ownership of files to UID 1000 on filesystems that lack Linux permissions features. Although this might be desirable for some disks, it doesn\u2019t enable the user with UID 1000 to mount the disk, so option E is incorrect.  \n"
         },
         {
@@ -3795,7 +3795,7 @@
         {
             "id": "2",
             "question": "What parameter can you pass to ln to create a soft link? (Select two.)  \n A. -s  \n B. --soft  \n C. --slink  \n D. --symbolic  \n E. --sl  ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "The \u2013s and \u2013\u2013symbolic options to ln are equivalent, and both create a symbolic (aka soft) link. Thus, options A and D are both correct. Options B, C, and E don\u2019t exist.  \n"
         },
         {
@@ -3813,13 +3813,13 @@
         {
             "id": "5",
             "question": "You type mkdir one/two/three and receive an error message that reads, in part, No  such file or directory. What can you do to overcome this problem? (Select two.)  \n A. Add the --parents parameter to the mkdir command.  \n B. Issue three separate mkdir commands: mkdir one, then mkdir one/two, and then  mkdir one/two/three.           \n C. Type touch /bin/mkdir to be sure the mkdir program file exists.  \n D. Type rmdir one to clear away the interfering base of the desired new directory tree.  \n E. Type mktree one/two/three instead of mkdir one/two/three.  ",
-            "answer": "A, B",
+            "answer": "AB",
             "explanation": "If you try to create a directory inside a directory that doesn\u2019t exist, mkdir responds with a No such file or directory error. The --parents parameter tells mkdir to create all necessary parent directories automatically in such situations, so option A is correct. You can also manually do this by creating each necessary directory separately, so option B is also correct. (It\u2019s possible that mkdir one wouldn\u2019t be necessary in this example if the directory one already existed. No harm will come from trying to create a directory that already exists, although mkdir will return a File exists error.) Typing touch /bin/mkdir, as option C suggests, will likely result in an error message if typed as a normal user and won\u2019t help if typed as root, so this option is incorrect. Clearing away existing directories in the one/two/three tree won\u2019t help, so option D is incorrect. Option E\u2019s mktree command is fictitious.  \n"
         },
         {
             "id": "6",
             "question": "Which of the following commands are commonly used to create archive files? (Select two.)  \n A. restore  \n B. vi  \n C. tape  \n D. cpio  \n E. tar  ",
-            "answer": "D, E",
+            "answer": "DE",
             "explanation": "The cpio and tar programs are common Linux archive-creation utilities, so options D and E are both correct. The restore command restores (but does not back up) data; its backup counterpart command is dump. Thus, option A is incorrect. The vi command launches a text editor; it\u2019s not used to create archives, so option B is incorrect. There is no standard tape command in Linux, so option C is incorrect.  \n"
         },
         {
@@ -3843,7 +3843,7 @@
         {
             "id": "10",
             "question": "Typing ls -ld wonderjaye reveals a symbolic file mode of drwxr-xr-x. Which of the  following are true? (Select two.)  \n A. wonderjaye is a symbolic link.  \n B. wonderjaye is an executable program.           \n C. wonderjaye is a directory.  \n D. wonderjaye has its SUID bit set.  \n E. wonderjaye may be read by all users of the system.  ",
-            "answer": "C, E",
+            "answer": "CE",
             "explanation": "The d character that leads the mode indicates that the file is actually a directory (option C), and the r symbol in the r-x triplet at the end of the symbolic mode indicates that all users of the system have read access to the directory (option E). Leading l characters, which this mode lacks, denote a symbolic link, so option A is incorrect. Although the x symbols usually denote executable program files, as specified in option B, in the case of directories this permission bit indicates that the directory\u2019s contents may be searched; executing a directory is meaningless. SUID bits are indicated by an s character in place of the owner\u2019s execute bit position in the symbolic mode. Since this position holds an x in this example, option D is incorrect.  \n"
         },
         {
@@ -3965,13 +3965,13 @@
         {
             "id": "10",
             "question": "Which SysV runlevels are reserved by init for reboot, shutdown, and single-user mode  purposes? (Select three.)  \n A. 0  \n B. 1  \n C. 2  \n D. 5  \n E. 6          ",
-            "answer": "A, B, E",
+            "answer": "ABE",
             "explanation": "Runlevel 0 (option A) is the reserved runlevel for halting the system. Runlevel 1 (option B) is reserved for single-user mode. Runlevel 6 (option E) is reserved for rebooting. Runlevel 2 (option C) is the default runlevel on Debian and most distributions derived from it, but it does none of the things described in the question. Runlevel 5 (option D) is a regular, user-configurable runlevel, which isn\u2019t normally used for the things described in the question. (Many systems use it for a regular boot with a GUI login prompt.)  \n"
         },
         {
             "id": "11",
             "question": "You type the following command:  $ runlevel  5 3  What can you tell about your runlevel status? (Select two.)  \n A. The current runlevel is 5.  \n B. The current runlevel is 3.  \n C. The previous runlevel is 5.  \n D. The previous runlevel is 3.  \n E. The runlevel is in the process of changing.  ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "The first number in the runlevel output is the previous runlevel (the letter N is used to indicate that the system hasn\u2019t changed runlevels since booting). The second number is the current runlevel. Hence, options B and C are both correct, while options A and D are both incorrect. The runlevel changes very quickly, and the runlevel utility doesn\u2019t provide a code to indicate that the runlevel is in the process of being changed, so option E is incorrect.  \n"
         },
         {
@@ -4019,7 +4019,7 @@
         {
             "id": "19",
             "question": "You want to enter insert mode from vi\u2019s command mode. How might you do this? (Select  three.)  \n A. Type R.  \n B. Type i.  \n C. Type a.  \n D. Type :.  \n E. Press Esc.  ",
-            "answer": "A, B, C",
+            "answer": "ABC",
             "explanation": "Typing R (option A) in command mode enters insert mode with the system configured to overwrite existing text. Typing i or a (options B and C, respectively) enters insert mode with the system configured to insert text. (The i and a commands differ in how they place the cursor; a advances one space.) Typing : (option D) in command mode enters ex mode (you typically type the ex-mode command on the same command line immediately after the colon). Pressing the Esc key (option E) returns vi to command mode from insert mode.  \n"
         },
         {
@@ -4063,7 +4063,7 @@
         {
             "id": "6",
             "question": "What methods do Linux distributions use to start X automatically when the system boots?  (Select two.)  \n A. Start an XDMCP server from the Start folder.  \n B. Start an XDMCP server from an ~/.xinitrc script.  \n C. Start an XDMCP server via a system startup script.  \n D. Start an XDMCP server via a boot manager.  \n E. Start an XDMCP server from init.  ",
-            "answer": "C, E",
+            "answer": "CE",
             "explanation": "XDMCP servers are typically launched either from a system startup script or by init (as specified in /etc/inittab), as described in options C and E. The XDMCP server then starts X. The Start folder mentioned in option A is a Windows construct, not a Linux construct. The ~/.xinitrc script mentioned in option B is an X login script used when starting X from the command line via startx; it\u2019s not used to start X automatically when the system boots. A boot manager, as described in option D, launches the kernel; it doesn\u2019t directly start X, so option D is incorrect.  \n"
         },
         {
@@ -4093,13 +4093,13 @@
         {
             "id": "11",
             "question": "Which of the following programs may be used to provide computer-generated speech for  users who have trouble reading computer displays? (Select two.)  \n A. SoX  \n B. Braille  \n C. Orca  \n D. talk  \n E. Emacspeak  ",
-            "answer": "C, E",
+            "answer": "CE",
             "explanation": "The Orca and Emacspeak programs both provide text-to-speech conversion facilities, so options C and E are both correct. Braille is a form of writing that uses bumps or holes in a surface that can be felt by the reader. Although Linux supports Braille output devices, the question specifies computer-generated speech, which Braille is not, so option B is incorrect. SoX (option A) is an audio format converter, but it won\u2019t convert from text to speech. The talk program (option D) is an early Unix online text-mode \u201cchat\u201d program, but it has no built-in speech synthesis capabilities.  \n"
         },
         {
             "id": "12",
             "question": "You manage a computer that\u2019s located in Los Angeles, California, but the time zone is  misconfigured as being in Tokyo, Japan. What procedure can you follow to fix this  problem? (Select two.)  \n A. Run hwclock --systohc to update the clock to the correct time zone.  \n B. Delete /etc/localtime, and replace it with an appropriate file from /usr/share/  zoneinfo.  \n C. Edit the /etc/tzconfig file so that it specifies North_America/Los_Angeles as the  time zone.  \n D. Edit /etc/localtime, and change the three-letter time zone code on the TZ line.  \n E. Use the tzselect program to select a new (Los Angeles) time zone.          ",
-            "answer": "B, E",
+            "answer": "BE",
             "explanation": "Time zones are determined by the /etc/localtime file, so replacing that one with the correct file (a selection is stored in /usr/share/zoneinfo) will fix the problem, making option B correct. (You may also need to edit /etc/timezone or some other file to keep automatic utilities from becoming confused.) Utilities such as tzselect will make these changes for you after prompting you for your location, so option E is also correct. The hwclock program mentioned in option A reads and writes data from the system\u2019s hardware clock. Although it relies on time zone data, it can\u2019t adjust your system\u2019s time zone itself. There is no standard /etc/tzconfig file, although the tzconfig program, like tzselect, can help you set the time zone. Thus, option C is incorrect. The /etc/localtime file is a binary format; you shouldn\u2019t attempt to edit it in a text editor, making option D incorrect. \u25a0  \n"
         },
         {
@@ -4129,7 +4129,7 @@
         {
             "id": "17",
             "question": "What information about print jobs does the lpq command display? (Select two.)  \n A. The name of the application that submitted the job  \n B. A numerical job ID that can be used to manipulate the job  \n C. The amount of ink or toner left in the printer  \n D. The username of the person who submitted the job  \n E. The estimated time to finish printing the job  ",
-            "answer": "B, D",
+            "answer": "BD",
             "explanation": "The job ID (option B) and job owner (option D) are both displayed by lpq. Unless the application embeds its own name (option A) in the filename, that information won\u2019t be present. Most printers lack Linux utilities to query ink or toner status (option C); certainly lpq can\u2019t do this. Although knowing when your job will finish printing (option E) would be handy, providing this information is well beyond lpq\u2019s capabilities.  \n"
         },
         {
@@ -4161,7 +4161,7 @@
         {
             "id": "2",
             "question": "What commands can be used to add user accounts to a Linux system?  \n A. useradd username  \n B. adduser username  \n C. useradd -c \\\"full name\\\" username  \n D. usradd username  \n E. passwd username  ",
-            "answer": "A, B, C",
+            "answer": "ABC",
             "explanation": "The useradd command is used to add user accounts to a Linux system, and therefore option A is correct. The adduser command is available on some Linux \u25a0 distributions, and it also allows you to add user accounts to the system. Thus, option B is correct as well. The useradd command has a valid -c option that allows you to enter comments, such as a user\u2019s full name. Therefore, option C is also correct. There is no usradd command, so option D is incorrect. The passwd command cannot add users to the system. Therefore, option E is incorrect.  \n"
         },
         {
@@ -4185,7 +4185,7 @@
         {
             "id": "6",
             "question": "What types of files might you expect to find in /etc/skel? (Select three.)  \n A. A copy of the /etc/shadow file  \n B. An empty set of directories to encourage good file management practices  \n C. A README or similar welcome file for new users  \n D. A starting .bashrc file  \n E. The RPM or Debian package management database  ",
-            "answer": "B, C, D",
+            "answer": "BCD",
             "explanation": "Files in /etc/skel are copied from this directory to the new users\u2019 home directories by certain account-creation tools. Thus, files that you want in all new users\u2019 home directories should reside in /etc/skel. Options B, C, and D all describe reasonable possibilities, although none is absolutely required. Including a copy of /etc/ shadow in /etc/skel (option A) would be a very bad idea because this would give all users access to all other users\u2019 hashed passwords, at least as of the moment of account creation. You wouldn\u2019t likely find package management databases (option E) in /etc/ skel, since users don\u2019t need privileged access to this data, nor do they need individualized copies of it.  \n"
         },
         {
@@ -4245,7 +4245,7 @@
         {
             "id": "16",
             "question": "Which of the following tasks are most likely to be handled by a cron job? (Select two.)  \n A. Starting an important server when the computer boots  \n B. Finding and deleting old temporary files  \n C. Scripting supervised account creation  \n D. Monitoring disk partition space status and emailing a report  \n E. Sending files to a printer in an orderly manner  ",
-            "answer": "B, D",
+            "answer": "BD",
             "explanation": "The cron utility is a good tool for performing tasks that can be done in an unsupervised manner, such as deleting old temporary files (option B) or checking to see that disk space is not low (option D). Tasks that require interaction or do not occur on a scheduled basis, such as creating accounts (option C), aren\u2019t good candidates for cron jobs, which must execute unsupervised and on a schedule. Although a cron job could restart a crashed server, it\u2019s not normally used to start a server when the system boots (option A); that\u2019s done through system startup scripts or a super server. Sending files to a printer (option E) is generally handled by a print server such as the cupsd daemon.  \n"
         },
         {
@@ -4269,7 +4269,7 @@
         {
             "id": "20",
             "question": "How might you schedule a script to run once a day on a Linux computer? (Select two.)  \n A. Place the script, or a link to it, in /etc/cron.daily.  \n B. Use the at command to schedule the specified script to run on a daily basis at a time of  your choosing.  \n C. Create a user cron job that calls the specified script once a day at a time of your choos-  ing, and install that cron job using crontab.  \n D. Use run-parts to schedule the specified script to run on a daily basis.  \n E. Type crontab -d scriptname, where scriptname is the name of your script.            ",
-            "answer": "A, C",
+            "answer": "AC",
             "explanation": "The contents of /etc/cron.daily are automatically run on a daily basis in most Linux distributions, and the crontab utility can create user cron jobs that run programs at arbitrary time intervals, so both A and C are correct. The at command noted in option B can be used to run a program a single time, but not on a regular basis (such as daily). Option D\u2019s run-parts utility is used by some distributions as a tool to help run programs in the /etc/cron.* subdirectories, but it\u2019s not used to schedule jobs. Although the crontab program can maintain user crontabs, it\u2019s not used as shown in option E and it has no -d parameter at all. Networking  \n"
         }
     ],
@@ -4277,7 +4277,7 @@
         {
             "id": "1",
             "question": "Which types of network hardware does Linux support? (Select three.)  \n A. Token Ring  \n B. Ethernet  \n C. DHCP  \n D. NetBEUI  \n E. Fibre Channel  ",
-            "answer": "A, B, E",
+            "answer": "ABE",
             "explanation": "Ethernet (option B) is currently the most common type of wired network hardware for local networks. Linux supports it very well, and Linux also includes support for Token Ring (option A) and Fibre Channel (option E) network hardware. DHCP (option C) is a protocol used to obtain a TCP/IP configuration over a TCP/IP network. It\u2019s not a type of network hardware, but it can be used over hardware that supports TCP/IP. NetBEUI (option D) is a network stack that can be used instead of or in addition to TCP/IP over various types of network hardware. Linux doesn\u2019t support NetBEUI directly.  \n"
         },
         {
@@ -4313,13 +4313,13 @@
         {
             "id": "6",
             "question": "Which of the following types of information are returned by typing ifconfig eth0?  (Select two.)  \n A. The names of programs that are using eth0  \n B. The IP address assigned to eth0  \n C. The hardware address of eth0  \n D. The hostname associated with eth0  \n E. The kernel driver used by eth0  ",
-            "answer": "C, E",
+            "answer": "CE",
             "explanation": "Option C, dhcpd, is the Linux DHCP server. Option E, ifconfig, can be used for network configuration but is not itself a DHCP client. The others are all DHCP clients. Any given computer will use just one DHCP client (or none at all), but any one of A, B, or D will be available choices.  \n"
         },
         {
             "id": "7",
             "question": "Which of the following programs is conventionally used to perform a DNS lookup?  \n A. host  \n B. dnslookup  \n C. pump  \n D. ifconfig  \n E. netstat  ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "When used to display information on an interface, ifconfig shows the hardware and IP addresses (options B and C) of the interface, the protocols (such as TCP/IP) bound to the interface, and statistics on transmitted and received packets. This command does not return information about programs using the interface (option A), the hostname associated with the interface (option D), or the kernel driver used by the interface (option E).  \n"
         },
         {
@@ -4337,7 +4337,7 @@
         {
             "id": "10",
             "question": "What is the purpose of /etc/hostname, if it\u2019s present on the system?  \n A. It holds the hostname of a package repository server.  \n B. It holds a list of servers that resolve hostnames.  \n C. It holds a list of IP addresses and associated hostnames.  \n D. It holds the hostname of the local gateway computer.  \n E. It holds the computer\u2019s default hostname.  ",
-            "answer": "A, B",
+            "answer": "AB",
             "explanation": "The dhclient utility, if installed, attempts to configure and bring up the network(s) passed to it as options (or all networks if it\u2019s given no options) using a DHCP server for guidance. Thus option A may work, although it won\u2019t work if no DHCP server is available. Option B applies whatever network options are configured using distribution-specific tools and brings up the network. Thus options A and B both may work, although neither is guaranteed to work. Option C displays the network status of eth1, but it won\u2019t activate eth1 if it\u2019s not already active. There is no standard network utility in Linux, so option D won\u2019t work. The netstat utility is a network diagnostic tool; it won\u2019t bring up a network interface, so option E is incorrect.  \n"
         },
         {
@@ -4367,7 +4367,7 @@
         {
             "id": "15",
             "question": "You\u2019re configuring a new system, and your network administrator scribbles its IP address  (172.25.78.89), netmask (255.255.255.0), gateway address (172.25.79.1), and DNS server  address (10.24.89.201) on a piece of paper. You enter this information into your configura-  tion files and type ifup eth0, but you find that you can\u2019t access the Internet with this  computer. Which of the following is definitely true?  \n A. Because the DNS server is on a completely different network, it won\u2019t function properly  for your system. You should ask for the local network\u2019s DNS server\u2019s IP address.  \n B. The netmask identifies the gateway as being on a different network segment than the  computer you\u2019re configuring, so the two can\u2019t communicate directly. You most likely  misread one address.  \n C. Because the IP addresses involved are private IP addresses, there\u2019s no way for them to  access the Internet. You must ask for public IP addresses for this system or use only  your local private network.  \n D. The computer\u2019s IP address is a Class B address, but the netmask is for a Class C  address. This combination can\u2019t work together, so you must obtain a new IP address or  netmask.  \n E. The ifup utility works only for computers that use DHCP, so using a static IP address  as specified in the question won\u2019t work correctly.  ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "If you get any response at all, you know that the basic network connection is working, including that the server is responding to the client. With basic knowledge of IMAP commands, telnet enables you to test the server\u2019s responses in more detail than most IMAP clients (mail readers) permit. Thus options A and D are both correct. Option B describes the functionality of traceroute or tracepath; telnet provides no information about intermediate routers\u2019 functionality, so option B is incorrect. Because neither telnet nor IMAP on port 143 uses encryption, option C is incorrect. Furthermore, a packet sniffer is likely to have no effect on the transfer of data; it just copies the data so that the packet sniffer\u2019s user can see it. Although telnet can be used for remote access in a way that could make option E correct, the question specifies using telnet to connect to port 143, which is the IMAP port, not the Telnet port. Thus, option E is incorrect. (Furthermore, using telnet for remote administration is very risky because telnet is an unencrypted protocol.)  \n"
         },
         {
@@ -4429,7 +4429,7 @@
         {
             "id": "5",
             "question": "What file might a user modify to alter their own bash environment?  \n A. /etc/inputrc  \n B. /etc/bashrc  \n C. $HOME/bashrc  \n D. $HOME/.profile_bash  \n E. ~/.bashrc  ",
-            "answer": "A, C",
+            "answer": "AC",
             "explanation": "Option A creates the desired environment variable. Option C also creates the desired environment variable. It combines the variable setting and the export of the MYVAR variable using a different method than option A uses. It combines the two commands on one line using a semicolon (;). Option B creates a local variable\u2014but not an environment variable\u2014called MYVAR, holding the value mystuff. After typing option B, you can also type export MYVAR to achieve the desired goal, but option B by itself is insufficient. Option D displays the contents of the MYVAR variable and also echoes mystuff to the screen, but it doesn\u2019t change the contents of any environment variable. Option E\u2019s setenv isn\u2019t a valid bash command, but it will set an environment variable in tcsh.  \n"
         },
         {
@@ -4441,7 +4441,7 @@
         {
             "id": "7",
             "question": "Immediately after creating a shell script called a_script.sh in a text editor, which method  will not work to run the script?  \n A. Typing bash a_script.sh at the command line.  \n B. Typing ./a_script.sh at the command line.  \n C. Typing . a_script.sh at the command line.  \n D. Typing source a_script.sh at the command line.  \n E. Any of the above will work.  ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "The env command displays all defined environment variables, so option A satisfies the question. (In practice, you might pipe the results through grep to find the value of a specific environment variable.) The echo command, when passed the name of a specific environment variable, displays its current value, so option D is also correct. DISPLAY is an environment variable, but it\u2019s not a command for displaying environment variables, so option B is incorrect. You can use the export command to create an environment variable but not to display the current settings for one, so option C is incorrect. Option E\u2019s cat command concatenates files or displays the contents of a file to the screen, but it doesn\u2019t display environment variables.  \n"
         },
         {
@@ -4465,13 +4465,13 @@
         {
             "id": "11",
             "question": "Which of the following are valid looping statements in bash shell scripting? (Select all that apply.)  \n A. for  \n B. while  \n C. if-then  \n D. until  \n E. case  ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "Valid shell scripts begin with the characters #! and the complete path to a program that can run the script. Options B and C both meet this description, because /bin/bash is a shell program that\u2019s installed on virtually all Linux systems and /bin/ tcsh is often also available. There is no standard /bin/script program, so option A is incorrect. Options D and E are both almost correct; /bin/sh is typically linked to a valid shell and /bin/zsh is a valid shell on many systems, but the order of the first two characters is reversed, so these options are incorrect.  \n"
         },
         {
             "id": "12",
             "question": "Your SMTP email server receives a message addressed to postmaster. The postmaster  username has an alias of john on this computer. Assuming that the system is properly con-  figured, who will receive the email message?  \n A. postmaster  \n B. john  \n C. The account listed in ~/.forward  \n D. root  \n E. No user, because an alias was set  ",
-            "answer": "A, B, D",
+            "answer": "ABD",
             "explanation": "The for, while, and until statements are all valid looping statements in bash, so options A, B, and D are all correct. The if-then statement in bash\u2019s scripting language tests a condition and, if it is true, executes its commands one time only. Therefore, option C is incorrect. The case statement is a conditional, not a looping statement in bash, so option E is incorrect.  \n"
         },
         {
@@ -4513,7 +4513,7 @@
         {
             "id": "19",
             "question": "What is the effect of the following SQL command, assuming the various names and  data exist?  mysql> UPDATE stars SET magnitude=2.25 WHERE starname='Mintaka';   \n A. It returns database entries from the stars table for all stars with magnitude of 2.25  and starname of Mintaka.  \n B. It sets the value of the stars field in the magnitude set to Mintaka, using a precision  of 2.25.  \n C. It sets the value of the magnitude field to 2.25 for any item in the stars table with the  starname value of Mintaka.  \n D. It combines the stars and magnitude=2.25 tables, returning all items for which the  starname is Mintaka.  \n E. It updates the stars database, creating a new entry with a starname value of Mintaka  and a magnitude of 2.25.            ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "A single database may hold multiple tables, as option A suggests. Option D is also correct; if data is split across tables (such as into tables describing objects generically and specifically), databases can be more space efficient. Option B is incorrect because the DROP command doesn\u2019t combine tables\u2014it deletes a table! Option C is incorrect because it reverses the meaning of rows and columns in a SQL table. A lossy compression algorithm, as the name suggests, deliberately corrupts or loses some data\u2014an unacceptable option for a text database, making option E incorrect. (Lossy compression is used for some audio and video file formats, though.)  \n"
         },
         {
@@ -4545,7 +4545,7 @@
         {
             "id": "4",
             "question": "Which of the following commands will locate all of the program files on a computer on  which the SUID bit is set?  \n A. find / -type SUID  \n B. find / -perm +4000 -type f  \n C. find / -perm +SUID -type f  \n D. find / -type +4000  \n E. find / -suid  ",
-            "answer": "A, B, C",
+            "answer": "ABC",
             "explanation": "Nmap (option A) is usually used to perform scans of remote computers, but it can scan the computer on which it\u2019s run as well. The netstat (option B) and lsof (option C) utilities can both identify programs that are listening for connections (that is, open ports) on the local computer. The Network File System (NFS) and some other \u25a0 servers use the portmap program (option D), but it\u2019s not used to identify open ports. There is no standard Linux services program (option E), although the /etc/services file holds a mapping of port numbers to common service names.  \n"
         },
         {
@@ -4581,7 +4581,7 @@
         {
             "id": "10",
             "question": "You want to use xinetd access controls to limit who may access a server that\u2019s launched via  xinetd. Specifically, only users on the 192.168.7.0/24 network block should be able to use  that server. How may you do this?  \n A. Enter hosts_allowed = 192.168.7.0/24 in the /etc/xinetd.conf  configuration file for the server in question.  \n B. Enter only_from = 192.168.7.0/24 in the /etc/xinetd.conf configuration file  for the server in question.  \n C. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.allow file.  \n D. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.deny file.  \n E. Type iptables -L 192.168.7.0 to enable only users of 192.168.7.0/24 to access  the server.  ",
-            "answer": "A, D",
+            "answer": "AD",
             "explanation": "Using a firewall rule to block Waiter\u2019s port, as in option A, can increase security by providing redundancy; if Waiter is accidentally run in the future, the firewall rule will block access to its port. Uninstalling the program, as in option D, improves security by reducing the risk that the program will be accidentally run in the future. Most programs don\u2019t have a \u201cstealth\u201d mode, so option B is incorrect. (Furthermore, reading the documentation isn\u2019t enough; to improve security, you must change some configuration.) Tunneling Waiter\u2019s connections might have some benefit in some situations, but this configuration requires setup on both client and server computers and by itself leaves the server\u2019s port open, so option C is incorrect. Clients associated with the server program, installed on the server computer, pose little or no risk of abuse of the associated server; the clients on other computers are most likely to be used to abuse a server program, and you can\u2019t control that. Thus option E is incorrect.  \n"
         },
         {
@@ -4611,7 +4611,7 @@
         {
             "id": "15",
             "question": "You find that the ssh_host_dsa_key file in /etc/ssh has 0666 (-rw-rw-rw-) permissions.  Your SSH server has been in operation for several months. Should you be concerned?  \n A. Yes  \n B. No  \n C. Only if the ssh_host_dsa_key.pub file is also world-readable  \n D. Only if you\u2019re launching SSH from a super server  \n E. Only if you\u2019re using a laptop computer  ",
-            "answer": "B, C",
+            "answer": "BC",
             "explanation": "SSH is most directly a replacement for Telnet (option B), but SSH also includes file-transfer features that enable it to replace FTP (option C) in many situations. SSH is not a direct replacement for the Simple Mail Transfer Protocol (SMTP, option A), the Network Time Protocol (NTP, option D), or Samba (option E).  \n"
         },
         {
@@ -4805,217 +4805,217 @@
             "id": 26,
             "question": "Which of the following settings for umask ensures that new files have the default permissions -rw-r-----? \n A.0017 \n B.0640 \n C.0038 \n D.0227 \n E.0027",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "0027:\nInitial 0: ignored\nsecond 0: rw for files (rwx for directories)\n2: r for files (rx for directories)\n7: nothing (for both files and directories)",
             "url": "https://www.examtopics.com/discussions/lpi/view/20505-exam-101-500-topic-1-question-82-discussion"
         },
         {
             "id": 27,
             "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \n A.echo \"${PWD}\" \n B.echo \"${WD}\" \n C.printwd \n D.pwd \n E.echo \"${pwd}\"",
-            "answer": "AC",
-            "explanation": "A REMPLIR",
+            "answer": "AD",
+            "explanation": "the printwd command is not installed by default on bash. The command pwd shows the value of the env variable ${PWD}",
             "url": "https://www.examtopics.com/discussions/lpi/view/15174-exam-101-500-topic-1-question-82-discussion"
         },
         {
             "id": 28,
             "question": "After a power outage, the XFS file system of /dev/sda3 is inconsistent. How can the existing file system errors be fixed? \n A.By using mount -f to force a mount of the file system \n B.By running xfsck on the file system \n C.By mounting the file system with the option xfs_repair \n D.By running xfsadmin repair on the file system \n E.By running xfs_repair on the file system",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "xfs_repair: Repair a corrupted or damaged XFS file system. Unmount the file system before running this command. If the file system cannot be repaired, restore files from a backup with xfsrestore",
             "url": "https://www.examtopics.com/discussions/lpi/view/58912-exam-101-500-topic-1-question-83-discussion"
         },
         {
             "id": 29,
             "question": "Which of the following properties of an existing file changes when a hard link pointing to that file is created? \n A.File size \n B.Link count \n C.Modify timestamp \n D.Inode number \n E.Permissions",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "A hard-link is basically just another filename pointing to the same data on the disk. Link count is the number of hard-link. Symbolic links do not count (their inode number is different from that of the original file)\n You can see that with ls -l - result will be like: \n '-rwxr-xr-x (!!!)1(!!!) guru users 267 Jul 18 16:59 test.c' where 1 is the link count.",
             "url": "https://www.examtopics.com/discussions/lpi/view/50751-exam-101-500-topic-1-question-84-discussion"
         },
         {
             "id": 31,
             "question": "Which of the following commands show how the shell handles a specific command? \n A.where \n B.type \n C.stat \n D.case \n E.fileinfo",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Type tells you whether a command is a shell built-in, aliased to another command, or the location of the program in the PATH",
             "url": "https://www.examtopics.com/discussions/lpi/view/44996-exam-101-500-topic-1-question-86-discussion"
         },
         {
             "id": 32,
             "question": "When in Normal mode in vi, which character can be used to begin a reverse search of the text? \n A.r \n B./ \n C.F \n D.? \n E.s",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "/ for forward search \n ? for backward search.",
             "url": "https://www.examtopics.com/discussions/lpi/view/58864-exam-101-500-topic-1-question-87-discussion"
         },
         {
             "id": 33,
             "question": "Which of the following commands displays the manual page command from section 1? \n A.man command(1) \n B.man command@1 \n C.man 1 command \n D.man 1.command \n E.man -s 1 command",
-            "answer": "C",
-            "explanation": "A REMPLIR",
+            "answer": "CE",
+            "explanation": "-S list, -s list, --sections=list \nThe given list is a colon- or comma-separated list of sections, used to determine which manual sections to search and in what order. \n man [section] [commande] est le truc normal à utiliser ",
             "url": "https://www.examtopics.com/discussions/lpi/view/34900-exam-101-500-topic-1-question-88-discussion"
         },
         {
             "id": 34,
             "question": "Which of the following commands creates or, in case it already exists, overwrites a file called data with the output of ls? \n A.ls 3> data \n B.ls >& data \n C.ls > data \n D.ls >> data \n E.ls >>> data",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "La base",
             "url": "https://www.examtopics.com/discussions/lpi/view/58558-exam-101-500-topic-1-question-89-discussion"
         },
         {
             "id": 35,
             "question": "Which of the following commands is used to change options and positional parameters within a running Bash shell? \n A.history \n B.setsh \n C.bashconf \n D.set \n E.envsetup",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The set command is a built-in function of the Bourne shell (sh), C shell (csh), and Korn shell (ksh), which is used to define and determine the values of the system environment.\nThe option B and C are not valid commands, and the option A and E are used for other things.",
             "url": "https://www.examtopics.com/discussions/lpi/view/41465-exam-101-500-topic-1-question-90-discussion"
         },
         {
             "id": 36,
             "question": "Which of the following commands display the IDs of all processes owned by root? (Choose two.) \n A.pgrep -c root \n B.pgrep -u root \n C.pgrep -f root \n D.pgrep -U 0 \n E.pgrep -c 0",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "B is correct because it specifies user of 'root' with -u.\nD is correct because it matches 'real user ID' with uid of 0 (which I assume is the default.)\nWhat is the real user ID? Who you really are (the person who owns the proess) & a unique number for a user in the system.\nWhat is pgrep? It looks at running processes and lists the process ID to STDOUT.\nFor example: 'pgrep -u root sshd' will only list the process ID's that are owned by root (user).\nExample 2: 'pgrep -u user -l' will list the process ID and name used by 'user'.\n-c count | -u user |-l list the process name together with the process ID",
             "url": "https://www.examtopics.com/discussions/lpi/view/19054-exam-101-500-topic-1-question-91-discussion"
         },
         {
             "id": 37,
             "question": "Which of the following sequences in the vi editor saves the opened document and exits the editor? (Choose two.) \n A.Ctrl XX \n B.Ctrl :W \n C.Esc zz \n D.Esc :wq \n E.Esc ZZ",
             "answer": "DE",
-            "explanation": "A REMPLIR",
+            "explanation": "A savoir",
             "url": "https://www.examtopics.com/discussions/lpi/view/21241-exam-101-500-topic-1-question-92-discussion"
         },
         {
             "id": 38,
             "question": "What is the effect of the -v option for the grep command? \n A.It enables color to highlight matching parts. \n B.It shows the command's version information. \n C.It only outputs non-matching lines. \n D.It changes the output order showing the last matching line first. \n E.It outputs all lines and prefixes matching lines with a+.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "-v, --invert-match \nInvert the sense of matching, to select non-matching lines.",
             "url": "https://www.examtopics.com/discussions/lpi/view/37476-exam-101-500-topic-1-question-93-discussion"
         },
         {
             "id": 39,
             "question": "Which of the following tools can show the complete path of an executable file that the current shell would execute when starting a command without specifying its complete path? (Choose two.) \n A.find \n B.pwd \n C.which \n D.locate \n E.type",
             "answer": "CE",
-            "explanation": "A REMPLIR",
+            "explanation": "which - shows the full path of (shell) commands.\n locate is not builtin \n type will show the command full path if it is not a shell builtin command like echo (for example).",
             "url": "https://www.examtopics.com/discussions/lpi/view/34903-exam-101-500-topic-1-question-94-discussion"
         },
         {
             "id": 40,
-            "question": "In Bash, inserting 1>&2 after a command redirects\"\u00a6 \n A.\"\u00a6standard error to standard input. \n B.\"\u00a6standard output to standard error. \n C.\"\u00a6standard input to standard error. \n D.\"\u00a6standard error to standard output. \n E.\"\u00a6standard output to standard input.",
+            "question": "In Bash, inserting 1>&2 after a command redirects \n A. standard error to standard input. \n B. standard output to standard error. \n C. standard input to standard error. \n D. standard error to standard output. \n E. standard output to standard input.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "0 : STDIN; 1 : STDOUT; 2 : STDERR",
             "url": "https://www.examtopics.com/discussions/lpi/view/58863-exam-101-500-topic-1-question-95-discussion"
         },
         {
             "id": 41,
-            "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \n A.ABxxbc \n B.xxCxxc \n C.xxxxxx \n D.ABCabc \n E.Axxaxx",
+            "question": "What is the output when the regular expression s/[ABC][abc]/xx/ is applied to the following string?ABCabc - \n A.ABxxbc \n B.xxCxxc \n C.xxxxxx \n D.ABCabc \n E.Axxaxx",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "Case-sensitive donc seulement à l'endroit où une majuscule est avec une miniscule",
             "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
         },
         {
             "id": 42,
             "question": "Which of the following commands outputs test to the shell? \n A.cat <!EOT test EOT \n B.cat <|EOT test EOT \n C.cat !<EOT test EOT \n D.cat &<EOT test EOT \n E.cat <<EOT test EOT",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "EOT = EndofText. C'est un truc utilisé pour passer plusieurs lignes. On ouvre en tapant << EOT et on ferme en tapant EOT. C'est utilisé pour passer des blocs multiligne comme argument d'une commande. Ca s'appelle le heredoc, btw.\nExample : \n '[COMMAND] <<[-] 'DELIMITER'\nHERE-DOCUMENT\nDELIMITER",
             "url": "https://www.examtopics.com/discussions/lpi/view/22426-exam-101-500-topic-1-question-98-discussion"
         },
         {
             "id": 43,
             "question": "What is the default nice level when a process is started using the nice command? \n A.-10 \n B.0 \n C.10 \n D.15 \n E.20",
-            "answer": "B",
-            "explanation": "A REMPLIR",
+            "answer": "C",
+            "explanation": "If you start a command with nice it'll be 10, if you start command without nice it'll be 0.",
             "url": "https://www.examtopics.com/discussions/lpi/view/15139-exam-101-500-topic-1-question-99-discussion"
         },
         {
             "id": 44,
             "question": "Which of the following commands can perform searches on file contents using regular expressions? \n A.find \n B.locate \n C.grep \n D.reggrep \n E.pgrep",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "gneee",
             "url": "https://www.examtopics.com/discussions/lpi/view/58861-exam-101-500-topic-1-question-101-discussion"
         },
         {
             "id": 45,
             "question": "In a nested directory structure, which find command line option would be used to restrict the command to searching down a particular number of subdirectories? \n A.-maxdepth \n B.-dirmax \n C.-maxlevels \n D.-s \n E.-n",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": " Comme dirait le manuel : -maxdepth levels\nDescend at most levels (a non-negative integer) levels ofdirectories below the starting-points. \nUsing -maxdepth 0 means only apply the tests and actions to the starting-points themselves.",
             "url": "https://www.examtopics.com/discussions/lpi/view/16147-exam-101-500-topic-1-question-102-discussion"
         },
         {
             "id": 46,
             "question": "Which of the following commands determines a file's format by using a definition database file which contains information about all common file types? \n A.type \n B.file \n C.magic \n D.pmagic \n E.hash",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "file — determine file type\n https://man7.org/linux/man-pages/man1/file.1.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/58562-exam-101-500-topic-1-question-103-discussion"
         },
         {
             "id": 47,
             "question": "Which of the following commands generates a list of user names from /etc/passwd along with their login shell? \n A.column -s : 1,7 /etc/passwd \n B.chop -c 1,7 /etc/passwd \n C.colrm 1,7 /etc/passwd \n D.sort -t: -k1,7 /etc/passwd \n E.cut -d: -f1,7 /etc/passwd",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "cut -d: -f 1,7 /etc/passwd - outcome: daemon:/usr/sbin/nologin",
             "url": "https://www.examtopics.com/discussions/lpi/view/83398-exam-101-500-topic-1-question-104-discussion"
         },
         {
             "id": 48,
             "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \n A.Only a.txt, b.txt, and texts.tgz \n B.Only texts.tar and texts.tgz \n C.Only a.txt.gz and b.txt.gz \n D.Only a.txt and b.txt \n E.Only texts.tar",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The answer is E because when you use gunzip without any parameter (for example, -k --keep), the extraction will not keep .tgz, but only .tar",
             "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
         },
         {
             "id": 49,
-            "question": "In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be issued multiple times or applied to multiple rows? \n A.By using the command :repeat followed by the number and the command \n B.By specifying the number right in front of a command such as 41 or 2yj. \n C.By selecting all affected lines using the shit and cursor keys before applying the command. \n D.By issuing a command such as :set repetition=4 with repeats every subsequent command 4 times. \n E.By specifying the number after a command such as 14 or yj2 followed by escape.",
+            "question": "In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be issued multiple times or applied to multiple rows? \n A.By using the command :repeat followed by the number and the command \n B.By specifying the number right in front of a command such as 4l or 2yj. \n C.By selecting all affected lines using the shift and cursor keys before applying the command. \n D.By issuing a command such as :set repetition=4 with repeats every subsequent command 4 times. \n E.By specifying the number after a command such as 14 or yj2 followed by escape.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "go vimtutor",
             "url": "https://www.examtopics.com/discussions/lpi/view/31068-exam-101-500-topic-1-question-106-discussion"
         },
         {
             "id": 50,
             "question": "Which of the following statements is correct for a command ending with an & character? \n A.The command's output is redirected to /dev/null. \n B.The command is run in background of the current shell. \n C.The command's output is executed by the shell. \n D.The command is run as a direct child of the init process. \n E.The command's input is read from /dev/null.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The & character is a control operator in the shell. It causes to execute the process in the background. That means that the process has no read access to the terminal. Only a foreground process has. But, it can still write its output to the terminal",
             "url": "https://www.examtopics.com/discussions/lpi/view/58862-exam-101-500-topic-1-question-107-discussion"
         },
         {
             "id": 51,
             "question": "What is the purpose of the xargs command? \n A.It passes arguments to an X server. \n B.It repeats the execution of a command using different parameters for each invocation. \n C.It reads standard input and builds up commands to execute. \n D.It asks a question, graphically, and returns the answer to the shell. \n E.It allows specifying long options (like --help) for commands that normally only accept short options (like -h)",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "By default xargs reads items from standard input as separated by blanks and executes a command once for each argument. In the following example standard input is piped to xargs and the mkdir command is run for each argument, creating three folders. \n 'echo 'one two three' | xargs mkdir'",
             "url": "https://www.examtopics.com/discussions/lpi/view/55278-exam-101-500-topic-1-question-109-discussion"
         },
         {
             "id": 53,
-            "question": "In Bash, inserting 1>&2 after a command redirects`\u00a6 \n A.\u05d2\u20ac\u00a6standard error to standard input. \n B.\u05d2\u20ac\u00a6standard output to standard error. \n C.\u05d2\u20ac\u00a6standard input to standard error. \n D.\u05d2\u20ac\u00a6standard error to standard output. \n E.\u05d2\u20ac\u00a6standard output to standard input.",
+            "question": "In Bash, inserting 1>&2 after a command redirects \n A.standard error to standard input. \n B.standard output to standard error. \n C.standard input to standard error. \n D.standard error to standard output. \n E.standard output to standard input.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "0: stdin, 1: stout, 2: sterr",
             "url": "https://www.examtopics.com/discussions/lpi/view/88119-exam-101-500-topic-1-question-112-discussion"
         },
         {
             "id": 54,
             "question": "When booting from the hard disk, a computer successfully loads the Linux kernel and initramfs but hangs during the subsequent startup tasks. The system is booted using a Linux based rescue CD to investigate the problem. Which of the following methods helps to identify the root cause of the problem? \n A.Using the dmesg command from the rescue CD's shell to view the original system's boot logs. \n B.Investigating the file /proc/kmsg on the computer's hard disk for possible errors. \n C.Investigating the file /var/log on the computer's hard disk for possible errors. \n D.Using chroot to switch to the file system on the hard disk and use dmesg to view the logs. \n E.Rebooting again from the hard drive since the system successfully booted from the rescue CD.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "During boot, the logs are stored in dmesg, but are later transferred to /var/logs when the boot has finished. In this example, it was successfully rebooted with a rescue disk, hence one needs to go look at /var/logs because your OS transferred it there!",
             "url": "https://www.examtopics.com/discussions/lpi/view/31339-exam-101-500-topic-1-question-113-discussion"
         },
         {
             "id": 55,
             "question": "What is the correct way to set the default systemd boot target to multi-user? \n A.systemctl isolate multi-user.target \n B.systemctl set-runlevel multi-user.target \n C.systemctl set-boot multi-user.target \n D.systemctl set-default multi-user.target \n E.systemctl boot -p multi-user.target",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "systemctl set-default -> change the system’s default target\nsystemctl get-default -> show you the system’s current default target\nsystemctl isolate -> jump to new targets and not set default targets",
             "url": "https://www.examtopics.com/discussions/lpi/view/72794-exam-101-500-topic-1-question-115-discussion"
         },
         {
             "id": 56,
             "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \n A.An initramfs is a compressed file system archive, which can be unpacked to examine its contents. \n B.An initramfs file contains the MBR, the bootloader and the Linux kernel. \n C.After a successful boot, the initramfs contents are available in /run/initramfs/. \n D.The kernel uses the initramfs temporarily before accessing the real root file system. \n E.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
-            "answer": "AC",
-            "explanation": "A REMPLIR",
+            "answer": "AD",
+            "explanation": "The kernel will then open the initramfs (initial RAM filesystem). The initramfs is an archive containing a filesystem used as a temporary root filesystem during the boot process. The main purpose of an initramfs file is to provide the required modules so the kernel can access the “real” root filesystem of the operating system.\nAn initramfs is a compressed file system archive, which can be unpacked to examine its contents.\nThe kernel uses the initramfs temporarily before accessing the real root file system",
             "url": "https://www.examtopics.com/discussions/lpi/view/19402-exam-101-500-topic-1-question-116-discussion"
         },
         {
             "id": 57,
             "question": "Which of the following commands loads a kernel module along with any required dependency modules? \n A.depmod \n B.modprobe \n C.module_install \n D.insmod \n E.loadmod",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Some modules have dependencies, which are other kernel modules that must be loaded before the module in question can be loaded. The modprobe command always takes dependencies into account when performing operations. When you ask modprobe to load a specific kernel module, it first examines the dependencies of that module, if there are any, and loads them if they are not already loaded into the kernel. modprobe resolves dependencies recursively: it will load all dependencies of dependencies, and so on, if necessary, thus ensuring that all dependencies are always met.",
             "url": "https://www.examtopics.com/discussions/lpi/view/70996-exam-101-500-topic-1-question-117-discussion"
         },
         {
             "id": 58,
             "question": "What information can the lspci command display about the system hardware? (Choose three.) \n A.System battery type \n B.Device IRQ settings \n C.PCI bus speed \n D.Ethernet MAC address \n E.Device vendor identification",
             "answer": "BCE",
-            "explanation": "A REMPLIR",
+            "explanation": "The lspci command alone does not provide any other information but hardware vendor. To inspect further, need to run lspci twice, the 2nd run add -s flag followed by corresponding hexadecimal numbers at the beginning of line examined in 1st lspci run, and finally -v flag.\nEg. lspci -s 00:03.0 -v \nWith this run, we can get IRQ and bus information",
             "url": "https://www.examtopics.com/discussions/lpi/view/66020-exam-101-500-topic-1-question-118-discussion"
         }
     ]
