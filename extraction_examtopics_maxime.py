@@ -11,9 +11,9 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from functions_briefmenow import *
 
-nom_questionnaire = "Exam-Topics 101 - Paywall breached - test"
+nom_questionnaire = "Exam-Topics 101 - Paywall breached - Test"
 liste_des_patterns = [r"<span.+>",r"</span>",r"(\n)|(\\n)", r"  [ ]*"]
-f3 = open("sources\QuestionLPIExamTopicsPaywallBreached.txt", "r", encoding="utf8")
+f3 = open("sources\examtopics.txt", "r", encoding="utf8")
 liste_url = f3.readlines()
 f3.close
 
@@ -74,7 +74,7 @@ for url in liste_url:
     #INSERTION
     y = {
                             "id": liste_url.index(url),
-                            "question": f"{question[0]} \n {question[1]} \n {question[2]} \n {question[3]} \n {question[4]} \n {question[5]}",
+                            "question": f"{question[0]} \n{question[1]} \n{question[2]} \n{question[3]} \n{question[4]} \n{question[5]}",
                             "answer": answer,
                             "explanation": "A REMPLIR",
                             "url": url
