@@ -4639,7 +4639,7 @@
             "explanation": "Option D provides the correct command to import fredkey.pub prior to use. The inspect-gpg, import-gpg, and gpg-import commands of options A, C, and E are fictitious, and there is no --readkey option to gpg, as option B suggests.  \n"
         }
     ],
-    "Exam-Topics 101 - Paywall breached": [
+    "Exam-Topics 101 - Paywall breached (w/ explanations)": [
         {
             "id": 0,
             "question": "Which wildcards will match the following filenames? (Choose two.) ttyS0 ttyS1 ttyS2 \n A.ttyS[1-5] \n B.tty?[0-5] \n C.tty*2 \n D.tty[A-Z][012] \n E.tty[Ss][02]",
@@ -5019,7 +5019,7 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/66020-exam-101-500-topic-1-question-118-discussion"
         }
     ],
-    "Exam-Topics 101 - Paywall breached - Version Large": [
+    "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": [
         {
             "id": 0,
             "question": "Which type of file system is created by mkfs when it is executed with the block device name only and without any additional parameters? \nA.XFS \nB.VFAT \nC.ext2 \nD.ext3 \nE.ext4",
