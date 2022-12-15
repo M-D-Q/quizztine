@@ -1,4 +1,10 @@
 {
+    "users": [
+        {
+        "max": []
+        }
+    ]
+    ,
     "Assessment Test": [
         {
             "id": "1",
@@ -5050,7 +5056,7 @@
         },
         {
             "id": 4,
-            "question": "Which of the following is true when a file system, which is neither listed in /etc/fstab nor known to system, is mounted manually? \nA.systemd ignores any manual mounts which are not done using the systemctl mount command \nB.The command systemctl mountsync can be used to create a mount unit based on the existing mount \nC.systemd automatically generates a mount unit and monitors the mount point without changing itMost Voted \nD.Unless a systemd mount unit is created, systemd unmounts the file system after a short period of time \nE.systemctl unmount must be used to remove the mount because system opens a file descriptor on the mount point",
+            "question": "Which of the following is true when a file system, which is neither listed in /etc/fstab nor known to system, is mounted manually? \nA.systemd ignores any manual mounts which are not done using the systemctl mount command \nB.The command systemctl mountsync can be used to create a mount unit based on the existing mount \nC.systemd automatically generates a mount unit and monitors the mount point without changing it \nD.Unless a systemd mount unit is created, systemd unmounts the file system after a short period of time \nE.systemctl unmount must be used to remove the mount because system opens a file descriptor on the mount point",
             "answer": "C",
             "explanation": "A. It's not mandatory to use the 'systemctl mount' to mount manual mount points.\nB. The command 'systemctl mountsync' doesn't exist. (https://man7.org/linux/man-pages/man1/systemctl.1.html)\n C. According to systemd.mount man page: 'Mount points created at runtime (independently of unit files or /etc/fstab) will be monitored by systemd and appear like any other mount unit in systemd.' so it is CORRECT.\n D. It should unmount it after rebooting, according to the comments.\n E. Whatever.",
             "url": "https://www.examtopics.com/discussions/lpi/view/22174-exam-101-500-topic-1-question-5-discussion"
@@ -5127,7 +5133,7 @@
         },
         {
             "id": 18,
-            "question": "What is true regarding UEFI firmware? (Choose two.) \nA.It can read and interpret partition tablesMost Voted \nB.It can use and read certain file systemsMost Voted \nC.It stores its entire configuration on the /boot/ partition \nD.It is stored in a special area within the GPT metadata \nE.It is loaded from a fixed boot disk position",
+            "question": "What is true regarding UEFI firmware? (Choose two.) \nA.It can read and interpret partition tables \nB.It can use and read certain file systems \nC.It stores its entire configuration on the /boot/ partition \nD.It is stored in a special area within the GPT metadata \nE.It is loaded from a fixed boot disk position",
             "answer": "BD",
             "explanation": "WEIRD. A & B are probably correct too. But here is some explanation for the D answer :\n GPT-partitioned disks can be used either with computers with the traditional PC BIOS or ones with UEFI firmware. On machines with a BIOS, the second part of GRUB is stored in a special BIOS boot partition.\nOn systems with UEFI firmware, GRUB is loaded by the firmware from the files grubia32.efi (for 32-Bit systems) or grubx64.efi (for 64-Bit systems) from a partition called the ESP (EFI System Partition).\n Some link : https://learning.lpi.org/en/learning-materials/101-500/102/102.2/102.2_01/ ",
             "url": "https://www.examtopics.com/discussions/lpi/view/35200-exam-101-500-topic-1-question-19-discussion"
@@ -5288,7 +5294,7 @@
         },
         {
             "id": 42,
-            "question": "Given the following input stream:\ntxt1.txt\natxt.txt\ntxtB.txt\n \nWhich of the following regular expressions turns this input stream into the following output stream? txt1.bak.txt atxt.bak.txt txtB.bak.txt \nA.s/^.txt/.bak/ \nB.s/txt/bak.txt/ \nC.s/txt$/bak.txt/Most Voted \nD.s/^txt$/.bak^/ \nE.s/[.txt]/.bak$1/",
+            "question": "Given the following input stream:\ntxt1.txt\natxt.txt\ntxtB.txt\n \nWhich of the following regular expressions turns this input stream into the following output stream? txt1.bak.txt atxt.bak.txt txtB.bak.txt \nA.s/^.txt/.bak/ \nB.s/txt/bak.txt/ \nC.s/txt$/bak.txt/ \nD.s/^txt$/.bak^/ \nE.s/[.txt]/.bak$1/",
             "answer": "C",
             "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/13524-exam-101-500-topic-1-question-44-discussion"
@@ -5407,7 +5413,7 @@
         },
         {
             "id": 61,
-            "question": "Which of the following files are found in the /boot/ file system? (Choose two.) \nA.Linux kernel imagesMost Voted \nB.Bash shell binaries \nC.systemd target and service units \nD.Initial ramdisk imagesMost Voted \nE.fsck binaries",
+            "question": "Which of the following files are found in the /boot/ file system? (Choose two.) \nA.Linux kernel images \nB.Bash shell binaries \nC.systemd target and service units \nD.Initial ramdisk images \nE.fsck binaries",
             "answer": "AD",
             "explanation": "C'est bien AD, il suffit de v\u00e9rifier en faisant la commande ls -la /boot.",
             "url": "https://www.examtopics.com/discussions/lpi/view/17478-exam-101-500-topic-1-question-65-discussion"
@@ -5491,7 +5497,7 @@
         },
         {
             "id": 74,
-            "question": "Running chmod 640 filea.txt as a regular user doesn't update filea.txt's permission. What might be a reason why chmod cannot modify the permissions? (Choose two.) \nA.filea.txt is owned by another user and a regular user cannot change the permissions of another user's file.Most Voted \nB.filea.txt is a symbolic link whose permissions are a fixed value which cannot be charged.Most Voted \nC.filea.txt has the sticky bit set and a regular user cannot remove this permission. \nD.filea.txt is a hard link whose permissions are inherited from the target and cannot be set directly. \nE.filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.",
+            "question": "Running chmod 640 filea.txt as a regular user doesn't update filea.txt's permission. What might be a reason why chmod cannot modify the permissions? (Choose two.) \nA.filea.txt is owned by another user and a regular user cannot change the permissions of another user's file. \nB.filea.txt is a symbolic link whose permissions are a fixed value which cannot be charged. \nC.filea.txt has the sticky bit set and a regular user cannot remove this permission. \nD.filea.txt is a hard link whose permissions are inherited from the target and cannot be set directly. \nE.filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.",
             "answer": "AB",
             "explanation": "About hardlinks : When you create a new filename (that(s what a hardlink is) pointing to the exact same data as the old filename. This means that the two filenames, though different, point to identical data. [...] When changes are made to one filename, the other reflects those changes. The permissions, link count, ownership, timestamps, and file content are the exact same. If the original file is deleted, the data still exists under the secondary hard link. The data is only removed from your drive when all links to the data have been removed. If you find two files with identical properties but are unsure if they are hard-linked, use the ls -i command to view the inode number. \n About the sticky bit, it doesn't prevent 'regular users' from modifying if they are owner, so it's like A. \n For SetUID, setuid: a bit that makes an executable run with the privileges of the owner of the file. So not related. ",
             "url": "https://www.examtopics.com/discussions/lpi/view/37539-exam-101-500-topic-1-question-78-discussion"
@@ -5519,7 +5525,7 @@
         },
         {
             "id": 78,
-            "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \nA.echo \"${PWD}\"Most Voted \nB.echo \"${WD}\" \nC.printwd \nD.pwdMost Voted \nE.echo \"${pwd}\"",
+            "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \nA.echo \"${PWD}\" \nB.echo \"${WD}\" \nC.printwd \nD.pwd \nE.echo \"${pwd}\"",
             "answer": "AC",
             "explanation": "the printwd command is not installed by default on bash. The command pwd shows the value of the env variable ${PWD}",
             "url": "https://www.examtopics.com/discussions/lpi/view/15174-exam-101-500-topic-1-question-82-discussion"
@@ -5575,7 +5581,7 @@
         },
         {
             "id": 87,
-            "question": "Which of the following commands display the IDs of all processes owned by root? (Choose two.) \nA.pgrep -c root \nB.pgrep -u rootMost Voted \nC.pgrep -f root \nD.pgrep -U 0Most Voted \nE.pgrep -c 0",
+            "question": "Which of the following commands display the IDs of all processes owned by root? (Choose two.) \nA.pgrep -c root \nB.pgrep -u root \nC.pgrep -f root \nD.pgrep -U 0 \nE.pgrep -c 0",
             "answer": "BD",
             "explanation": "B is correct because it specifies user of 'root' with -u.\nD is correct because it matches 'real user ID' with uid of 0 (which I assume is the default.)\nWhat is the real user ID? Who you really are (the person who owns the proess) & a unique number for a user in the system.\nWhat is pgrep? It looks at running processes and lists the process ID to STDOUT.\nFor example: 'pgrep -u root sshd' will only list the process ID's that are owned by root (user).\nExample 2: 'pgrep -u user -l' will list the process ID and name used by 'user'.\n-c count | -u user |-l list the process name together with the process ID",
             "url": "https://www.examtopics.com/discussions/lpi/view/19054-exam-101-500-topic-1-question-91-discussion"
@@ -5610,28 +5616,28 @@
         },
         {
             "id": 92,
-            "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \nA.ABxxbcMost Voted \nB.xxCxxc \nC.xxxxxx \nD.ABCabc \nE.Axxaxx",
+            "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \nA.ABxxbc \nB.xxCxxc \nC.xxxxxx \nD.ABCabc \nE.Axxaxx",
             "answer": "C",
             "explanation": "Case-sensitive donc seulement \u00e0 l'endroit o\u00f9 une majuscule est avec une miniscule",
             "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
         },
         {
             "id": 93,
-            "question": "Which of the following commands outputs test to the shell? \nA.cat &lt;!EOT test EOT \nB.cat &lt;|EOT test EOT \nC.cat !&lt;EOT test EOT \nD.cat &amp;&lt;EOT test EOT \nE.cat &lt;&lt;EOT test EOTMost Voted",
+            "question": "Which of the following commands outputs test to the shell? \nA.cat &lt;!EOT test EOT \nB.cat &lt;|EOT test EOT \nC.cat !&lt;EOT test EOT \nD.cat &amp;&lt;EOT test EOT \nE.cat &lt;&lt;EOT test EOT",
             "answer": "E",
             "explanation": "EOT = EndofText. C'est un truc utilis\u00e9 pour passer plusieurs lignes. On ouvre en tapant << EOT et on ferme en tapant EOT. C'est utilis\u00e9 pour passer des blocs multiligne comme argument d'une commande. Ca s'appelle le heredoc, btw.\nExample : \n '[COMMAND] <<[-] 'DELIMITER'\nHERE-DOCUMENT\nDELIMITER",
             "url": "https://www.examtopics.com/discussions/lpi/view/22426-exam-101-500-topic-1-question-98-discussion"
         },
         {
             "id": 94,
-            "question": "What is the default nice level when a process is started using the nice command? \nA.-10 \nB.0 \nC.10Most Voted \nD.15 \nE.20",
+            "question": "What is the default nice level when a process is started using the nice command? \nA.-10 \nB.0 \nC.10 \nD.15 \nE.20",
             "answer": "B",
             "explanation": "If you start a command with nice it'll be 10, if you start command without nice it'll be 0.",
             "url": "https://www.examtopics.com/discussions/lpi/view/15139-exam-101-500-topic-1-question-99-discussion"
         },
         {
             "id": 95,
-            "question": "A user accidentally created the subdirectory \\dir in his home directory. Which of the following commands will remove that directory? \nA.rmdir ~/\\\\dirMost Voted \nB.rmdir \u05d2\u20ac~/\\dir\u05d2\u20ac \nC.rmdir ~/'dir' \nD.rmdir ~/\\dir \nE.rmdir '~/\\dir'",
+            "question": "A user accidentally created the subdirectory \\dir in his home directory. Which of the following commands will remove that directory? \nA.rmdir ~/\\\\dir \nB.rmdir \u05d2\u20ac~/\\dir\u05d2\u20ac \nC.rmdir ~/'dir' \nD.rmdir ~/\\dir \nE.rmdir '~/\\dir'",
             "answer": "A",
             "explanation": "D'après les tests des gars sur exam topics c'est bien la A",
             "url": "https://www.examtopics.com/discussions/lpi/view/16743-exam-101-500-topic-1-question-100-discussion"
@@ -5666,7 +5672,7 @@
         },
         {
             "id": 100,
-            "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \nA.Only a.txt, b.txt, and texts.tgz \nB.Only texts.tar and texts.tgz \nC.Only a.txt.gz and b.txt.gz \nD.Only a.txt and b.txt \nE.Only texts.tarMost Voted",
+            "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \nA.Only a.txt, b.txt, and texts.tgz \nB.Only texts.tar and texts.tgz \nC.Only a.txt.gz and b.txt.gz \nD.Only a.txt and b.txt \nE.Only texts.tar",
             "answer": "B",
             "explanation": "The answer is E because when you use gunzip without any parameter (for example, -k --keep), the extraction will not keep .tgz, but only .tar",
             "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
@@ -5722,7 +5728,7 @@
         },
         {
             "id": 109,
-            "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \nA.An initramfs is a compressed file system archive, which can be unpacked to examine its contents.Most Voted \nB.An initramfs file contains the MBR, the bootloader and the Linux kernel. \nC.After a successful boot, the initramfs contents are available in /run/initramfs/. \nD.The kernel uses the initramfs temporarily before accessing the real root file system.Most Voted \nE.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
+            "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \nA.An initramfs is a compressed file system archive, which can be unpacked to examine its contents. \nB.An initramfs file contains the MBR, the bootloader and the Linux kernel. \nC.After a successful boot, the initramfs contents are available in /run/initramfs/. \nD.The kernel uses the initramfs temporarily before accessing the real root file system. \nE.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
             "answer": "AC",
             "explanation": "The kernel will then open the initramfs (initial RAM filesystem). The initramfs is an archive containing a filesystem used as a temporary root filesystem during the boot process. The main purpose of an initramfs file is to provide the required modules so the kernel can access the \u201creal\u201d root filesystem of the operating system.\nAn initramfs is a compressed file system archive, which can be unpacked to examine its contents.\nThe kernel uses the initramfs temporarily before accessing the real root file system",
             "url": "https://www.examtopics.com/discussions/lpi/view/19402-exam-101-500-topic-1-question-116-discussion"
@@ -5743,7 +5749,7 @@
         },
         {
             "id": 113,
-            "question": "Given the following two symbolic links in a System V init configuration:/etc/rc1.d/K01apache2/etc/rc2.d/S02apache2When are the scripts executed that are referenced by these links? (Choose two.) \nA.S02apache2 is run when runlevel 2 is entered.Most Voted \nB.S02apache2 is run when runlevel 2 is left. \nC.K01apache2 is never run because K indicates a deactivated service. \nD.Both S02apache2 and K01apache2 are run during a system shutdown. \nE.K01apache2 is run when runlevel 1 is entered.Most Voted",
+            "question": "Given the following two symbolic links in a System V init configuration:/etc/rc1.d/K01apache2/etc/rc2.d/S02apache2When are the scripts executed that are referenced by these links? (Choose two.) \nA.S02apache2 is run when runlevel 2 is entered. \nB.S02apache2 is run when runlevel 2 is left. \nC.K01apache2 is never run because K indicates a deactivated service. \nD.Both S02apache2 and K01apache2 are run during a system shutdown. \nE.K01apache2 is run when runlevel 1 is entered.",
             "answer": "AC",
             "explanation": "A REMPLIR",
             "url": "https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion"
