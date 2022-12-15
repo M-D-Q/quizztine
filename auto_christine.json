@@ -504,7 +504,7 @@
             "id": 54,
             "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A. gzip archive.tgz | tar xvf \u2013 \n B. tar ztf archive.tgz \n C. gzip -d archive.tgz | tar tvf \u2013 \n D. tar cf archive.tgz \n",
             "answer": "B",
-            "explanation": "https://www.briefmenow.org/comptia/which-of-the-following-commands-displays-the-contents-of-a-gzip-compressed-tar-archive-2/"
+            "explanation": "-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE."
         },
         {
             "id": 55,
@@ -975,7 +975,7 @@
         },
         {
             "id": 9,
-            "question": "Which of the following commands will produce the following output? \n <a href=\"//cdn.briefmenow.org/wp-content/uploads/101-400-v2/1.jpg\"><img class=\"aligncenter size-full\" src=\"//cdn.briefmenow.org/wp-content/uploads/101-400-v2/1.jpg\" alt=\"\"></a> \n A. jobs \n B. proclist \n C. netstat \n D. ps \n",
+            "question": "Which of the following commands will produce the following output? \n <a href=\"//cdn.briefmenow.org/wp-content/uploads/101-400-v2/1.jpg\"><img class=\"aligncenter size-full\" src=\"//cdn.briefmenow.org/wp-content/uploads/101-400-v2/1.jpg\" alt=-></a> \n A. jobs \n B. proclist \n C. netstat \n D. ps \n",
             "answer": "D",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-will-produce-the-follow-3/",
@@ -1049,7 +1049,7 @@
             "id": 17,
             "question": "Which of the following commands can be used to display the inode number of a given file? \n A. inode \n B. ls \n C. ln \n D. cp \n",
             "answer": "B",
-            "explanation": "",
+            "explanation": "ls -i [filename] and stat [filename]",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-can-be-used-to-display-4/",
             "warning": "All appears to be good",
             "type": "choix"
@@ -1409,7 +1409,7 @@
             "id": 57,
             "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A. gzip archive.tgz | tar xvf \u2013 \n B. tar ztf archive.tgz \n C. gzip -d archive.tgz | tar tvf \u2013 \n D. tar cf archive.tgz \n",
             "answer": "B",
-            "explanation": "",
+            "explanation": "-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE.",
             "url": "https://www.briefmenow.org/linux/which-of-the-following-commands-displays-the-contents-o-3/",
             "warning": "All appears to be good",
             "type": "choix"
@@ -4656,7 +4656,7 @@
         },
         {
             "id": 2,
-            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A.gzip archive.tgz | tar xvf - \n B.tar \u05d2\u20ac\"fzt archive.tgz \n C.gzip \u05d2\u20ac\"d archive.tgz | tar tvf - \n D.tar cf archive.tgz \n E.tar ztf archive.tgz",
+            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \n A.gzip archive.tgz | tar xvf - \n B.tar -fzt archive.tgz \n C.gzip -d archive.tgz | tar tvf - \n D.tar cf archive.tgz \n E.tar ztf archive.tgz",
             "answer": "E",
             "explanation": "-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30630-exam-101-500-topic-1-question-56-discussion"
@@ -5019,122 +5019,122 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/66020-exam-101-500-topic-1-question-118-discussion"
         }
     ],
-    "Exam-Topics 101 - Paywall breached - Test": [
+    "Exam-Topics 101 - Paywall breached - Version Large": [
         {
             "id": 0,
             "question": "Which type of file system is created by mkfs when it is executed with the block device name only and without any additional parameters? \nA.XFS \nB.VFAT \nC.ext2 \nD.ext3 \nE.ext4",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "From the manual : '-t, --type type \nSpecify the type of filesystem to be built. If not specified, the default filesystem type (currently ext2) is used.'",
             "url": "https://www.examtopics.com/discussions/lpi/view/19299-exam-101-500-topic-1-question-1-discussion"
         },
         {
             "id": 1,
             "question": "Which umask value ensures that new directories can be read, written and listed by their owning user, read and listed by their owning group and are not accessible at all for everyone else? \nA.0750 \nB.0027 \nC.0036 \nD.7640 \nE.0029",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "written and listed by their owning user => 7 => umask 0 \nread and listed by their owning group => 5 => umask 2 \nnot accessible at all for everyone else => 0 => umask 7\n => umask 0027 \nSchéma sympatoche pour comprendre = https://en.wikipedia.org/wiki/Umask#Octal_codes ",
             "url": "https://www.examtopics.com/discussions/lpi/view/22939-exam-101-500-topic-1-question-2-discussion"
         },
         {
             "id": 2,
-            "question": "Which of the following commands changes the number of days before the ext3 filesystem on /dev/sda1 has to run through a full filesystem check while booting? \nA.tune2fs \u05d2\u20ac\"d 200 /dev/sda1 \nB.tune2fs \u05d2\u20ac\"i 200 /dev/sda1 \nC.tune2fs \u05d2\u20ac\"c 200 /dev/sda1 \nD.tune2fs \u05d2\u20ac\"n 200 /dev/sda1 \nE.tune2fs --days 200 /dev/sda1",
+            "question": "Which of the following commands changes the number of days before the ext3 filesystem on /dev/sda1 has to run through a full filesystem check while booting? \nA.tune2fs -d 200 /dev/sda1 \nB.tune2fs -i 200 /dev/sda1 \nC.tune2fs -c 200 /dev/sda1 \nD.tune2fs -n 200 /dev/sda1 \nE.tune2fs --days 200 /dev/sda1",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The 'i' switch stands for interval-between-checks",
             "url": "https://www.examtopics.com/discussions/lpi/view/22071-exam-101-500-topic-1-question-3-discussion"
         },
         {
             "id": 3,
             "question": "Which is the default percentage of reserved space for the root user on new ext4 filesystems? \nA.10% \nB.3% \nC.15% \nD.0% \nE.5%",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "By default, the ext3 and ext4 filesystems reserve 5% space for use by the root user. This reserved space counts as Non DFS Used . The Reserved block count is the number of ext3 / ext4 filesystem blocks that are reserved.",
             "url": "https://www.examtopics.com/discussions/lpi/view/25058-exam-101-500-topic-1-question-4-discussion"
         },
         {
             "id": 4,
             "question": "Which of the following is true when a file system, which is neither listed in /etc/fstab nor known to system, is mounted manually? \nA.systemd ignores any manual mounts which are not done using the systemctl mount command \nB.The command systemctl mountsync can be used to create a mount unit based on the existing mount \nC.systemd automatically generates a mount unit and monitors the mount point without changing itMost Voted \nD.Unless a systemd mount unit is created, systemd unmounts the file system after a short period of time \nE.systemctl unmount must be used to remove the mount because system opens a file descriptor on the mount point",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "A. It's not mandatory to use the 'systemctl mount' to mount manual mount points.\nB. The command 'systemctl mountsync' doesn't exist. (https://man7.org/linux/man-pages/man1/systemctl.1.html)\n C. According to systemd.mount man page: 'Mount points created at runtime (independently of unit files or /etc/fstab) will be monitored by systemd and appear like any other mount unit in systemd.' so it is CORRECT.\n D. It should unmount it after rebooting, according to the comments.\n E. Whatever.",
             "url": "https://www.examtopics.com/discussions/lpi/view/22174-exam-101-500-topic-1-question-5-discussion"
         },
         {
             "id": 6,
             "question": "What does the command mount --bind do? \nA.It makes the contents of one directory available in another directory \nB.It mounts all available filesystems to the current directory \nC.It mounts all user mountable filesystems to the user's home directory \nD.It mounts all file systems listed in /etc/fstab which have the option userbind set \nE.It permanently mounts a regular file to a directory",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "Bind mount operation\nRemount part of the file hierarchy somewhere else. The call is:\n'mount --bind olddir newdir'\nor by using this fstab entry:\n'/olddir /newdir none bind'\nAfter this call the same contents are accessible in two places./nIt is important to understand that 'bind' does not create any second-class or special node in the kernel VFS. The 'bind' is just another operation to attach a filesystem. There is nowhere stored information that the filesystem has been attached by a 'bind' operation. The olddir and newdir are independent and the olddir may be unmounted.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38415-exam-101-500-topic-1-question-7-discussion"
         },
         {
             "id": 7,
-            "question": "Consider the following output from the command ls `\"i:How would a new file named c.txt be created with the same inode number as a.txt (Inode 525385)? \nA.ln \u05d2\u20ac\"h a.txt c.txt \nB.ln c.txt a.txt \nC.ln a.txt c.txt \nD.ln \u05d2\u20ac\"f c.txt a.txt \nE.ln \u05d2\u20ac\"i 525385 c.txt",
+            "question": "Consider the following output from the command ls -i:\n525385 -rw-rw-r-- 2 1000 1000 0 Feb 12 19:44 a.txt\n526255 lrwxrwxrwx 1 1000 1000 5 Feb 12 19:44 b.txt -> a.txt\nHow would a new file named c.txt be created with the same inode number as a.txt (Inode 525385)? \nA.ln -h a.txt c.txt \nB.ln c.txt a.txt \nC.ln a.txt c.txt \nD.ln -f c.txt a.txt \nE.ln -i 525385 c.txt",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "C is correct because only ln is used without any options creating a hardlink which has the same inode number as the original file",
             "url": "https://www.examtopics.com/discussions/lpi/view/85041-exam-101-500-topic-1-question-8-discussion"
         },
         {
             "id": 8,
-            "question": "Consider the following directory:drwxrwxr-x 2 root sales 4096 Jan 1 15:21 salesWhich command ensures new files created within the directory sales are owned by the group sales? (Choose two.) \nA.chmod g+s sales \nB.setpol \u05d2\u20ac\"R newgroup=sales sales \nC.chgrp \u05d2\u20ac\"p sales sales \nD.chown --persistent *.sales sales \nE.chmod 2775 sales",
+            "question": "Consider the following directory:\ndrwxrwxr-x 2 root sales 4096 Jan 1 15:21 sales\nWhich command ensures new files created within the directory sales are owned by the group sales? (Choose two.) \nA.chmod g+s sales \nB.setpol -R newgroup=sales sales \nC.chgrp -p sales sales \nD.chown --persistent *.sales sales \nE.chmod 2775 sales",
             "answer": "AE",
-            "explanation": "A REMPLIR",
+            "explanation": "A : This command sets the 'set group ID' (setgid) mode bit on a directory. \nThis means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file. This will also be passed on to new subdirectories created in the current directory.\ng+s affects the files' group ID but does not affect the owner ID.\nNote that this applies only to newly-created files. Files that are moved (mv) into the directory are unaffected by the setgid setting. Files that are copied with cp -p are also unaffected.\nE : The 2 in front of 775 is the setgid or 'group id'.\n Some more info : https://unix.stackexchange.com/questions/182212/chmod-gs-command & https://en.wikipedia.org/wiki/Chmod#Symbolic_modes \nEt un site générateur de chmod, tiens pourquoi pas : https://chmodcommand.com/ \n",
             "url": "https://www.examtopics.com/discussions/lpi/view/82524-exam-101-500-topic-1-question-9-discussion"
         },
         {
             "id": 9,
             "question": "In order to display all currently mounted filesystems, which of the following commands could be used? (Choose two.) \nA.cat /proc/self/mounts \nB.free \nC.lsmounts \nD.mount \nE.cat /proc/filesystems",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "Les 4 manières de voir les filesystems montés :\n 'df' = Shows Linux file system disk space usage\n 'mount' = shows all mounted Linux filesystems\n 'findmnt' = find or search a linux filesystem.\n '/proc/mounts' OR '/proc/self/mounts' files = show all mounted filesystems under Linux.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38416-exam-101-500-topic-1-question-10-discussion"
         },
         {
             "id": 11,
-            "question": "Which chown command changes the ownership to dave and the group to staff on a file named data.txt? \nA.chown dave/staff data.txt \nB.chown \u05d2\u20ac\"u dave \u05d2\u20ac\"g staff data.txt \nC.chown --user dave --group staff data.txt \nD.chown dave+staff data.txt \nE.chown dave:staff data.txt",
+            "question": "Which chown command changes the ownership to dave and the group to staff on a file named data.txt? \nA.chown dave/staff data.txt \nB.chown -u dave -g staff data.txt \nC.chown --user dave --group staff data.txt \nD.chown dave+staff data.txt \nE.chown dave:staff data.txt",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "chown USERNAME:GROUPNAME FILENAME",
             "url": "https://www.examtopics.com/discussions/lpi/view/30983-exam-101-500-topic-1-question-12-discussion"
         },
         {
             "id": 12,
             "question": "When considering the use of hard links, what are valid reasons not to use hard links? \nA.Hard links are not available on all Linux systems because traditional filesystems, such as ext4, do not support them \nB.Each hard link has individual ownership, permissions and ACLs which can lead to unintended disclosure of file content \nC.Hard links are specific to one filesystem and cannot point to files on another filesystem \nD.If users other than root should be able to create hard links, suln has to be installed and configured \nE.When a hard linked file is changed, a copy of the file is created and consumes additional space",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "While useful, there are some limitations to what hard links can do. For starters, they can only be created for regular files (not directories or special files). Also, a hard link cannot span multiple filesystems. They only work when the new hard link exists on the same filesystem as the original",
             "url": "https://www.examtopics.com/discussions/lpi/view/24988-exam-101-500-topic-1-question-13-discussion"
         },
         {
             "id": 13,
             "question": "In compliance with the FHS, in which of the directories are man pages found? \nA./opt/man/ \nB./usr/doc/ \nC./usr/share/man/ \nD./var/pkg/man \nE./var/man/",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/38420-exam-101-500-topic-1-question-14-discussion"
         },
         {
             "id": 15,
             "question": "What is the process ID number of the init process on a System V init based system? \nA.-1 \nB.0 \nC.1 \nD.It is different with each reboot \nE.It is set to the current run level",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "Process ID 1 is the init process primarily responsible for starting and shutting down the system",
             "url": "https://www.examtopics.com/discussions/lpi/view/30984-exam-101-500-topic-1-question-16-discussion"
         },
         {
             "id": 16,
             "question": "Which daemon handles power management events on a Linux system? \nA.acpid \nB.batteryd \nC.pwrmgntd \nD.psd \nE.inetd",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "acpid: Advanced Configuration and Power Interface\nRefer: https://www.thegeekdiary.com/linux-os-service-acpid/#:~:text=The%20acpid%20daemon%20supports%20the,programs%20to%20handle%20the%20event.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38423-exam-101-500-topic-1-question-17-discussion"
         },
         {
             "id": 17,
             "question": "Which of the following statements are true about the boot sequence of a PC using a BIOS? (Choose two.) \nA.Some parts of the boot process can be configured from the BIOS \nB.Linux does not require the assistance of the BIOS to boot a computer \nC.The BIOS boot process starts only if secondary storage, such as the hard disk, is functional \nD.The BIOS initiates the boot process after turning the computer on \nE.The BIOS is started by loading hardware drivers from secondary storage, such as the hard disk",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "B = contredit la question, C = non, pas besoin, E = Non, c'est faux.",
             "url": "https://www.examtopics.com/discussions/lpi/view/48624-exam-101-500-topic-1-question-18-discussion"
         },
         {
             "id": 18,
             "question": "What is true regarding UEFI firmware? (Choose two.) \nA.It can read and interpret partition tablesMost Voted \nB.It can use and read certain file systemsMost Voted \nC.It stores its entire configuration on the /boot/ partition \nD.It is stored in a special area within the GPT metadata \nE.It is loaded from a fixed boot disk position",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "WEIRD. A & B are probably correct too. But here is some explanation for the D answer :\n GPT-partitioned disks can be used either with computers with the traditional PC BIOS or ones with UEFI firmware. On machines with a BIOS, the second part of GRUB is stored in a special BIOS boot partition.\nOn systems with UEFI firmware, GRUB is loaded by the firmware from the files grubia32.efi (for 32-Bit systems) or grubx64.efi (for 64-Bit systems) from a partition called the ESP (EFI System Partition).\n Some link : https://learning.lpi.org/en/learning-materials/101-500/102/102.2/102.2_01/ ",
             "url": "https://www.examtopics.com/discussions/lpi/view/35200-exam-101-500-topic-1-question-19-discussion"
         },
         {
             "id": 19,
-            "question": "A faulty kernel module is causing issues with a network interface card. Which of the following actions ensures that this module is not loaded automatically when the system boots? \nA.Using lsmod --remove --autoclean without specifying the name of a specific module \nB.Using modinfo \u05d2\u20ac\"k followed by the name of the offending module \nC.Using modprobe \u05d2\u20ac\"r followed by the name of the offending module \nD.Adding a blacklist line including the name of the offending module to the file /etc/modprobe.d/blacklist.conf \nE.Deleting the kernel module's directory from the file system and recompiling the kernel, including its modules",
+            "question": "A faulty kernel module is causing issues with a network interface card. Which of the following actions ensures that this module is not loaded automatically when the system boots? \nA.Using lsmod --remove --autoclean without specifying the name of a specific module \nB.Using modinfo -k followed by the name of the offending module \nC.Using modprobe -r followed by the name of the offending module \nD.Adding a blacklist line including the name of the offending module to the file /etc/modprobe.d/blacklist.conf \nE.Deleting the kernel module's directory from the file system and recompiling the kernel, including its modules",
             "answer": "D",
             "explanation": "A REMPLIR",
             "url": "https://www.examtopics.com/discussions/lpi/view/16578-exam-101-500-topic-1-question-20-discussion"
@@ -5143,21 +5143,21 @@
             "id": 20,
             "question": "Which of the following commands installs all packages with a name ending with the string foo? \nA.zypper get \"*foo\" \nB.zypper update \"foo?\" \nC.zypper force \"foo*\" \nD.zypper install \"*foo\" \nE.zypper add \".*foo\"",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "(*) is a wildcard that matches anything. And you have to use zypper install not add.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38100-exam-101-500-topic-1-question-21-discussion"
         },
         {
             "id": 21,
             "question": "What is the first program the Linux kernel starts at boot time when using System V init? \nA./lib/init.so \nB./proc/sys/kernel/init \nC./etc/rc.d/rcinit \nD./sbin/init \nE./boot/init",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The kernel looks for init in a few locations that have been historically used for it, but the proper location for it (on a Linux system) is /sbin/init. If the kernel can't find init, it tries to run /bin/sh, and if that also fails, the startup of the system fails.\n source : https://tldp.org/LDP/sag/html/init-process.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/48571-exam-101-500-topic-1-question-22-discussion"
         },
         {
             "id": 22,
-            "question": "A Debian package creates several files during its installation. Which of the following commands searches for packages owning the file /etc/debian_version? \nA.apt-get search /etc/debian_version \nB.apt \u05d2\u20ac\"r /etc/debian_version \nC.find /etc/debian_version -dpkg \nD.dpkg \u05d2\u20ac\"S /etc/debian_version \nE.apt-file /etc/debian_version",
+            "question": "A Debian package creates several files during its installation. Which of the following commands searches for packages owning the file /etc/debian_version? \nA.apt-get search /etc/debian_version \nB.apt -r /etc/debian_version \nC.find /etc/debian_version -dpkg \nD.dpkg -S /etc/debian_version \nE.apt-file /etc/debian_version",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "-S, --search filename-search-pattern...\nSearch for a filename from installed packages.",
             "url": "https://www.examtopics.com/discussions/lpi/view/22079-exam-101-500-topic-1-question-23-discussion"
         },
         {
@@ -5171,574 +5171,574 @@
             "id": 24,
             "question": "Which of the following directories on a 64 bit Linux system typically contain shared libraries? (Choose two.) \nA.~/.lib64/ \nB./usr/lib64/ \nC./var/lib64/ \nD./lib64/ \nE./opt/lib64/",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "Common locations for shared libraries in a Linux system are:\n• /lib\n• /lib32\n• /lib64\n• /usr/lib\n• /usr/local/lib",
             "url": "https://www.examtopics.com/discussions/lpi/view/48572-exam-101-500-topic-1-question-25-discussion"
         },
         {
             "id": 25,
-            "question": "Which command uninstalls a package but keeps its configuration files in case the package is re-installed? \nA.dpkg \"\"s pkgname \nB.dpkg \"\"L pkgname \nC.dpkg \"\"P pkgname \nD.dpkg \"\"v pkgname \nE.dpkg \"\"r pkgname",
+            "question": "Which command uninstalls a package but keeps its configuration files in case the package is re-installed? \nA.dpkg -s pkgname \nB.dpkg -L pkgname \nC.dpkg -P pkgname \nD.dpkg -v pkgname \nE.dpkg -r pkgname",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "-r, --remove package...|-a|--pending\nRemove an installed package. This removes everything except conffiles, which may avoid having to reconfigure the package if it is reinstalled later",
             "url": "https://www.examtopics.com/discussions/lpi/view/32018-exam-101-500-topic-1-question-26-discussion"
         },
         {
             "id": 26,
-            "question": "Which of the following commands lists the dependencies of the RPM package file foo.rpm? \nA.rpm \"\"qpR foo.rpm \nB.rpm \"\"dep foo \nC.rpm \"\"ld foo.rpm \nD.rpm \"\"R foo.rpm \nE.rpm \"\"pD foo",
+            "question": "Which of the following commands lists the dependencies of the RPM package file foo.rpm? \nA.rpm -qpR foo.rpm \nB.rpm -dep foo \nC.rpm -ld foo.rpm \nD.rpm -R foo.rpm \nE.rpm -pD foo",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "rpm - RedHat Package Manager\n-q Query\n-p Package\n-R Requires (Dependencies)R",
             "url": "https://www.examtopics.com/discussions/lpi/view/48574-exam-101-500-topic-1-question-27-discussion"
         },
         {
             "id": 27,
             "question": "Which of the following properties of a Linux system should be changed when a virtual machine is cloned? (Choose two.) \nA.The partitioning scheme \nB.The file system \nC.The D-Bus Machine ID \nD.The permissions of /root/ \nE.The SSH host keys",
             "answer": "CE",
-            "explanation": "A REMPLIR",
+            "explanation": "Machine ID is a unique hexadecimal 32 character string given to your machine during installation. So it should be changed if the machine is cloned to prevent duplicate ID on a network.\nSSH keys are unique to each server/client and also should be changed to securely SSH \nAdditional information. We must change the following as well.\n1. The hostname\n2. NIC MAC address\n3. NIC IP address\n4. Any item employing a UUID.\n5. Machine ID\n6. Configuration settings on the clone that employ any item in the list above",
             "url": "https://www.examtopics.com/discussions/lpi/view/27048-exam-101-500-topic-1-question-28-discussion"
         },
         {
             "id": 28,
             "question": "Which of the following commands installs GRUB 2 into the master boot record on the third hard disk? \nA.grub2 install /dev/sdc \nB.grub-mkrescue /dev/sdc \nC.grub-mbrinstall /dev/sdc \nD.grub-setup /dev/sdc \nE.grub-install /dev/sdc",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "A. NO the right command is:# grub2-install /dev/sda\nB. NO it's for create bootable device\nC. NO does not exist\nD. NO does not exist\nE. YES it's the right command also on Grub2 system",
             "url": "https://www.examtopics.com/discussions/lpi/view/40303-exam-101-500-topic-1-question-29-discussion"
         },
         {
             "id": 29,
             "question": "Which of the following partition types is used for Linux swap spaces when partitioning hard disk drives? \nA.7 \nB.82 \nC.83 \nD.8e \nE.fd",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "82 Linux Swap\n83 Linux",
             "url": "https://www.examtopics.com/discussions/lpi/view/22943-exam-101-500-topic-1-question-30-discussion"
         },
         {
             "id": 30,
             "question": "What is true regarding the configuration of yum? (Choose two.) \nA.Changes to the repository configuration become active after running yum confupdate \nB.Changes to the yum configuration become active after restarting the yumd service \nC.The configuration of package repositories can be divided into multiple files \nD.Repository configurations can include variables such as $basearch or $releasever \nE.In case /etc/yum.repos.d/ contains files, /etc/yum.conf is ignored",
             "answer": "CD",
-            "explanation": "A REMPLIR",
+            "explanation": "https://docs.fedoraproject.org/en-US/Fedora/17/html/System_Administrators_Guide/sec-Configuring_Yum_and_Yum_Repositories.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/48573-exam-101-500-topic-1-question-31-discussion"
         },
         {
             "id": 31,
             "question": "Which of the following apt-get subcommands installs the newest versions of all currently installed packages? \nA.auto-update \nB.dist-upgrade \nC.full-upgrade \nD.install \nE.update",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "dist-upgrade - Upgrades all packages, but monitors for package dependencies",
             "url": "https://www.examtopics.com/discussions/lpi/view/14610-exam-101-500-topic-1-question-32-discussion"
         },
         {
             "id": 32,
-            "question": "Which command uninstalls a package but keeps its configuration files in case the package is re-installed? \nA.dpkg \u05d2\u20ac\"s pkgname \nB.dpkg \u05d2\u20ac\"L pkgname \nC.dpkg \u05d2\u20ac\"P pkgname \nD.dpkg \u05d2\u20ac\"v pkgname \nE.dpkg \u05d2\u20ac\"r pkgname",
+            "question": "Which command uninstalls a package but keeps its configuration files in case the package is re-installed? \nA.dpkg -s pkgname \nB.dpkg -L pkgname \nC.dpkg -P pkgname \nD.dpkg -v pkgname \nE.dpkg -r pkgname",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "-r, --remove package...|-a|--pending\nRemove an installed package. This removes everything except conffiles, which may avoid having to reconfigure the package if it is reinstalled later",
             "url": "https://www.examtopics.com/discussions/lpi/view/85141-exam-101-500-topic-1-question-33-discussion"
         },
         {
             "id": 33,
-            "question": "Which of the following commands lists the dependencies of the RPM package file foo.rpm? \nA.rpm \u05d2\u20ac\"qpR foo.rpm \nB.rpm \u05d2\u20ac\"dep foo \nC.rpm \u05d2\u20ac\"ld foo.rpm \nD.rpm \u05d2\u20ac\"R foo.rpm \nE.rpm \u05d2\u20ac\"pD foo",
+            "question": "Which of the following commands lists the dependencies of the RPM package file foo.rpm? \nA.rpm -qpR foo.rpm \nB.rpm -dep foo \nC.rpm -ld foo.rpm \nD.rpm -R foo.rpm \nE.rpm -pD foo",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "rpm - RedHat Package Manager\n-q Query\n-p Package\n-R Requires (Dependencies)R",
             "url": "https://www.examtopics.com/discussions/lpi/view/85144-exam-101-500-topic-1-question-34-discussion"
         },
         {
             "id": 34,
             "question": "What is the maximum niceness value that a regular user can assign to a process with the nice command when executing a new process? \nA.9 \nB.15 \nC.19 \nD.49 \nE.99",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "nice = Runs COMMAND with an adjusted niceness, which affects process scheduling. With no COMMAND, prints the current niceness. Niceness values range from -20 (most favorable to the process) to 19 (least favorable to the process).\n So it must be 19. The question ask about the maximum possible number not a maximum priotity user can assign where lower = higher pririoty",
             "url": "https://www.examtopics.com/discussions/lpi/view/22953-exam-101-500-topic-1-question-35-discussion"
         },
         {
             "id": 35,
-            "question": "Which of the following commands list all files and directories within the /tmp/ directory and its subdirectories which are owned by the user root? (Choose two.) \nA.find /tmp \u05d2\u20ac\"user root -print \nB.find \u05d2\u20ac\"path /tmp \u05d2\u20ac\"uid root \nC.find /tmp \u05d2\u20ac\"uid root -print \nD.find /tmp \u05d2\u20ac\"user root \nE.find \u05d2\u20ac\"path /tmp \u05d2\u20ac\"user root -print",
+            "question": "Which of the following commands list all files and directories within the /tmp/ directory and its subdirectories which are owned by the user root? (Choose two.) \nA.find /tmp -user root -print \nB.find -path /tmp -uid root \nC.find /tmp -uid root -print \nD.find /tmp -user root \nE.find -path /tmp -user root -print",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "From the manual on find command : '-user uname' = File is owned by user uname (numeric user ID allowed).\n-print just prints everything to stout, so it's the same.",
             "url": "https://www.examtopics.com/discussions/lpi/view/85145-exam-101-500-topic-1-question-36-discussion"
         },
         {
             "id": 36,
             "question": "Which of the following are valid stream redirection operators within Bash? (Choose two.) \nA.&lt; \nB.#&gt; \nC.%&gt; \nD.&gt;&gt;&gt; \nE.2&gt;&amp;1",
             "answer": "AE",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/48576-exam-101-500-topic-1-question-37-discussion"
         },
         {
             "id": 37,
-            "question": "What output will be displayed when the user fred executes the following command? echo \"\u02dcfred $USER' \nA.fred fred \nB.fred /home/fred/ \nC.\"\u02dcfred $USER' \nD.fred $USER \nE.\"\u02dcfred fred'",
+            "question": "What output will be displayed when the user fred executes the following command? echo 'fred $USER' \nA.fred fred \nB.fred /home/fred/ \nC.'fred $USER' \nD.fred $USER \nE.'fred fred'",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "echo 'fred $USER' will repeat the content within the ' '",
             "url": "https://www.examtopics.com/discussions/lpi/view/14609-exam-101-500-topic-1-question-38-discussion"
         },
         {
             "id": 38,
             "question": "From a Bash shell, which of the following commands directly execute the instructions from the file /usr/local/bin/runme.sh without starting a subshell?(Choose two.) \nA.source /usr/local/bin/runme.sh \nB./usr/local/bin/runme.sh \nC./bin/bash /usr/local/bin/runme.sh \nD.. /usr/local/bin/runme.sh \nE.run /usr/local/bin/runme.sh",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "When a script is run using source it runs within the existing shell, any variables created or modified by the script will remain available after the script completes.\nsource is a synonym for dot/period '.' in bash.",
             "url": "https://www.examtopics.com/discussions/lpi/view/23936-exam-101-500-topic-1-question-40-discussion"
         },
         {
             "id": 40,
             "question": "Immediately after deleting 3 lines of text in vi and moving the cursor to a different line, which single character command will insert the deleted content below the current line? \nA.i (lowercase) \nB.p (lowercase) \nC.P (uppercase) \nD.U (uppercase) \nE.u (lowercase)",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/14612-exam-101-500-topic-1-question-42-discussion"
         },
         {
             "id": 41,
-            "question": "Which of the following commands changes all CR-LF line breaks in the text file userlist.txt to Linux standard LF line breaks and stores the result in newlist.txt? \nA.tr \u05d2\u20ac\"d '\\r' &lt; userlist.txt &gt; newlist.txt \nB.tr \u05d2\u20ac\"c '\\r' '' &lt;newlist.txt&gt; userlist.txt \nC.tr '\\r' '' &lt;userlist.txt&gt; newlist.txt \nD.tr '\\r' '' userlist.txt newlist.txt \nE.tr \u05d2\u20ac\"s '/^M/^J/' userlist.txt newlist.txt",
+            "question": "Which of the following commands changes all CR-LF line breaks in the text file userlist.txt to Linux standard LF line breaks and stores the result in newlist.txt? \nA.tr -d '\\r' &lt; userlist.txt &gt; newlist.txt \nB.tr -c '\\r' '' &lt;newlist.txt&gt; userlist.txt \nC.tr '\\r' '' &lt;userlist.txt&gt; newlist.txt \nD.tr '\\r' '' userlist.txt newlist.txt \nE.tr -s '/^M/^J/' userlist.txt newlist.txt",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "https://stackoverflow.com/questions/2613800/how-to-convert-dos-windows-newline-crlf-to-unix-newline-lf",
             "url": "https://www.examtopics.com/discussions/lpi/view/86151-exam-101-500-topic-1-question-43-discussion"
         },
         {
             "id": 42,
-            "question": "Given the following input stream:txt1.txtatxt.txttxtB.txtWhich of the following regular expressions turns this input stream into the following output stream? txt1.bak.txt atxt.bak.txt txtB.bak.txt \nA.s/^.txt/.bak/ \nB.s/txt/bak.txt/ \nC.s/txt$/bak.txt/Most Voted \nD.s/^txt$/.bak^/ \nE.s/[.txt]/.bak$1/",
+            "question": "Given the following input stream:\ntxt1.txt\natxt.txt\ntxtB.txt\n \nWhich of the following regular expressions turns this input stream into the following output stream? txt1.bak.txt atxt.bak.txt txtB.bak.txt \nA.s/^.txt/.bak/ \nB.s/txt/bak.txt/ \nC.s/txt$/bak.txt/Most Voted \nD.s/^txt$/.bak^/ \nE.s/[.txt]/.bak$1/",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/13524-exam-101-500-topic-1-question-44-discussion"
         },
         {
             "id": 43,
             "question": "Which command must be entered before exiting vi to save the current file as filea.txt? \nA.%s filea.txt \nB.%w filea.txt \nC.:save filea.txt \nD.:w filea.txt \nE.:s filea.txt",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/49224-exam-101-500-topic-1-question-45-discussion"
         },
         {
             "id": 44,
-            "question": "Which of the following commands prints a list of usernames (first column) and their primary group (fourth column) from the /etc/passwd file? \nA.fmt \"\"f 1,4 /etc/passwd \nB.cut \"\"d : -f 1,4 /etc/passwd \nC.sort \"\"t : -k 1,4 /etc/passwd \nD.paste \"\"f 1,4 /etc/passwd \nE.split \"\"c 1,4 /etc/passwd",
+            "question": "Which of the following commands prints a list of usernames (first column) and their primary group (fourth column) from the /etc/passwd file? \nA.fmt -f 1,4 /etc/passwd \nB.cut -d : -f 1,4 /etc/passwd \nC.sort -t : -k 1,4 /etc/passwd \nD.paste -f 1,4 /etc/passwd \nE.split -c 1,4 /etc/passwd",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Column 1: Username | Column 2: Password (x) | Column 3: UID | Column 4: GID",
             "url": "https://www.examtopics.com/discussions/lpi/view/58553-exam-101-500-topic-1-question-46-discussion"
         },
         {
             "id": 45,
             "question": "Which of the following commands displays the output of the foo command on the screen and also writes it to a file called /tmp/foodata? \nA.foo | less /tmp/foodata \nB.foo | cp /tmp/foodata \nC.foo &gt; /tmp/foodata \nD.foo | tee /tmp/foodata \nE.foo &gt; stdout &gt;&gt; /tmp/foodata",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "'Keyword is 'tee'. Think of the letter 'T' where it sends information two-ways!'\n-Confucius",
             "url": "https://www.examtopics.com/discussions/lpi/view/20114-exam-101-500-topic-1-question-47-discussion"
         },
         {
             "id": 46,
             "question": "What output will be displayed when the user fred executes the following command? echo 'fred $USER' \nA.fred fred \nB.fred /home/fred/ \nC.'fred $USER' \nD.fred $USER \nE.'fred fred'",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "echo 'fred $USER' will repeat the content within the ' '",
             "url": "https://www.examtopics.com/discussions/lpi/view/83731-exam-101-500-topic-1-question-48-discussion"
         },
         {
             "id": 47,
             "question": "Which of the following commands displays the path to the executable file that would be executed when the command foo is invoked? \nA.lsattr foo \nB.apropos foo \nC.locate foo \nD.whatis foo \nE.which foo",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "A. lsattr foo -- lsattr: No such file or directory while trying to stat ls\nB. apropos foo - all man pages - apropos - search the manual page names and descriptions\nC. locate foo - locate file via updatedb reference\nD. whatis foo - whatis - display one-line manual page descriptions\nE. which foo - show location lib -which - locate a command",
             "url": "https://www.examtopics.com/discussions/lpi/view/14613-exam-101-500-topic-1-question-49-discussion"
         },
         {
             "id": 48,
-            "question": "When redirecting the output of find to the xargs command, what option to find is useful if the filenames contain spaces? \nA.\u05d2\u20ac\"rep-space \nB.-printnul \nC.-nospace \nD.\u05d2\u20ac\"ignore-space \nE.\u05d2\u20ac\"print0",
+            "question": "When redirecting the output of find to the xargs command, what option to find is useful if the filenames contain spaces? \nA.-rep-space \nB.-printnul \nC.-nospace \nD.-ignore-space \nE.-print0",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "Par défaut, xargs considère l'espace comme le délimiteur entre les arguments. Donc si un nom de fichier a un espace dedans ça va le considérer comme deux arguments différents et ne rien donner en fait. On mets le -print0 pour éviter ça.\n D'après le manuel : Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special (every character is taken literally).  Disables the end of file string, which is treated like any other argument.  Useful when input items might contain white space, quote marks, or backslashes.  The GNU find -print0 option produces input suitable for this mode.\n Example : 'find /tmp -name core -type f -print0 | xargs -0 /bin/rm -f'\nFind files named core in or below the directory /tmp and delete them, processing filenames in such a way that file or directory names containing spaces or newlines are correctly handled.",
             "url": "https://www.examtopics.com/discussions/lpi/view/17475-exam-101-500-topic-1-question-50-discussion"
         },
         {
             "id": 49,
-            "question": "Which of the following commands can be used to determine how long the system has been running? (Choose two.) \nA.uptime \nB.up \nC.time --up \nD.uname \u05d2\u20ac\"u \nE.top",
+            "question": "Which of the following commands can be used to determine how long the system has been running? (Choose two.) \nA.uptime \nB.up \nC.time --up \nD.uname -u \nE.top",
             "answer": "AE",
-            "explanation": "A REMPLIR",
+            "explanation": "",
             "url": "https://www.examtopics.com/discussions/lpi/view/53705-exam-101-500-topic-1-question-51-discussion"
         },
         {
             "id": 50,
-            "question": "What is true regarding the commandls > filesif files does not exist? \nA.The output of ls is printed to the terminal \nB.files is created and contains the output of ls \nC.An error message is shown and ls is not executed \nD.The command files is executed and receives the output of ls \nE.Any output of ls is discarded",
+            "question": "What is true regarding the command 'ls > files' if files does not exist? \nA.The output of ls is printed to the terminal \nB.files is created and contains the output of ls \nC.An error message is shown and ls is not executed \nD.The command files is executed and receives the output of ls \nE.Any output of ls is discarded",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/53707-exam-101-500-topic-1-question-52-discussion"
         },
         {
             "id": 51,
             "question": "Which of the following files, located in a user's home directory, contains the Bash history? \nA..bashrc_history \nB..bash_histfile \nC..history \nD..bash_history \nE..history_bash",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "",
             "url": "https://www.examtopics.com/discussions/lpi/view/16575-exam-101-500-topic-1-question-53-discussion"
         },
         {
             "id": 52,
             "question": "Which wildcards will match the following filenames? (Choose two.) ttyS0 ttyS1 ttyS2 \nA.ttyS[1-5] \nB.tty?[0-5] \nC.tty*2 \nD.tty[A-Z][012] \nE.tty[Ss][02]",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "We are talking about file globbing (limit\u00e9 \u00e0 la console bash) and not about Regular Expressions here. \nCheck \u00e7a : https://askubuntu.com/questions/714503/regular-expressions-vs-filename-globbing/714520#714520 \nTraditional glob wildcards support a very narrow set of metacharacters \u2014 * is 'anything', ? is an arbitrary single character; Bourne shell also supports [a-z123] for a single character out of a set of alternatives, and [!x-z789] any one except those listed.   Regex obviously is much richer, supporting repetitions, and (in ERE) alternation and specific numbers of repetitions.",
             "url": "https://www.examtopics.com/discussions/lpi/view/21425-exam-101-500-topic-1-question-54-discussion"
         },
         {
             "id": 53,
             "question": "Which of the following commands redirects the output of ls to standard error? \nA.ls &gt;-1 \nB.ls &lt;&lt;ERR \nC.ls &gt;&amp;2 \nD.ls &gt;&gt;2 \nE.ls |error",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "C is correct: ls>&2 sends the ls output to the 2 (stderr) location \n A, B, D, and E are wrong : \n ls>-1 creates a file -1 that is the output of ls \n <<ERR sets the ERR string as the end of input \n ls>>2 would append to a file '2' \n ls |error is an invalid command",
             "url": "https://www.examtopics.com/discussions/lpi/view/49920-exam-101-500-topic-1-question-55-discussion"
         },
         {
             "id": 54,
-            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \nA.gzip archive.tgz | tar xvf - \nB.tar \u05d2\u20ac\"fzt archive.tgz \nC.gzip \u05d2\u20ac\"d archive.tgz | tar tvf - \nD.tar cf archive.tgz \nE.tar ztf archive.tgz",
+            "question": "Which of the following commands displays the contents of a gzip compressed tar archive? \nA.gzip archive.tgz | tar xvf - \nB.tar -fzt archive.tgz \nC.gzip -d archive.tgz | tar tvf - \nD.tar cf archive.tgz \nE.tar ztf archive.tgz",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "-z Use Gzip \n -t List contents \n -f Specify file or else will use $TAPE.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30630-exam-101-500-topic-1-question-56-discussion"
         },
         {
             "id": 55,
             "question": "Which of the following regular expressions represents a single upper-case letter? \nA.:UPPER: \nB.[A-Z] \nC.!a-z \nD.%C \nE.{AZ}",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Pas besoin d'explication, c'est la base.",
             "url": "https://www.examtopics.com/discussions/lpi/view/59718-exam-101-500-topic-1-question-58-discussion"
         },
         {
             "id": 57,
             "question": "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to identify the intended partition? (Choose two.) \nA.LABEL \nB.ID \nC.FIND \nD.NAME \nE.UUID",
             "answer": "AE",
-            "explanation": "A REMPLIR",
+            "explanation": "If you want to automatically mount a partition to a specific location using /etc/fstab file, then you must put an entry there.\nFor example : '/dev/sdb1 /storage/disk2p1 ext4 defaults 0 0' \nHere, /dev/sdb1 is set to mount at the path /storage/disk2p1. This is alright and it works. But there is a problem. /dev/sdb1 is the first partition of the second hard drive of your computer. Similarly, /dev/sda1 is the first partition of the first hard drive. There is no guarantee that /dev/sdb1 will always be /dev/sdb1. Depending on the order of how you connected the hard drives to your motherboard, it may change. If that happens, your hard drives may be mounted in the wrong mount points resulting data loss or data corruption.\nTo solve this, we can use UUID or LABEL. UUID is a better choice as it is unique throughout the system. Even if it\u2019s different computer system, the probability of duplicate UUID is almost zero.\nLABEL on the other hand is a short name that you can put it when you format a partition to identify the disk. Many people can use the same LABEL. So, the uniqueness of LABEL depends on how creative you are at naming your partitions.",
             "url": "https://www.examtopics.com/discussions/lpi/view/63822-exam-101-500-topic-1-question-61-discussion"
         },
         {
             "id": 58,
             "question": "A yum repository can declare sets of related packages. Which yum command installs all packages belonging to the group admintools? \nA.yum pkgsel --install admintools \nB.yum install admintools/* \nC.yum groupinstall admintools \nD.yum taskinstall admintools \nE.yum collection install admintools",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "For more info about YUM, please read the pdf at 'sources\\originals\\lpic-1_linux_professional_institute_certification_study_guide_exam_101-400_and_exam_102-400_4th_edi.pdf' at page 111 - 'Using YUM'",
             "url": "https://www.examtopics.com/discussions/lpi/view/58554-exam-101-500-topic-1-question-62-discussion"
         },
         {
             "id": 60,
             "question": "Which of the following commands installs the GRUB boot files into the currently active file systems and the boot loader into the first partition of the first disk? \nA.grub-install /dev/sda \nB.grub-install /dev/sda1 \nC.grub-install current /dev/sda0 \nD.grub-install /dev/sda0 \nE.grub-install current /dev/sda1",
-            "answer": "A",
-            "explanation": "A REMPLIR",
+            "answer": "B",
+            "explanation": "Ca devrait \u00eatre la B, car il est bien demand\u00e9 'first partition of the first disk'. La wiki CentOS dirige vers la r\u00e9ponse B : https://wiki.centos.org/HowTos/GrubInstallation#Installing_Grub_using_grub-install \n On peut aussi lire le pdf : 'sources\\originals\\lpic-1_linux_professional_institute_certification_study_guide_exam_101-400_and_exam_102-400_4th_edi.pdf' \u00e0 la page 296. ' ",
             "url": "https://www.examtopics.com/discussions/lpi/view/26508-exam-101-500-topic-1-question-64-discussion"
         },
         {
             "id": 61,
             "question": "Which of the following files are found in the /boot/ file system? (Choose two.) \nA.Linux kernel imagesMost Voted \nB.Bash shell binaries \nC.systemd target and service units \nD.Initial ramdisk imagesMost Voted \nE.fsck binaries",
-            "answer": "AC",
-            "explanation": "A REMPLIR",
+            "answer": "AD",
+            "explanation": "C'est bien AD, il suffit de v\u00e9rifier en faisant la commande ls -la /boot.",
             "url": "https://www.examtopics.com/discussions/lpi/view/17478-exam-101-500-topic-1-question-65-discussion"
         },
         {
             "id": 62,
             "question": "Which file defines the network locations from where the Debian package manager downloads software packages? \nA./etc/dpkg/dpkg.cfg \nB./etc/apt/apt.conf.d \nC./etc/apt/apt.conf \nD./etc/dpkg/dselect.cfg \nE./etc/apt/sources.list",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "",
             "url": "https://www.examtopics.com/discussions/lpi/view/67131-exam-101-500-topic-1-question-66-discussion"
         },
         {
             "id": 63,
             "question": "When removing a package on a system using dpkg package management, which dpkg option ensures configuration files are removed as well? \nA.--clean \nB.--purge \nC.--vacuum \nD.--remove \nE.--declare",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "-r will remove package but keep config files.\n -p --purge will remove all including config files.",
             "url": "https://www.examtopics.com/discussions/lpi/view/58556-exam-101-500-topic-1-question-67-discussion"
         },
         {
             "id": 64,
             "question": "Which of the following statements are correct when comparing Linux containers with traditional virtual machines (e.g. LXC vs. KVM)? (Choose three.) \nA.Containers are a lightweight virtualization method where the kernel controls process isolation and resource management. \nB.Fully virtualized machines can run any operating system for a specific hardware architecture within the virtual machine. \nC.Containers are completely decoupled from the host system's physical hardware and can only use emulated virtual hardware devices. \nD.The guest environment for fully virtualized machines is created by a hypervisor which provides virtual and emulated hardware devices. \nE.Containers on the same host can use different operating systems, as the container hypervisor creates separate kernel execution.",
             "answer": "ABD",
-            "explanation": "A REMPLIR",
+            "explanation": "A, B, and D are right.\n C is for traditional KVM. For E, it would be yes if hypervisor was replaced with container namespace and the same kernel execution were referenced, then this would be accurate. So choice E is wrong. However, LXC does focus on OS containerization and the goal is to not need a separate kernel.\n Check this :https://linuxcontainers.org/lxc/manpages/man5/lxc.container.conf.5.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/47287-exam-101-500-topic-1-question-68-discussion"
         },
         {
             "id": 65,
             "question": "The installation of a local Debian package failed due to unsatisfied dependencies. Which of the following commands installs missing dependencies and completes the interrupted package installation? \nA.dpkg --fix --all \nB.apt-get autoinstall \nC.dpkg-reconfigure --all \nD.apt-get all \nE.apt-get install -f",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "man apt-get: -f, --fix-broken - Fix; attempt to correct a system with broken dependencies in place.",
             "url": "https://www.examtopics.com/discussions/lpi/view/63647-exam-101-500-topic-1-question-69-discussion"
         },
         {
             "id": 66,
             "question": "Which of the following commands lists all currently installed packages when using RPM package management? \nA.yum --query --all \nB.yum --list --installed \nC.rpm --query --list \nD.rpm --list --installed \nE.rpm --query --all",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "Et la version short sera rpm -qa",
             "url": "https://www.examtopics.com/discussions/lpi/view/86949-exam-101-500-topic-1-question-70-discussion"
         },
         {
             "id": 67,
             "question": "Which of the following commands are valid in the GRUB 2 configuration file? (Choose two.) \nA.menuentry \nB.uefi \nC.pxe-ifconfig \nD.insmod \nE.kpartx",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "menuentry: 'From the GRUB 2 menu at boot, the user can also determine which Ubuntu is controlling the boot on a multi-OS system. By default, the first menuentry always lists an option from the installation which is in charge of GRUB 2. For example, if the first menuentry contains 'on sda5, then the GRUB installed on sda5 OS is controlling the menu/boot.' (https://help.ubuntu.com/community/Grub2/Setup) \n insmod : Insert the dynamic GRUB module called module. \n pxe-ifconfig is invalid \n kpartx is related but not specifically in the grub2 config file (https://linux.die.net/man/8/kpartx).",
             "url": "https://www.examtopics.com/discussions/lpi/view/57049-exam-101-500-topic-1-question-71-discussion"
         },
         {
             "id": 68,
             "question": "What is the purpose of the ldd command? \nA.It lists which shared libraries a binary needs to run. \nB.It installs and updates installed shared libraries. \nC.It turns a dynamically linked binary into a static binary. \nD.It defines which version of a library should be used by default. \nE.It runs a binary with an alternate library search path.",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "man ldd: ldd prints the shared libraries required by each program or shared library specified on the command line.",
             "url": "https://www.examtopics.com/discussions/lpi/view/63648-exam-101-500-topic-1-question-72-discussion"
         },
         {
             "id": 69,
             "question": "What can the Logical Volume Manager (LVM) be used for? (Choose three.) \nA.To create snapshots. \nB.To dynamically change the size of logical volumes. \nC.To dynamically create or delete logical volumes. \nD.To create RAID 9 arrays. \nE.To encrypt logical volumes.",
             "answer": "ABC",
-            "explanation": "A REMPLIR",
+            "explanation": "",
             "url": "https://www.examtopics.com/discussions/lpi/view/63823-exam-101-500-topic-1-question-73-discussion"
         },
         {
             "id": 70,
             "question": "What are the main differences between GPT and MBR partition tables regarding maximum number and size of partitions? (Choose two.) \nA.MBR can handle partition sizes up to 4 TB, whereas GPT supports partition sizes up to 128 ZB. \nB.By default, GPT can manage up to 128 partitions while MBR only supports four primary partitions. \nC.By default, GPT can manage up to 64 partitions while MBR only supports 16 primary partitions. \nD.MBR can handle partition sizes up to 2.2 TB, whereas GPT supports sizes up to 9.4 ZB. \nE.Both GPT and MBR support up to four primary partitions, each with up to 4096 TB.",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "Bcp de d\u00e9tails ici : https://www.freecodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/#:~:text=Differences%20between%20MBR%20vs%20GPT%20partitions&text=You%20can%20use%20a%20drive,maximum%20capacity%20of%209.7%20zetabytes.",
             "url": "https://www.examtopics.com/discussions/lpi/view/65464-exam-101-500-topic-1-question-74-discussion"
         },
         {
             "id": 71,
             "question": "A backup software heavily uses hard links between files which have not been changed in between two backup runs. Which benefits are realized due to these hard links? (Choose two.) \nA.The old backups can be moved to slow backup media, such as tapes, while still serving as hard link target in new backups. \nB.The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time. \nC.The backup is guaranteed to be uncharged because a hard linked file cannot be modified after its creation. \nD.The backup consumes less space because the hard links point to the same data on disk instead of storing redundant copies. \nE.The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data.",
             "answer": "AD",
-            "explanation": "A REMPLIR",
+            "explanation": "A is wrong because Hard Links cannot cross filesystem boundaries or span across partitions.\n B : sounds weird \n C: lie: a hardlink can be modified as long as the inode number is same as the 'original file', (which is really the original index entry to the data) \n  ",
             "url": "https://www.examtopics.com/discussions/lpi/view/27153-exam-101-500-topic-1-question-75-discussion"
         },
         {
             "id": 73,
             "question": "How many fields are in a syntactically correct line of /etc/fstab? \nA.3 \nB.4 \nC.5 \nD.6 \nE.7",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "<device> / <mount point> / <file system type> / <options> / <dump> / <pass num> \n Device - Device / partition that contains a file system. \n Mount point - The point where it can access the device / partition (the /) \n File system type - eg. ntfs, ext4,3,2, vfat \n Options - rg. dmask=027, fmask=137 (Cause umask=000 would make everything executable)\n Dump - Enable / disable backup of the device (Default is 0)\n Pass num - Order of whick fsck will check the device/partition (Root should be 1, other partitions should be 2.)",
             "url": "https://www.examtopics.com/discussions/lpi/view/48585-exam-101-500-topic-1-question-77-discussion"
         },
         {
             "id": 74,
             "question": "Running chmod 640 filea.txt as a regular user doesn't update filea.txt's permission. What might be a reason why chmod cannot modify the permissions? (Choose two.) \nA.filea.txt is owned by another user and a regular user cannot change the permissions of another user's file.Most Voted \nB.filea.txt is a symbolic link whose permissions are a fixed value which cannot be charged.Most Voted \nC.filea.txt has the sticky bit set and a regular user cannot remove this permission. \nD.filea.txt is a hard link whose permissions are inherited from the target and cannot be set directly. \nE.filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.",
             "answer": "AB",
-            "explanation": "A REMPLIR",
+            "explanation": "About hardlinks : When you create a new filename (that(s what a hardlink is) pointing to the exact same data as the old filename. This means that the two filenames, though different, point to identical data. [...] When changes are made to one filename, the other reflects those changes. The permissions, link count, ownership, timestamps, and file content are the exact same. If the original file is deleted, the data still exists under the secondary hard link. The data is only removed from your drive when all links to the data have been removed. If you find two files with identical properties but are unsure if they are hard-linked, use the ls -i command to view the inode number. \n About the sticky bit, it doesn't prevent 'regular users' from modifying if they are owner, so it's like A. \n For SetUID, setuid: a bit that makes an executable run with the privileges of the owner of the file. So not related. ",
             "url": "https://www.examtopics.com/discussions/lpi/view/37539-exam-101-500-topic-1-question-78-discussion"
         },
         {
             "id": 75,
             "question": "Which of the following Linux filesystems preallocate a fixed number of inodes when creating a new filesystem instead of generating them as needed? (Choose two.) \nA.JFS \nB.ext3 \nC.XFS \nD.ext2 \nE.procfs",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "XFS dynamically allocates inodes.\n JFS dynamically allocates space for disk inodes as required, freeing the space when it is no longer required. This is a radical improvement over Ext2, which reserves a fixed amount of space for disk inodes at file system creation time. \n Ext2 doesnt dynamically allocate inodes, and Ext3 is the same as Ext4 with an added journal thingy. \n Procfs is also doing it",
             "url": "https://www.examtopics.com/discussions/lpi/view/69361-exam-101-500-topic-1-question-79-discussion"
         },
         {
             "id": 76,
             "question": "Which of the following commands sets the SetUID permission on the executable /bin/foo? \nA.chmod 4755 /bin/foo \nB.chmod 1755 /bin/foo \nC.chmod u-s /bin/foo \nD.chmod 755+s /bin/foo \nE.chmod 2755 /bin/foo",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "For the special permissions, you need to prepend these numbers with another number where 4 is setuid, 2 is setgid, and 1 is the sticky bit =^._.^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/39885-exam-101-500-topic-1-question-80-discussion"
         },
         {
             "id": 77,
             "question": "Which of the following commands can be used to display the inode number of a given file? (Choose two.) \nA.inode \nB.ln \nC.ls \nD.cp \nE.stat",
             "answer": "CE",
-            "explanation": "A REMPLIR",
+            "explanation": "ls -i [filename] and stat [filename]",
             "url": "https://www.examtopics.com/discussions/lpi/view/50750-exam-101-500-topic-1-question-81-discussion"
         },
         {
             "id": 78,
             "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \nA.echo \"${PWD}\"Most Voted \nB.echo \"${WD}\" \nC.printwd \nD.pwdMost Voted \nE.echo \"${pwd}\"",
             "answer": "AC",
-            "explanation": "A REMPLIR",
+            "explanation": "the printwd command is not installed by default on bash. The command pwd shows the value of the env variable ${PWD}",
             "url": "https://www.examtopics.com/discussions/lpi/view/15174-exam-101-500-topic-1-question-82-discussion"
         },
         {
             "id": 79,
             "question": "After a power outage, the XFS file system of /dev/sda3 is inconsistent. How can the existing file system errors be fixed? \nA.By using mount -f to force a mount of the file system \nB.By running xfsck on the file system \nC.By mounting the file system with the option xfs_repair \nD.By running xfsadmin repair on the file system \nE.By running xfs_repair on the file system",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "xfs_repair: Repair a corrupted or damaged XFS file system. Unmount the file system before running this command. If the file system cannot be repaired, restore files from a backup with xfsrestore",
             "url": "https://www.examtopics.com/discussions/lpi/view/58912-exam-101-500-topic-1-question-83-discussion"
         },
         {
             "id": 80,
             "question": "Which of the following properties of an existing file changes when a hard link pointing to that file is created? \nA.File size \nB.Link count \nC.Modify timestamp \nD.Inode number \nE.Permissions",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "A hard-link is basically just another filename pointing to the same data on the disk. Link count is the number of hard-link. Symbolic links do not count (their inode number is different from that of the original file)\n You can see that with ls -l - result will be like: \n '-rwxr-xr-x (!!!)1(!!!) guru users 267 Jul 18 16:59 test.c' where 1 is the link count.",
             "url": "https://www.examtopics.com/discussions/lpi/view/50751-exam-101-500-topic-1-question-84-discussion"
         },
         {
             "id": 82,
             "question": "Which of the following commands show how the shell handles a specific command? \nA.where \nB.type \nC.stat \nD.case \nE.fileinfo",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Type tells you whether a command is a shell built-in, aliased to another command, or the location of the program in the PATH",
             "url": "https://www.examtopics.com/discussions/lpi/view/44996-exam-101-500-topic-1-question-86-discussion"
         },
         {
             "id": 83,
             "question": "When in Normal mode in vi, which character can be used to begin a reverse search of the text? \nA.r \nB./ \nC.F \nD.? \nE.s",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "/ for forward search \n ? for backward search.",
             "url": "https://www.examtopics.com/discussions/lpi/view/58864-exam-101-500-topic-1-question-87-discussion"
         },
         {
             "id": 84,
             "question": "Which of the following commands displays the manual page command from section 1? \nA.man command(1) \nB.man command@1 \nC.man 1 command \nD.man 1.command \nE.man -s 1 command",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "-S list, -s list, --sections=list \nThe given list is a colon- or comma-separated list of sections, used to determine which manual sections to search and in what order. \n man [section] [commande] est le truc normal \u00e0 utiliser ",
             "url": "https://www.examtopics.com/discussions/lpi/view/34900-exam-101-500-topic-1-question-88-discussion"
         },
         {
             "id": 85,
             "question": "Which of the following commands creates or, in case it already exists, overwrites a file called data with the output of ls? \nA.ls 3&gt; data \nB.ls &gt;&amp; data \nC.ls &gt; data \nD.ls &gt;&gt; data \nE.ls &gt;&gt;&gt; data",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "La base",
             "url": "https://www.examtopics.com/discussions/lpi/view/58558-exam-101-500-topic-1-question-89-discussion"
         },
         {
             "id": 86,
             "question": "Which of the following commands is used to change options and positional parameters within a running Bash shell? \nA.history \nB.setsh \nC.bashconf \nD.set \nE.envsetup",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The set command is a built-in function of the Bourne shell (sh), C shell (csh), and Korn shell (ksh), which is used to define and determine the values of the system environment.\nThe option B and C are not valid commands, and the option A and E are used for other things.",
             "url": "https://www.examtopics.com/discussions/lpi/view/41465-exam-101-500-topic-1-question-90-discussion"
         },
         {
             "id": 87,
             "question": "Which of the following commands display the IDs of all processes owned by root? (Choose two.) \nA.pgrep -c root \nB.pgrep -u rootMost Voted \nC.pgrep -f root \nD.pgrep -U 0Most Voted \nE.pgrep -c 0",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "B is correct because it specifies user of 'root' with -u.\nD is correct because it matches 'real user ID' with uid of 0 (which I assume is the default.)\nWhat is the real user ID? Who you really are (the person who owns the proess) & a unique number for a user in the system.\nWhat is pgrep? It looks at running processes and lists the process ID to STDOUT.\nFor example: 'pgrep -u root sshd' will only list the process ID's that are owned by root (user).\nExample 2: 'pgrep -u user -l' will list the process ID and name used by 'user'.\n-c count | -u user |-l list the process name together with the process ID",
             "url": "https://www.examtopics.com/discussions/lpi/view/19054-exam-101-500-topic-1-question-91-discussion"
         },
         {
             "id": 88,
             "question": "Which of the following sequences in the vi editor saves the opened document and exits the editor? (Choose two.) \nA.Ctrl XX \nB.Ctrl :W \nC.Esc zz \nD.Esc :wq \nE.Esc ZZ",
             "answer": "DE",
-            "explanation": "A REMPLIR",
+            "explanation": "A savoir",
             "url": "https://www.examtopics.com/discussions/lpi/view/21241-exam-101-500-topic-1-question-92-discussion"
         },
         {
             "id": 89,
             "question": "What is the effect of the -v option for the grep command? \nA.It enables color to highlight matching parts. \nB.It shows the command's version information. \nC.It only outputs non-matching lines. \nD.It changes the output order showing the last matching line first. \nE.It outputs all lines and prefixes matching lines with a+.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "-v, --invert-match \nInvert the sense of matching, to select non-matching lines.",
             "url": "https://www.examtopics.com/discussions/lpi/view/37476-exam-101-500-topic-1-question-93-discussion"
         },
         {
             "id": 90,
             "question": "Which of the following tools can show the complete path of an executable file that the current shell would execute when starting a command without specifying its complete path? (Choose two.) \nA.find \nB.pwd \nC.which \nD.locate \nE.type",
             "answer": "CE",
-            "explanation": "A REMPLIR",
+            "explanation": "which - shows the full path of (shell) commands.\n locate is not builtin \n type will show the command full path if it is not a shell builtin command like echo (for example).",
             "url": "https://www.examtopics.com/discussions/lpi/view/34903-exam-101-500-topic-1-question-94-discussion"
         },
         {
             "id": 91,
             "question": "Which of the following signals is sent to a process when the key combination Ctrl+Z is pressed on the keyboard? \nA.SIGTERM \nB.SIGCONT \nC.SIGSTOP \nD.SIGKILL \nE.SIGINT",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "Ctrl-Z sends SIGTSTP, a signal this causes the process to suspend execution. In this case, it is resumable - try executing a command that will take a while and press",
             "url": "https://www.examtopics.com/discussions/lpi/view/28817-exam-101-500-topic-1-question-95-discussion"
         },
         {
             "id": 92,
             "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \nA.ABxxbcMost Voted \nB.xxCxxc \nC.xxxxxx \nD.ABCabc \nE.Axxaxx",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "Case-sensitive donc seulement \u00e0 l'endroit o\u00f9 une majuscule est avec une miniscule",
             "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
         },
         {
             "id": 93,
             "question": "Which of the following commands outputs test to the shell? \nA.cat &lt;!EOT test EOT \nB.cat &lt;|EOT test EOT \nC.cat !&lt;EOT test EOT \nD.cat &amp;&lt;EOT test EOT \nE.cat &lt;&lt;EOT test EOTMost Voted",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "EOT = EndofText. C'est un truc utilis\u00e9 pour passer plusieurs lignes. On ouvre en tapant << EOT et on ferme en tapant EOT. C'est utilis\u00e9 pour passer des blocs multiligne comme argument d'une commande. Ca s'appelle le heredoc, btw.\nExample : \n '[COMMAND] <<[-] 'DELIMITER'\nHERE-DOCUMENT\nDELIMITER",
             "url": "https://www.examtopics.com/discussions/lpi/view/22426-exam-101-500-topic-1-question-98-discussion"
         },
         {
             "id": 94,
             "question": "What is the default nice level when a process is started using the nice command? \nA.-10 \nB.0 \nC.10Most Voted \nD.15 \nE.20",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "If you start a command with nice it'll be 10, if you start command without nice it'll be 0.",
             "url": "https://www.examtopics.com/discussions/lpi/view/15139-exam-101-500-topic-1-question-99-discussion"
         },
         {
             "id": 95,
-            "question": "A user accidentally created the subdirectory \\dir in his home directory. Which of the following commands will remote that directory? \nA.rmdir ~/\\\\dirMost Voted \nB.rmdir \u05d2\u20ac~/\\dir\u05d2\u20ac \nC.rmdir ~/'dir' \nD.rmdir ~/\\dir \nE.rmdir '~/\\dir'",
-            "answer": "D",
-            "explanation": "A REMPLIR",
+            "question": "A user accidentally created the subdirectory \\dir in his home directory. Which of the following commands will remove that directory? \nA.rmdir ~/\\\\dirMost Voted \nB.rmdir \u05d2\u20ac~/\\dir\u05d2\u20ac \nC.rmdir ~/'dir' \nD.rmdir ~/\\dir \nE.rmdir '~/\\dir'",
+            "answer": "A",
+            "explanation": "D'après les tests des gars sur exam topics c'est bien la A",
             "url": "https://www.examtopics.com/discussions/lpi/view/16743-exam-101-500-topic-1-question-100-discussion"
         },
         {
             "id": 96,
             "question": "Which of the following commands can perform searches on file contents using regular expressions? \nA.find \nB.locate \nC.grep \nD.reggrep \nE.pgrep",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/58861-exam-101-500-topic-1-question-101-discussion"
         },
         {
             "id": 97,
             "question": "In a nested directory structure, which find command line option would be used to restrict the command to searching down a particular number of subdirectories? \nA.-maxdepth \nB.-dirmax \nC.-maxlevels \nD.-s \nE.-n",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": " Comme dirait le manuel : -maxdepth levels\nDescend at most levels (a non-negative integer) levels ofdirectories below the starting-points. \nUsing -maxdepth 0 means only apply the tests and actions to the starting-points themselves.",
             "url": "https://www.examtopics.com/discussions/lpi/view/16147-exam-101-500-topic-1-question-102-discussion"
         },
         {
             "id": 98,
             "question": "Which of the following commands determines a file's format by using a definition database file which contains information about all common file types? \nA.type \nB.file \nC.magic \nD.pmagic \nE.hash",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "file \u2014 determine file type\n https://man7.org/linux/man-pages/man1/file.1.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/58562-exam-101-500-topic-1-question-103-discussion"
         },
         {
             "id": 99,
             "question": "Which of the following commands generates a list of user names from /etc/passwd along with their login shell? \nA.column -s : 1,7 /etc/passwd \nB.chop -c 1,7 /etc/passwd \nC.colrm 1,7 /etc/passwd \nD.sort -t: -k1,7 /etc/passwd \nE.cut -d: -f1,7 /etc/passwd",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "cut -d: -f 1,7 /etc/passwd - outcome: daemon:/usr/sbin/nologin",
             "url": "https://www.examtopics.com/discussions/lpi/view/83398-exam-101-500-topic-1-question-104-discussion"
         },
         {
             "id": 100,
             "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \nA.Only a.txt, b.txt, and texts.tgz \nB.Only texts.tar and texts.tgz \nC.Only a.txt.gz and b.txt.gz \nD.Only a.txt and b.txt \nE.Only texts.tarMost Voted",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The answer is E because when you use gunzip without any parameter (for example, -k --keep), the extraction will not keep .tgz, but only .tar",
             "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
         },
         {
             "id": 101,
             "question": "In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be issued multiple times or applied to multiple rows? \nA.By using the command :repeat followed by the number and the command \nB.By specifying the number right in front of a command such as 41 or 2yj. \nC.By selecting all affected lines using the shit and cursor keys before applying the command. \nD.By issuing a command such as :set repetition=4 with repeats every subsequent command 4 times. \nE.By specifying the number after a command such as 14 or yj2 followed by escape.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "go vimtutor",
             "url": "https://www.examtopics.com/discussions/lpi/view/31068-exam-101-500-topic-1-question-106-discussion"
         },
         {
             "id": 102,
             "question": "Which of the following statements is correct for a command ending with an & character? \nA.The command's output is redirected to /dev/null. \nB.The command is run in background of the current shell. \nC.The command's output is executed by the shell. \nD.The command is run as a direct child of the init process. \nE.The command's input is read from /dev/null.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The & character is a control operator in the shell. It causes to execute the process in the background. That means that the process has no read access to the terminal. Only a foreground process has. But, it can still write its output to the terminal",
             "url": "https://www.examtopics.com/discussions/lpi/view/58862-exam-101-500-topic-1-question-107-discussion"
         },
         {
             "id": 103,
             "question": "What is the purpose of the xargs command? \nA.It passes arguments to an X server. \nB.It repeats the execution of a command using different parameters for each invocation. \nC.It reads standard input and builds up commands to execute. \nD.It asks a question, graphically, and returns the answer to the shell. \nE.It allows specifying long options (like --help) for commands that normally only accept short options (like -h)",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "By default xargs reads items from standard input as separated by blanks and executes a command once for each argument. In the following example standard input is piped to xargs and the mkdir command is run for each argument, creating three folders. \n 'echo 'one two three' | xargs mkdir'",
             "url": "https://www.examtopics.com/discussions/lpi/view/55278-exam-101-500-topic-1-question-109-discussion"
         },
         {
             "id": 105,
-            "question": "In Bash, inserting 1>&2 after a command redirects`\u00a6 \nA.\u05d2\u20ac\u00a6standard error to standard input. \nB.\u05d2\u20ac\u00a6standard output to standard error. \nC.\u05d2\u20ac\u00a6standard input to standard error. \nD.\u05d2\u20ac\u00a6standard error to standard output. \nE.\u05d2\u20ac\u00a6standard output to standard input.",
+            "question": "In Bash, inserting 1>&2 after a command redirects : \nA.standard error to standard input. \nB.standard output to standard error. \nC.standard input to standard error. \nD.standard error to standard output. \nE.standard output to standard input.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "0 : STDIN; 1 : STDOUT; 2 : STDERR",
             "url": "https://www.examtopics.com/discussions/lpi/view/88119-exam-101-500-topic-1-question-112-discussion"
         },
         {
             "id": 106,
             "question": "When booting from the hard disk, a computer successfully loads the Linux kernel and initramfs but hangs during the subsequent startup tasks. The system is booted using a Linux based rescue CD to investigate the problem. Which of the following methods helps to identify the root cause of the problem? \nA.Using the dmesg command from the rescue CD's shell to view the original system's boot logs. \nB.Investigating the file /proc/kmsg on the computer's hard disk for possible errors. \nC.Investigating the file /var/log on the computer's hard disk for possible errors. \nD.Using chroot to switch to the file system on the hard disk and use dmesg to view the logs. \nE.Rebooting again from the hard drive since the system successfully booted from the rescue CD.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "During boot, the logs are stored in dmesg, but are later transferred to /var/logs when the boot has finished. In this example, it was successfully rebooted with a rescue disk, hence one needs to go look at /var/logs because your OS transferred it there!",
             "url": "https://www.examtopics.com/discussions/lpi/view/31339-exam-101-500-topic-1-question-113-discussion"
         },
         {
             "id": 107,
             "question": "Where is the bootloader stored on the hard disk of a UEFI system? \nA.In the EFI Boot Record (EBR). \nB.In the Master Boot Record (MBR). \nC.On the EFI System Partition (ESP). \nD.On the partition labeled boot. \nE.On the partition number 127.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "",
             "url": "https://www.examtopics.com/discussions/lpi/view/26127-exam-101-500-topic-1-question-114-discussion"
         },
         {
             "id": 108,
             "question": "What is the correct way to set the default systemd boot target to multi-user? \nA.systemctl isolate multi-user.target \nB.systemctl set-runlevel multi-user.target \nC.systemctl set-boot multi-user.target \nD.systemctl set-default multi-user.target \nE.systemctl boot -p multi-user.target",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "systemctl set-default -> change the system\u2019s default target\nsystemctl get-default -> show you the system\u2019s current default target\nsystemctl isolate -> jump to new targets and not set default targets",
             "url": "https://www.examtopics.com/discussions/lpi/view/72794-exam-101-500-topic-1-question-115-discussion"
         },
         {
             "id": 109,
             "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \nA.An initramfs is a compressed file system archive, which can be unpacked to examine its contents.Most Voted \nB.An initramfs file contains the MBR, the bootloader and the Linux kernel. \nC.After a successful boot, the initramfs contents are available in /run/initramfs/. \nD.The kernel uses the initramfs temporarily before accessing the real root file system.Most Voted \nE.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
             "answer": "AC",
-            "explanation": "A REMPLIR",
+            "explanation": "The kernel will then open the initramfs (initial RAM filesystem). The initramfs is an archive containing a filesystem used as a temporary root filesystem during the boot process. The main purpose of an initramfs file is to provide the required modules so the kernel can access the \u201creal\u201d root filesystem of the operating system.\nAn initramfs is a compressed file system archive, which can be unpacked to examine its contents.\nThe kernel uses the initramfs temporarily before accessing the real root file system",
             "url": "https://www.examtopics.com/discussions/lpi/view/19402-exam-101-500-topic-1-question-116-discussion"
         },
         {
             "id": 110,
             "question": "Which of the following commands loads a kernel module along with any required dependency modules? \nA.depmod \nB.modprobe \nC.module_install \nD.insmod \nE.loadmod",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "Some modules have dependencies, which are other kernel modules that must be loaded before the module in question can be loaded. The modprobe command always takes dependencies into account when performing operations. When you ask modprobe to load a specific kernel module, it first examines the dependencies of that module, if there are any, and loads them if they are not already loaded into the kernel. modprobe resolves dependencies recursively: it will load all dependencies of dependencies, and so on, if necessary, thus ensuring that all dependencies are always met.",
             "url": "https://www.examtopics.com/discussions/lpi/view/70996-exam-101-500-topic-1-question-117-discussion"
         },
         {
             "id": 111,
             "question": "What information can the lspci command display about the system hardware? (Choose three.) \nA.System battery type \nB.Device IRQ settings \nC.PCI bus speed \nD.Ethernet MAC address \nE.Device vendor identification",
             "answer": "BCE",
-            "explanation": "A REMPLIR",
+            "explanation": "The lspci command alone does not provide any other information but hardware vendor. To inspect further, need to run lspci twice, the 2nd run add -s flag followed by corresponding hexadecimal numbers at the beginning of line examined in 1st lspci run, and finally -v flag.\nEg. lspci -s 00:03.0 -v \nWith this run, we can get IRQ and bus information",
             "url": "https://www.examtopics.com/discussions/lpi/view/66020-exam-101-500-topic-1-question-118-discussion"
         },
         {
