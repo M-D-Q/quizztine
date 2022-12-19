@@ -69,8 +69,6 @@ for url in liste_url:
         continue
     print("finito question")
 
-    
-    
     #INSERTION
     y = {
                             "id": liste_url.index(url),

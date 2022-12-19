@@ -1,10 +1,9 @@
 {
-    "users": [
-        {
-        "max": []
-        }
-    ]
-    ,
+    "score": {
+        "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 100,
+        "LX0-103(v.1)": 145,
+        "Exam-Topics 101 - Paywall breached - Input": 50
+    },
     "Assessment Test": [
         {
             "id": "1",
@@ -5037,7 +5036,7 @@
             "id": 1,
             "question": "Which umask value ensures that new directories can be read, written and listed by their owning user, read and listed by their owning group and are not accessible at all for everyone else? \nA.0750 \nB.0027 \nC.0036 \nD.7640 \nE.0029",
             "answer": "B",
-            "explanation": "written and listed by their owning user => 7 => umask 0 \nread and listed by their owning group => 5 => umask 2 \nnot accessible at all for everyone else => 0 => umask 7\n => umask 0027 \nSchéma sympatoche pour comprendre = https://en.wikipedia.org/wiki/Umask#Octal_codes ",
+            "explanation": "written and listed by their owning user => 7 => umask 0 \nread and listed by their owning group => 5 => umask 2 \nnot accessible at all for everyone else => 0 => umask 7\n => umask 0027 \nSch\u00e9ma sympatoche pour comprendre = https://en.wikipedia.org/wiki/Umask#Octal_codes ",
             "url": "https://www.examtopics.com/discussions/lpi/view/22939-exam-101-500-topic-1-question-2-discussion"
         },
         {
@@ -5065,7 +5064,7 @@
             "id": 6,
             "question": "What does the command mount --bind do? \nA.It makes the contents of one directory available in another directory \nB.It mounts all available filesystems to the current directory \nC.It mounts all user mountable filesystems to the user's home directory \nD.It mounts all file systems listed in /etc/fstab which have the option userbind set \nE.It permanently mounts a regular file to a directory",
             "answer": "A",
-            "explanation": "Bind mount operation\nRemount part of the file hierarchy somewhere else. The call is:\n'mount --bind olddir newdir'\nor by using this fstab entry:\n'/olddir /newdir none bind'\nAfter this call the same contents are accessible in two places./nIt is important to understand that 'bind' does not create any second-class or special node in the kernel VFS. The 'bind' is just another operation to attach a filesystem. There is nowhere stored information that the filesystem has been attached by a 'bind' operation. The olddir and newdir are independent and the olddir may be unmounted.",
+            "explanation": "Bind mount operation\nRemount part of the file hierarchy somewhere else. The call is:\n'mount --bind olddir newdir'\nor by using this fstab entry:\n'/olddir /newdir none bind'\nAfter this call the same contents are accessible in two places.\nIt is important to understand that 'bind' does not create any second-class or special node in the kernel VFS. The 'bind' is just another operation to attach a filesystem. There is nowhere stored information that the filesystem has been attached by a 'bind' operation. The olddir and newdir are independent and the olddir may be unmounted.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38415-exam-101-500-topic-1-question-7-discussion"
         },
         {
@@ -5079,14 +5078,14 @@
             "id": 8,
             "question": "Consider the following directory:\ndrwxrwxr-x 2 root sales 4096 Jan 1 15:21 sales\nWhich command ensures new files created within the directory sales are owned by the group sales? (Choose two.) \nA.chmod g+s sales \nB.setpol -R newgroup=sales sales \nC.chgrp -p sales sales \nD.chown --persistent *.sales sales \nE.chmod 2775 sales",
             "answer": "AE",
-            "explanation": "A : This command sets the 'set group ID' (setgid) mode bit on a directory. \nThis means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file. This will also be passed on to new subdirectories created in the current directory.\ng+s affects the files' group ID but does not affect the owner ID.\nNote that this applies only to newly-created files. Files that are moved (mv) into the directory are unaffected by the setgid setting. Files that are copied with cp -p are also unaffected.\nE : The 2 in front of 775 is the setgid or 'group id'.\n Some more info : https://unix.stackexchange.com/questions/182212/chmod-gs-command & https://en.wikipedia.org/wiki/Chmod#Symbolic_modes \nEt un site générateur de chmod, tiens pourquoi pas : https://chmodcommand.com/ \n",
+            "explanation": "A : This command sets the 'set group ID' (setgid) mode bit on a directory. \nThis means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file. This will also be passed on to new subdirectories created in the current directory.\ng+s affects the files' group ID but does not affect the owner ID.\nNote that this applies only to newly-created files. Files that are moved (mv) into the directory are unaffected by the setgid setting. Files that are copied with cp -p are also unaffected.\nE : The 2 in front of 775 is the setgid or 'group id'.\n Some more info : https://unix.stackexchange.com/questions/182212/chmod-gs-command & https://en.wikipedia.org/wiki/Chmod#Symbolic_modes \nEt un site g\u00e9n\u00e9rateur de chmod, tiens pourquoi pas : https://chmodcommand.com/ \n",
             "url": "https://www.examtopics.com/discussions/lpi/view/82524-exam-101-500-topic-1-question-9-discussion"
         },
         {
             "id": 9,
             "question": "In order to display all currently mounted filesystems, which of the following commands could be used? (Choose two.) \nA.cat /proc/self/mounts \nB.free \nC.lsmounts \nD.mount \nE.cat /proc/filesystems",
             "answer": "AD",
-            "explanation": "Les 4 manières de voir les filesystems montés :\n 'df' = Shows Linux file system disk space usage\n 'mount' = shows all mounted Linux filesystems\n 'findmnt' = find or search a linux filesystem.\n '/proc/mounts' OR '/proc/self/mounts' files = show all mounted filesystems under Linux.",
+            "explanation": "Les 4 mani\u00e8res de voir les filesystems mont\u00e9s :\n 'df' = Shows Linux file system disk space usage\n 'mount' = shows all mounted Linux filesystems\n 'findmnt' = find or search a linux filesystem.\n '/proc/mounts' OR '/proc/self/mounts' files = show all mounted filesystems under Linux.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38416-exam-101-500-topic-1-question-10-discussion"
         },
         {
@@ -5107,7 +5106,7 @@
             "id": 13,
             "question": "In compliance with the FHS, in which of the directories are man pages found? \nA./opt/man/ \nB./usr/doc/ \nC./usr/share/man/ \nD./var/pkg/man \nE./var/man/",
             "answer": "C",
-            "explanation": "=^_^=",
+            "explanation": "/opt c'est pour les logiciels pas inclu dans la distro, optionnels donc. \n/var/ c'est pour les variables, donc des donn\u00e9es qui changent tt le temps.",
             "url": "https://www.examtopics.com/discussions/lpi/view/38420-exam-101-500-topic-1-question-14-discussion"
         },
         {
@@ -5142,7 +5141,7 @@
             "id": 19,
             "question": "A faulty kernel module is causing issues with a network interface card. Which of the following actions ensures that this module is not loaded automatically when the system boots? \nA.Using lsmod --remove --autoclean without specifying the name of a specific module \nB.Using modinfo -k followed by the name of the offending module \nC.Using modprobe -r followed by the name of the offending module \nD.Adding a blacklist line including the name of the offending module to the file /etc/modprobe.d/blacklist.conf \nE.Deleting the kernel module's directory from the file system and recompiling the kernel, including its modules",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "If a module is causing problems, the file /etc/modprobe.d/blacklist.conf can be used to block the loading of the module\nhttps://learning.lpi.org/en/learning-materials/101-500/101/101.1/101.1_01/",
             "url": "https://www.examtopics.com/discussions/lpi/view/16578-exam-101-500-topic-1-question-20-discussion"
         },
         {
@@ -5177,7 +5176,7 @@
             "id": 24,
             "question": "Which of the following directories on a 64 bit Linux system typically contain shared libraries? (Choose two.) \nA.~/.lib64/ \nB./usr/lib64/ \nC./var/lib64/ \nD./lib64/ \nE./opt/lib64/",
             "answer": "BD",
-            "explanation": "Common locations for shared libraries in a Linux system are:\n• /lib\n• /lib32\n• /lib64\n• /usr/lib\n• /usr/local/lib",
+            "explanation": "Common locations for shared libraries in a Linux system are:\n\u2022 /lib\n\u2022 /lib32\n\u2022 /lib64\n\u2022 /usr/lib\n\u2022 /usr/local/lib",
             "url": "https://www.examtopics.com/discussions/lpi/view/48572-exam-101-500-topic-1-question-25-discussion"
         },
         {
@@ -5259,7 +5258,7 @@
         },
         {
             "id": 36,
-            "question": "Which of the following are valid stream redirection operators within Bash? (Choose two.) \nA.&lt; \nB.#&gt; \nC.%&gt; \nD.&gt;&gt;&gt; \nE.2&gt;&amp;1",
+            "question": "Which of the following are valid stream redirection operators within Bash? (Choose two.) \nA.< \nB.#> \nC.%> \nD.>>> \nE.2>&1",
             "answer": "AE",
             "explanation": "=^_^=",
             "url": "https://www.examtopics.com/discussions/lpi/view/48576-exam-101-500-topic-1-question-37-discussion"
@@ -5287,7 +5286,7 @@
         },
         {
             "id": 41,
-            "question": "Which of the following commands changes all CR-LF line breaks in the text file userlist.txt to Linux standard LF line breaks and stores the result in newlist.txt? \nA.tr -d '\\r' &lt; userlist.txt &gt; newlist.txt \nB.tr -c '\\r' '' &lt;newlist.txt&gt; userlist.txt \nC.tr '\\r' '' &lt;userlist.txt&gt; newlist.txt \nD.tr '\\r' '' userlist.txt newlist.txt \nE.tr -s '/^M/^J/' userlist.txt newlist.txt",
+            "question": "Which of the following commands changes all CR-LF line breaks in the text file userlist.txt to Linux standard LF line breaks and stores the result in newlist.txt? \nA.tr -d '\\r' < userlist.txt > newlist.txt \nB.tr -c '\\r' '' <newlist.txt> userlist.txt \nC.tr '\\r' '' <userlist.txt> newlist.txt \nD.tr '\\r' '' userlist.txt newlist.txt \nE.tr -s '/^M/^J/' userlist.txt newlist.txt",
             "answer": "A",
             "explanation": "https://stackoverflow.com/questions/2613800/how-to-convert-dos-windows-newline-crlf-to-unix-newline-lf",
             "url": "https://www.examtopics.com/discussions/lpi/view/86151-exam-101-500-topic-1-question-43-discussion"
@@ -5315,7 +5314,7 @@
         },
         {
             "id": 45,
-            "question": "Which of the following commands displays the output of the foo command on the screen and also writes it to a file called /tmp/foodata? \nA.foo | less /tmp/foodata \nB.foo | cp /tmp/foodata \nC.foo &gt; /tmp/foodata \nD.foo | tee /tmp/foodata \nE.foo &gt; stdout &gt;&gt; /tmp/foodata",
+            "question": "Which of the following commands displays the output of the foo command on the screen and also writes it to a file called /tmp/foodata? \nA.foo | less /tmp/foodata \nB.foo | cp /tmp/foodata \nC.foo > /tmp/foodata \nD.foo | tee /tmp/foodata \nE.foo > stdout >> /tmp/foodata",
             "answer": "D",
             "explanation": "'Keyword is 'tee'. Think of the letter 'T' where it sends information two-ways!'\n-Confucius",
             "url": "https://www.examtopics.com/discussions/lpi/view/20114-exam-101-500-topic-1-question-47-discussion"
@@ -5338,7 +5337,7 @@
             "id": 48,
             "question": "When redirecting the output of find to the xargs command, what option to find is useful if the filenames contain spaces? \nA.-rep-space \nB.-printnul \nC.-nospace \nD.-ignore-space \nE.-print0",
             "answer": "E",
-            "explanation": "Par défaut, xargs considère l'espace comme le délimiteur entre les arguments. Donc si un nom de fichier a un espace dedans ça va le considérer comme deux arguments différents et ne rien donner en fait. On mets le -print0 pour éviter ça.\n D'après le manuel : Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special (every character is taken literally).  Disables the end of file string, which is treated like any other argument.  Useful when input items might contain white space, quote marks, or backslashes.  The GNU find -print0 option produces input suitable for this mode.\n Example : 'find /tmp -name core -type f -print0 | xargs -0 /bin/rm -f'\nFind files named core in or below the directory /tmp and delete them, processing filenames in such a way that file or directory names containing spaces or newlines are correctly handled.",
+            "explanation": "Par d\u00e9faut, xargs consid\u00e8re l'espace comme le d\u00e9limiteur entre les arguments. Donc si un nom de fichier a un espace dedans \u00e7a va le consid\u00e9rer comme deux arguments diff\u00e9rents et ne rien donner en fait. On mets le -print0 pour \u00e9viter \u00e7a.\n D'apr\u00e8s le manuel : Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special (every character is taken literally).  Disables the end of file string, which is treated like any other argument.  Useful when input items might contain white space, quote marks, or backslashes.  The GNU find -print0 option produces input suitable for this mode.\n Example : 'find /tmp -name core -type f -print0 | xargs -0 /bin/rm -f'\nFind files named core in or below the directory /tmp and delete them, processing filenames in such a way that file or directory names containing spaces or newlines are correctly handled.",
             "url": "https://www.examtopics.com/discussions/lpi/view/17475-exam-101-500-topic-1-question-50-discussion"
         },
         {
@@ -5371,7 +5370,7 @@
         },
         {
             "id": 53,
-            "question": "Which of the following commands redirects the output of ls to standard error? \nA.ls &gt;-1 \nB.ls &lt;&lt;ERR \nC.ls &gt;&amp;2 \nD.ls &gt;&gt;2 \nE.ls |error",
+            "question": "Which of the following commands redirects the output of ls to standard error? \nA.ls >-1 \nB.ls <<ERR \nC.ls >&2 \nD.ls >>2 \nE.ls |error",
             "answer": "C",
             "explanation": "C is correct: ls>&2 sends the ls output to the 2 (stderr) location \n A, B, D, and E are wrong : \n ls>-1 creates a file -1 that is the output of ls \n <<ERR sets the ERR string as the end of input \n ls>>2 would append to a file '2' \n ls |error is an invalid command",
             "url": "https://www.examtopics.com/discussions/lpi/view/49920-exam-101-500-topic-1-question-55-discussion"
@@ -5429,7 +5428,7 @@
             "id": 63,
             "question": "When removing a package on a system using dpkg package management, which dpkg option ensures configuration files are removed as well? \nA.--clean \nB.--purge \nC.--vacuum \nD.--remove \nE.--declare",
             "answer": "B",
-            "explanation": "-r will remove package but keep config files.\n -p --purge will remove all including config files.",
+            "explanation": "-r will remove package but keep config files.\n -P --purge will remove all including config files.",
             "url": "https://www.examtopics.com/discussions/lpi/view/58556-exam-101-500-topic-1-question-67-discussion"
         },
         {
@@ -5484,7 +5483,7 @@
         {
             "id": 71,
             "question": "A backup software heavily uses hard links between files which have not been changed in between two backup runs. Which benefits are realized due to these hard links? (Choose two.) \nA.The old backups can be moved to slow backup media, such as tapes, while still serving as hard link target in new backups. \nB.The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time. \nC.The backup is guaranteed to be uncharged because a hard linked file cannot be modified after its creation. \nD.The backup consumes less space because the hard links point to the same data on disk instead of storing redundant copies. \nE.The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data.",
-            "answer": "AD",
+            "answer": "DE",
             "explanation": "A is wrong because Hard Links cannot cross filesystem boundaries or span across partitions.\n B : sounds weird \n C: lie: a hardlink can be modified as long as the inode number is same as the 'original file', (which is really the original index entry to the data) \n  ",
             "url": "https://www.examtopics.com/discussions/lpi/view/27153-exam-101-500-topic-1-question-75-discussion"
         },
@@ -5526,7 +5525,7 @@
         {
             "id": 78,
             "question": "Which of the following commands print the current working directory when using a Bash shell? (Choose two.) \nA.echo \"${PWD}\" \nB.echo \"${WD}\" \nC.printwd \nD.pwd \nE.echo \"${pwd}\"",
-            "answer": "AC",
+            "answer": "AD",
             "explanation": "the printwd command is not installed by default on bash. The command pwd shows the value of the env variable ${PWD}",
             "url": "https://www.examtopics.com/discussions/lpi/view/15174-exam-101-500-topic-1-question-82-discussion"
         },
@@ -5567,7 +5566,7 @@
         },
         {
             "id": 85,
-            "question": "Which of the following commands creates or, in case it already exists, overwrites a file called data with the output of ls? \nA.ls 3&gt; data \nB.ls &gt;&amp; data \nC.ls &gt; data \nD.ls &gt;&gt; data \nE.ls &gt;&gt;&gt; data",
+            "question": "Which of the following commands creates or, in case it already exists, overwrites a file called data with the output of ls? \nA.ls 3> data \nB.ls >& data \nC.ls > data \nD.ls >> data \nE.ls >>> data",
             "answer": "C",
             "explanation": "La base",
             "url": "https://www.examtopics.com/discussions/lpi/view/58558-exam-101-500-topic-1-question-89-discussion"
@@ -5617,13 +5616,13 @@
         {
             "id": 92,
             "question": "What is the output when the regular expression s/[ABC] [abc]/xx/ is applied to the following string?ABCabc - \nA.ABxxbc \nB.xxCxxc \nC.xxxxxx \nD.ABCabc \nE.Axxaxx",
-            "answer": "C",
+            "answer": "A",
             "explanation": "Case-sensitive donc seulement \u00e0 l'endroit o\u00f9 une majuscule est avec une miniscule",
             "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
         },
         {
             "id": 93,
-            "question": "Which of the following commands outputs test to the shell? \nA.cat &lt;!EOT test EOT \nB.cat &lt;|EOT test EOT \nC.cat !&lt;EOT test EOT \nD.cat &amp;&lt;EOT test EOT \nE.cat &lt;&lt;EOT test EOT",
+            "question": "Which of the following commands outputs test to the shell? \nA.cat <!EOT test EOT \nB.cat <|EOT test EOT \nC.cat !<EOT test EOT \nD.cat &<EOT test EOT \nE.cat <<EOT test EOT",
             "answer": "E",
             "explanation": "EOT = EndofText. C'est un truc utilis\u00e9 pour passer plusieurs lignes. On ouvre en tapant << EOT et on ferme en tapant EOT. C'est utilis\u00e9 pour passer des blocs multiligne comme argument d'une commande. Ca s'appelle le heredoc, btw.\nExample : \n '[COMMAND] <<[-] 'DELIMITER'\nHERE-DOCUMENT\nDELIMITER",
             "url": "https://www.examtopics.com/discussions/lpi/view/22426-exam-101-500-topic-1-question-98-discussion"
@@ -5631,7 +5630,7 @@
         {
             "id": 94,
             "question": "What is the default nice level when a process is started using the nice command? \nA.-10 \nB.0 \nC.10 \nD.15 \nE.20",
-            "answer": "B",
+            "answer": "C",
             "explanation": "If you start a command with nice it'll be 10, if you start command without nice it'll be 0.",
             "url": "https://www.examtopics.com/discussions/lpi/view/15139-exam-101-500-topic-1-question-99-discussion"
         },
@@ -5639,7 +5638,7 @@
             "id": 95,
             "question": "A user accidentally created the subdirectory \\dir in his home directory. Which of the following commands will remove that directory? \nA.rmdir ~/\\\\dir \nB.rmdir \u05d2\u20ac~/\\dir\u05d2\u20ac \nC.rmdir ~/'dir' \nD.rmdir ~/\\dir \nE.rmdir '~/\\dir'",
             "answer": "A",
-            "explanation": "D'après les tests des gars sur exam topics c'est bien la A",
+            "explanation": "D'apr\u00e8s les tests des gars sur exam topics c'est bien la A",
             "url": "https://www.examtopics.com/discussions/lpi/view/16743-exam-101-500-topic-1-question-100-discussion"
         },
         {
@@ -5673,7 +5672,7 @@
         {
             "id": 100,
             "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \nA.Only a.txt, b.txt, and texts.tgz \nB.Only texts.tar and texts.tgz \nC.Only a.txt.gz and b.txt.gz \nD.Only a.txt and b.txt \nE.Only texts.tar",
-            "answer": "B",
+            "answer": "E",
             "explanation": "The answer is E because when you use gunzip without any parameter (for example, -k --keep), the extraction will not keep .tgz, but only .tar",
             "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
         },
@@ -5729,7 +5728,7 @@
         {
             "id": 109,
             "question": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.) \nA.An initramfs is a compressed file system archive, which can be unpacked to examine its contents. \nB.An initramfs file contains the MBR, the bootloader and the Linux kernel. \nC.After a successful boot, the initramfs contents are available in /run/initramfs/. \nD.The kernel uses the initramfs temporarily before accessing the real root file system. \nE.An initramfs does not depend on a specific kernel version and is not changed after the initial installation.",
-            "answer": "AC",
+            "answer": "AD",
             "explanation": "The kernel will then open the initramfs (initial RAM filesystem). The initramfs is an archive containing a filesystem used as a temporary root filesystem during the boot process. The main purpose of an initramfs file is to provide the required modules so the kernel can access the \u201creal\u201d root filesystem of the operating system.\nAn initramfs is a compressed file system archive, which can be unpacked to examine its contents.\nThe kernel uses the initramfs temporarily before accessing the real root file system",
             "url": "https://www.examtopics.com/discussions/lpi/view/19402-exam-101-500-topic-1-question-116-discussion"
         },
@@ -5750,9 +5749,81 @@
         {
             "id": 113,
             "question": "Given the following two symbolic links in a System V init configuration:/etc/rc1.d/K01apache2/etc/rc2.d/S02apache2When are the scripts executed that are referenced by these links? (Choose two.) \nA.S02apache2 is run when runlevel 2 is entered. \nB.S02apache2 is run when runlevel 2 is left. \nC.K01apache2 is never run because K indicates a deactivated service. \nD.Both S02apache2 and K01apache2 are run during a system shutdown. \nE.K01apache2 is run when runlevel 1 is entered.",
-            "answer": "AC",
+            "answer": "AE",
             "explanation": "A REMPLIR",
             "url": "https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion"
+        }
+    ],
+    "Exam-Topics 101 - Paywall breached - Input": [
+        {
+            "id": 0,
+            "question": "Which program updates the database that is used by the locate command? (Specify ONLY the command without any path or parameters).",
+            "answer": "updatedb",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/40524-exam-101-500-topic-1-question-6-discussion"
+        },
+        {
+            "id": 1,
+            "question": "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the command without any path or parameters.)",
+            "answer": "df",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/13313-exam-101-500-topic-1-question-11-discussion"
+        },
+        {
+            "id": 2,
+            "question": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the file name only without any path.)",
+            "answer": "cmdline",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/37582-exam-101-500-topic-1-question-15-discussion"
+        },
+        {
+            "id": 3,
+            "question": "Which program runs a command in specific intervals and refreshes the display of the program's output? (Specify ONLY the command without any path or parameters.)",
+            "answer": "watch",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/46441-exam-101-500-topic-1-question-41-discussion"
+        },
+        {
+            "id": 4,
+            "question": "Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
+            "answer": "nice",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/58859-exam-101-500-topic-1-question-59-discussion"
+        },
+        {
+            "id": 5,
+            "question": "What directory contains configuration files for additional yum repositories? (Specify the full path to the directory.)",
+            "answer": "/etc/yum.conf",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/16429-exam-101-500-topic-1-question-63-discussion"
+        },
+        {
+            "id": 6,
+            "question": "Which file from the /proc/ file system contains a list of all currently mounted devices? (Specify the full name of the file, including path.)",
+            "answer": "/proc/mounts",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/21716-exam-101-500-topic-1-question-76-discussion"
+        },
+        {
+            "id": 7,
+            "question": "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by the system administrator be placed in order to be made available to all users on the system? (Specify the full path to the directory.)",
+            "answer": "/usr/local/bin/",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/55355-exam-101-500-topic-1-question-85-discussion"
+        },
+        {
+            "id": 8,
+            "question": "Which command is used to change the priority of an already running process? (Specify ONLY the command without any path or parameters.)",
+            "answer": "renice",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/76875-exam-101-500-topic-1-question-111-discussion"
+        },
+        {
+            "id": 9,
+            "question": "Which System V init configuration file is commonly used to set the default run level? (Specify the full name of the file, including path.)",
+            "answer": "/etc/inittab",
+            "explanation": "A REMPLIR",
+            "url": "https://www.examtopics.com/discussions/lpi/view/53593-exam-101-500-topic-1-question-119-discussion"
         }
     ]
 }
