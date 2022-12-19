@@ -2,7 +2,7 @@
     "score": {
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 100,
         "LX0-103(v.1)": 145,
-        "Exam-Topics 101 - Paywall breached - Input": 50
+        "Exam-Topics 101 - Paywall breached - Input": 60
     },
     "Assessment Test": [
         {
@@ -2305,7 +2305,7 @@
     "101-400(v.2) - input": [
         {
             "id": 1,
-            "question": "CORRECT TEXTWhat command changes the nice level of a running process? (Specify ONLY the command withoutany path or parameters) \n",
+            "question": "What command changes the nice level of a running process? (Specify ONLY the command withoutany path or parameters) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-command-changes-the-nice-level-of-a-running-process/",
@@ -2314,7 +2314,7 @@
         },
         {
             "id": 2,
-            "question": "CORRECT TEXTWhich file from the /proc file system contains a list of all currently mounted devices?(Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which file from the /proc file system contains a list of all currently mounted devices?(Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-file-from-the-proc-file-system-contains-a-list-o/",
@@ -2323,7 +2323,7 @@
         },
         {
             "id": 3,
-            "question": "CORRECT TEXTWhich umask value will result in the default access permissions of 600 (rw\u2014\u2014-) for files and 700(rwx\u2014\u2014) for directories? (Specify only the numerical umask value.) \n",
+            "question": "Which umask value will result in the default access permissions of 600 (rw\u2014\u2014-) for files and 700(rwx\u2014\u2014) for directories? (Specify only the numerical umask value.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-umask-value-will-result-in-the-default-access-per-2/",
@@ -2332,7 +2332,7 @@
         },
         {
             "id": 4,
-            "question": "CORRECT TEXTWhich Debian package management tool asks the configuration questions for a specific alreadyinstalled package just as if the package were being installed for the first time?(Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which Debian package management tool asks the configuration questions for a specific alreadyinstalled package just as if the package were being installed for the first time?(Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-debian-package-management-tool-asks-the-configura-3/",
@@ -2341,7 +2341,7 @@
         },
         {
             "id": 5,
-            "question": "CORRECT TEXTWhich command will disable swapping on a device? (Specify ONLY the command without any path orparameters.) \n",
+            "question": "Which command will disable swapping on a device? (Specify ONLY the command without any path orparameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-will-disable-swapping-on-a-device-3/",
@@ -2350,7 +2350,7 @@
         },
         {
             "id": 6,
-            "question": "CORRECT TEXTIn which directory must definition files be placed to add additional repositories to yum? \n",
+            "question": "In which directory must definition files be placed to add additional repositories to yum? \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-directory-must-definition-files-be-placed-to-add-5/",
@@ -2359,7 +2359,7 @@
         },
         {
             "id": 7,
-            "question": "CORRECT TEXTIn the vi editor, what vi command will copy (but not paste) from the current line at the cursor and thefollowing 16 lines (17 lines total)? Specify the correct vi command without spaces. \n",
+            "question": "In the vi editor, what vi command will copy (but not paste) from the current line at the cursor and thefollowing 16 lines (17 lines total)? Specify the correct vi command without spaces. \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-vi-command-will-copy-but-not-paste-from-the-curr-3/",
@@ -2368,7 +2368,7 @@
         },
         {
             "id": 8,
-            "question": "CORRECT TEXTWhich signal is missing from the following command that is commonly used to instruct a daemon toreinitialize itself, including reading configuration files?killall -s _______ daemon \n",
+            "question": "Which signal is missing from the following command that is commonly used to instruct a daemon toreinitialize itself, including reading configuration files?killall -s _______ daemon \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-signal-is-missing-from-the-following-command-that-3/",
@@ -2377,7 +2377,7 @@
         },
         {
             "id": 9,
-            "question": "CORRECT TEXTWhich command shows all shared libraries required by a binary executable or another shared library?(Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which command shows all shared libraries required by a binary executable or another shared library?(Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-shows-all-shared-libraries-required-by-a/",
@@ -2386,7 +2386,7 @@
         },
         {
             "id": 10,
-            "question": "CORRECT TEXTWhich command displays a list of all background tasks running in the current shell?(Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which command displays a list of all background tasks running in the current shell?(Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-displays-a-list-of-all-background-tasks-r-3/",
@@ -2395,7 +2395,7 @@
         },
         {
             "id": 11,
-            "question": "CORRECT TEXTWhich command is used to create and initialize the files used to store quota information?(Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which command is used to create and initialize the files used to store quota information?(Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-is-used-to-create-and-initialize-the-file-3/",
@@ -2404,7 +2404,7 @@
         },
         {
             "id": 12,
-            "question": "CORRECT TEXTWhich command will display messages from the kernel that were output during the normal bootsequence? \n",
+            "question": "Which command will display messages from the kernel that were output during the normal bootsequence? \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-will-display-messages-from-the-kernel-tha-5/",
@@ -2413,7 +2413,7 @@
         },
         {
             "id": 13,
-            "question": "CORRECT TEXTWhich world-writable directory should be placed on a separate partition in order to prevent usersfrom being able to fill up the / filesystem? (Specify the full path to the directory.) \n",
+            "question": "Which world-writable directory should be placed on a separate partition in order to prevent usersfrom being able to fill up the / filesystem? (Specify the full path to the directory.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-world-writable-directory-should-be-placed-on-a-se-3/",
@@ -2422,7 +2422,7 @@
         },
         {
             "id": 14,
-            "question": "CORRECT TEXTWhich command is used to start another command with a given nice level? (Specify ONLY thecommand without any path or parameters.) \n",
+            "question": "Which command is used to start another command with a given nice level? (Specify ONLY thecommand without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-is-used-to-start-another-command-with-a-g/",
@@ -2431,7 +2431,7 @@
         },
         {
             "id": 15,
-            "question": "CORRECT TEXTWhich file in the /proc filesystem lists parameters passed from the bootloader to the kernel?(Specify the file name only without any path.) \n",
+            "question": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel?(Specify the file name only without any path.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-file-in-the-proc-filesystem-lists-parameters-pas-3/",
@@ -2440,7 +2440,7 @@
         },
         {
             "id": 16,
-            "question": "CORRECT TEXTWhich command is used in a Linux environment to create a new directory? (Specify ONLY thecommand without any path or parameters.) \n",
+            "question": "Which command is used in a Linux environment to create a new directory? (Specify ONLY thecommand without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-is-used-in-a-linux-environment-to-create-3/",
@@ -2458,16 +2458,16 @@
         },
         {
             "id": 18,
-            "question": "CORRECT TEXT \n",
+            "question": " \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-creates-a-swap-space-on-a-block-device-or/",
-            "warning": "All appears to be good",
+            "warning": "WARNING",
             "type": "input"
         },
         {
             "id": 19,
-            "question": "CORRECT TEXTWhich file in /proc describes the IRQs that are used by various kernel drivers? (Specify the file nameonly without any path.) \n",
+            "question": "Which file in /proc describes the IRQs that are used by various kernel drivers? (Specify the file nameonly without any path.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-file-in-proc-describes-the-irqs-that-are-used-by/",
@@ -2476,7 +2476,7 @@
         },
         {
             "id": 20,
-            "question": "CORRECT TEXTWhat is the name of the main configuration file for GNU GRUB? (Specify the file name only withoutany path.) \n",
+            "question": "What is the name of the main configuration file for GNU GRUB? (Specify the file name only withoutany path.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/what-is-the-name-of-the-main-configuration-file-for-gnu-3/",
@@ -2485,7 +2485,7 @@
         },
         {
             "id": 21,
-            "question": "CORRECT TEXTFollowing the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiledby the system administrator be placed in order to be made available to all users on the system? \n",
+            "question": "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiledby the system administrator be placed in order to be made available to all users on the system? \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/where-should-binaries-that-have-been-compiled-by-the-sy/",
@@ -2494,7 +2494,7 @@
         },
         {
             "id": 22,
-            "question": "CORRECT TEXTWhich command reads and displays the current contents of the Kernel Ring Buffer on the commandline? (Specify ONLY the command without any path or parameters.) \n",
+            "question": "Which command reads and displays the current contents of the Kernel Ring Buffer on the commandline? (Specify ONLY the command without any path or parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-command-reads-and-displays-the-current-contents-o/",
@@ -2503,7 +2503,7 @@
         },
         {
             "id": 23,
-            "question": "CORRECT TEXTWhich option to the yum command will update the entire system? (Specify ONLY the option namewithout any additional parameters.) \n",
+            "question": "Which option to the yum command will update the entire system? (Specify ONLY the option namewithout any additional parameters.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-option-to-the-yum-command-will-update-the-entire-3/",
@@ -2512,7 +2512,7 @@
         },
         {
             "id": 24,
-            "question": "CORRECT TEXTWhich SysV init configuration file is commonly used to set the default run level? (Specify the fullname of the file, including path.) \n",
+            "question": "Which SysV init configuration file is commonly used to set the default run level? (Specify the fullname of the file, including path.) \n",
             "answer": "",
             "explanation": "",
             "url": "https://www.briefmenow.org/linux/which-sysv-init-configuration-file-is-commonly-used-to/",
@@ -5793,7 +5793,7 @@
         {
             "id": 5,
             "question": "What directory contains configuration files for additional yum repositories? (Specify the full path to the directory.)",
-            "answer": "/etc/yum.conf",
+            "answer": "/etc/yum.repos.d/",
             "explanation": "A REMPLIR",
             "url": "https://www.examtopics.com/discussions/lpi/view/16429-exam-101-500-topic-1-question-63-discussion"
         },
