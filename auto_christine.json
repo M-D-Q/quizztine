@@ -4906,7 +4906,7 @@
         {
             "id": 41,
             "question": "What is the output when the regular expression s/[ABC][abc]/xx/ is applied to the following string?ABCabc - \n A.ABxxbc \n B.xxCxxc \n C.xxxxxx \n D.ABCabc \n E.Axxaxx",
-            "answer": "C",
+            "answer": "A",
             "explanation": "Case-sensitive donc seulement \u00e0 l'endroit o\u00f9 une majuscule est avec une miniscule",
             "url": "https://www.examtopics.com/discussions/lpi/view/16146-exam-101-500-topic-1-question-96-discussion"
         },
@@ -4955,7 +4955,7 @@
         {
             "id": 48,
             "question": "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present in the current directory after running gunzip texts.tgz? \n A.Only a.txt, b.txt, and texts.tgz \n B.Only texts.tar and texts.tgz \n C.Only a.txt.gz and b.txt.gz \n D.Only a.txt and b.txt \n E.Only texts.tar",
-            "answer": "B",
+            "answer": "E",
             "explanation": "The answer is E because when you use gunzip without any parameter (for example, -k --keep), the extraction will not keep .tgz, but only .tar",
             "url": "https://www.examtopics.com/discussions/lpi/view/16148-exam-101-500-topic-1-question-105-discussion"
         },
@@ -5749,7 +5749,7 @@
             "id": 113,
             "question": "Given the following two symbolic links in a System V init configuration:/etc/rc1.d/K01apache2/etc/rc2.d/S02apache2When are the scripts executed that are referenced by these links? (Choose two.) \nA.S02apache2 is run when runlevel 2 is entered. \nB.S02apache2 is run when runlevel 2 is left. \nC.K01apache2 is never run because K indicates a deactivated service. \nD.Both S02apache2 and K01apache2 are run during a system shutdown. \nE.K01apache2 is run when runlevel 1 is entered.",
             "answer": "AE",
-            "explanation": "A REMPLIR",
+            "explanation": "Moi mêm j'ai rien compris, check donc l'url de la question : https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion/",
             "url": "https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion"
         }
     ],
@@ -5758,70 +5758,70 @@
             "id": 0,
             "question": "Which program updates the database that is used by the locate command? (Specify ONLY the command without any path or parameters).",
             "answer": "updatedb",
-            "explanation": "A REMPLIR",
+            "explanation": "Oui.",
             "url": "https://www.examtopics.com/discussions/lpi/view/40524-exam-101-500-topic-1-question-6-discussion"
         },
         {
             "id": 1,
             "question": "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the command without any path or parameters.)",
             "answer": "df",
-            "explanation": "A REMPLIR",
+            "explanation": "df command – Shows the amount of disk space used and available on Linux file systems.\ndu command – Display the amount of disk space used by the specified files and for each subdirectory.\nbtrfs fi df /device/ – Show disk space usage information for a btrfs based mount point/file system.",
             "url": "https://www.examtopics.com/discussions/lpi/view/13313-exam-101-500-topic-1-question-11-discussion"
         },
         {
             "id": 2,
             "question": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the file name only without any path.)",
             "answer": "cmdline",
-            "explanation": "A REMPLIR",
+            "explanation": "Based on LPIC learning materials : \n'A new configuration file for the bootloader must be generated every time /etc/default/grub changes, which is accomplished by the command grub-mkconfig -o /boot/grub/grub.cfg. Once the operating system is running, the kernel parameters used for loading the current session are available for reading in the file /proc/cmdline.'",
             "url": "https://www.examtopics.com/discussions/lpi/view/37582-exam-101-500-topic-1-question-15-discussion"
         },
         {
             "id": 3,
             "question": "Which program runs a command in specific intervals and refreshes the display of the program's output? (Specify ONLY the command without any path or parameters.)",
             "answer": "watch",
-            "explanation": "A REMPLIR",
+            "explanation": "From the manual:\nwatch runs command repeatedly, displaying its output and errors (the first screenfull).  This allows you to watch the program output change over time. \nBy default, command is run every 2 seconds and watch will run until interrupted.",
             "url": "https://www.examtopics.com/discussions/lpi/view/46441-exam-101-500-topic-1-question-41-discussion"
         },
         {
             "id": 4,
             "question": "Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
             "answer": "nice",
-            "explanation": "A REMPLIR",
+            "explanation": "gentil",
             "url": "https://www.examtopics.com/discussions/lpi/view/58859-exam-101-500-topic-1-question-59-discussion"
         },
         {
             "id": 5,
             "question": "What directory contains configuration files for additional yum repositories? (Specify the full path to the directory.)",
             "answer": "/etc/yum.repos.d/",
-            "explanation": "A REMPLIR",
+            "explanation": "From the comments : it is recommended to define individual repositories in new or existing .repo files in the /etc/yum.repos.d/ directory. The values you define in individual [repository] sections of the /etc/yum.conf file override values set in the [main] section. \n https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sec-configuring_yum_and_yum_repositories",
             "url": "https://www.examtopics.com/discussions/lpi/view/16429-exam-101-500-topic-1-question-63-discussion"
         },
         {
             "id": 6,
             "question": "Which file from the /proc/ file system contains a list of all currently mounted devices? (Specify the full name of the file, including path.)",
             "answer": "/proc/mounts",
-            "explanation": "A REMPLIR",
+            "explanation": "Ca peut aussi être proc/self/mounts (les deux sont acceptés, même si proc/mounts est un lien symbolique de l'autre). ",
             "url": "https://www.examtopics.com/discussions/lpi/view/21716-exam-101-500-topic-1-question-76-discussion"
         },
         {
             "id": 7,
             "question": "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by the system administrator be placed in order to be made available to all users on the system? (Specify the full path to the directory.)",
             "answer": "/usr/local/bin/",
-            "explanation": "A REMPLIR",
+            "explanation": "According to FHS:\n/bin contains executables needed to up or repair the system, monouser mode.\n/usr/bin contains executables for users to use. Most of non booting programs, intended for normal users, should be placed here./sbin/ contains boot binaries, and other executables tipically not used for nnormal users.\n/usr/local/bin usually contains non system, third party locally compiled binaries. Default location for user binaries.\n/usr/local/sbin contains non system binaries for root only.",
             "url": "https://www.examtopics.com/discussions/lpi/view/55355-exam-101-500-topic-1-question-85-discussion"
         },
         {
             "id": 8,
             "question": "Which command is used to change the priority of an already running process? (Specify ONLY the command without any path or parameters.)",
             "answer": "renice",
-            "explanation": "A REMPLIR",
+            "explanation": "renice s'utilise pour modifier le niceness level d'un processus déjà en cours.",
             "url": "https://www.examtopics.com/discussions/lpi/view/76875-exam-101-500-topic-1-question-111-discussion"
         },
         {
             "id": 9,
             "question": "Which System V init configuration file is commonly used to set the default run level? (Specify the full name of the file, including path.)",
             "answer": "/etc/inittab",
-            "explanation": "A REMPLIR",
+            "explanation": "Pensez bien à mettre le chemin entier.",
             "url": "https://www.examtopics.com/discussions/lpi/view/53593-exam-101-500-topic-1-question-119-discussion"
         }
     ]
