@@ -1,6 +1,4 @@
 import json
-import os
-import time
 from fonctions_main import *
 #TO DO : ajouter ascii art, sound "lets get started"
 
@@ -12,33 +10,22 @@ liste_questionnaires_book = ["Assessment Test", "Chapter 1: Exploring Linux Comm
 "Chapter 5: Booting Linux and Editing Files", "Chapter 6: Configuring the X Window System, Localization, and Printing", "Chapter 7: Administering the System"]
 # WORKING ON IT "Chapter 8: Configuring Basic Networking", "Chapter 9: Writing Scripts, Configuring Email, and Using Databases", "Chapter 10: Securing Your System"
 
-liste_questionnaires_dumps = ["LX0-103(v.1)", "101-400(v.2)", "101-350", "Exam-Topics 101 - Paywall breached (w/ explanations)", "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)", "Exam-Topics 101 - Paywall breached - Input"]
-
+liste_questionnaires_dumps = ["Exam-Topics 101 - Paywall breached (w/ explanations)", "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)", "Exam-Topics 101 - Paywall breached - Input"]
 continuer = 1
 while continuer == 1:
     choix_first = str(input("""
-    What do you want to study ?
-    0 - Assessment Test & Chapters w/ explanations from LPIC-1 Study Guide book ?
-    1 - Dumps questionnaires - Choice answers
+What do you want to study ?
+0 - Assessment Test & Chapters w/ explanations from LPIC-1 Study Guide book ?
+1 - Dumps questionnaires - Choice answers
 
-    Enter chosen number here ->"""))
-
+Enter chosen number here ->"""))
     if choix_first == "0" :
         deroulement_questionnaire(liste_questionnaires_book,data)
-
-
     elif choix_first == "1":
        deroulement_questionnaire(liste_questionnaires_dumps,data)
     print("c'est finito")
-    continuer = int(input("Continuer ? 1 = Oui"))
-
-
-
-    #ICI faire une variante pour le questionnaire à input, en mettant une liste des réponses possibles via un split à la virgule des trucs avec plusieurs variantes, puis un if response in liste_answers
-
-    # AUSSI , Variante shuffle avec 20 fois un chiffre random qui fetch l'id du même chiffre et on évite que ça se répète.
-
+    continuer = int(input("""
+Continuer ? (1 = Oui)
+--> """))
+    # Variante shuffle avec 20 fois un chiffre random qui fetch l'id du même chiffre et on évite que ça se répète.
     # Et de l'esthétique bien sur.
-
-    
-

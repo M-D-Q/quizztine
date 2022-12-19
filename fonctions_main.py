@@ -29,9 +29,9 @@ def show_it(liste_quest, data):
     clefs = list(data['score'].keys())
     for x in range(0, len(liste_quest)):
         if liste_quest[x] in clefs :
-            print(f"{x} - {liste_quest[x]} \t \t \t \t \t \t \t Score actuel : {data['score'][liste_quest[x]]}%")
+            print(f"{x} - {liste_quest[x]} =^_^= Score actuel : {data['score'][liste_quest[x]]}%")
         else : 
-            print(f"{x} - {liste_quest[x]} \t \t \t \t \t \t \t Score actuel : Pas encore de score")
+            print(f"{x} - {liste_quest[x]} =^_^= Score actuel : Nothing yet..")
 def deroulement_questionnaire(liste_quest, data):
     print("What dump do you want to study :")
     show_it(liste_quest, data)
