@@ -2,8 +2,22 @@
     "score": {
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 0,
         "Exam-Topics 101 - Paywall breached - Input": 0,
-        "Questionnaire_Shuffle": 0
+        "Questionnaire_Shuffle": 68
     },
+    "Exam Essentials": [
+        {
+            "chapter 1": {
+                "summary": [],
+                "exam_essentials": []
+            }
+        },
+        {
+            "chapter 2": {
+                "summary": [],
+                "exam_essentials": []
+            }
+        }
+    ],
     "Assessment Test": [
         {
             "id": "1",
