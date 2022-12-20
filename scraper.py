@@ -5,6 +5,14 @@ from fpdf import FPDF
 
 
 def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str) -> list:
+    """Create a text and pdf of all found links, then return a list of them
+
+    :param forum_linkf: link to the discussion
+    :param sizef: number of pages
+    :param exam_namef: key string to search in link
+    :param file_namef: name of the text file and pdf
+    :return: a str list of all found links
+    """
     driver = webdriver.Chrome()
 
     f = open(file_namef, 'w')
