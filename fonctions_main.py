@@ -37,11 +37,12 @@ def show_it(liste_quest, data):
 #choix questionnaire entier ou shuffle de 25 questions (avec un timer ?)
 def shuffle_oupas(data, liste_quest, choix_second):
     choix_shuffle = input("""
-    1 - Dump entier
+    1 - Dump entier (randomisé)
     2 - 25 questions randoms provenant du dump
     --> """)
     if choix_shuffle == 1:
         liste_utilisee = data[liste_quest[int(choix_second)]]
+        random.shuffle(liste_utilisee)
         liste_utilisee.append(str(liste_quest[int(choix_second)]))
         return liste_utilisee
     else:
