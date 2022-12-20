@@ -168,3 +168,37 @@ def tous_ensemble_general(clean_text_questions, clean_text_answers, noms_questio
             except Exception as e : 
                 print(str(e))
                 pass
+
+
+def formattage_exam_essentials(txtsource, jsoncible):
+    chapter_names = ["Chapter 1: Exploring Linux Command-Line Tools", "Chapter 2: Managing Software", "Chapter 3: Configuring Hardware", "Chapter 4: Managing Files",
+"Chapter 5: Booting Linux and Editing Files", "Chapter 6: Configuring the X Window System, Localization, and Printing", "Chapter 7: Administering the System",
+"Chapter 8: Configuring Basic Networking", "Chapter 9: Writing Scripts, Configuring Email, and Using Databases", "Chapter 10: Securing Your System" ]
+    f3 = open(txtsource, "r", encoding="utf8")
+    linelist = f3.readlines()
+    f3.close
+    string_base = ' '.join(linelist)
+    liste_chapitres= re.split(r"^Summary$",string_base)
+    liste_chapitres.pop(0)
+    for chapitre in range(len(0,liste_chapitres)) :
+        liste_both = re.split(r"^Exam Essentials$", liste_chapitres[chapitre])
+        liste_summaries = liste_both[0::2]
+        liste_essentials = liste_both[1::2]
+        for occurence in range(0,len(liste_essentials)):
+            liste_paragraphe_essentials = liste_essentials[occurence].split("§")
+            for occurence2 in range(0,len(liste_paragraphe_essentials)):
+                liste_paragraphe_essentials[occurence2] = re.sub(r"\n", " ", liste_paragraphe_essentials[occurence2])
+                liste_paragraphe_essentials[occurence2] = re.sub(r"§", r"\n", liste_paragraphe_essentials[occurence2])
+        for occurence in range(0,len(liste_summaries)):
+            liste_paragraphe_summary = liste_summaries[occurence].split("§")
+            for occurence3 in range(0,len(liste_paragraphe_summary)):
+                liste_paragraphe_summary[occurence3] = re.sub(r"\n", " ", liste_paragraphe_summary[occurence3])
+                liste_paragraphe_summary[occurence3] = re.sub(r"§", r"\n", liste_paragraphe_summary[occurence3])
+        y = {
+                "id": chapter_names,
+                "question": str(re.sub("§", r"\n ", liste_questions[int(x)])),
+                "answer": str(templist_answers[1]),
+                "explanation": str(templist_answers[2]),
+            }
+            #APPEND TO data["exam essentials]["nb du chapitre"]
+

@@ -36,21 +36,25 @@ def show_it(liste_quest, data):
 
 #choix questionnaire entier ou shuffle de 25 questions (avec un timer ?)
 def shuffle_oupas(data, liste_quest, choix_second):
-    choix_shuffle = int(input("""
+    choix_shuffle = str(input("""
     1 - Dump entier (randomisé)
     2 - 25 questions randoms provenant du dump
     --> """))
-    if choix_shuffle == 1:
+    if choix_shuffle == "1":
         liste_utilisee = data[liste_quest[int(choix_second)]]
         random.shuffle(liste_utilisee)
         liste_utilisee.append(str(liste_quest[int(choix_second)]))
         return liste_utilisee
-    else:
+    elif choix_shuffle == "2":
         liste_utilisee = data[liste_quest[int(choix_second)]]
         random.shuffle(liste_utilisee)
         liste_utilisee = liste_utilisee[:25]
         liste_utilisee.append("Questionnaire_Shuffle")
         return liste_utilisee
+    else : 
+        print("Entre un chiffre valide stp")
+        exit
+    
 
 def deroulement_questionnaire(liste_quest, data):
     print("What dump do you want to study :")
@@ -61,14 +65,13 @@ def deroulement_questionnaire(liste_quest, data):
     liste_utilisee = shuffle_oupas(data, liste_quest, choix_second)
     nom_questionnaire_k = liste_utilisee[-1]
     liste_utilisee.pop()
-    print(len(liste_utilisee))
     for john in liste_utilisee:
         print(f"Question # {liste_utilisee.index(john)}/{len(liste_utilisee)}")
         print(john['question'])
         response = str(input("""
 Your answer is (no spaces, no commas, only capital letters) :
---> """)).upper()
-        if response != john['answer'].upper():
+--> """))
+        if response.upper() != john['answer'].upper():
             print(f"""
 Incorrect, the answer was {john['answer']} !
             """)
