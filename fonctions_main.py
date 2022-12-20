@@ -16,14 +16,12 @@ def update_user_score(questionnaire_name, score, datajson):
     i = 0
     cles = datajson["score"].keys()
     cles = list(cles)
-    print(cles)
     while not found and i < len(cles):
         found = cles[i] == questionnaire_name
         if found :
             datajson["score"][cles[i]] = score
         i+=1
     if not found:
-        print("not found")
         datajson["score"][questionnaire_name] = score
     insertion_json(datajson,"auto_christine.json","score" )
 def show_it(liste_quest, data):
@@ -62,9 +60,7 @@ def deroulement_questionnaire(liste_quest, data):
     liste_utilisee = shuffle_oupas(data, liste_quest, choix_second)
     nom_questionnaire_k = liste_utilisee[-1]
     liste_utilisee.pop()
-
-
-    liste_utilisee = data[liste_quest[int(choix_second)]]
+    print(len(liste_utilisee))
     for john in liste_utilisee:
         print(f"Question # {liste_utilisee.index(john)}/{len(liste_utilisee)}")
         print(john['question'])

@@ -27,5 +27,4 @@ Enter chosen number here ->"""))
     continuer = int(input("""
 Continuer ? (1 = Oui)
 --> """))
-    # Variante shuffle avec 20 fois un chiffre random qui fetch l'id du même chiffre et on évite que ça se répète.
     # Et de l'esthétique bien sur.
