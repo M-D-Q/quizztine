@@ -1,7 +1,8 @@
 {
     "score": {
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 0,
-        "Exam-Topics 101 - Paywall breached - Input":0
+        "Exam-Topics 101 - Paywall breached - Input": 0,
+        "Questionnaire_Shuffle": 0
     },
     "Assessment Test": [
         {
@@ -5133,7 +5134,7 @@
             "id": 18,
             "question": "What is true regarding UEFI firmware? (Choose two.) \nA.It can read and interpret partition tables \nB.It can use and read certain file systems \nC.It stores its entire configuration on the /boot/ partition \nD.It is stored in a special area within the GPT metadata \nE.It is loaded from a fixed boot disk position",
             "answer": "BD",
-            "explanation": "WEIRD. A & B are probably correct too. But here is some explanation for the D answer :\n GPT-partitioned disks can be used either with computers with the traditional PC BIOS or ones with UEFI firmware. On machines with a BIOS, the second part of GRUB is stored in a special BIOS boot partition.\nOn systems with UEFI firmware, GRUB is loaded by the firmware from the files grubia32.efi (for 32-Bit systems) or grubx64.efi (for 64-Bit systems) from a partition called the ESP (EFI System Partition).\n Some link : https://learning.lpi.org/en/learning-materials/101-500/102/102.2/102.2_01/ ",
+            "explanation": "From RJ : Here is some explanation for the D answer :\n GPT-partitioned disks can be used either with computers with the traditional PC BIOS or ones with UEFI firmware. On machines with a BIOS, the second part of GRUB is stored in a special BIOS boot partition.\nOn systems with UEFI firmware, GRUB is loaded by the firmware from the files grubia32.efi (for 32-Bit systems) or grubx64.efi (for 64-Bit systems) from a partition called the ESP (EFI System Partition).\n Some link : https://learning.lpi.org/en/learning-materials/101-500/102/102.2/102.2_01/ \n Romain : Dans tous les cas, il faut retenir deux choses : 1. Des fichiers de l'UEFI sont dans la partition boot, mais l'UEFI n'est en aucun cas charg\u00e9 ou lanc\u00e9 depuis cette partition (on oublie C et E).\n Les fichiers de configuration sont dans la partition ESP (EFI System Partition) avec les m\u00e9tadonn\u00e9es GPT (\u00e0 savoir que la table GPT est un d\u00e9riv\u00e9  de l'UEFI) (On garde la D). \n UEFI requiert \u00e9galement de savoir lire les tables GPT (et aussi MBR pour Windows, et Solaris pour Oracle, ...) (A est bonne...) \n The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems (B est bonne...) ",
             "url": "https://www.examtopics.com/discussions/lpi/view/35200-exam-101-500-topic-1-question-19-discussion"
         },
         {
@@ -5749,7 +5750,7 @@
             "id": 113,
             "question": "Given the following two symbolic links in a System V init configuration:/etc/rc1.d/K01apache2/etc/rc2.d/S02apache2When are the scripts executed that are referenced by these links? (Choose two.) \nA.S02apache2 is run when runlevel 2 is entered. \nB.S02apache2 is run when runlevel 2 is left. \nC.K01apache2 is never run because K indicates a deactivated service. \nD.Both S02apache2 and K01apache2 are run during a system shutdown. \nE.K01apache2 is run when runlevel 1 is entered.",
             "answer": "AE",
-            "explanation": "Moi mêm j'ai rien compris, check donc l'url de la question : https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion/",
+            "explanation": "Moi m\u00eam j'ai rien compris, check donc l'url de la question : https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion/",
             "url": "https://www.examtopics.com/discussions/lpi/view/25410-exam-101-500-topic-1-question-120-discussion"
         }
     ],
@@ -5765,7 +5766,7 @@
             "id": 1,
             "question": "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the command without any path or parameters.)",
             "answer": "df",
-            "explanation": "df command – Shows the amount of disk space used and available on Linux file systems.\ndu command – Display the amount of disk space used by the specified files and for each subdirectory.\nbtrfs fi df /device/ – Show disk space usage information for a btrfs based mount point/file system.",
+            "explanation": "df command \u2013 Shows the amount of disk space used and available on Linux file systems.\ndu command \u2013 Display the amount of disk space used by the specified files and for each subdirectory.\nbtrfs fi df /device/ \u2013 Show disk space usage information for a btrfs based mount point/file system.",
             "url": "https://www.examtopics.com/discussions/lpi/view/13313-exam-101-500-topic-1-question-11-discussion"
         },
         {
@@ -5800,7 +5801,7 @@
             "id": 6,
             "question": "Which file from the /proc/ file system contains a list of all currently mounted devices? (Specify the full name of the file, including path.)",
             "answer": "/proc/mounts",
-            "explanation": "Ca peut aussi être proc/self/mounts (les deux sont acceptés, même si proc/mounts est un lien symbolique de l'autre). ",
+            "explanation": "Ca peut aussi \u00eatre proc/self/mounts (les deux sont accept\u00e9s, m\u00eame si proc/mounts est un lien symbolique de l'autre). ",
             "url": "https://www.examtopics.com/discussions/lpi/view/21716-exam-101-500-topic-1-question-76-discussion"
         },
         {
@@ -5814,14 +5815,14 @@
             "id": 8,
             "question": "Which command is used to change the priority of an already running process? (Specify ONLY the command without any path or parameters.)",
             "answer": "renice",
-            "explanation": "renice s'utilise pour modifier le niceness level d'un processus déjà en cours.",
+            "explanation": "renice s'utilise pour modifier le niceness level d'un processus d\u00e9j\u00e0 en cours.",
             "url": "https://www.examtopics.com/discussions/lpi/view/76875-exam-101-500-topic-1-question-111-discussion"
         },
         {
             "id": 9,
             "question": "Which System V init configuration file is commonly used to set the default run level? (Specify the full name of the file, including path.)",
             "answer": "/etc/inittab",
-            "explanation": "Pensez bien à mettre le chemin entier.",
+            "explanation": "Pensez bien \u00e0 mettre le chemin entier.",
             "url": "https://www.examtopics.com/discussions/lpi/view/53593-exam-101-500-topic-1-question-119-discussion"
         }
     ]
