@@ -1,5 +1,6 @@
 import json
 import os
+import random
 def insertion_json(new_data, nom_fichier,nom_questionnaire):
         with open(nom_fichier,'r+', encoding="utf8") as file:
             # First we load existing data into a dict.
@@ -32,14 +33,40 @@ def show_it(liste_quest, data):
             print(f"{x} - {liste_quest[x]} =^_^= Score actuel : {data['score'][liste_quest[x]]}%")
         else : 
             print(f"{x} - {liste_quest[x]} =^_^= Score actuel : Nothing yet..")
+
+
+
+#choix questionnaire entier ou shuffle de 25 questions (avec un timer ?)
+def shuffle_oupas(data, liste_quest, choix_second):
+    choix_shuffle = input("""
+    1 - Dump entier
+    2 - 25 questions randoms provenant du dump
+    --> """)
+    if choix_shuffle == 1:
+        liste_utilisee = data[liste_quest[int(choix_second)]]
+        liste_utilisee.append(str(liste_quest[int(choix_second)]))
+        return liste_utilisee
+    else:
+        liste_utilisee = data[liste_quest[int(choix_second)]]
+        random.shuffle(liste_utilisee)
+        liste_utilisee = liste_utilisee[:25]
+        liste_utilisee.append("Questionnaire_Shuffle")
+        return liste_utilisee
+
 def deroulement_questionnaire(liste_quest, data):
     print("What dump do you want to study :")
     show_it(liste_quest, data)
     choix_second = input("Enter chosen number here -> ")
     score = 0
     i = 0
-    for john in data[liste_quest[int(choix_second)]]:
-        print(f"Question # {data[liste_quest[int(choix_second)]].index(john)}/{len(data[liste_quest[int(choix_second)]])}")
+    liste_utilisee = shuffle_oupas(data, liste_quest, choix_second)
+    nom_questionnaire_k = liste_utilisee[-1]
+    liste_utilisee.pop()
+
+
+    liste_utilisee = data[liste_quest[int(choix_second)]]
+    for john in liste_utilisee:
+        print(f"Question # {liste_utilisee.index(john)}/{len(liste_utilisee)}")
         print(john['question'])
         response = str(input("""
 Your answer is (no spaces, no commas, only capital letters) :
@@ -83,4 +110,4 @@ URL : {john['url']})
         osef = input("Press enter to continue...")
         os.system('cls' if os.name == 'nt' else 'clear')
     print(f"impression du famoso score final de {current_score}% ")
-    update_user_score(liste_quest[int(choix_second)],current_score, data)
+    update_user_score(nom_questionnaire_k,current_score, data)
