@@ -15,7 +15,7 @@ def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str) -
     """
     driver = webdriver.Chrome()
 
-    f = open(file_namef, 'w')
+    f = open(f"{file_namef}.txt", 'w')
 
     pdf: FPDF = FPDF()
     pdf.add_page()
@@ -46,4 +46,5 @@ if __name__ == "__main__":
     exam_name = input("Exam name? Format example: exam-101-500: ")
 
     file_name = input("Choose a file name to export the links to: ")
-    scrap_exam(forum_link, size, exam_name, file_name)
+    liste = scrap_exam(forum_link, size, exam_name, file_name)
+    print(len(liste))
