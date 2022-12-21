@@ -2,8 +2,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from fpdf import FPDF
+import re
 
-
+def question_number(question: str) -> int:
+    match = re.search("-[0-9]+-discussion/", question).group()
+    number = 0
+    if match:
+        number = int(re.sub("-|discussion/", "", match))
+    return number
 def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str, export_txt: bool = True,
                export_pdf: bool = True) -> list:
     """Create a text and pdf of all found links, then return a list of them
@@ -28,7 +34,7 @@ def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str, e
             if exam_namef in link:
                 wanted_link.append(link)
 
-    wanted_link.sort()
+    wanted_link.sort(key=question_number)
 
     if export_pdf:
         pdf: FPDF = FPDF()
