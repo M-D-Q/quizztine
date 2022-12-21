@@ -4,9 +4,12 @@ from selenium.webdriver.common.by import By
 from fpdf import FPDF
 
 
-def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str) -> list:
+def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str, export_txt: bool = True,
+               export_pdf: bool = True) -> list:
     """Create a text and pdf of all found links, then return a list of them
 
+    :param export_txt: Wants to export to pdf
+    :param export_pdf: wants to export to txt
     :param forum_linkf: link to the discussion
     :param sizef: number of pages
     :param exam_namef: key string to search in link
@@ -14,12 +17,6 @@ def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str) -
     :return: a str list of all found links
     """
     driver = webdriver.Chrome()
-
-    f = open(f"{file_namef}.txt", 'w')
-
-    pdf: FPDF = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=15)
 
     wanted_link = []
 
@@ -30,12 +27,22 @@ def scrap_exam(forum_linkf: str, sizef: int, exam_namef: str, file_namef: str) -
             link = possible_link_html.get_attribute("href")
             if exam_namef in link:
                 wanted_link.append(link)
-                f.write(f"{link}\n\n")
-                pdf.cell(200, 10, txt=link,
-                         ln=2, align='C')
 
-    # save the pdf with name .pdf
-    pdf.output(f"{file_namef}.pdf")
+    wanted_link.sort()
+
+    if export_pdf:
+        pdf: FPDF = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=15)
+        for link in wanted_link:
+            pdf.cell(200, 10, txt=link, ln=2, align='C')
+        pdf.output(f"{file_namef}.pdf")
+
+    if export_txt:
+        f = open(f"{file_namef}.txt", 'w')
+        for link in wanted_link:
+            f.write(f"{link}\n\n")
+        f.close()
 
     return wanted_link
 
