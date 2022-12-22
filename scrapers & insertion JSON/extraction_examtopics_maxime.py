@@ -2,18 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
-from selenium.webdriver import ActionChains
 from selenium.webdriver import *
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from functions_briefmenow import *
 
-nom_questionnaire = "Exam-Topics 101 - Paywall breached - Test"
+nom_questionnaire = "Exam-Topics 102-500 - Paywall breached"
 liste_des_patterns = [r"<span.+>",r"</span>",r"(\n)|(\\n)", r"  [ ]*"]
-f3 = open("sources\examtopics.txt", "r", encoding="utf8")
+f3 = open("sources\\102-500.txt.txt", "r", encoding="utf8")
 liste_url = f3.readlines()
 f3.close
 
