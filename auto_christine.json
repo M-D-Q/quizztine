@@ -6539,42 +6539,42 @@
             "id": 119,
             "question": "Which of the following getent invocations lists all existing users? \nA.getent homes \nB.getent uids \nC.getent passwd \nD.getent users \nE.getent logins",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is C (getent passwd).\nThe getent command is a tool that is used to retrieve entries from various system databases, such as the passwd, group, and hosts databases. The passwd database contains information about the users on the system, including their login names, user IDs (UIDs), group IDs (GIDs), home directories, and default shells.\nTo list all of the existing users on the system, you can use the getent passwd command. This will retrieve all of the entries in the passwd database and print them to the console.\nOption A (getent homes) is not correct, as the homes database does not exist. Option B (getent uids) is also not correct, as the uids database does not exist. Option D (getent users) is not correct, as the users database does not exist. Option E (getent logins) is also not correct, as the logins database does not exist.",
             "url": "https://www.examtopics.com/discussions/lpi/view/59430-exam-102-500-topic-1-question-112-discussion"
         },
         {
             "id": 120,
             "question": "Given the following user's crontab entry:15 14 * * 1-5 /usr/local/bin/example.shWhen will the script /usr/local/bin/example.sh be executed? \nA.At 14:15 local time, January till May. \nB.At 15:14 local time, 1st to 5th day of month. \nC.At 14:15 local time, February till June. \nD.At 14:15 local time, 1st to 5th day of month. \nE.At 14:15 local time, Monday to Friday",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is E (At 14:15 local time, Monday to Friday).\nThe crontab syntax consists of a series of fields that specify when a task should be executed. In this case, the crontab entry specifies that the script /usr/local/bin/example.sh should be executed at 14:15 (2:15 PM) local time, on Monday through Friday (days 1 through 5).\nThe fields in a crontab entry are as follows:\n- The first field specifies the minute of the hour (0-59) when the task should be executed.\n- The second field specifies the hour of the day (0-23) when the task should be executed.\n- The third field specifies the day of the month (1-31) when the task should be executed.\n- The fourth field specifies the month of the year (1-12) when the task should be executed.\n- The fifth field specifies the day of the week (0-6, with 0 being Sunday) when the task should be executed.\nIn this case, the first field is set to 15, the second field is set to 14, the third field is set to \"*\", the fourth field is set to \"*\", and the fifth field is set to \"1-5\", which means that the script will be executed at 14:15 local time on Monday through Friday.\nOption A (At 14:15 local time, January till May) is not correct, because the fourth field is set to \"*\", which means that the script will be executed in every month, not just January through May. Option B (At 15:14 local time, 1st to 5th day of month) is also not correct, because the second field is set to 14, not 15, and the third field is set to \"*\", not 1-5.",
             "url": "https://www.examtopics.com/discussions/lpi/view/70127-exam-102-500-topic-1-question-113-discussion"
         },
         {
             "id": 121,
             "question": "If neither cron.allow nor cron.deny exist in /etc/, which of the following is true? \nA.Without additional configuration, all users may create user specific crontabs. \nB.Without additional configuration, only root may create user specific crontabs. \nC.The cron daemon will refuse to start and report missing files in the system's logfile. \nD.When a user creates a user specific crontab the system administrator must approve it explicitly. \nE.The default settings of /etc/crond.conf define whether or not user specific crontabs are generally allowed or not.",
-            "answer": "E",
-            "explanation": "A REMPLIR",
+            "answer": "B",
+            "explanation": "If neither the cron.allow nor the cron.deny file exists in the /etc/ directory, then only the root user will be allowed to create user-specific crontabs by default. This is because the cron daemon is designed to restrict access to the crontab command (which is used to create and edit user-specific crontabs) to the root user unless explicitly configured otherwise. This is a security measure to prevent unauthorized users from creating or modifying cron jobs on the system.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30430-exam-102-500-topic-1-question-114-discussion"
         },
         {
             "id": 122,
             "question": "What is the purpose of the iconv command? \nA.It converts bitmap images from one format to another such as PNG to JPEG. \nB.It verifies that the root directory tree compiles to all conventions from the Filesystem Hierarchy Standard (FHS). \nC.It converts files from one character set to an other. \nD.It changes the mode of an inode in the ext4 filesystem. \nE.It displays additional meta information from icon files ending in .ico.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is C (It converts files from one character set to another).\nThe iconv command is a utility that is used to convert files from one character set (also known as a "code page") to another. It reads a file as input, converts the characters in the file from the input character set to the output character set, and writes the resulting text to a new file or to the standard output.\nFor example, you could use the iconv command to convert a file that is encoded in UTF-8 to ISO-8859-1, or vice versa. This can be useful if you have a file that was created on a system with a different character set encoding and you need to convert it to a character set that is compatible with your system.\nOptions A, B, D, and E are not related to the purpose of the iconv command.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77864-exam-102-500-topic-1-question-115-discussion"
         },
         {
             "id": 123,
             "question": "Which character in the password field of /etc/passwd is used to indicate that the encrypted password is stored in /etc/shadow? \nA.* \nB.- \nC.s \nD.# \nE.x",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "https://man7.org/linux/man-pages/man5/passwd.5.html\nhttps://man7.org/linux/man-pages/man8/pwconv.8.html",
             "url": "https://www.examtopics.com/discussions/lpi/view/59452-exam-102-500-topic-1-question-116-discussion"
         },
         {
             "id": 124,
             "question": "What does the term Braille Display refer to? \nA.A standardized high contract graphical theme for desktop applications? \nB.A Linux desktop environment similar to KDE and GNOME. \nC.A legacy display technology superseded by LCD. \nD.A physical representation of characters using small dots. \nE.A standard file format for data exchange, similar to XML.",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is D (A physical representation of characters using small dots).\nA Braille display is a device that is used to display text and other information in braille, which is a system of raised dots that can be felt with the fingers. Braille displays are often used by individuals who are blind or have low vision, as they provide a way for these individuals to read and interact with digital text and other information. A Braille display typically consists of a series of cells, each of which contains a small number of raised dots that can be felt by the user. The dots are arranged in patterns that correspond to different letters, numbers, and symbols, allowing the user to read the text by feeling the dots with their fingers.\nOptions A (A standardized high contract graphical theme for desktop applications) and B (A Linux desktop environment similar to KDE and GNOME) are not related to Braille displays. Option C (A legacy display technology superseded by LCD) is not accurate, as Braille displays are still in use today and are not considered a legacy technology. Option E (A standard file format for data exchange, similar to XML) is also not related to Braille displays.",
             "url": "https://www.examtopics.com/discussions/lpi/view/78011-exam-102-500-topic-1-question-117-discussion"
         },
         {
