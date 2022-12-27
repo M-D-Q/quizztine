@@ -6000,56 +6000,56 @@
             "id": 26,
             "question": "What is true about the file /etc/localtime? \nA.It is a plain text file containing a string such as Europe/Berlin \nB.It is created and maintained by the NTP service based on the location of the system's IP address. \nC.It is a symlink to /sys/device/clock/ltime and always contains the current local time. \nD.After changing this file, newtzconfig has to be run to make the changes effective. \nE.It is either a symlink to or a copy of a timezone information file such as /usr/share/zoneinfo/Europe/Berlin.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "E. It is either a symlink to or a copy of a timezone information file such as usr/share/zoneinfo/Europe/Berlin.\n/etc/localtime is a file that contains the timezone information for the system. It is typically a symlink to a file in the /usr/share/zoneinfo directory, which contains a list of timezone definitions. For example, if the system is located in Berlin, /etc/localtime might be a symlink to /usr/share/zoneinfo/Europe/Berlin. This file is used by the system to determine the current local time, and it is typically set during the installation process or through the use of the tzconfig or timedatectl utilities.",
             "url": "https://www.examtopics.com/discussions/lpi/view/64317-exam-102-500-topic-1-question-21-discussion"
         },
         {
             "id": 27,
             "question": "Which of the following statements is true regarding systemd timer units? \nA.Timer units can only be defined within a service unit's file. \nB.The command executed by the timer is specified in the timer unit's [Cmd] section. \nC.A dedicated system service, systemd-cron, handles the execution of timer units. \nD.Timer units only exist in the system scope and are not available for users. \nE.Each systemd timer unit controls a specific systemd service unit.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "E. Each systemd timer unit controls a specific systemd service unit.\nTimer units in systemd are used to schedule the execution of specific service units at specific intervals or times. Timer units are defined in files with the '.timer' extension, and each timer unit is associated with a specific service unit. When the timer unit's scheduled time or interval is reached, it will trigger the execution of the associated service unit. Timer units are not limited to the system scope and can be created and used by individual users as well. They are not controlled by a dedicated system service like systemd-cron, and the command to be executed by the timer is not specified in the timer unit's configuration file.",
             "url": "https://www.examtopics.com/discussions/lpi/view/66382-exam-102-500-topic-1-question-22-discussion"
         },
         {
             "id": 28,
             "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.-z \nB.-eq \nC.-d \nD.-f \nE.-lt",
             "answer": "CD",
-            "explanation": "A REMPLIR",
+            "explanation": "C. -d\nThe -d operator tests whether a file is a directory. If the file is a directory, the test command returns a zero exit status (true). If the file is not a directory, it returns a non-zero exit status (false).\nD. -f\nThe -f operator tests whether a file is a regular file (not a directory or special file). If the file is a regular file, the test command returns a zero exit status (true). If the file is not a regular file, it returns a non-zero exit status (false).\nThe test command is a utility in Unix-like systems that is used to evaluate expressions and perform comparisons. The following comparison operators work on elements in the file system: -d and -f. The other comparison operators listed, such as -z, -eq, and -lt, are used for different purposes and are not specifically used to compare elements in the file system.",
             "url": "https://www.examtopics.com/discussions/lpi/view/37605-exam-102-500-topic-2-question-22-discussion"
         },
         {
             "id": 29,
             "question": "Which of the following fields are available in the standard format of both the global /etc/crontab file as well as in user-specific crontab files? (Choose two.) \nA.Year \nB.Minute \nC.Username \nD.Effective group ID \nE.Command",
             "answer": "BD",
-            "explanation": "A REMPLIR",
+            "explanation": "B. Minute\nThe Minute field specifies the minute of the hour when the command should be run.\nE. Command\nThe Command field specifies the command to be run.\nThe standard format for crontab files includes the following fields: Minute, Hour, Day of the month, Month, Day of the week, and Command. The global /etc/crontab file and user-specific crontab files both use this standard format, with the additional field of 'username' in the global file specifying the user under which the command should be run. The other fields listed, such as Year and Effective group ID, are not part of the standard crontab format.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14243-exam-102-500-topic-1-question-23-discussion"
         },
         {
             "id": 30,
-            "question": "Which of the following commands should be executed when starting a login shell in order to change the language of messages for an internationalized program toPortuguese (pt)? \nA.export LANGUAGE=\u05d2\u20acpt\u05d2\u20ac \nB.export LC_MESSAGES=\u05d2\u20acpt\u05d2\u20ac \nC.export UI_MESSAGES=\u05d2\u20acpt\u05d2\u20ac \nD.export MESSAGE=\u05d2\u20acpt\u05d2\u20ac \nE.export ALL_MESSAGES=\u05d2\u20acpt\u05d2\u20ac",
+            "question": "Which of the following commands should be executed when starting a login shell in order to change the language of messages for an internationalized program toPortuguese (pt)? \nA.export LANGUAGE='pt' \nB.export LC_MESSAGES='pt' \nC.export UI_MESSAGES='pt' \nD.export MESSAGE='pt' \nE.export ALL_MESSAGES='pt'",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "B. export LC_MESSAGES='pt'\nThe LC_MESSAGES environment variable specifies the language to be used for messages in internationalized programs. To change the language of messages to Portuguese (pt), the export command should be used to set the value of LC_MESSAGES to 'pt'. The other options listed, such as LANGUAGE, UI_MESSAGES, MESSAGE, and ALL_MESSAGES, are not valid environment variables for setting the language of messages in internationalized programs.",
             "url": "https://www.examtopics.com/discussions/lpi/view/80191-exam-102-500-topic-1-question-24-discussion"
         },
         {
             "id": 31,
             "question": "Which of the following files assigns a user to its primary group? \nA./etc/pgroup \nB./etc/shadow \nC./etc/passwd \nD./etc/group \nE./etc/gshadow",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "C. /etc/passwd\nThe /etc/passwd file is used to store information about user accounts on a Unix-like system. Each line in the file represents a different user, and the fields on each line are separated by a colon (:). One of the fields in the /etc/passwd file is the user's primary group, which is specified by the group name or group ID. The other files listed, such as /etc/pgroup, /etc/shadow, /etc/group, and /etc/gshadow, do not contain information about user primary groups.",
             "url": "https://www.examtopics.com/discussions/lpi/view/76344-exam-102-500-topic-1-question-25-discussion"
         },
         {
             "id": 32,
             "question": "Which of the following steps prevents a user from obtaining an interactive login session? \nA.Setting the UID for the user to 0. \nB.Running the command chsh -s /bin/false with the user name. \nC.Removing the user from the group staff. \nD.Adding the user to /etc/noaccess. \nE.Creating a .nologin file in the user's home directory.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "E. Creating a .nologin file in the user's home directory.\nThe .nologin file is a special file that can be placed in a user's home directory to prevent the user from obtaining an interactive login session. When the user attempts to log in, the system will check for the presence of the .nologin file and, if it exists, will display the contents of the file to the user and then terminate the login session. The other options listed, such as setting the UID to 0, running the chsh command with /bin/false, removing the user from the group staff, and adding the user to /etc/noaccess, do not prevent a user from obtaining an interactive login session.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14532-exam-102-500-topic-1-question-26-discussion"
         },
         {
             "id": 34,
             "question": "Which of the following statements about systemd-journald are true? (Choose three.) \nA.It is incompatible with syslog and cannot be installed on a system using regular syslog. \nB.It only processes messages of systemd and not messages of any other tools. \nC.It can pass log messages to syslog for further processing. \nD.It maintains metadata such as _UID or _PID for each message. \nE.It supports syslog facilities such as kern, user, and auth.",
             "answer": "CDE",
-            "explanation": "A REMPLIR",
+            "explanation": "B. It only processes messages of systemd and not messages of any other tools.\nD. It maintains metadata such as '_UID' or '_PID' for each message.\nE. It supports syslog facilities such as 'kern', 'user', and 'auth'.\nSystemd-journald is a system service in Unix-like systems that is responsible for collecting and storing log messages from the system and its applications. It is compatible with syslog and can be installed on a system that uses regular syslog. However, it only processes messages from systemd, and not from other tools. It maintains metadata such as '_UID' and '_PID' for each message, and it also supports syslog facilities such as 'kern', 'user', and 'auth'. Systemd-journald can also pass log messages to syslog for further processing.",
             "url": "https://www.examtopics.com/discussions/lpi/view/57651-exam-102-500-topic-1-question-28-discussion"
         },
         {
