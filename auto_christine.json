@@ -5895,35 +5895,35 @@
             "id": 10,
             "question": "Which of the following connection types, as seen in nmcli connection show, may exist in NetworkManager? (Choose three.) \nA.tcp \nB.ethernet \nC.wifi \nD.ipv6 \nE.bridge",
             "answer": "BCE",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answers are: B. ethernet, C. wifi, and E. bridge\n\nnmcli is a command-line tool that is used to manage and configure network connections on systems that use NetworkManager, a network management daemon that runs on many Linux and Unix-like systems.\n\nThe nmcli connection show command displays a list of all network connections managed by NetworkManager. Each connection in the list is identified by a connection type, which specifies the type of network interface or device that the connection uses.\n\nThe following connection types may exist in NetworkManager:\n\n- ethernet: This connection type is used for wired Ethernet connections.\n- wifi: This connection type is used for wireless Wi-Fi connections.\n- bridge: This connection type is used to create a bridge between two or more network interfaces or devices, allowing them to communicate with each other as if they were on the same network.\n\nOption A. tcp is not a valid connection type in NetworkManager. Option D. ipv6 is not a connection type, but rather a protocol used to transmit data over a network. NetworkManager supports IPv6 connections, but the connection type would be identified as ethernet, wifi, or bridge, depending on the type of network interface or device used.",
             "url": "https://www.examtopics.com/discussions/lpi/view/39217-exam-102-500-topic-1-question-7-discussion"
         },
         {
             "id": 11,
-            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.\"\"z \nB.\"\"eq \nC.\"\"d \nD.\"\"f \nE.\"\"lt",
+            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.-z \nB.-eq \nC.-d \nD.-f \nE.-lt",
             "answer": "CD",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answers are: C. -d and D. -f\n\nThe test command is a utility that is used to evaluate the conditions of a file or expression, and return an exit status of 0 (true) or 1 (false) depending on the result. test can be used with various comparison operators to compare values and perform different tests on files and expressions.\n\nThe following comparison operators can be used to perform tests on elements in the file system:\n\n- -d: This operator tests whether a file is a directory. It returns true if the file exists and is a directory, and false otherwise.\n- -f: This operator tests whether a file is a regular file. It returns true if the file exists and is a regular file (not a directory or special file), and false otherwise.\n\nOption A. -z is not a comparison operator for test. It is used to test whether a string is empty (has a length of zero). Option B. -eq is not a comparison operator for test. It is used to test whether two integers are equal. Option E. -lt is not a comparison operator for test. It is used to test whether one integer is less than another.",
             "url": "https://www.examtopics.com/discussions/lpi/view/37590-exam-102-500-topic-2-question-7-discussion"
         },
         {
             "id": 12,
             "question": "On a Linux workstation, the route command takes a long time before printing out the routing table. Which of the following errors does that indicate? \nA.The local routing information may be corrupted and must be re-validated using a routing protocol. \nB.One of the routers in the routing table is not available which causes the automatic router failure detection mechanism (ARF-D) to wait for a timeout. \nC.There may accidentally be more than one default router in which case a default router election has to be done on the network in order to choose one router as the default. \nD.The Linux Kernel Routing Daemon (LKRD) is not running and should be started using its init script or systemd unit. \nE.DNS resolution may not be working as route by default tries to resolve names of routers and destinations and may run into a timeout.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is: E. DNS resolution may not be working as route by default tries to resolve names of routers and destinations and may run into a timeout.\n\nThe route command is a utility that is used to view and modify the routing table on a Linux system. When you run the route command, it typically prints out the current routing table immediately. If it takes a long time before the routing table is printed, it could be an indication that there is an issue with DNS resolution.\n\nBy default, route tries to resolve the names of routers and destinations in the routing table to their corresponding IP addresses using DNS. If DNS resolution is not working, or if there is a delay in resolving the names, it can cause the route command to take a long time before printing out the routing table.\n\nOption A. The local routing information may not be corrupted, and there is no need to re-validate it using a routing protocol. Option B. The automatic router failure detection mechanism (ARF-D) is not a real thing and is not related to the route command. Option C. There may be more than one default router on a network, but this would not cause the route command to take a long time before printing out the routing table. Option D. The Linux Kernel Routing Daemon (LKRD) is not a real thing and is not related to the route command.",
             "url": "https://www.examtopics.com/discussions/lpi/view/33093-exam-102-500-topic-1-question-8-discussion"
         },
         {
             "id": 13,
             "question": "What is true about the Hop Limit field in the IPv6 header? \nA.The field is not changed during the transport of a package. \nB.The field is transmitted within a hop-by-hop extension header. \nC.Each router forwarding the packet increases the field's value. \nD.Each router forwarding the packet decreases the field's value. \nE.For multicast packages, the field's value is always 1.",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is: D. Each router forwarding the packet decreases the field's value.\n\nThe Hop Limit field in the IPv6 header is used to prevent packets from circulating indefinitely on a network. It is similar to the Time-To-Live (TTL) field in the IPv4 header.\n\nWhen an IPv6 packet is transmitted over a network, the Hop Limit field is initialized to a certain value. Each time the packet passes through a router, the router decreases the value of the Hop Limit field by 1. If the value of the Hop Limit field reaches zero, the router discards the packet and does not forward it any further.\n\nOption A. The Hop Limit field is changed during the transport of a packet. Option B. The Hop Limit field is not transmitted within a hop-by-hop extension header. Option C. Each router forwarding the packet does not increase the field's value. Option E. The value of the Hop Limit field is not always 1 for multicast packets. The value may vary depending on the specific multicast group and the intended scope of the multicast transmission.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30406-exam-102-500-topic-1-question-9-discussion"
         },
         {
             "id": 14,
             "question": "Which of the following nmcli subcommands exist? (Choose two.) \nA.nmcli ethernet \nB.nmcli device \nC.nmcli wifi \nD.nmcli address \nE.nmcli connection",
             "answer": "BE",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answers are: B. nmcli device and E. nmcli connection\n\nnmcli is a command-line tool that is used to manage and configure network connections on systems that use NetworkManager, a network management daemon that runs on many Linux and Unix-like systems. nmcli provides a number of subcommands that allow you to perform various tasks related to network management.\n\nThe following nmcli subcommands exist:\n\n- nmcli device: This subcommand is used to manage network devices and their configurations. You can use it to list devices, show device details, activate or deactivate devices, and modify device settings.\n- nmcli connection: This subcommand is used to manage network connections and their configurations. You can use it to list connections, show connection details, create, modify, or delete connections, and activate or deactivate connections.\n\nOption A. nmcli ethernet is not a valid subcommand. Option C. nmcli wifi is not a valid subcommand. Option D. nmcli address is not a valid subcommand.",
             "url": "https://www.examtopics.com/discussions/lpi/view/39219-exam-102-500-topic-1-question-10-discussion"
         },
         {
@@ -6012,7 +6012,7 @@
         },
         {
             "id": 28,
-            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.\"\"z \nB.\"\"eq \nC.\"\"d \nD.\"\"f \nE.\"\"lt",
+            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.-z \nB.-eq \nC.-d \nD.-f \nE.-lt",
             "answer": "CD",
             "explanation": "A REMPLIR",
             "url": "https://www.examtopics.com/discussions/lpi/view/37605-exam-102-500-topic-2-question-22-discussion"
