@@ -6196,28 +6196,28 @@
             "id": 62,
             "question": "Which of the following commands preloads and manages existing SSH keys that are used for automatic authentication while logging in to order machines usingSSH? \nA.sshd \nB.ssh-keyring \nC.ssh-keygen \nD.ssh-pki \nE.ssh-agent",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is E: ssh-agent.\n\nssh-agent is a command that is used to manage and preload existing SSH keys that are used for automatic authentication when logging in to remote machines using SSH. It is typically used in conjunction with the ssh-add command, which is used to add private keys to the ssh-agent. When you start ssh-agent, it will create a socket and set the SSH_AUTH_SOCK environment variable to point to that socket. Any SSH client programs that are run subsequently will use this socket to communicate with the ssh-agent.\n\nThe other commands you listed do not pertain to managing and preloading SSH keys:\n\n- A: sshd is the daemon process that runs on a server and listens for incoming SSH connections. It is not related to managing and preloading SSH keys.\n- B: ssh-keyring is not a standard command in Linux or Unix.\n- C: ssh-keygen is a command that is used to generate new SSH keys. It is not related to managing and preloading existing SSH keys.\n- D: ssh-pki is not a standard command in Linux or Unix.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14852-exam-102-500-topic-1-question-56-discussion"
         },
         {
             "id": 63,
             "question": "On a machine running several X servers, how do programs identify the different instances of the X11 server? \nA.By a fixed UUID that is defined in the X11 configuration file. \nB.By a display name like: 1. \nC.By the name of the user that runs the X server like x11:bob. \nD.By a device name like /dev/X11/xservers/1. \nE.By a unique IPv6 address from the fe80::/64 subnet.",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is B. Programs identify different instances of the X11 server by a display name like \":1\", \":2\", etc. The display name is usually specified as a command-line option when starting the X server. For example, you might start an X server with the command X :1, which would start an instance of the X server on display \":1\".\nEach X server listens for connections on a network socket, and clients can connect to a specific display by specifying the hostname and display number as part of the connection. For example, a client might connect to display \":1\" on the local host with a command like xclock -display localhost:1.\nA. There is no fixed UUID defined in the X11 configuration file.\nC. The name of the user running the X server is not used to identify different instances of the X server.\nD. The X11 server is not identified by a device name like \"/dev/X11/xservers/1\".\nE. The X11 server is not identified by a unique IPv6 address from the fe80::/64 subnet.",
             "url": "https://www.examtopics.com/discussions/lpi/view/62752-exam-102-500-topic-1-question-57-discussion"
         },
         {
             "id": 64,
             "question": "What is the purpose of a screen reader? \nA.It manages virtual keyboards on touch screen displays. \nB.It reads the parameters of the attached monitors and creates an appropriate X11 configuration. \nC.It displays lines and markers to help people use speed reading techniques. \nD.It manages and displays files that contain e-books. \nE.It reads displayed text to accommodate the needs of blind or visually impaired people.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is E. A screen reader is a software program that reads displayed text to accommodate the needs of blind or visually impaired people. It is used to access computers and other electronic devices by translating the text on the screen into speech or braille.\nScreen readers can be used with a variety of devices, including computers, smartphones, and tablets, and can be used in combination with other assistive technologies such as braille displays and refreshable braille terminals.\nA. A screen reader does not manage virtual keyboards on touch screen displays.\nB. A screen reader does not read the parameters of attached monitors or create X11 configurations.\nC. A screen reader does not display lines or markers to help people use speed reading techniques.\nD. A screen reader does not manage or display files that contain e-books",
             "url": "https://www.examtopics.com/discussions/lpi/view/37606-exam-102-500-topic-1-question-58-discussion"
         },
         {
             "id": 65,
             "question": "The X11 configuration file xorg.conf is grouped into section. How is the content of the section SectionName represented? \nA.It is placed in curly brackets as in Section SectionName {\u05d2\u20ac\u00a6}. \nB.It is placed between the tags &lt;Section name=\u05d2\u20acSectionName\u05d2\u20ac&gt; and &lt;/Section&gt;. \nC.It is placed between a line containing Section \u05d2\u20acSectionName\u05d2\u20ac and a line containing EndSection. \nD.It is placed after the row [SectionName]. \nE.It is placed after an initial unindented Section \u05d2\u20acSectionName\u05d2\u20ac and must be indented by exactly one tab character.",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer is C. The content of a section in the X11 configuration file xorg.conf is represented by placing it between a line containing \"Section SectionName\" and a line containing \"EndSection\". For example:\n\nSection \"SectionName\"\n Option1 value1\n Option2 value2\nEndSection\n\nA. The content of a section is not placed in curly brackets.\nB. The content of a section is not placed between tags.\nD. The content of a section is not placed after a row containing \"[SectionName]\".\nE. The content of a section is not indented by exactly one tab character. It can be indented by any number of spaces or tabs, or it can be left unindented.",
             "url": "https://www.examtopics.com/discussions/lpi/view/42191-exam-102-500-topic-1-question-59-discussion"
         },
         {
