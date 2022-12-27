@@ -6581,14 +6581,14 @@
             "id": 126,
             "question": "Which of the following tasks are handled by a display manager like XDM or KMD? (Choose two.) \nA.Configure additional devices like new monitors or projectors when they are attached. \nB.Start and prepare the desktop environment for the user. \nC.Create an X11 configuration file for the current graphic devices and monitors. \nD.Lock the screen when the user was inactive for a configurable amount of time. \nE.Handle the login of a user.",
             "answer": "BE",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is options E (Handle the login of a user) and B (Start and prepare the desktop environment for the user).\nA display manager is a program that is responsible for displaying the login screen and allowing the user to enter their credentials (username and password). Once the user has successfully logged in, the display manager is also responsible for starting and preparing the desktop environment for the user. This includes setting up the user's preferred desktop environment, loading any necessary system services or background processes, and displaying the user's desktop on the screen.\nOptions A (Configure additional devices like new monitors or projectors when they are attached) and C (Create an X11 configuration file for the current graphic devices and monitors) are not tasks that are typically handled by a display manager. These tasks are usually handled by other programs or system processes. Option D (Lock the screen when the user was inactive for a configurable amount of time) is a task that can be handled by a display manager, but it is not a primary function of a display manager.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77867-exam-102-500-topic-1-question-119-discussion"
         },
         {
             "id": 127,
             "question": "Which of the following protocols is designed to access the video card output of a virtual machine? \nA.KDE \nB.X11 \nC.Xfce \nD.SPICE \nE.XDMCP",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The Simple Protocol for Independent Computing Environments (SPICE) is a remote access protocol that is designed to access the video card output of a virtual machine. It allows users to remotely connect to and interact with a virtual machine as if they were physically present in front of the machine. SPICE is commonly used in virtualization environments, such as those provided by the QEMU and KVM open source virtualization tools. KDE (A), X11 (B), Xfce (C), and XDMCP (E) are not protocols designed to access the video card output of a virtual machine.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77917-exam-102-500-topic-1-question-120-discussion"
         }
     ],
