@@ -6511,28 +6511,28 @@
             "id": 115,
             "question": "How can a specific user be prevented from scheduling tasks with at? \nA.By adding the specific user to the /etc/at.allow file. \nB.By adding the specific user to the [deny] section in the /etc/atd.conf file. \nC.By adding the specific user to the nojobs group. \nD.By adding the specific user to the /etc/at.deny file. \nE.By executing the atd --deny [user] command.",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is D (By adding the specific user to the /etc/at.deny file).\nThe at command is a Linux utility that is used to schedule tasks to be executed at a specific time in the future. The atd daemon is responsible for executing these tasks at the specified times.\nTo prevent a specific user from scheduling tasks with at, you can add their username to the /etc/at.deny file. This file contains a list of users who are not allowed to use the at command. If a user is listed in this file, they will not be able to schedule tasks with at, even if they have the necessary permissions to execute the command.\nOption A (By adding the specific user to the /etc/at.allow file) is not correct, as the /etc/at.allow file contains a list of users who are allowed to use the at command. Option B (By adding the specific user to the [deny] section in the /etc/atd.conf file) is not correct, as the /etc/atd.conf file does not have a [deny] section. Option C (By adding the specific user to the nojobs group) is not correct, as the nojobs group does not exist. Option E (By executing the atd --deny [user] command) is not correct, as there is no such command.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77850-exam-102-500-topic-1-question-108-discussion"
         },
         {
             "id": 116,
             "question": "Which file contains the data of the last change of a user's password? \nA./etc/gshadow \nB./etc/passwd \nC./etc/pwdlog \nD./var/log/shadow \nE./etc/shadow",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is E (/etc/shadow).\nThe /etc/shadow file is a system file that contains information about the user accounts on a Linux system. It is a secure file that is readable only by the root user and the system administrator.\nThe /etc/shadow file contains a number of fields for each user account, including the encrypted password for the user, the date of the last password change, and the minimum and maximum password age. The data of the last password change for a user is stored in the third field of the /etc/shadow file.\nOption A (/etc/gshadow) is not the correct file, as it contains information about group passwords and is not related to user password changes. Option B (/etc/passwd) is also not the correct file, as it contains general information about user accounts but does not include password data. Option C (/etc/pwdlog) does not exist. Option D (/var/log/shadow) does not exist.",
             "url": "https://www.examtopics.com/discussions/lpi/view/60909-exam-102-500-topic-1-question-109-discussion"
         },
         {
             "id": 117,
             "question": "Which of the following fields can be found in the /etc/group file? (Choose two.) \nA.The home directory of the group. \nB.The list of users that belong to the group. \nC.The name of the group. \nD.The default group ACL. \nE.The description of the group.",
             "answer": "BC",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answers to this question are B (The list of users that belong to the group) and C (The name of the group).\nThe /etc/group file is a system file that contains information about the groups on a Linux system. Each line in the file represents a group, and the fields on each line are separated by colons (:).\nThe fields in the /etc/group file are as follows:\n- The first field is the name of the group.\n- The second field is the group password (this field is often left blank).\n- The third field is the group ID (GID) number.\n- The fourth field is the list of users that belong to the group, separated by commas.\nOption A (The home directory of the group) is not a valid field in the /etc/group file. Option D (The default group ACL) is also not a valid field in the /etc/group file. Option E (The description of the group) is not a valid field in the /etc/group file.",
             "url": "https://www.examtopics.com/discussions/lpi/view/59448-exam-102-500-topic-1-question-110-discussion"
         },
         {
             "id": 118,
             "question": "Which of the following sections exists in a systemd timer unit? \nA.[Events] \nB.[Timer] \nC.[cron] \nD.[Schedule] \nE.[Trigger]",
             "answer": "B",
-            "explanation": "A REMPLIR",
+            "explanation": "The correct answer to this question is B (Timer).\nA systemd timer unit is a type of unit file that is used to schedule the execution of tasks on a Linux system that uses the systemd init system. The timer unit file contains a number of sections that define the behavior of the timer.\nThe [Timer] section is a required section in a timer unit file. It specifies the timing parameters for the timer, including the frequency at which the timer should be triggered and the time at which the timer should be first activated.\nOption A (Events) is not a valid section in a timer unit file. Option C (cron) is also not a valid section in a timer unit file. Option D (Schedule) is not a valid section in a timer unit file. Option E (Trigger) is not a valid section in a timer unit file.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77853-exam-102-500-topic-1-question-111-discussion"
         },
         {
