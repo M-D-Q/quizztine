@@ -71,7 +71,7 @@ def deroulement_questionnaire(liste_quest, data):
         response = str(input("""
 Your answer is (no spaces, no commas, only capital letters) :
 --> """))
-        if response.upper() != john['answer'].upper():
+        if response.upper() != john['answer'] :
             print(f"""
 Incorrect, the answer was {john['answer']} !
             """)
