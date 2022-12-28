@@ -133,7 +133,10 @@ def deroulement_questionnaire(liste_quest, data):
         i += 1
         current_score = int((score/i)*100)
         print(f"Current score : {current_score}%")
-        osef = input("Press enter to continue...")
+        mark_or_pass = input("Press enter to continue...")
+        if mark_or_pass == "X" or "x" : 
+            #mettre l'id de la question/explication à revoir dans une liste ou un dico dans un fichier txt ou autre.
+            print("placeholder")
         os.system('cls' if os.name == 'nt' else 'clear')
     print(f"impression du famoso score final de {current_score}% ")
     update_user_score(nom_questionnaire_k,current_score, data)
