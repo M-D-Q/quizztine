@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import re
 def insertion_json(new_data, nom_fichier,nom_questionnaire):
         with open(nom_fichier,'r+', encoding="utf8") as file:
             # First we load existing data into a dict.
@@ -32,8 +33,6 @@ def show_it(liste_quest, data):
         else : 
             print(f"{x} - {liste_quest[x]} =^_^= Score actuel : Nothing yet..")
 
-
-
 #choix questionnaire entier ou shuffle de 25 questions (avec un timer ?)
 def shuffle_oupas(data, liste_quest, choix_second):
     choix_shuffle = str(input("""
@@ -54,7 +53,62 @@ def shuffle_oupas(data, liste_quest, choix_second):
     else : 
         print("Entre un chiffre valide stp")
         exit
-    
+
+def get_response(pattern):
+    user_input = str(input("""
+Your answer is (no spaces, no commas, only capital letters) :
+--> """))
+    match = re.fullmatch(pattern,user_input)
+    while match is None:
+        print("Invalid answer format, please try again.")
+        user_input = str(input("""
+Your answer is (no spaces, no commas, only capital letters) :
+--> """))
+        match = re.fullmatch(pattern, user_input)
+    return user_input
+
+def question_result_string(john, response, score):
+    if response.upper() != john['answer'] :
+        print(f"""
+Incorrect, the answer was {john['answer']} !
+            """)
+        if john['explanation'] != "":
+            print(f"""
+Some explanation : {john['explanation']}
+""")
+    elif response.upper() == john['answer'] : 
+        print(f"""
+Well done ! {response} is correct ! 
+            """)
+        if john['explanation'] != "":
+            print(f"""
+Some explanation :
+{john['explanation']}
+""")
+        score += 1
+
+def question_result_list(john, response, score):
+    if response not in john['answer'] :
+        print(f"""
+Incorrect, the answer was {" OR ".join(john['answer'])} !
+            """)
+        if john['explanation'] != "":
+            print(f"""
+Some explanation : {john['explanation']}
+""")
+    elif response in john['answer'] :   
+        print(f"""
+Well done ! {response} is correct ! 
+""")
+        if len(john['answer']) > 1 :
+                print(f"""
+All possible answers were : {" || ".join(john['answer'])}""")
+        if john['explanation'] != "":
+                print(f"""
+Some explanation :
+{john['explanation']}
+""")
+        score += 1
 
 def deroulement_questionnaire(liste_quest, data):
     print("What dump do you want to study :")
@@ -68,49 +122,12 @@ def deroulement_questionnaire(liste_quest, data):
     for john in liste_utilisee:
         print(f"Question # {liste_utilisee.index(john)}/{len(liste_utilisee)}")
         print(john['question'])
-        response = str(input("""
-Your answer is (no spaces, no commas, only capital letters) :
---> """))
-        if type(john['answer']) != list and response.upper() != john['answer'] :
-            print(f"""
-Incorrect, the answer was {john['answer']} !
-            """)
-            if john ['explanation'] != "":
-                print(f"""
-Some explanation : {john['explanation']}
-""")
-        elif type(john['answer']) != list and response.upper() == john['answer'] : 
-            print(f"""
-Well done ! {response} is correct ! 
-            """)
-            if john ['explanation'] != "":
-                print(f"""
-Some explanation :
-{john['explanation']}
-""")
-            score += 1
-        elif type(john['answer']) == list and response not in john['answer'] :
-            print(f"""
-Incorrect, the answer was {" OR ".join(john['answer'])}  !
-            """)
-            if john ['explanation'] != "":
-                print(f"""
-Some explanation : {john['explanation']}
-""")
-        elif type(john['answer']) == list and response in john['answer'] : 
-            print(f"""
-Well done ! {response} is correct ! 
-            """)
-            if len(john['answer']) > 1:
-                print(f"""
-All possible answers were : {" || ".join(john['answer'])}""")
-            if john ['explanation'] != "":
-                print(f"""
-Some explanation :
-{john['explanation']}
-""")
-            score += 1
-
+        if type(john['answer']) != list:
+            response = get_response("[A-E][A-E]?[A-E]?")
+            question_result_string(john, response, score)
+        elif type(john['answer']) == list :
+            response = get_response(".+")
+            question_result_list(john, response, score)
         i += 1
         current_score = int((score/i)*100)
         print(f"Current score : {current_score}%")
