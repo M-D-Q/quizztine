@@ -6223,85 +6223,85 @@
         {
             "id": 66,
             "question": "Which of the following features are provided by SPICE? (Choose two.) \nA.Connecting local USB devices to remote applications. \nB.Accessing graphical applications on a remote host. \nC.Replacing Xorg as local X11 server. \nD.Downloading and locally installing applications from a remote machine. \nE.Uploading and running a binary program on a remote machine.",
-            "answer": "AD",
-            "explanation": "A REMPLIR",
+            "answer": "AB",
+            "explanation": "A. Connecting local USB devices to remote applications:\n\nSPICE allows users to connect local USB devices (such as keyboards, mice, and printers) to remote applications. This can be useful in situations where a user wants to use a local device with an application running on a remote host.\n\nB. Accessing graphical applications on a remote host:\n\nSPICE allows users to access and run graphical applications on a remote host. This can be useful in situations where a user wants to use an application that is not available on their local machine, or when a user wants to access an application from a different location.\n\nC. Replacing Xorg as local X11 server:\n\nSPICE is not used to replace Xorg as the local X11 server. Xorg is the default display server for most Linux distributions, and it is responsible for handling the rendering and display of graphical applications on the local machine. SPICE, on the other hand, is a protocol for remotely accessing graphical applications on a remote host. It does not have any functionality related to the local display server.\n\nD. Downloading and locally installing applications from a remote machine:\n\nSPICE does not provide a way to download and install applications locally from a remote machine. It is a protocol for remotely accessing graphical applications, and it does not have any functionality related to installing or updating applications.\n\nE. Uploading and running a binary program on a remote machine:\n\nSPICE does not provide a way to upload and run a binary program on a remote machine. It is a protocol for remotely accessing graphical applications, and it does not have any functionality related to uploading and running programs on the remote host.",
             "url": "https://www.examtopics.com/discussions/lpi/view/13654-exam-102-500-topic-1-question-60-discussion"
         },
         {
             "id": 67,
             "question": "What is the systemd journal stored? \nA./var/jlog/ and /var/jlogd/ \nB./proc/log/ and /proc/klog/ \nC./run/log/journal/ or /var/log/journal/ \nD./var/log/syslog.bin or /var/log/syslog.jrn \nE./etc/systemd/journal/ or /usr/lib/systemd/journal/",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "C. /run/log/journal/ or /var/log/journal/\n\nThe systemd journal is a system log service that stores log data in a binary format. By default, the journal is stored in one of the following locations:\n\n- /run/log/journal/ (on systems where this directory is available)\n- /var/log/journal/ (on systems where /run/log/journal/ is not available)\n\nOption A is incorrect, as the directories /var/jlog/ and /var/jlogd/ do not exist on most systems. Option B is incorrect, as the directories /proc/log/ and /proc/klog/ do not exist on most systems. Option D is incorrect, as the files /var/log/syslog.bin and /var/log/syslog.jrn do not exist on most systems. Option E is incorrect, as the directories /etc/systemd/journal/ and /usr/lib/systemd/journal/ do not contain log data.",
             "url": "https://www.examtopics.com/discussions/lpi/view/59444-exam-102-500-topic-1-question-61-discussion"
         },
         {
             "id": 68,
             "question": "Which of the following is true regarding the command sendmail? \nA.With any MTA, the sendmail command must be run periodically by the cron daemon. \nB.When using systemd, sendmail is an alias to relayctl. \nC.The sendmail command prints the MTA's queue history of which mails have been sent successfully. \nD.It is only available when the sendmail MTA is installed. \nE.All common MTAs, including Postfix and Exim, provide a sendmail command.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "E. All common MTAs, including Postfix and Exim, provide a sendmail command.\n\nThe sendmail command is a command-line utility that is used to send email messages. It is typically used in conjunction with a mail transfer agent (MTA) such as sendmail, Postfix, or Exim. Most common MTAs, including Postfix and Exim, provide a sendmail command as part of their package.\n\nOption A is incorrect, as the sendmail command does not need to be run periodically by the cron daemon. Option B is incorrect, as sendmail is not an alias to relayctl when using systemd. Option C is incorrect, as the sendmail command does not print the MTA's queue history. Option D is incorrect, as sendmail is not only available when the sendmail MTA is installed.",
             "url": "https://www.examtopics.com/discussions/lpi/view/52379-exam-102-500-topic-1-question-62-discussion"
         },
         {
             "id": 69,
             "question": "Which file inside the CUPS configuration directory contains the settings of the printers? \nA.cups-devices.conf \nB.snmp.conf \nC.printers.conf \nD.printcap.conf \nE.cupsd.conf",
             "answer": "C",
-            "explanation": "A REMPLIR",
+            "explanation": "C. printers.conf\n\nIn the Common Unix Printing System (CUPS), the configuration file printers.conf contains the settings for printers and other related options. This file is located in the CUPS configuration directory, which is typically /etc/cups/.\n\nOption A is incorrect, as the file cups-devices.conf does not exist in the CUPS configuration directory. Option B is incorrect, as the file snmp.conf does not contain printer settings. Option D is incorrect, as the file printcap.conf does not contain printer settings in CUPS. Option E is incorrect, as the file cupsd.conf does not contain printer settings.",
             "url": "https://www.examtopics.com/discussions/lpi/view/57832-exam-102-500-topic-1-question-63-discussion"
         },
         {
             "id": 71,
             "question": "Which of the following commands puts the output of the command date into the shell variable mydate? \nA.mydate=\"date\" \nB.mydate=\"exec date\" \nC.mydate=\"$((date))\" \nD.mydate=\"$(date)\" \nE.mydate=\"${date}\"",
             "answer": "D",
-            "explanation": "A REMPLIR",
+            "explanation": "D. mydate=\"$(date)\"\n\nThe command mydate=\"$(date)\" puts the output of the command date into the shell variable mydate. The $(...) notation is used to run a command and capture its output.\n\nOption A is incorrect, as the assignment mydate=\"date\" sets the value of mydate to the string \"date\", rather than the output of the date command. Option B is incorrect, as the exec command is used to execute a command and replace the current process with the command, rather than capturing its output. Option C is incorrect, as the $((...)) notation is used for arithmetic expansion, rather than command substitution. Option E is incorrect, as the ${...} notation is used for variable expansion, rather than command substitution.",
             "url": "https://www.examtopics.com/discussions/lpi/view/52381-exam-102-500-topic-1-question-64-discussion"
         },
         {
             "id": 72,
             "question": "Which of the following are syslog facilities? (Choose two.) \nA.local5 \nB.accounting \nC.mail \nD.postmaster \nE.remote",
             "answer": "AC",
-            "explanation": "A REMPLIR",
+            "explanation": "A. local5\nC. mail\n\nThe syslog facilities are used to categorize messages logged by the syslog system. Some common syslog facilities include local0 through local7, mail, cron, auth, and daemon.\n\nOption A is correct, as local5 is a syslog facility. Option B is incorrect, as accounting is not a syslog facility. Option C is correct, as mail is a syslog facility. Option D is incorrect, as postmaster is not a syslog facility. Option E is incorrect, as remote is not a syslog facility.",
             "url": "https://www.examtopics.com/discussions/lpi/view/69968-exam-102-500-topic-1-question-65-discussion"
         },
         {
             "id": 73,
             "question": "Which of the following parameters are used for journalctl to limit the time frame of the output? (Choose two.) \nA.--since= \nB.--from= \nC.--until= \nD.--upto= \nE.--date=",
             "answer": "AC",
-            "explanation": "A REMPLIR",
+            "explanation": "A. --since=\nC. --until=\n\nThe journalctl command is used to view the journal entries in the systemd journal. The --since= and --until= parameters can be used to limit the time frame of the output. The --since= parameter specifies a starting point in time, and the --until= parameter specifies an ending point in time.\n\nOption B is incorrect, as the --from= parameter is not a valid option for journalctl. Option D is incorrect, as the --upto= parameter is not a valid option for journalctl. Option E is incorrect, as the --date= parameter is not a valid option for journalctl.",
             "url": "https://www.examtopics.com/discussions/lpi/view/40464-exam-102-500-topic-1-question-66-discussion"
         },
         {
             "id": 74,
             "question": "What is true regarding the file ~/.forward? \nA.When configured correctly ~/.forward can be used to forward each incoming mail to one or more other recipients. \nB.After editing ~/.forward the user must run newaliases to make the mail server aware of the changes. \nC.Using ~/.forward, root may configure any email address whereas all other users may configure only their own addresses. \nD.As ~/.forward is owned by the MTA and not writable by the user, it must be edited using the editaliases command. \nE.By default, only ~/.forward files of users in the group mailq are processed while all other user's ~/.forward files are ignored.",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "A. When configured correctly ~/.forward can be used to forward each incoming mail to one or more other recipients.\n\nThe file ~/.forward is a configuration file that can be used to forward incoming email to one or more other recipients. This file is typically used with sendmail and other mail transfer agents (MTAs). When configured correctly, the ~/.forward file can be used to forward each incoming mail to the specified recipients.\n\nOption B is incorrect, as the newaliases command is used to rebuild the mail server's alias database, rather than to make the mail server aware of changes to the ~/.forward file. Option C is incorrect, as the ~/.forward file can be used by any user to forward their own incoming email, regardless of whether they are root or not. Option D is incorrect, as the ~/.forward file is typically owned by the user and is writable by the user, so it does not need to be edited using the editaliases command. Option E is incorrect, as the ~/.forward files of all users are processed by default, regardless of their group membership.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77870-exam-102-500-topic-1-question-67-discussion"
         },
         {
             "id": 75,
             "question": "Which of the following commands display a list of jobs in the print queue? (Choose two.) \nA.cups --list \nB.lprm -l \nC.lpstat \nD.lpr -q \nE.lpq",
             "answer": "CE",
-            "explanation": "A REMPLIR",
+            "explanation": "C. lpstat\nE. lpq\n\nThe lpstat and lpq commands can be used to display a list of jobs in the print queue. The lpstat command displays a summary of the current status of the printer, including a list of jobs in the print queue. The lpq command displays a detailed list of jobs in the print queue, including the job number, owner, size, and status of each job.\n\nOption A is incorrect, as the cups --list command does not display a list of jobs in the print queue. Option B is incorrect, as the lprm -l command does not display a list of jobs in the print queue. Option D is incorrect, as the lpr -q command does not display a list of jobs in the print queue.",
             "url": "https://www.examtopics.com/discussions/lpi/view/47160-exam-102-500-topic-1-question-68-discussion"
         },
         {
             "id": 76,
             "question": "On a system using systemd-journald, which of the following commands add the message Howdy to the system log? (Choose two.) \nA.append Howdy \nB.logger Howdy \nC.systemd-cat echo Howdy \nD.echo Howdy &gt; /dev/journal \nE.journalctl add Howdy",
-            "answer": "E",
-            "explanation": "A REMPLIR",
+            "answer": "BC",
+            "explanation": "Option B, logger Howdy, sends the message \"Howdy\" to the system log.\nOption C, systemd-cat echo Howdy, sends the message \"Howdy\" to the system log by first using the echo command to output the message, and then using the systemd-cat command to write the output to the system log.\n\nOption A, append Howdy, is incorrect, as the append command is not a valid command for adding a message to the system log.\nOption D, echo Howdy > /dev/journal, is incorrect, as the /dev/journal device file is not used on systems with the systemd-journald daemon.\nOption E, journalctl add Howdy, is incorrect, as the journalctl command is used to view the journal entries in the system log, rather than to add a message to the system log.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30093-exam-102-500-topic-1-question-69-discussion"
         },
         {
             "id": 77,
             "question": "Which of the following options in the chrony configuration file define remote time sources? (Choose two.) \nA.source \nB.clock \nC.remote \nD.pool \nE.server",
             "answer": "DE",
-            "explanation": "A REMPLIR",
+            "explanation": "Option D, pool, specifies a group of remote time sources that are accessed via a DNS pool. This option allows chrony to automatically select an appropriate time source from the pool, based on the availability and performance of the servers in the pool.\nOption E, server, specifies a single remote time source in the form of an IP address or a hostname, along with optional parameters such as a port number and a key identifier.\n\nOption A, source, is incorrect, as the source option specifies a remote time source in the form of an IP address or a hostname, rather than a group of time sources.\nOption B, clock, is incorrect, as the clock option is used to define a local clock as a time source, rather than a remote time source.\nOption C, remote, is incorrect, as the remote option is not a valid option in the chrony configuration file.",
             "url": "https://www.examtopics.com/discussions/lpi/view/66970-exam-102-500-topic-1-question-70-discussion"
         },
         {
             "id": 79,
             "question": "Which of the following situations is observed and corrected by an NTP client? \nA.The skew in time between the system clock and the computer's hardware clock. \nB.The physical location and the timezone configuration. \nC.Changes in the time zone of the current computer's location. \nD.Adjustment needed to support Daylight Saving Time. \nE.The skew in time between the system clock and the reference clock.",
             "answer": "E",
-            "explanation": "A REMPLIR",
+            "explanation": "E. The skew in time between the system clock and the reference clock.\n\nAn NTP (Network Time Protocol) client is a software application that is used to synchronize the system clock with a reference clock. This synchronization is used to ensure that the system clock is accurate, as the system clock is often used to timestamp events and to schedule tasks.\n\nThe NTP client observes the skew in time between the system clock and the reference clock, and it adjusts the system clock as needed to correct for any drift. This ensures that the system clock remains accurate and consistent over time.\n\nOption A is incorrect, as the skew between the system clock and the hardware clock is not observed or corrected by the NTP client. Option B is incorrect, as the NTP client does not consider the physical location or timezone configuration of the computer. Option C is incorrect, as the NTP client does not adjust the system clock based on changes in the time zone of the current location. Option D is incorrect, as the NTP client does not adjust the system clock to support Daylight Saving Time.",
             "url": "https://www.examtopics.com/discussions/lpi/view/76698-exam-102-500-topic-1-question-72-discussion"
         },
         {
