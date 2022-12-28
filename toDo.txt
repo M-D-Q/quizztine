@@ -1,0 +1,25 @@
+DE QUICK, Max
+    corriger truc reponse à input libre (type si list alors nininin)
+    mettre regex sur l'input
+    pour les réponses avec des lettres
+COQUERET, Martin
+    mettre une alerte "Est-ce que c'est votre ultime bafouille?" avant validation de la réponse
+DE QUICK, Max
+    passer toutes les réponses dans des listes?? meme si il n'y a qu'une seule variante? Ca va pas relentir à mort et complixifier le trux,
+COQUERET, Martin
+    Mettre des citations de Wadie
+JACEK, Romain
+    faut d'abord faire un merge des branches
+DE QUICK, Max
+    ##################################################################
+    # je me charge de la prise en compte des questions en mode liste #
+    ##################################################################
+    corriger prise en compte rep input python
+    Mettre des regex pour input reponse
+    Mettre une interface graphique !
+COQUERET, Martin
+    Intergration de ChristASCI et de la bande son "LET'S GET STARTED"
+    Schématiser la structure git + Jenkins ou autre + ènjiènix ou Apache + BDD PostgreSQL
+    Schématiser les tables des BDD
+    Etudier les bonnes pratiques de chiffrement des passwords
+    Travailler sur l'injection du JASON dans la BDD
