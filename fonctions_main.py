@@ -71,7 +71,7 @@ def deroulement_questionnaire(liste_quest, data):
         response = str(input("""
 Your answer is (no spaces, no commas, only capital letters) :
 --> """))
-        if response.upper() != john['answer'] :
+        if type(john['answer']) != list and response.upper() != john['answer'] :
             print(f"""
 Incorrect, the answer was {john['answer']} !
             """)
@@ -79,31 +79,38 @@ Incorrect, the answer was {john['answer']} !
                 print(f"""
 Some explanation : {john['explanation']}
 """)
-            try : 
-                print(f"""
-    
-Fiabilité de la réponse : {john['warning']}
-URL : {john['url']})
-            """)
-            except : 
-                pass
-        else : 
+        elif type(john['answer']) != list and response.upper() == john['answer'] : 
             print(f"""
 Well done ! {response} is correct ! 
             """)
             if john ['explanation'] != "":
                 print(f"""
+Some explanation :
+{john['explanation']}
+""")
+            score += 1
+        elif type(john['answer']) == list and response not in john['answer'] :
+            print(f"""
+Incorrect, the answer was {" OR ".join(john['answer'])}  !
+            """)
+            if john ['explanation'] != "":
+                print(f"""
 Some explanation : {john['explanation']}
 """)
-            try : 
-                print(f"""
-                
-Fiabilité de la réponse : {john['warning']}
-URL : {john['url']})
+        elif type(john['answer']) == list and response in john['answer'] : 
+            print(f"""
+Well done ! {response} is correct ! 
             """)
-            except : 
-                pass
+            if len(john['answer']) > 1:
+                print(f"""
+All possible answers were : {" || ".join(john['answer'])}""")
+            if john ['explanation'] != "":
+                print(f"""
+Some explanation :
+{john['explanation']}
+""")
             score += 1
+
         i += 1
         current_score = int((score/i)*100)
         print(f"Current score : {current_score}%")
