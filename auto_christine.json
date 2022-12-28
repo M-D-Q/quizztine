@@ -6434,35 +6434,35 @@
             "id": 102,
             "question": "Which of the following states can NetworkManager show regarding the system's network connectivity? (Choose two.) \nA.up \nB.portal \nC.full \nD.login-required \nE.firewalled",
             "answer": "BC",
-            "explanation": "A REMPLIR",
+            "explanation": "Man nmcli\nconnectivity [check]\nGet network connectivity state. The optional check argument tells NetworkManager to re-check the connectivity, else the most recent known connectivity state is displayed without re-checking. Possible states are:\nNone: the host is not connected to any network.\nPortal: the host is behind a captive portal and cannot reach the full Internet.\nLimited: the host is connected to a network, but it has no access to the Internet.\nFull: the host is connected to a network and has full access to the Internet.\nUnknown: the connectivity status cannot be found out.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30425-exam-102-500-topic-1-question-95-discussion"
         },
         {
             "id": 103,
             "question": "Which of the following are valid host addresses for the subnet 203.0.113.64/28? (Choose two.) \nA.203.0.113.64 \nB.203.0.113.78 \nC.203.0.113.65 \nD.203.0.113.80 \nE.203.0.113.81",
             "answer": "BC",
-            "explanation": "A REMPLIR",
+            "explanation": "The valid host addresses in the subnet 203.0.113.64/28 are:\nB. 203.0.113.78\nC. 203.0.113.65\n\nOption A, 203.0.113.64, is the network address and is not a valid host address. Option D, 203.0.113.80, and Option E, 203.0.113.81, are outside of the range of valid host addresses for this subnet.\n\nThe subnet mask /28 represents a subnet with 16 addresses, and the valid host address range for this subnet is from 203.0.113.65 to 203.0.113.78, inclusive. The network address, 203.0.113.64, and the broadcast address, 203.0.113.79, are not considered valid host addresses.",
             "url": "https://www.examtopics.com/discussions/lpi/view/40852-exam-102-500-topic-1-question-96-discussion"
         },
         {
             "id": 104,
-            "question": "Which of the following keywords can be used in the file /etc/resolv/conf? (Choose two.) \nA.substitute \nB.lookup \nC.search \nD.nameserver \nE.method",
+            "question": "Which of the following keywords can be used in the file /etc/resolv.conf? (Choose two.) \nA.substitute \nB.lookup \nC.search \nD.nameserver \nE.method",
             "answer": "CD",
-            "explanation": "A REMPLIR",
+            "explanation": "Option C: search\nOption D: nameserver\n\nThe file \"/etc/resolv.conf\" is a configuration file that specifies the domain name servers that a system should use to resolve domain names into IP addresses. The \"search\" keyword specifies a space-separated list of domain names that the system should try when a hostname is not fully qualified (i.e., it does not contain a domain name). The \"nameserver\" keyword specifies the IP address of a domain name server that the system should use to resolve domain names. Option A (substitute) and Option E (method) are not valid keywords in this file. Option B (lookup) may be used in other DNS-related configuration files, but it is not a valid keyword in \"/etc/resolv.conf\".",
             "url": "https://www.examtopics.com/discussions/lpi/view/32923-exam-102-500-topic-1-question-97-discussion"
         },
         {
             "id": 105,
             "question": "How does the ping command work by default? \nA.Is sends an ICMP Echo Request to a remote host and waits to receive an ICMP Echo Response in return. \nB.It sends an ARP request to a remote host and waits to receive an ARP response in return. \nC.It sends a TCP SYN packet to a remote host and waits to receive an TCP ACK response in return. \nD.Is sends a broadcast packet to all hosts on the net and waits to receive, among others, a response from the target system. \nE.It sends a UDP packet to port 0 of the remote host and waits to receive a UDP error response in return.",
             "answer": "A",
-            "explanation": "A REMPLIR",
+            "explanation": "Option A: Is sends an ICMP Echo Request to a remote host and waits to receive an ICMP Echo Response in return.\nThe \"ping\" command is used to test the reachability of a remote host and to measure the round-trip time it takes for packets to travel to and from that host. By default, it does this by sending an ICMP Echo Request packet to the specified host and waiting for an ICMP Echo Response packet in return. If the host is reachable and able to respond, the \"ping\" command will display the round-trip time and other information about the packets that were sent and received.\nOption B (It sends an ARP request to a remote host and waits to receive an ARP response in return) is not correct, as the \"ping\" command does not use the Address Resolution Protocol (ARP) to communicate with remote hosts. Option C (It sends a TCP SYN packet to a remote host and waits to receive an TCP ACK response in return) is not correct, as the \"ping\" command does not use the Transmission Control Protocol (TCP) to communicate with remote hosts. Option D (Is sends a broadcast packet to all hosts on the net and waits to receive, among others, a response from the target system) is not correct, as the \"ping\" command does not use broadcast packets to communicate with remote hosts. Option E (It sends a UDP packet to port 0 of the remote host and waits to receive a UDP error response in return) is not correct, as the \"ping\" command does not use the User Datagram Protocol (UDP) to communicate with remote hosts.",
             "url": "https://www.examtopics.com/discussions/lpi/view/77912-exam-102-500-topic-1-question-98-discussion"
         },
         {
             "id": 106,
             "question": "Which of the following commands display the number of bytes transmitted and received via the eth0 network interface? (Choose two.) \nA.route -v via eth0 \nB.ip stats show dev eth0 \nC.netstat -s -i eth0 \nD.ifconfig eth0 \nE.ip -s link show eth0",
             "answer": "CD",
-            "explanation": "A REMPLIR",
+            "explanation": "Option D: ifconfig eth0\nThe \"ifconfig\" command displays various information about network interfaces, including the number of bytes transmitted and received. When run with just the interface name as an argument (e.g. \"ifconfig eth0\"), it will show the current status and statistics of that interface.\n\nOption E: ip -s link show eth0\nThe \"ip\" command is a powerful tool for displaying and modifying various aspects of the network configuration. The \"-s\" option tells it to show statistics, and the \"link\" subcommand tells it to show information about the specified link (i.e. network interface). When combined with the interface name (e.g. \"ip -s link show eth0\"), it will display detailed statistics about that interface, including the number of bytes transmitted and received.\n\nOption A (route -v via eth0) is not correct, as the \"route\" command does not have a \"-v\" option and does not display interface statistics. Option B (ip stats show dev eth0) is not correct, as the \"ip\" command does not have a \"stats\" subcommand. Option C (netstat -s -i eth0) is not correct, as the \"netstat\" command does not have a \"-i\" option and does not display interface statistics.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30454-exam-102-500-topic-1-question-99-discussion"
         },
         {
