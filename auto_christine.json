@@ -6627,7 +6627,7 @@
             "answer": [
                 "/etc/cron.allow"
             ],
-            "explanation": "A REMPLIR",
+            "explanation": "The file that must contain all users that are allowed to use the cron scheduling system is '/etc/cron.allow'.\nThe 'cron' daemon is a system service that runs in the background and executes scheduled tasks at predetermined times. To use the 'cron' system, a user must have an entry in the 'cron.allow' file. If the 'cron.allow' file does not exist, then all users are allowed to use 'cron'. However, if the 'cron.allow' file does exist, then only users listed in this file are allowed to use 'cron'.\nThe 'cron' system also has a 'cron.deny' file, which specifies users that are not allowed to use 'cron'. If both the 'cron.allow' and 'cron.deny' files exist, then the 'cron.allow' file takes precedence and the 'cron.deny' file is ignored.\nIn general, it is recommended to use the 'cron.allow' file to specify which users are allowed to use 'cron', rather than using the 'cron.deny' file to specify which users are not allowed to use 'cron'. This approach is more flexible and allows you to easily add and remove users from the list of allowed users.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14530-exam-102-500-topic-1-question-19-discussion"
         },
         {
@@ -6673,7 +6673,7 @@
             "answer": [
                 "server"
             ],
-            "explanation": "A REMPLIR + en d\u00e9tails. Exemple de la doc LPIC qui mentionne 'server' : https://learning.lpi.org/en/learning-materials/102-500/108/108.1/108.1_02/#:~:text=server%200.centos.pool.ntp.org%20iburst",
+            "explanation": "The option in the '/etc/ntp.conf' file that specifies an external NTP source to be queried for time information is 'server'.\nThe Network Time Protocol (NTP) is a protocol used to synchronize the time on a computer system with an external reference time source. The 'ntp.conf' file is the main configuration file for the 'ntpd' daemon, which is responsible for synchronizing the time on a system with an external NTP source.\nThe 'server' option in the 'ntp.conf' file specifies an external NTP server that should be queried for time information. The 'server' option can be specified multiple times to specify multiple NTP servers. For example:\n'server time1.example.com\nserver time2.example.com\nserver time3.example.com'\nIn this example, the 'ntpd' daemon will query the NTP servers 'time1.example.com', 'time2.example.com', and 'time3.example.com' for time information.\nOther options in the 'ntp.conf' file can be used to configure the behavior of the 'ntpd' daemon, such as specifying the timezone, enabling authentication, and setting the poll interval.+ en d\u00e9tails. Exemple de la doc LPIC qui mentionne 'server' : https://learning.lpi.org/en/learning-materials/102-500/108/108.1/108.1_02/#:~:text=server%200.centos.pool.ntp.org%20iburst",
             "url": "https://www.examtopics.com/discussions/lpi/view/30151-exam-102-500-topic-1-question-37-discussion"
         },
         {
