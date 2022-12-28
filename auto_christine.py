@@ -10,7 +10,7 @@ liste_questionnaires_book = ["Assessment Test", "Chapter 1: Exploring Linux Comm
 "Chapter 5: Booting Linux and Editing Files", "Chapter 6: Configuring the X Window System, Localization, and Printing", "Chapter 7: Administering the System"]
 # WORKING ON IT "Chapter 8: Configuring Basic Networking", "Chapter 9: Writing Scripts, Configuring Email, and Using Databases", "Chapter 10: Securing Your System"
 
-liste_questionnaires_dumps = ["Exam-Topics 101 - Paywall breached (w/ explanations)", "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)", "Exam-Topics 101 - Paywall breached - Input", "Exam-Topics 102-500 - Paywall breached - Input"]
+liste_questionnaires_dumps = ["Exam-Topics 101 - Paywall breached (w/ explanations)", "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)", "Exam-Topics 101 - Paywall breached - Input","Exam-Topics 102-500 - Paywall breached", "Exam-Topics 102-500 - Paywall breached - Input"]
 continuer = 1
 while continuer == 1:
     choix_first = str(input("""
