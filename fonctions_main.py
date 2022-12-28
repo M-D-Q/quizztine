@@ -85,7 +85,7 @@ Well done ! {response} is correct !
 Some explanation :
 {john['explanation']}
 """)
-        score += 1
+        return True
 
 def question_result_list(john, response, score):
     if response not in john['answer'] :
@@ -108,7 +108,7 @@ All possible answers were : {" || ".join(john['answer'])}""")
 Some explanation :
 {john['explanation']}
 """)
-        score += 1
+        return True
 
 def deroulement_questionnaire(liste_quest, data):
     print("What dump do you want to study :")
@@ -124,10 +124,12 @@ def deroulement_questionnaire(liste_quest, data):
         print(john['question'])
         if type(john['answer']) != list:
             response = get_response("[A-E][A-E]?[A-E]?")
-            question_result_string(john, response, score)
+            if question_result_string(john, response, score):
+                score += 1
         elif type(john['answer']) == list :
             response = get_response(".+")
-            question_result_list(john, response, score)
+            if question_result_list(john, response, score) :
+                score += 1 
         i += 1
         current_score = int((score/i)*100)
         print(f"Current score : {current_score}%")
