@@ -111,6 +111,7 @@ Some explanation :
         return True
 
 def deroulement_questionnaire(liste_quest, data):
+    marked_questions= {}
     print("What dump do you want to study :")
     show_it(liste_quest, data)
     choix_second = input("Enter chosen number here -> ")
@@ -134,9 +135,12 @@ def deroulement_questionnaire(liste_quest, data):
         current_score = int((score/i)*100)
         print(f"Current score : {current_score}%")
         mark_or_pass = input("Press enter to continue...")
-        if mark_or_pass == "X" or "x" : 
-            #mettre l'id de la question/explication à revoir dans une liste ou un dico dans un fichier txt ou autre.
-            print("placeholder")
+        if mark_or_pass.lower() == "x" : 
+            marked_questions[john["id"]] = {}
+            marked_questions[john["id"]]["comment"] = input("Enter a comment for this question: ")
         os.system('cls' if os.name == 'nt' else 'clear')
     print(f"impression du famoso score final de {current_score}% ")
     update_user_score(nom_questionnaire_k,current_score, data)
+    if marked_questions :
+        with open(f'marked_questions_{nom_questionnaire_k}_.json', 'w') as f:
+            json.dump(marked_questions, f)
