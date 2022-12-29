@@ -5,3 +5,5 @@ print(len(urls))
 templist = ['hostname', 'hostnamectl']
 if "hostname" in templist :
     print("kek")
+
+
