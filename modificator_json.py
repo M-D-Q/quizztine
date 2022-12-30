@@ -46,17 +46,17 @@ Explanation || {question["explanation"]}
     # Write the modified data dictionary back to the JSON file
     print("Now, we will print the changes")
     with open('auto_christine.json', 'w') as f:
-        json.dump(data, f, indent=4, separators=(',', ': '), sort_keys=True)
+        json.dump(data, f, indent=4, separators=(',', ': ') )#,sort_keys=True)
 
-
+###CODE PAS ENCORE FONCTIONNEL. Ca deconne pas mal au niveua de l'insertion JSON, et l'interet est quand même assez limité.
 
 
 # Test the modify_questions function
     # Open the JSON file in read mode
 
-with open('auto_christine.json', 'r') as f:
+"""with open('auto_christine.json', 'r') as f:
     # Load the contents of the file into a dictionary
     data = json.load(f)
 
 
-modify_questions(data, "Exam-Topics 102-500 - Paywall breached", "marked_questions_Questionnaire_Shuffle_.json")
+modify_questions(data, "Exam-Topics 102-500 - Paywall breached", "marked_questions_Questionnaire_Shuffle_.json")"""

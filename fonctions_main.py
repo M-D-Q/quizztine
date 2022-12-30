@@ -142,5 +142,6 @@ def deroulement_questionnaire(liste_quest, data):
     print(f"impression du famoso score final de {current_score}% ")
     update_user_score(nom_questionnaire_k,current_score, data)
     if marked_questions :
-        with open(f'marked_questions_{nom_questionnaire_k}_.json', 'w') as f:
+        file_name = input("File name for your review file ?")
+        with open(f'{file_name}_{nom_questionnaire_k}.json', 'w') as f:
             json.dump(marked_questions, f)
