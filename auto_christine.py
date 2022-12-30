@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import json
 from fonctions_main import *
 #TO DO : ajouter ascii art, sound "lets get started"
