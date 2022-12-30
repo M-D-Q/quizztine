@@ -2,7 +2,7 @@
     "score": {
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 97,
         "Exam-Topics 101 - Paywall breached - Input": 100,
-        "Questionnaire_Shuffle": 68,
+        "Questionnaire_Shuffle": 60,
         "Exam-Topics 102-500 - Paywall breached - Input": 0
     },
     "Exam Essentials": [
@@ -6027,7 +6027,7 @@
         {
             "id": 32,
             "question": "Which of the following steps prevents a user from obtaining an interactive login session? \nA.Setting the UID for the user to 0. \nB.Running the command chsh -s /bin/false with the user name. \nC.Removing the user from the group staff. \nD.Adding the user to /etc/noaccess. \nE.Creating a .nologin file in the user's home directory.",
-            "answer": "B",
+            "answer": "E",
             "explanation": "E. Creating a .nologin file in the user's home directory.\nThe .nologin file is a special file that can be placed in a user's home directory to prevent the user from obtaining an interactive login session. When the user attempts to log in, the system will check for the presence of the .nologin file and, if it exists, will display the contents of the file to the user and then terminate the login session. The other options listed, such as setting the UID to 0, running the chsh command with /bin/false, removing the user from the group staff, and adding the user to /etc/noaccess, do not prevent a user from obtaining an interactive login session.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14532-exam-102-500-topic-1-question-26-discussion"
         },
