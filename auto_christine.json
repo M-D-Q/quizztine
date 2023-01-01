@@ -3527,7 +3527,7 @@
         {
             "id": "15",
             "question": "Which of the following commands will number the lines in aleph.txt? (Select three.)  \n A. fmt aleph.txt  \n B. nl aleph.txt  \n C. cat -b aleph.txt  \n D. cat -n aleph.txt  \n E. od -nl aleph.txt          ",
-            "answer": "BCD",
+            "answer": "B, C, D",
             "explanation": "The nl command numbers lines, so it does this task without any special options, and option B is correct. (Its options can fine-tune the way it numbers lines, though.) The cat command can also number lines via its -b and -n options; -b numbers non-blank lines, whereas -n numbers all lines (including blank lines). Thus options C and D are both correct. Neither the fmt command nor the od command will number the lines of the input file, so options A and E are both incorrect.  \n"
         },
         {
@@ -3619,7 +3619,7 @@
         {
             "id": "10",
             "question": "Which of the following commands would you type to update the unzip program on a  Fedora system to the latest version? (Select all that apply.)  \n A. yum update unzip  \n B. yum upgrade unzip  \n C. yum -u unzip  \n D. yum -U unzip  \n E. yum check-update unzip  ",
-            "answer": "AB",
+            "answer": "A, B",
             "explanation": "The Yum utility\u2019s update and upgrade options are nearly identical in effect, and either can be used to upgrade an individual package, such as unzip, so options A and B are both correct. The primary command options to yum don\u2019t use dashes, so options C and D are both incorrect. The check-update option to yum checks for the availability of updates, but it does not install them, so option E is incorrect.  \n"
         },
         {
@@ -3649,7 +3649,7 @@
         {
             "id": "15",
             "question": "What programs might you use to learn what your system\u2019s load average is? (Select two.)  \n A. ld  \n B. load  \n C. top  \n D. uptime  \n E. la  ",
-            "answer": "CD",
+            "answer": "C, D",
             "explanation": "The top utility displays a dynamic list of processes ordered according to their CPU use along with additional system information, including load averages, so option C is correct. If you want only the load average at a specific moment, uptime (option D) may be better because it presents less extraneous information\u2014it shows the current time, the time since the system was booted, the number of active users, and the load averages. Option A\u2019s ld command has nothing to do with displaying load averages. (It\u2019s a programming tool that links together program modules into an executable program.) There are no standard Linux programs called load (option B) or la (option E).  \n"
         },
         {
@@ -3673,13 +3673,13 @@
         {
             "id": "19",
             "question": "Which of the following commands are equivalent to one another? (Select two.)  \n A. nice --value 10 crunch  \n B. nice -n -10 crunch  \n C. nice -10 crunch  \n D. nice 10 crunch  \n E. nice crunch  ",
-            "answer": "CE",
+            "answer": "C, E",
             "explanation": "The nice command launches a program (crunch in this example) with increased or decreased priority. The default priority when none is specified is 10, and the nice -10 crunch command also sets the priority to 10, so options C and E are equivalent. Option A isn\u2019t a valid nice command because nice has no --value option. Option B is a valid nice command, but it sets the priority to \u201310 rather than 10. Despite the similarity in the form of options C and D, option D is not a valid nice command, and so it is incorrect. (When passing a numeric value to nice, you must use a preceding dash, -, or -n.)  \n"
         },
         {
             "id": "20",
             "question": "Which of the following are restrictions on ordinary users\u2019 abilities to run renice?  (Select two.)  \n A. Users may not modify the priorities of processes that are already running.  \n B. Users may not modify the priority of their programs launched from anything but their  current shells.  \n C. Users may not decrease the priority (that is, increase the priority value) of their own  processes.  \n D. Users may not modify the priorities of other users\u2019 processes.  \n E. Users may not increase the priority (that is, decrease the priority value) of their own  processes.            ",
-            "answer": "DE",
+            "answer": "D, E",
             "explanation": "Linux insulates users\u2019 actions from one another, and this rule applies to renice; only root may modify the priority of other users\u2019 processes, so option D is correct. Similarly, only root may increase the priority of a process in order to prevent users from setting their processes to maximum priority, thus stealing CPU time from others, so option E is correct. Option A correctly describes nice, but not renice. The whole point of renice is to be able to change the priorities of existing processes. Contrary to option B, renice doesn\u2019t care about the shell from which renice or the target program was launched. Users may use renice to decrease their own processes\u2019 priorities, contrary to option C.  \n"
         }
     ],
@@ -3687,7 +3687,7 @@
         {
             "id": "1",
             "question": "What are common IRQs for RS-232 serial ports? (Select two.)  \n A. 1  \n B. 3  \n C. 4  \n D. 8  \n E. 16  ",
-            "answer": "BC",
+            "answer": "B, C",
             "explanation": "IRQs 3 and 4 are common defaults for RS-232 serial ports, so options B and C are both correct. IRQ 1 is reserved for the keyboard, so option A is incorrect. IRQ 8 is reserved for use by the real-time clock, so option D is incorrect. Although IRQ 16 exists on modern systems, it didn\u2019t exist on early x86 systems, and its purpose isn\u2019t standardized.  \n"
         },
         {
@@ -3711,7 +3711,7 @@
         {
             "id": "5",
             "question": "Which files contain essential system information such as IRQs, direct-memory access chan-  nels, and I/O addresses? (Select three.)  \n A. /proc/ioports  \n B. /proc/ioaddresses  \n C. /proc/dma  \n D. /proc/interrupts  \n E. /proc/hardware          ",
-            "answer": "ACD",
+            "answer": "A, C, D",
             "explanation": "There are no files called /proc/ioaddresses or /proc/hardware, so options B and E are both incorrect. All the other files listed contain useful information; /proc/ ioports holds information about I/O ports, /proc/dma holds information about DMA port usage, and /proc/interrupts holds information about IRQs. \u25a0  \n"
         },
         {
@@ -3795,7 +3795,7 @@
         {
             "id": "19",
             "question": "What filesystem options might you specify in /etc/fstab to make a removable disk (such  as a USB flash drive) mountable by an ordinary user with a UID of 1000? (Select three.)  \n A. user  \n B. users  \n C. owner  \n D. owners  \n E. uid=1000          ",
-            "answer": "ABC",
+            "answer": "A, B, C",
             "explanation": "The user, users, and owner options in /etc/fstab all enable ordinary users to mount a filesystem, but with slightly different implications: user enables anybody to mount a filesystem\u2014and only that user may unmount it; users enables anybody to mount a filesystem, and anybody may unmount it; and owner enables only the owner of the mount point to mount or unmount a filesystem. Thus, options A, B, and C are all correct. The owners parameter of option D doesn\u2019t exist. The uid=1000 parameter of option E tells Linux to set the ownership of files to UID 1000 on filesystems that lack Linux permissions features. Although this might be desirable for some disks, it doesn\u2019t enable the user with UID 1000 to mount the disk, so option E is incorrect.  \n"
         },
         {
@@ -3815,7 +3815,7 @@
         {
             "id": "2",
             "question": "What parameter can you pass to ln to create a soft link? (Select two.)  \n A. -s  \n B. --soft  \n C. --slink  \n D. --symbolic  \n E. --sl  ",
-            "answer": "AD",
+            "answer": "A, D",
             "explanation": "The \u2013s and \u2013\u2013symbolic options to ln are equivalent, and both create a symbolic (aka soft) link. Thus, options A and D are both correct. Options B, C, and E don\u2019t exist.  \n"
         },
         {
@@ -3833,13 +3833,13 @@
         {
             "id": "5",
             "question": "You type mkdir one/two/three and receive an error message that reads, in part, No  such file or directory. What can you do to overcome this problem? (Select two.)  \n A. Add the --parents parameter to the mkdir command.  \n B. Issue three separate mkdir commands: mkdir one, then mkdir one/two, and then  mkdir one/two/three.           \n C. Type touch /bin/mkdir to be sure the mkdir program file exists.  \n D. Type rmdir one to clear away the interfering base of the desired new directory tree.  \n E. Type mktree one/two/three instead of mkdir one/two/three.  ",
-            "answer": "AB",
+            "answer": "A, B",
             "explanation": "If you try to create a directory inside a directory that doesn\u2019t exist, mkdir responds with a No such file or directory error. The --parents parameter tells mkdir to create all necessary parent directories automatically in such situations, so option A is correct. You can also manually do this by creating each necessary directory separately, so option B is also correct. (It\u2019s possible that mkdir one wouldn\u2019t be necessary in this example if the directory one already existed. No harm will come from trying to create a directory that already exists, although mkdir will return a File exists error.) Typing touch /bin/mkdir, as option C suggests, will likely result in an error message if typed as a normal user and won\u2019t help if typed as root, so this option is incorrect. Clearing away existing directories in the one/two/three tree won\u2019t help, so option D is incorrect. Option E\u2019s mktree command is fictitious.  \n"
         },
         {
             "id": "6",
             "question": "Which of the following commands are commonly used to create archive files? (Select two.)  \n A. restore  \n B. vi  \n C. tape  \n D. cpio  \n E. tar  ",
-            "answer": "DE",
+            "answer": "D, E",
             "explanation": "The cpio and tar programs are common Linux archive-creation utilities, so options D and E are both correct. The restore command restores (but does not back up) data; its backup counterpart command is dump. Thus, option A is incorrect. The vi command launches a text editor; it\u2019s not used to create archives, so option B is incorrect. There is no standard tape command in Linux, so option C is incorrect.  \n"
         },
         {
@@ -3863,7 +3863,7 @@
         {
             "id": "10",
             "question": "Typing ls -ld wonderjaye reveals a symbolic file mode of drwxr-xr-x. Which of the  following are true? (Select two.)  \n A. wonderjaye is a symbolic link.  \n B. wonderjaye is an executable program.           \n C. wonderjaye is a directory.  \n D. wonderjaye has its SUID bit set.  \n E. wonderjaye may be read by all users of the system.  ",
-            "answer": "CE",
+            "answer": "C, E",
             "explanation": "The d character that leads the mode indicates that the file is actually a directory (option C), and the r symbol in the r-x triplet at the end of the symbolic mode indicates that all users of the system have read access to the directory (option E). Leading l characters, which this mode lacks, denote a symbolic link, so option A is incorrect. Although the x symbols usually denote executable program files, as specified in option B, in the case of directories this permission bit indicates that the directory\u2019s contents may be searched; executing a directory is meaningless. SUID bits are indicated by an s character in place of the owner\u2019s execute bit position in the symbolic mode. Since this position holds an x in this example, option D is incorrect.  \n"
         },
         {
@@ -3985,13 +3985,13 @@
         {
             "id": "10",
             "question": "Which SysV runlevels are reserved by init for reboot, shutdown, and single-user mode  purposes? (Select three.)  \n A. 0  \n B. 1  \n C. 2  \n D. 5  \n E. 6          ",
-            "answer": "ABE",
+            "answer": "A, B, E",
             "explanation": "Runlevel 0 (option A) is the reserved runlevel for halting the system. Runlevel 1 (option B) is reserved for single-user mode. Runlevel 6 (option E) is reserved for rebooting. Runlevel 2 (option C) is the default runlevel on Debian and most distributions derived from it, but it does none of the things described in the question. Runlevel 5 (option D) is a regular, user-configurable runlevel, which isn\u2019t normally used for the things described in the question. (Many systems use it for a regular boot with a GUI login prompt.)  \n"
         },
         {
             "id": "11",
             "question": "You type the following command:  $ runlevel  5 3  What can you tell about your runlevel status? (Select two.)  \n A. The current runlevel is 5.  \n B. The current runlevel is 3.  \n C. The previous runlevel is 5.  \n D. The previous runlevel is 3.  \n E. The runlevel is in the process of changing.  ",
-            "answer": "BC",
+            "answer": "B, C",
             "explanation": "The first number in the runlevel output is the previous runlevel (the letter N is used to indicate that the system hasn\u2019t changed runlevels since booting). The second number is the current runlevel. Hence, options B and C are both correct, while options A and D are both incorrect. The runlevel changes very quickly, and the runlevel utility doesn\u2019t provide a code to indicate that the runlevel is in the process of being changed, so option E is incorrect.  \n"
         },
         {
@@ -4039,7 +4039,7 @@
         {
             "id": "19",
             "question": "You want to enter insert mode from vi\u2019s command mode. How might you do this? (Select  three.)  \n A. Type R.  \n B. Type i.  \n C. Type a.  \n D. Type :.  \n E. Press Esc.  ",
-            "answer": "ABC",
+            "answer": "A, B, C",
             "explanation": "Typing R (option A) in command mode enters insert mode with the system configured to overwrite existing text. Typing i or a (options B and C, respectively) enters insert mode with the system configured to insert text. (The i and a commands differ in how they place the cursor; a advances one space.) Typing : (option D) in command mode enters ex mode (you typically type the ex-mode command on the same command line immediately after the colon). Pressing the Esc key (option E) returns vi to command mode from insert mode.  \n"
         },
         {
@@ -4083,7 +4083,7 @@
         {
             "id": "6",
             "question": "What methods do Linux distributions use to start X automatically when the system boots?  (Select two.)  \n A. Start an XDMCP server from the Start folder.  \n B. Start an XDMCP server from an ~/.xinitrc script.  \n C. Start an XDMCP server via a system startup script.  \n D. Start an XDMCP server via a boot manager.  \n E. Start an XDMCP server from init.  ",
-            "answer": "CE",
+            "answer": "C, E",
             "explanation": "XDMCP servers are typically launched either from a system startup script or by init (as specified in /etc/inittab), as described in options C and E. The XDMCP server then starts X. The Start folder mentioned in option A is a Windows construct, not a Linux construct. The ~/.xinitrc script mentioned in option B is an X login script used when starting X from the command line via startx; it\u2019s not used to start X automatically when the system boots. A boot manager, as described in option D, launches the kernel; it doesn\u2019t directly start X, so option D is incorrect.  \n"
         },
         {
@@ -4113,13 +4113,13 @@
         {
             "id": "11",
             "question": "Which of the following programs may be used to provide computer-generated speech for  users who have trouble reading computer displays? (Select two.)  \n A. SoX  \n B. Braille  \n C. Orca  \n D. talk  \n E. Emacspeak  ",
-            "answer": "CE",
+            "answer": "C, E",
             "explanation": "The Orca and Emacspeak programs both provide text-to-speech conversion facilities, so options C and E are both correct. Braille is a form of writing that uses bumps or holes in a surface that can be felt by the reader. Although Linux supports Braille output devices, the question specifies computer-generated speech, which Braille is not, so option B is incorrect. SoX (option A) is an audio format converter, but it won\u2019t convert from text to speech. The talk program (option D) is an early Unix online text-mode \u201cchat\u201d program, but it has no built-in speech synthesis capabilities.  \n"
         },
         {
             "id": "12",
             "question": "You manage a computer that\u2019s located in Los Angeles, California, but the time zone is  misconfigured as being in Tokyo, Japan. What procedure can you follow to fix this  problem? (Select two.)  \n A. Run hwclock --systohc to update the clock to the correct time zone.  \n B. Delete /etc/localtime, and replace it with an appropriate file from /usr/share/  zoneinfo.  \n C. Edit the /etc/tzconfig file so that it specifies North_America/Los_Angeles as the  time zone.  \n D. Edit /etc/localtime, and change the three-letter time zone code on the TZ line.  \n E. Use the tzselect program to select a new (Los Angeles) time zone.          ",
-            "answer": "BE",
+            "answer": "B, E",
             "explanation": "Time zones are determined by the /etc/localtime file, so replacing that one with the correct file (a selection is stored in /usr/share/zoneinfo) will fix the problem, making option B correct. (You may also need to edit /etc/timezone or some other file to keep automatic utilities from becoming confused.) Utilities such as tzselect will make these changes for you after prompting you for your location, so option E is also correct. The hwclock program mentioned in option A reads and writes data from the system\u2019s hardware clock. Although it relies on time zone data, it can\u2019t adjust your system\u2019s time zone itself. There is no standard /etc/tzconfig file, although the tzconfig program, like tzselect, can help you set the time zone. Thus, option C is incorrect. The /etc/localtime file is a binary format; you shouldn\u2019t attempt to edit it in a text editor, making option D incorrect. \u25a0  \n"
         },
         {
@@ -4149,7 +4149,7 @@
         {
             "id": "17",
             "question": "What information about print jobs does the lpq command display? (Select two.)  \n A. The name of the application that submitted the job  \n B. A numerical job ID that can be used to manipulate the job  \n C. The amount of ink or toner left in the printer  \n D. The username of the person who submitted the job  \n E. The estimated time to finish printing the job  ",
-            "answer": "BD",
+            "answer": "B, D",
             "explanation": "The job ID (option B) and job owner (option D) are both displayed by lpq. Unless the application embeds its own name (option A) in the filename, that information won\u2019t be present. Most printers lack Linux utilities to query ink or toner status (option C); certainly lpq can\u2019t do this. Although knowing when your job will finish printing (option E) would be handy, providing this information is well beyond lpq\u2019s capabilities.  \n"
         },
         {
@@ -4181,7 +4181,7 @@
         {
             "id": "2",
             "question": "What commands can be used to add user accounts to a Linux system?  \n A. useradd username  \n B. adduser username  \n C. useradd -c \\\"full name\\\" username  \n D. usradd username  \n E. passwd username  ",
-            "answer": "ABC",
+            "answer": "A, B, C",
             "explanation": "The useradd command is used to add user accounts to a Linux system, and therefore option A is correct. The adduser command is available on some Linux \u25a0 distributions, and it also allows you to add user accounts to the system. Thus, option B is correct as well. The useradd command has a valid -c option that allows you to enter comments, such as a user\u2019s full name. Therefore, option C is also correct. There is no usradd command, so option D is incorrect. The passwd command cannot add users to the system. Therefore, option E is incorrect.  \n"
         },
         {
@@ -4205,7 +4205,7 @@
         {
             "id": "6",
             "question": "What types of files might you expect to find in /etc/skel? (Select three.)  \n A. A copy of the /etc/shadow file  \n B. An empty set of directories to encourage good file management practices  \n C. A README or similar welcome file for new users  \n D. A starting .bashrc file  \n E. The RPM or Debian package management database  ",
-            "answer": "BCD",
+            "answer": "B, C, D",
             "explanation": "Files in /etc/skel are copied from this directory to the new users\u2019 home directories by certain account-creation tools. Thus, files that you want in all new users\u2019 home directories should reside in /etc/skel. Options B, C, and D all describe reasonable possibilities, although none is absolutely required. Including a copy of /etc/ shadow in /etc/skel (option A) would be a very bad idea because this would give all users access to all other users\u2019 hashed passwords, at least as of the moment of account creation. You wouldn\u2019t likely find package management databases (option E) in /etc/ skel, since users don\u2019t need privileged access to this data, nor do they need individualized copies of it.  \n"
         },
         {
@@ -4265,7 +4265,7 @@
         {
             "id": "16",
             "question": "Which of the following tasks are most likely to be handled by a cron job? (Select two.)  \n A. Starting an important server when the computer boots  \n B. Finding and deleting old temporary files  \n C. Scripting supervised account creation  \n D. Monitoring disk partition space status and emailing a report  \n E. Sending files to a printer in an orderly manner  ",
-            "answer": "BD",
+            "answer": "B, D",
             "explanation": "The cron utility is a good tool for performing tasks that can be done in an unsupervised manner, such as deleting old temporary files (option B) or checking to see that disk space is not low (option D). Tasks that require interaction or do not occur on a scheduled basis, such as creating accounts (option C), aren\u2019t good candidates for cron jobs, which must execute unsupervised and on a schedule. Although a cron job could restart a crashed server, it\u2019s not normally used to start a server when the system boots (option A); that\u2019s done through system startup scripts or a super server. Sending files to a printer (option E) is generally handled by a print server such as the cupsd daemon.  \n"
         },
         {
@@ -4289,7 +4289,7 @@
         {
             "id": "20",
             "question": "How might you schedule a script to run once a day on a Linux computer? (Select two.)  \n A. Place the script, or a link to it, in /etc/cron.daily.  \n B. Use the at command to schedule the specified script to run on a daily basis at a time of  your choosing.  \n C. Create a user cron job that calls the specified script once a day at a time of your choos-  ing, and install that cron job using crontab.  \n D. Use run-parts to schedule the specified script to run on a daily basis.  \n E. Type crontab -d scriptname, where scriptname is the name of your script.            ",
-            "answer": "AC",
+            "answer": "A, C",
             "explanation": "The contents of /etc/cron.daily are automatically run on a daily basis in most Linux distributions, and the crontab utility can create user cron jobs that run programs at arbitrary time intervals, so both A and C are correct. The at command noted in option B can be used to run a program a single time, but not on a regular basis (such as daily). Option D\u2019s run-parts utility is used by some distributions as a tool to help run programs in the /etc/cron.* subdirectories, but it\u2019s not used to schedule jobs. Although the crontab program can maintain user crontabs, it\u2019s not used as shown in option E and it has no -d parameter at all. Networking  \n"
         }
     ],
@@ -4297,126 +4297,120 @@
         {
             "id": "1",
             "question": "Which types of network hardware does Linux support? (Select three.)  \n A. Token Ring  \n B. Ethernet  \n C. DHCP  \n D. NetBEUI  \n E. Fibre Channel  ",
-            "answer": "ABE",
+            "answer": "A, B, E",
             "explanation": "Ethernet (option B) is currently the most common type of wired network hardware for local networks. Linux supports it very well, and Linux also includes support for Token Ring (option A) and Fibre Channel (option E) network hardware. DHCP (option C) is a protocol used to obtain a TCP/IP configuration over a TCP/IP network. It\u2019s not a type of network hardware, but it can be used over hardware that supports TCP/IP. NetBEUI (option D) is a network stack that can be used instead of or in addition to TCP/IP over various types of network hardware. Linux doesn\u2019t support NetBEUI directly.  \n"
         },
         {
             "id": "2",
             "question": "Which of the following is a valid IPv4 address for a single computer on a TCP/IP network?  \n A. 202.9.257.33  \n B. 63.63.63.63  \n C. 107.29.5.3.2  \n D. 98.7.104.0/24  \n E. 255.255.255.255  ",
             "answer": "B",
-            "explanation": "IP addresses consist of four 1-byte numbers (0\u2013255). They\u2019re normally expressed in base 10 and separated by periods. 63.63.63.63 meets these criteria, so option B is \u25a0 correct. 202.9.257.33 includes one value (257) that\u2019s not a 1-byte number, so option A is incorrect. 107.29.5.3.2 includes five 1-byte numbers, so option C is incorrect.  \n"
-        },
-        {
-            "id": "98.7.104.0/24 (option D) is a network address\u2014the trailing /24 indicates that the final byte is a machine identifier, and the first 3 bytes specify the network",
-            "question": "You want to set up a computer on a local network via a static TCP/IP configuration, but  you lack a gateway address. Which of the following is true?  \n A. Because the gateway address is necessary, no TCP/IP networking functions will work.  \n B. TCP/IP networking will function, but you\u2019ll be unable to convert hostnames to IP  addresses or vice versa.  \n C. You\u2019ll be able to communicate with machines on your local network segment but not  with other systems.  \n D. Since a gateway is needed only for IPv6, you\u2019ll be able to use IPv4 but not IPv6  protocols.  \n E. Without a gateway address available, you\u2019ll be unable to use DHCP to simplify  configuration.  ",
-            "answer": "Option E, 255.255.255.255, meets the basic form of an IP address, but it\u2019s a special case\u2014this is a broadcast address that refers to all computers rather than to the single computer specified by the question",
-            "explanation": " \n"
+            "explanation": "IP addresses consist of four 1-byte numbers (0\u2013255). They\u2019re normally expressed in base 10 and separated by periods. 63.63.63.63 meets these criteria, so option B is \u25a0 correct. 202.9.257.33 includes one value (257) that\u2019s not a 1-byte number, so option A is incorrect. 107.29.5.3.2 includes five 1-byte numbers, so option C is incorrect. 98.7.104.0/24 (option D) is a network address\u2014the trailing /24 indicates that the final byte is a machine identifier, and the first 3 bytes specify the network. Option E, 255.255.255.255, meets the basic form of an IP address, but it\u2019s a special case\u2014this is a broadcast address that refers to all computers rather than to the single computer specified by the question.  \n"
         },
         {
             "id": "3",
-            "question": "Using a packet sniffer, you notice a lot of traffic directed at TCP port 22 on a local com-  puter. What protocol does this traffic use, assuming it\u2019s using the standard port?  \n A. HTTP  \n B. SMTP  \n C. Telnet  \n D. SSH  \n E. NNTP  ",
+            "question": "You want to set up a computer on a local network via a static TCP/IP configuration, but  you lack a gateway address. Which of the following is true?  \n A. Because the gateway address is necessary, no TCP/IP networking functions will work.  \n B. TCP/IP networking will function, but you\u2019ll be unable to convert hostnames to IP  addresses or vice versa.  \n C. You\u2019ll be able to communicate with machines on your local network segment but not  with other systems.  \n D. Since a gateway is needed only for IPv6, you\u2019ll be able to use IPv4 but not IPv6  protocols.  \n E. Without a gateway address available, you\u2019ll be unable to use DHCP to simplify  configuration.  ",
             "answer": "C",
             "explanation": "The gateway computer is a router that transfers data between two or more network segments. As such, if a computer isn\u2019t configured to use a gateway, it won\u2019t be able to communicate beyond its local network segment, making option C correct. A gateway is not necessary for communicating with other systems on the local network segment, so option A is incorrect. If your DNS server is on a different network segment, name resolution via DNS won\u2019t work, as stated in option B; however, other types of name resolution, such as /etc/hosts file entries, will still work, and the DNS server might be on the local network segment, so option B is incorrect. Gateways perform the same function in both IPv4 and IPv6 networking, so option D is incorrect. DHCP functions fine without a gateway, provided that a DHCP server is on the same local network segment as its clients (as is normally the case), so option E is incorrect.  \n"
         },
         {
             "id": "4",
-            "question": "What network port would an IMAP server normally use for IMAP exchanges?  \n A. 21  \n B. 25  \n C. 110           \n D. 143  \n E. 443  ",
+            "question": "Using a packet sniffer, you notice a lot of traffic directed at TCP port 22 on a local com-  puter. What protocol does this traffic use, assuming it\u2019s using the standard port?  \n A. HTTP  \n B. SMTP  \n C. Telnet  \n D. SSH  \n E. NNTP  ",
             "answer": "D",
             "explanation": "The Secure Shell (SSH) protocol uses port 22, so if the traffic to port 22 is using the correct protocol, it\u2019s SSH traffic and option D is correct. The Hypertext Transfer Protocol (HTTP; option A) is conventionally bound to port 80; the Simple Mail Transfer Protocol (SMTP; option B) uses port 25; Telnet (option C) uses port 23; and the Network News Transfer Protocol (NNTP; option E) uses port 119. None of these would normally be directed to port 22.  \n"
         },
         {
             "id": "5",
-            "question": "Which of the following are not Linux DHCP clients? (Select two.)  \n A. pump  \n B. dhcpcd  \n C. dhcpd  \n D. dhclient  \n E. ifconfig  ",
+            "question": "What network port would an IMAP server normally use for IMAP exchanges?  \n A. 21  \n B. 25  \n C. 110           \n D. 143  \n E. 443  ",
             "answer": "D",
             "explanation": "The Interactive Mail Access Protocol (IMAP) is assigned to TCP port 143. Ports 21, 25, 110, and 443 are assigned to the File Transfer Protocol (FTP), the Simple Mail Transfer Protocol (SMTP), the Post Office Protocol version 3 (POP3), and the Hypertext Transfer Protocol over SSL (HTTPS), respectively. Although some IMAP server programs also support POP3 and might therefore listen to both ports 110 and 143, the question specifies IMAP exchanges, so option D is the only correct answer.  \n"
         },
         {
             "id": "6",
-            "question": "Which of the following types of information are returned by typing ifconfig eth0?  (Select two.)  \n A. The names of programs that are using eth0  \n B. The IP address assigned to eth0  \n C. The hardware address of eth0  \n D. The hostname associated with eth0  \n E. The kernel driver used by eth0  ",
-            "answer": "CE",
+            "question": "Which of the following are not Linux DHCP clients? (Select two.)  \n A. pump  \n B. dhcpcd  \n C. dhcpd  \n D. dhclient  \n E. ifconfig  ",
+            "answer": "C, E",
             "explanation": "Option C, dhcpd, is the Linux DHCP server. Option E, ifconfig, can be used for network configuration but is not itself a DHCP client. The others are all DHCP clients. Any given computer will use just one DHCP client (or none at all), but any one of A, B, or D will be available choices.  \n"
         },
         {
             "id": "7",
-            "question": "Which of the following programs is conventionally used to perform a DNS lookup?  \n A. host  \n B. dnslookup  \n C. pump  \n D. ifconfig  \n E. netstat  ",
-            "answer": "BC",
+            "question": "Which of the following types of information are returned by typing ifconfig eth0?  (Select two.)  \n A. The names of programs that are using eth0  \n B. The IP address assigned to eth0  \n C. The hardware address of eth0  \n D. The hostname associated with eth0  \n E. The kernel driver used by eth0  ",
+            "answer": "B, C",
             "explanation": "When used to display information on an interface, ifconfig shows the hardware and IP addresses (options B and C) of the interface, the protocols (such as TCP/IP) bound to the interface, and statistics on transmitted and received packets. This command does not return information about programs using the interface (option A), the hostname associated with the interface (option D), or the kernel driver used by the interface (option E).  \n"
         },
         {
             "id": "8",
-            "question": "Which of the following commands should you type to add to host 192.168.0.10 a default  gateway of 192.168.0.1?  \n A. route add default gw 192.168.0.10 192.168.0.1  \n B. route add default gw 192.168.0.1  \n C. route add 192.168.0.10 default 192.168.0.1  \n D. route 192.168.0.10 gw 192.168.0.1  \n E. route host gw 192.168.0.1  ",
+            "question": "Which of the following programs is conventionally used to perform a DNS lookup?  \n A. host  \n B. dnslookup  \n C. pump  \n D. ifconfig  \n E. netstat  ",
             "answer": "A",
             "explanation": "The host program (option A) is a commonly used program to perform a DNS lookup. There is no standard dnslookup program (option B), although the nslookup program is a deprecated program for performing DNS lookups. pump (option C) is a DHCP client. ifconfig (option D) is used for configuration of networking parameters and cards. netstat (option E) is a general-purpose network diagnostic tool.  \n"
         },
         {
             "id": "9",
-            "question": "Which of the following commands might bring up an interface on eth1? (Select two.)  \n A. dhclient eth1  \n B. ifup eth1  \n C. ifconfig eth1  \n D. network eth1  \n E. netstat -up eth1          ",
+            "question": "Which of the following commands should you type to add to host 192.168.0.10 a default  gateway of 192.168.0.1?  \n A. route add default gw 192.168.0.10 192.168.0.1  \n B. route add default gw 192.168.0.1  \n C. route add 192.168.0.10 default 192.168.0.1  \n D. route 192.168.0.10 gw 192.168.0.1  \n E. route host gw 192.168.0.1  ",
             "answer": "B",
             "explanation": "To add a default gateway of 192.168.0.1, the command would be route add default gw 192.168.0.1, as in option B. Specifying the IP address of the host system (as in options A, C, and D) is not necessary and in fact will confuse the route command. Although route provides a -host option, using host (without a dash), as in option E, is incorrect. Furthermore, option E omits the critical add parameter.  \n"
         },
         {
             "id": "10",
-            "question": "What is the purpose of /etc/hostname, if it\u2019s present on the system?  \n A. It holds the hostname of a package repository server.  \n B. It holds a list of servers that resolve hostnames.  \n C. It holds a list of IP addresses and associated hostnames.  \n D. It holds the hostname of the local gateway computer.  \n E. It holds the computer\u2019s default hostname.  ",
-            "answer": "AB",
+            "question": "Which of the following commands might bring up an interface on eth1? (Select two.)  \n A. dhclient eth1  \n B. ifup eth1  \n C. ifconfig eth1  \n D. network eth1  \n E. netstat -up eth1          ",
+            "answer": "A, B",
             "explanation": "The dhclient utility, if installed, attempts to configure and bring up the network(s) passed to it as options (or all networks if it\u2019s given no options) using a DHCP server for guidance. Thus option A may work, although it won\u2019t work if no DHCP server is available. Option B applies whatever network options are configured using distribution-specific tools and brings up the network. Thus options A and B both may work, although neither is guaranteed to work. Option C displays the network status of eth1, but it won\u2019t activate eth1 if it\u2019s not already active. There is no standard network utility in Linux, so option D won\u2019t work. The netstat utility is a network diagnostic tool; it won\u2019t bring up a network interface, so option E is incorrect.  \n"
         },
         {
             "id": "11",
-            "question": "Network accesses to parts of the Internet work fine, but several common sites have stopped  responding (even when addressed via raw IP addresses). Which of the following tools will  be most helpful in diagnosing the source of this problem?  \n A. netstat  \n B. ping  \n C. traceroute  \n D. ifconfig  \n E. dig  ",
+            "question": "What is the purpose of /etc/hostname, if it\u2019s present on the system?  \n A. It holds the hostname of a package repository server.  \n B. It holds a list of servers that resolve hostnames.  \n C. It holds a list of IP addresses and associated hostnames.  \n D. It holds the hostname of the local gateway computer.  \n E. It holds the computer\u2019s default hostname.  ",
             "answer": "E",
             "explanation": "Although not all systems use /etc/hostname, option E correctly describes it for those systems that use it. The file or files that hold information on package repository servers vary from one package system to another, so option A is incorrect. Option B describes the purpose of /etc/resolv.conf. Option C describes the purpose of /etc/hosts. Option D doesn\u2019t describe any standard Linux configuration file, although the gateway computer\u2019s IP address is likely to appear in a distribution-specific configuration file.  \n"
         },
         {
             "id": "12",
-            "question": "What value identifies an IPv6 address as a link-local address?  \n A. The address uses the MAC address of the system.  \n B. The address starts with fe80.  \n C. The address starts with fee.  \n D. The address starts with 2001.  ",
+            "question": "Network accesses to parts of the Internet work fine, but several common sites have stopped  responding (even when addressed via raw IP addresses). Which of the following tools will  be most helpful in diagnosing the source of this problem?  \n A. netstat  \n B. ping  \n C. traceroute  \n D. ifconfig  \n E. dig  ",
             "answer": "C",
             "explanation": "The traceroute command (option C) identifies the computers that lie between your own computer and a destination computer, along with some very basic information about network packet travel time and reliability. Thus, traceroute can help you track down the source of the described problem\u2014perhaps a router that\u2019s critical to reaching all of the non-responsive systems has failed. The netstat and ifconfig utilities of options A and D both provide information about local network configuration options, but they most likely won\u2019t be of much help in diagnosing a problem that affects only some sites. The ping utility (option B) may help you quickly identify sites that have failed but won\u2019t be of much use beyond that. You can use dig (option E) to obtain information on the mapping of hostnames to IP addresses, but it won\u2019t help in resolving basic connectivity problems.  \n"
         },
         {
             "id": "13",
-            "question": "How can you learn what programs are currently accessing the network on a Linux system?  \n A. Type ifconfig -p eth0.  \n B. Examine /proc/network/programs.  \n C. Type netstat -p.  \n D. Examine /etc/xinetd.conf.  \n E. Type dmesg | less.  ",
+            "question": "What value identifies an IPv6 address as a link-local address?  \n A. The address uses the MAC address of the system.  \n B. The address starts with fe80.  \n C. The address starts with fee.  \n D. The address starts with 2001.  ",
             "answer": "B",
             "explanation": "Both global and link-local IPv6 addresses can use the system MAC address as part of the IPv6 address, thus option A is incorrect. The fee network address identifies a site-local address but not a link-local address, so option C is also incorrect. An address that starts with 2001 would be a normal global address, making option D incorrect. IPv6 link-local addresses start with fe80, thus C is the correct answer.  \n"
         },
         {
             "id": "14",
-            "question": "To diagnose a problem with an IMAP server (imap.example.com), you type telnet  imap.example.com 143 from a remote client. How can this procedure help you?  (Select two.)  \n A. You can verify basic connectivity between the client computer and the server program.  \n B. By examining the output, you can locate intermediate routers that are misbehaving.  \n C. By using an encrypted protocol, you ensure that a packet-sniffing intruder doesn\u2019t  cause problems.  \n D. Once connected, you can type IMAP commands to test the server\u2019s response to them.  \n E. Once you\u2019ve logged into the remote system, you can examine its IMAP log files.          ",
+            "question": "How can you learn what programs are currently accessing the network on a Linux system?  \n A. Type ifconfig -p eth0.  \n B. Examine /proc/network/programs.  \n C. Type netstat -p.  \n D. Examine /etc/xinetd.conf.  \n E. Type dmesg | less.  ",
             "answer": "C",
             "explanation": "The netstat program produces various network statistics, including the process IDs (PIDs) and names of programs currently accessing the network when it\u2019s passed the -p \u25a0 parameter, thus option C is correct. The ifconfig program can\u2019t produce this information, and the -p option to this program is fictitious, so option A is incorrect. Option B\u2019s /proc/network/programs file is also fictitious. Option D\u2019s /etc/xinetd.conf file is real and may provide some information about some servers that are using the network (as described in Chapter 10), but this file won\u2019t provide information about all servers, much less about clients that are accessing the network. The dmesg command displays the kernel ring buffer, which doesn\u2019t contain information on programs that are currently accessing the network, so option E is incorrect.  \n"
         },
         {
             "id": "15",
-            "question": "You\u2019re configuring a new system, and your network administrator scribbles its IP address  (172.25.78.89), netmask (255.255.255.0), gateway address (172.25.79.1), and DNS server  address (10.24.89.201) on a piece of paper. You enter this information into your configura-  tion files and type ifup eth0, but you find that you can\u2019t access the Internet with this  computer. Which of the following is definitely true?  \n A. Because the DNS server is on a completely different network, it won\u2019t function properly  for your system. You should ask for the local network\u2019s DNS server\u2019s IP address.  \n B. The netmask identifies the gateway as being on a different network segment than the  computer you\u2019re configuring, so the two can\u2019t communicate directly. You most likely  misread one address.  \n C. Because the IP addresses involved are private IP addresses, there\u2019s no way for them to  access the Internet. You must ask for public IP addresses for this system or use only  your local private network.  \n D. The computer\u2019s IP address is a Class B address, but the netmask is for a Class C  address. This combination can\u2019t work together, so you must obtain a new IP address or  netmask.  \n E. The ifup utility works only for computers that use DHCP, so using a static IP address  as specified in the question won\u2019t work correctly.  ",
-            "answer": "AD",
+            "question": "To diagnose a problem with an IMAP server (imap.example.com), you type telnet  imap.example.com 143 from a remote client. How can this procedure help you?  (Select two.)  \n A. You can verify basic connectivity between the client computer and the server program.  \n B. By examining the output, you can locate intermediate routers that are misbehaving.  \n C. By using an encrypted protocol, you ensure that a packet-sniffing intruder doesn\u2019t  cause problems.  \n D. Once connected, you can type IMAP commands to test the server\u2019s response to them.  \n E. Once you\u2019ve logged into the remote system, you can examine its IMAP log files.          ",
+            "answer": "A, D",
             "explanation": "If you get any response at all, you know that the basic network connection is working, including that the server is responding to the client. With basic knowledge of IMAP commands, telnet enables you to test the server\u2019s responses in more detail than most IMAP clients (mail readers) permit. Thus options A and D are both correct. Option B describes the functionality of traceroute or tracepath; telnet provides no information about intermediate routers\u2019 functionality, so option B is incorrect. Because neither telnet nor IMAP on port 143 uses encryption, option C is incorrect. Furthermore, a packet sniffer is likely to have no effect on the transfer of data; it just copies the data so that the packet sniffer\u2019s user can see it. Although telnet can be used for remote access in a way that could make option E correct, the question specifies using telnet to connect to port 143, which is the IMAP port, not the Telnet port. Thus, option E is incorrect. (Furthermore, using telnet for remote administration is very risky because telnet is an unencrypted protocol.)  \n"
         },
         {
             "id": "16",
-            "question": "What is the purpose of the -n option to route?  \n A. It causes no operation to be performed; route reports what it would do if -n  were omitted.  \n B. It precedes the specification of a netmask when setting the route.  \n C. It limits route\u2019s output to descriptions of non-Internet routes.  \n D. It forces interpretation of a provided address as a network address rather than a  host address.  \n E. It causes machines to be identified by IP address rather than hostname in output.  ",
+            "question": "You\u2019re configuring a new system, and your network administrator scribbles its IP address  (172.25.78.89), netmask (255.255.255.0), gateway address (172.25.79.1), and DNS server  address (10.24.89.201) on a piece of paper. You enter this information into your configura-  tion files and type ifup eth0, but you find that you can\u2019t access the Internet with this  computer. Which of the following is definitely true?  \n A. Because the DNS server is on a completely different network, it won\u2019t function properly  for your system. You should ask for the local network\u2019s DNS server\u2019s IP address.  \n B. The netmask identifies the gateway as being on a different network segment than the  computer you\u2019re configuring, so the two can\u2019t communicate directly. You most likely  misread one address.  \n C. Because the IP addresses involved are private IP addresses, there\u2019s no way for them to  access the Internet. You must ask for public IP addresses for this system or use only  your local private network.  \n D. The computer\u2019s IP address is a Class B address, but the netmask is for a Class C  address. This combination can\u2019t work together, so you must obtain a new IP address or  netmask.  \n E. The ifup utility works only for computers that use DHCP, so using a static IP address  as specified in the question won\u2019t work correctly.  ",
             "answer": "B",
             "explanation": "The computer\u2019s IP address (172.25.78.89) and netmask (255.255.255.0) mean that the computer can directly address computers with IP addresses in the range of 172.25.78.1 to 172.25.78.254, but the gateway address (172.25.79.1) is outside of this range. Thus, either the IP address or the gateway address is wrong, and option B is correct. Nothing about the way DNS operates necessitates that the DNS server be on the same network segment as the DNS client, so option A is incorrect. Although private IP addresses are often isolated from the Internet, as option C specifies, Network Address Translation (NAT) can get around this limitation. Thus, although there could be some truth to option C, it\u2019s not certain to be true. The Class A/B/C distinctions are just guidelines that can be overridden by specific configurations. Thus option D is incorrect. Option E\u2019s assertion that ifup is used only on computers that use DHCP is incorrect; ifup can work on computers that use static IP addresses provided the relevant information is entered correctly.  \n"
         },
         {
             "id": "17",
-            "question": "What is the purpose of /etc/resolv.conf?  \n A. It holds the names of network protocols and the port numbers with which they\u2019re  associated.  \n B. It controls whether the computer\u2019s network options are configured statically or via a  DHCP server.  \n C. It specifies the IP address of a DHCP server from which the computer attempts to  obtain an IP address.  \n D. It holds the routing table for the computer, determining the route that network packets  take to other computers.  \n E. It sets the computer\u2019s default search domain and identifies (by IP address) the name  servers that the computer may use.  ",
+            "question": "What is the purpose of the -n option to route?  \n A. It causes no operation to be performed; route reports what it would do if -n  were omitted.  \n B. It precedes the specification of a netmask when setting the route.  \n C. It limits route\u2019s output to descriptions of non-Internet routes.  \n D. It forces interpretation of a provided address as a network address rather than a  host address.  \n E. It causes machines to be identified by IP address rather than hostname in output.  ",
             "answer": "E",
             "explanation": "The -n option is used when you want to use route to display the current routing table, and it does as option E specifies. There is no route parameter that behaves as options A or C specify. Option B describes the purpose of the netmask parameter to route. Option D describes the purpose of the -net parameter to route.  \n"
         },
         {
             "id": "18",
-            "question": "Which of the following entries are found in the /etc/hosts file?  \n A. A list of hosts allowed to access this one remotely  \n B. Mappings of IP addresses to hostnames           \n C. A list of users allowed to access this host remotely  \n D. Passwords for remote web administration  \n E. A list of port numbers and their associated protocols  ",
+            "question": "What is the purpose of /etc/resolv.conf?  \n A. It holds the names of network protocols and the port numbers with which they\u2019re  associated.  \n B. It controls whether the computer\u2019s network options are configured statically or via a  DHCP server.  \n C. It specifies the IP address of a DHCP server from which the computer attempts to  obtain an IP address.  \n D. It holds the routing table for the computer, determining the route that network packets  take to other computers.  \n E. It sets the computer\u2019s default search domain and identifies (by IP address) the name  servers that the computer may use.  ",
             "answer": "E",
             "explanation": "Option E correctly identifies the function of /etc/resolv.conf. Option A describes the purpose of /etc/services. Various distribution-specific configuration files perform the function described in option B, but /etc/resolv.conf is not one of these files. A DHCP client sends a broadcast to locate a DHCP server; there is no client configuration file that holds the DHCP server\u2019s address, as option C describes. The routing table is maintained internally, although basic routing information may be stored in distribution-specific configuration files, so option D is also incorrect.  \n"
         },
         {
             "id": "19",
-            "question": "How can you reconfigure Linux to use DNS queries prior to consulting /etc/hosts?  \n A. Edit the /etc/resolv.conf file, and be sure the nameserver dns line comes before  the nameserver files line.  \n B. As root, type nslookup dns.  \n C. Edit the /etc/named.conf file, and change the preferred-resolution option from  files to dns.  \n D. Edit /etc/nsswitch.conf, and change the order of the files and dns options on the  hosts: line.  \n E. As root, type dig local dns.            ",
+            "question": "Which of the following entries are found in the /etc/hosts file?  \n A. A list of hosts allowed to access this one remotely  \n B. Mappings of IP addresses to hostnames           \n C. A list of users allowed to access this host remotely  \n D. Passwords for remote web administration  \n E. A list of port numbers and their associated protocols  ",
             "answer": "B",
             "explanation": "The /etc/hosts file holds mappings of IP addresses to hostnames, on a one-lineper-mapping basis. Thus option B is correct. The file does not list the users (option C) or other hosts (option A) allowed to access this one remotely, affect remote administration through a web browser (option D), or map port numbers to protocols (option E).  \n"
         },
         {
             "id": "20",
-            "question": "Which environment variable stores the format for the command prompt?  \n A. PROMPT  \n B. PSI  \n C. PAGER  \n D. PS1  \n E. None of these variables store the format for the command prompt.  ",
+            "question": "How can you reconfigure Linux to use DNS queries prior to consulting /etc/hosts?  \n A. Edit the /etc/resolv.conf file, and be sure the nameserver dns line comes before  the nameserver files line.  \n B. As root, type nslookup dns.  \n C. Edit the /etc/named.conf file, and change the preferred-resolution option from  files to dns.  \n D. Edit /etc/nsswitch.conf, and change the order of the files and dns options on the  hosts: line.  \n E. As root, type dig local dns.            ",
             "answer": "D",
             "explanation": "The /etc/nsswitch.conf file controls the order of name resolution, among other things. Option D correctly describes the procedure for changing the order in which Linux performs name resolution. The /etc/resolv.conf file mentioned in option A controls the DNS servers that Linux consults, but it doesn\u2019t control access to /etc/ hosts. Option B\u2019s nslookup command resolves a hostname, so option B will return the IP address of the computer called dns, if Linux can find such a system. The /etc/ named.conf file of option C is the configuration file for the standard name server. This server isn\u2019t likely to be installed on most Linux systems, and even if it is, the procedure described in option C is invalid. Like option B\u2019s nslookup, option E\u2019s dig looks up hostname-to-IP-address mappings, so option E will display such mappings for the computers called local and dns, if they exist. Email, and Using Databases  \n"
         }
@@ -4424,121 +4418,121 @@
     "Chapter 9: Writing Scripts, Configuring Email, and Using Databases": [
         {
             "id": "1",
-            "question": "You want to create a shortcut command for the command cd ~/papers/trade. Which of  the following lines, if entered in a bash startup script, will accomplish this goal?  \n A. alias cdpt='cd ~/papers/trade'  \n B. export cdpt='cd ~/papers/trade'  \n C. alias cdpt 'cd ~/papers/trade'  \n D. alias cd 'cdpt ~/papers/trade'  \n E. env cdpt `cd ~/papers/trade`  ",
+            "question": "Which environment variable stores the format for the command prompt?  \n A. PROMPT  \n B. PSI  \n C. PAGER  \n D. PS1  \n E. None of these variables store the format for the command prompt.  ",
             "answer": "D",
             "explanation": "The PS1 environment variable contains various formatting codes preceded by a backslash (\\) as well as text to be included in the primary command prompt. Therefore, option D is correct. There is no environment variable called PROMPT, nor is there an environment variable called PSI, so options A and B are incorrect. Programs that use a pager, such as less or more, use the PAGER environment variable. If the variable is set, the programs use the pager listed in the variable. Therefore, option C is incorrect. Option D is correct, so option E is incorrect.  \n"
         },
         {
             "id": "2",
-            "question": "What is the purpose of the EDITOR environment variable?  \n A. If it\u2019s set to Y (the default), the shell environment permits editing of commands; if it\u2019s  set to N, such editing is disallowed.  \n B. It specifies the filename of the text editor that bash uses by default while you\u2019re enter-  ing commands at its prompt.  \n C. If you type edit filename at a command prompt, the program specified by EDITOR  will be launched.  \n D. If it\u2019s set to GUI, programs call a GUI editor; if it\u2019s set to TEXT, programs call a text-  based editor.  \n E. Some programs refer to EDITOR to determine what external editor to launch when they  need to launch one.  ",
+            "question": "You want to create a shortcut command for the command cd ~/papers/trade. Which of  the following lines, if entered in a bash startup script, will accomplish this goal?  \n A. alias cdpt='cd ~/papers/trade'  \n B. export cdpt='cd ~/papers/trade'  \n C. alias cdpt 'cd ~/papers/trade'  \n D. alias cd 'cdpt ~/papers/trade'  \n E. env cdpt `cd ~/papers/trade`  ",
             "answer": "A",
             "explanation": "The alias built-in command creates a duplicate name for a (potentially much longer) command. Option A shows the correct syntax for using this built-in command. It causes the new alias cdpt to work like the much longer cd ~/papers/trade. The export command in option B creates an environment variable called cdpt that holds the value cd ~/papers/trade. This will have no useful effect. Option C, if placed in a bash startup script, will cause an error because it uses incorrect alias command syntax, as does option D. Although env is a valid command, it\u2019s used incorrectly in option E, and so this option is incorrect.  \n"
         },
         {
             "id": "3",
-            "question": "In what environment variable is the current working directory stored?  \n A. PATH  \n B. CWD  \n C. PWD  \n D. PRESENT  \n E. WORKING  ",
+            "question": "What is the purpose of the EDITOR environment variable?  \n A. If it\u2019s set to Y (the default), the shell environment permits editing of commands; if it\u2019s  set to N, such editing is disallowed.  \n B. It specifies the filename of the text editor that bash uses by default while you\u2019re enter-  ing commands at its prompt.  \n C. If you type edit filename at a command prompt, the program specified by EDITOR  will be launched.  \n D. If it\u2019s set to GUI, programs call a GUI editor; if it\u2019s set to TEXT, programs call a text-  based editor.  \n E. Some programs refer to EDITOR to determine what external editor to launch when they  need to launch one.  ",
             "answer": "E",
             "explanation": "Some programs use the EDITOR environment variable as described in option E. Contrary to option A, the EDITOR environment variable has nothing to do with \u25a0 command-line editing. When you\u2019re typing at a bash command prompt, bash itself provides simple editing features, so option B is incorrect. (You can launch the editor specified by $EDITOR by typing Ctrl+X followed by Ctrl+E, though.) The edit command doesn\u2019t behave as option C suggests. (This command may be configured differently on different systems.) You can create links called GUI and TEXT to have the EDITOR environment variable behave as option D suggests, but this isn\u2019t a normal configuration.  \n"
         },
         {
             "id": "4",
-            "question": "If typed in a bash shell, which of the following commands will create an environment vari-  able called MYVAR with the contents mystuff that will be accessible to any created subshells?  (Choose all that apply.)  \n A. export MYVAR='mystuff'  \n B. MYVAR='mystuff'           \n C. MYVAR='mystuff'; export MYVAR  \n D. echo $MYVAR mystuff  \n E. setenv MYVAR mystuff  ",
+            "question": "In what environment variable is the current working directory stored?  \n A. PATH  \n B. CWD  \n C. PWD  \n D. PRESENT  \n E. WORKING  ",
             "answer": "C",
             "explanation": "The PWD environment variable holds the present working directory, so option C is correct. The PATH environment variable (option A) holds a colon-delimited list of directories in which executable programs are stored so that they may be run without specifying their complete pathnames. There are no standard CWD, PRESENT, or WORKING environment variables, so options B, D, and E are all incorrect.  \n"
         },
         {
             "id": "5",
-            "question": "What file might a user modify to alter their own bash environment?  \n A. /etc/inputrc  \n B. /etc/bashrc  \n C. $HOME/bashrc  \n D. $HOME/.profile_bash  \n E. ~/.bashrc  ",
-            "answer": "AC",
+            "question": "If typed in a bash shell, which of the following commands will create an environment vari-  able called MYVAR with the contents mystuff that will be accessible to any created subshells?  (Choose all that apply.)  \n A. export MYVAR='mystuff'  \n B. MYVAR='mystuff'           \n C. MYVAR='mystuff'; export MYVAR  \n D. echo $MYVAR mystuff  \n E. setenv MYVAR mystuff  ",
+            "answer": "A, C",
             "explanation": "Option A creates the desired environment variable. Option C also creates the desired environment variable. It combines the variable setting and the export of the MYVAR variable using a different method than option A uses. It combines the two commands on one line using a semicolon (;). Option B creates a local variable\u2014but not an environment variable\u2014called MYVAR, holding the value mystuff. After typing option B, you can also type export MYVAR to achieve the desired goal, but option B by itself is insufficient. Option D displays the contents of the MYVAR variable and also echoes mystuff to the screen, but it doesn\u2019t change the contents of any environment variable. Option E\u2019s setenv isn\u2019t a valid bash command, but it will set an environment variable in tcsh.  \n"
         },
         {
             "id": "6",
-            "question": "What commands might you use (along with appropriate options) to learn the value of a  specific environment variable? (Select two.)  \n A. env  \n B. DISPLAY  \n C. export  \n D. echo  \n E. cat  ",
+            "question": "What file might a user modify to alter their own bash environment?  \n A. /etc/inputrc  \n B. /etc/bashrc  \n C. $HOME/bashrc  \n D. $HOME/.profile_bash  \n E. ~/.bashrc  ",
             "answer": "E",
             "explanation": "The ~/.bashrc file is a non-login bash startup script file. As such, it can be used to alter a user\u2019s bash environment, and option E is correct. The /etc/inputrc file is a global bash configuration file for keyboard customization and setting terminal behavior. The ~/.inputrc file is for users to create or modify their own keyboard configuration file. Therefore, option A is incorrect. The /etc/bashrc file is a global bash startup script. Editing it will modify users\u2019 bash environments, but an individual user should not be able to modify it, so option B is incorrect. There is no standard $HOME/bashrc file because the filename is missing its prefixed period (.). Thus, option C is incorrect. Likewise, option D\u2019s $HOME/.profile_bash doesn\u2019t refer to a user\u2019s configuration file and is incorrect. However, there is a $HOME/.bash_profile bash configuration file.  \n"
         },
         {
             "id": "7",
-            "question": "Immediately after creating a shell script called a_script.sh in a text editor, which method  will not work to run the script?  \n A. Typing bash a_script.sh at the command line.  \n B. Typing ./a_script.sh at the command line.  \n C. Typing . a_script.sh at the command line.  \n D. Typing source a_script.sh at the command line.  \n E. Any of the above will work.  ",
-            "answer": "AD",
+            "question": "What commands might you use (along with appropriate options) to learn the value of a  specific environment variable? (Select two.)  \n A. env  \n B. DISPLAY  \n C. export  \n D. echo  \n E. cat  ",
+            "answer": "A, D",
             "explanation": "The env command displays all defined environment variables, so option A satisfies the question. (In practice, you might pipe the results through grep to find the value of a specific environment variable.) The echo command, when passed the name of a specific environment variable, displays its current value, so option D is also correct. DISPLAY is an environment variable, but it\u2019s not a command for displaying environment variables, so option B is incorrect. You can use the export command to create an environment variable but not to display the current settings for one, so option C is incorrect. Option E\u2019s cat command concatenates files or displays the contents of a file to the screen, but it doesn\u2019t display environment variables.  \n"
         },
         {
             "id": "8",
-            "question": "Describe the effect of the following short script, cp1.sh, if it\u2019s called as cp1.sh big.c  big.cc:  #!/bin/bash  cp $2 $1   \n A. It has the same effect as the cp command\u2014copying the contents of big.c to big.cc.  \n B. It compiles the C program big.c and calls the result big.cc.  \n C. It copies the contents of big.cc to big.c, eliminating the old big.c.  \n D. It converts the C program big.c into a C++ program called big.cc.  \n E. It interprets the big.c and big.cc files as bash scripts.  ",
+            "question": "Immediately after creating a shell script called a_script.sh in a text editor, which method  will not work to run the script?  \n A. Typing bash a_script.sh at the command line.  \n B. Typing ./a_script.sh at the command line.  \n C. Typing . a_script.sh at the command line.  \n D. Typing source a_script.sh at the command line.  \n E. Any of the above will work.  ",
             "answer": "B",
             "explanation": "Before using the ./ execution method, the script must have at least one executable bit set. Therefore, an error will be generated since chmod was not used to modify the execute permissions on the a_script file. Thus Option B is the correct choice since it would not work. Option A uses the bash command to execute a script, and this will work fine without any file permission changes. Likewise, when you source a file using either the source command or a dot (.) and a space, there is no need to modify a scripts permission bits before executing the file. Therefore, option C and option D are incorrect because they also work fine.  \n"
         },
         {
             "id": "9",
-            "question": "Where are the commands iterated by the loop located within the loop?  \n A. Within the then statement section  \n B. Between the double semicolons (;;)  \n C. Within the case and esac constructs           \n D. Within the test statement  \n E. Between do and done constructs  ",
+            "question": "Describe the effect of the following short script, cp1.sh, if it\u2019s called as cp1.sh big.c  big.cc:  #!/bin/bash  cp $2 $1   \n A. It has the same effect as the cp command\u2014copying the contents of big.c to big.cc.  \n B. It compiles the C program big.c and calls the result big.cc.  \n C. It copies the contents of big.cc to big.c, eliminating the old big.c.  \n D. It converts the C program big.c into a C++ program called big.cc.  \n E. It interprets the big.c and big.cc files as bash scripts.  ",
             "answer": "C",
             "explanation": "The cp command is the only one called in the script, and that command copies files. Because the script passes the arguments ($1 and $2) to cp in reverse order, their effect is reversed\u2014where cp copies its first argument to the second name, the cp1.sh script copies the second argument to the first name. Thus, option C is correct. Because the order of arguments to cp is reversed, option A is incorrect. The cp command has nothing to do with compiling (option B) or converting (option D) C or C++ programs, so neither does the script. The reference to /bin/bash in the first line of the script identifies the script itself as being a bash script; it does not cause the arguments to the script to be run as bash scripts, so option E is incorrect.  \n"
         },
         {
             "id": "10",
-            "question": "Which of the following lines identify valid shell scripts on a normally configured system?  (Select two.)  \n A. #!/bin/script  \n B. #!/bin/bash  \n C. #!/bin/tcsh  \n D. !#/bin/sh  \n E. !#/bin/zsh  ",
+            "question": "Where are the commands iterated by the loop located within the loop?  \n A. Within the then statement section  \n B. Between the double semicolons (;;)  \n C. Within the case and esac constructs           \n D. Within the test statement  \n E. Between do and done constructs  ",
             "answer": "E",
             "explanation": "The commands iterated by the for, while, and until loops are located between the do and done constructs. Therefore, option E is correct. Commands in the then statement section are for an if-then construct, not a loop, thus option A is incorrect. Double semicolons are used for case constructs, but not loops, and so option B is incorrect. The case and esac keywords begin and end a case construct, and thus option C is incorrect. A test statement can be used to determine whether or not a loop\u2019s commands should iterate or not. However, it does not contain the actual commands to be iterated, and therefore option D is incorrect.  \n"
         },
         {
             "id": "11",
-            "question": "Which of the following are valid looping statements in bash shell scripting? (Select all that apply.)  \n A. for  \n B. while  \n C. if-then  \n D. until  \n E. case  ",
-            "answer": "BC",
+            "question": "Which of the following lines identify valid shell scripts on a normally configured system?  (Select two.)  \n A. #!/bin/script  \n B. #!/bin/bash  \n C. #!/bin/tcsh  \n D. !#/bin/sh  \n E. !#/bin/zsh  ",
+            "answer": "B, C",
             "explanation": "Valid shell scripts begin with the characters #! and the complete path to a program that can run the script. Options B and C both meet this description, because /bin/bash is a shell program that\u2019s installed on virtually all Linux systems and /bin/ tcsh is often also available. There is no standard /bin/script program, so option A is incorrect. Options D and E are both almost correct; /bin/sh is typically linked to a valid shell and /bin/zsh is a valid shell on many systems, but the order of the first two characters is reversed, so these options are incorrect.  \n"
         },
         {
             "id": "12",
-            "question": "Your SMTP email server receives a message addressed to postmaster. The postmaster  username has an alias of john on this computer. Assuming that the system is properly con-  figured, who will receive the email message?  \n A. postmaster  \n B. john  \n C. The account listed in ~/.forward  \n D. root  \n E. No user, because an alias was set  ",
-            "answer": "ABD",
+            "question": "Which of the following are valid looping statements in bash shell scripting? (Select all that apply.)  \n A. for  \n B. while  \n C. if-then  \n D. until  \n E. case  ",
+            "answer": "A, B, D",
             "explanation": "The for, while, and until statements are all valid looping statements in bash, so options A, B, and D are all correct. The if-then statement in bash\u2019s scripting language tests a condition and, if it is true, executes its commands one time only. Therefore, option C is incorrect. The case statement is a conditional, not a looping statement in bash, so option E is incorrect.  \n"
         },
         {
             "id": "13",
-            "question": "Which of the following is not a popular SMTP server for Linux?  \n A. Postfix  \n B. Sendmail  \n C. Fetchmail  \n D. Exim  \n E. qmail  ",
+            "question": "Your SMTP email server receives a message addressed to postmaster. The postmaster  username has an alias of john on this computer. Assuming that the system is properly con-  figured, who will receive the email message?  \n A. postmaster  \n B. john  \n C. The account listed in ~/.forward  \n D. root  \n E. No user, because an alias was set  ",
             "answer": "B",
             "explanation": "When aliases are properly configured, any email addresses sent to the email with an alias is received by the alias account. Therefore, option B is correct. The postmaster username would not receive the email because the alias is set to john, and so option A is incorrect. The ~/.forward file is associated with email forwarding, not aliases. Therefore, option C is incorrect. There is no reason for root to receive this email, so option D is incorrect. An alias does allow email to be sent to the alias account, so the statement in Option E does not make sense and is incorrect.  \n"
         },
         {
             "id": "14",
-            "question": "You see the following line in a script:  mail -s \\\"Error\\\" -c abort < /tmp/msg root   What is the effect of this line, if and when it executes?  \n A. An email is sent to the user Error, the script is aborted using root privileges, and error  messages are written to /tmp/msg.  \n B. An email with the subject of Error and the contents from /tmp/msg is sent to the local  users root and abort.           \n C. An email with the subject of Error and the contents of /tmp/msg is sent to the local  user root, and then the script is aborted.  \n D. An email is sent with Error priority to the local user root, and the email system is  then shut down with error messages being stored in /tmp/msg.  \n E. An email with the subject of Error and contents of /tmp/msg is sent to root, and  information on this is logged with priority abort.  ",
+            "question": "Which of the following is not a popular SMTP server for Linux?  \n A. Postfix  \n B. Sendmail  \n C. Fetchmail  \n D. Exim  \n E. qmail  ",
             "answer": "C",
             "explanation": "The Fetchmail program is a tool for retrieving email from remote POP or IMAP servers and injecting it into a local (or remote) SMTP email queue. As such, it\u2019s not \u25a0 an SMTP server, so option C is correct. Postfix (option A), sendmail (option B), Exim (option D), and qmail (option E) are all popular SMTP email servers for Linux.  \n"
         },
         {
             "id": "15",
-            "question": "Your Internet connection has gone down for several hours. What command can you use to  check if there is a long list of jobs in the email queue?  \n A. service sendmail status  \n B. lp -d queue ~/Maildir  \n C. sendmail -bq  \n D. mailq  \n E. ls /var/spool  ",
+            "question": "You see the following line in a script:  mail -s \\\"Error\\\" -c abort < /tmp/msg root   What is the effect of this line, if and when it executes?  \n A. An email is sent to the user Error, the script is aborted using root privileges, and error  messages are written to /tmp/msg.  \n B. An email with the subject of Error and the contents from /tmp/msg is sent to the local  users root and abort.           \n C. An email with the subject of Error and the contents of /tmp/msg is sent to the local  user root, and then the script is aborted.  \n D. An email is sent with Error priority to the local user root, and the email system is  then shut down with error messages being stored in /tmp/msg.  \n E. An email with the subject of Error and contents of /tmp/msg is sent to root, and  information on this is logged with priority abort.  ",
             "answer": "B",
             "explanation": "The -s option to mail sets the message subject line, and -c sets carbon copy (cc:) recipients. Input redirection (via <) reads the contents of a line into mail as a message. A mail command line normally terminates with the primary recipient. Thus, option B correctly describes the effect of the specified line. Options A, C, D, and E are all confused in their interpretation of the effects of mail parameters. Options A, B, and D also confuse input and output redirection, and option A incorrectly suggests that a script (or the mail program) can elevate its run status to root privileges.  \n"
         },
         {
             "id": "16",
-            "question": "You examine your /etc/aliases file and find that it contains the following line:   root: jody   What can you conclude from this?  \n A. Email addressed to jody on this system will be sent to the local user root.  \n B. Email addressed to root on this system will be sent to the local user jody.  \n C. The local user jody has broken into the system and has acquired root privileges.  \n D. The local user jody has permission to read email directly from root\u2019s mail queue.  \n E. The administrator may log in using either username: root or jody.  ",
+            "question": "Your Internet connection has gone down for several hours. What command can you use to  check if there is a long list of jobs in the email queue?  \n A. service sendmail status  \n B. lp -d queue ~/Maildir  \n C. sendmail -bq  \n D. mailq  \n E. ls /var/spool  ",
             "answer": "D",
             "explanation": "To view your mail queue, use the mailq command (option D). The service sendmail status command is a SysV service status command and does not show mail queues, so option A is incorrect. Option B is a printer command and is therefore incorrect. Option C is close, but the correct command is sendmail -bp not -bq. Option E will show you the various directories within /var/spool and is therefore not the correct command.  \n"
         },
         {
             "id": "17",
-            "question": "You\u2019ve just installed MySQL and run it by typing mysql. How would you create a database  called fish to store data on different varieties of fish?  \n A. Type NEW DATABASE fish; at the mysql> prompt.  \n B. Type CREATE DATABASE fish; at the mysql> prompt.  \n C. Type NEW DATABASE FISH; at the mysql> prompt.  \n D. Type DATABASE CREATE fish; at the mysql> prompt.  \n E. Type DB CREATE fish; at the mysql> prompt.  ",
+            "question": "You examine your /etc/aliases file and find that it contains the following line:   root: jody   What can you conclude from this?  \n A. Email addressed to jody on this system will be sent to the local user root.  \n B. Email addressed to root on this system will be sent to the local user jody.  \n C. The local user jody has broken into the system and has acquired root privileges.  \n D. The local user jody has permission to read email directly from root\u2019s mail queue.  \n E. The administrator may log in using either username: root or jody.  ",
             "answer": "B",
             "explanation": "The /etc/aliases file configures system-wide email forwarding. The specified line does as option B describes. A configuration like this one is common. Option A has things reversed. Option C is not a valid conclusion from this evidence alone, although an intruder conceivably may be interested in redirecting root\u2019s email, so if jody shouldn\u2019t be receiving root\u2019s email, this should be investigated further. Although the effect of option D (jody reading root\u2019s email) is nearly identical to the correct answer\u2019s effect, they are different; jody cannot directly access the file or directory that is root\u2019s email queue. Instead, the described configuration redirects root\u2019s email into jody\u2019s email queue. Thus, option D is incorrect. Because /etc/aliases is an email configuration file, not an account configuration file, it can\u2019t have the effect described in option E.  \n"
         },
         {
             "id": "18",
-            "question": "Which of the following are true statements about SQL tables? (Select two.)  \n A. Multiple tables may exist in a single SQL database.  \n B. Tables may be combined for cross-table searches using the DROP command.  \n C. Tables consist of rows, each of which holds attributes, and columns, each of which  defines a specific database item.  \n D. Careful table design can reduce the amount of data entry and database storage size.  \n E. Tables are stored on disk using a lossy compression algorithm.          ",
+            "question": "You\u2019ve just installed MySQL and run it by typing mysql. How would you create a database  called fish to store data on different varieties of fish?  \n A. Type NEW DATABASE fish; at the mysql> prompt.  \n B. Type CREATE DATABASE fish; at the mysql> prompt.  \n C. Type NEW DATABASE FISH; at the mysql> prompt.  \n D. Type DATABASE CREATE fish; at the mysql> prompt.  \n E. Type DB CREATE fish; at the mysql> prompt.  ",
             "answer": "B",
             "explanation": "The CREATE DATABASE command creates a new database with the specified name. Because SQL commands are case insensitive, this command may be typed in uppercase or lowercase, and option B is correct. Options A and C both use the incorrect command NEW rather than CREATE, and option C specifies the database name as FISH rather than fish. (Database names are case sensitive.) Option D reverses the order of the CREATE and DATABASE keywords. Option E uses the fictitious command DB.  \n"
         },
         {
             "id": "19",
-            "question": "What is the effect of the following SQL command, assuming the various names and  data exist?  mysql> UPDATE stars SET magnitude=2.25 WHERE starname='Mintaka';   \n A. It returns database entries from the stars table for all stars with magnitude of 2.25  and starname of Mintaka.  \n B. It sets the value of the stars field in the magnitude set to Mintaka, using a precision  of 2.25.  \n C. It sets the value of the magnitude field to 2.25 for any item in the stars table with the  starname value of Mintaka.  \n D. It combines the stars and magnitude=2.25 tables, returning all items for which the  starname is Mintaka.  \n E. It updates the stars database, creating a new entry with a starname value of Mintaka  and a magnitude of 2.25.            ",
-            "answer": "AD",
+            "question": "Which of the following are true statements about SQL tables? (Select two.)  \n A. Multiple tables may exist in a single SQL database.  \n B. Tables may be combined for cross-table searches using the DROP command.  \n C. Tables consist of rows, each of which holds attributes, and columns, each of which  defines a specific database item.  \n D. Careful table design can reduce the amount of data entry and database storage size.  \n E. Tables are stored on disk using a lossy compression algorithm.          ",
+            "answer": "A, D",
             "explanation": "A single database may hold multiple tables, as option A suggests. Option D is also correct; if data is split across tables (such as into tables describing objects generically and specifically), databases can be more space efficient. Option B is incorrect because the DROP command doesn\u2019t combine tables\u2014it deletes a table! Option C is incorrect because it reverses the meaning of rows and columns in a SQL table. A lossy compression algorithm, as the name suggests, deliberately corrupts or loses some data\u2014an unacceptable option for a text database, making option E incorrect. (Lossy compression is used for some audio and video file formats, though.)  \n"
         },
         {
             "id": "20",
-            "question": "Typing lsof -i | grep LISTEN as root produces three lines of output, corresponding  to the sendmail, sshd, and proftpd servers. What can you conclude about the security of  this system?  \n A. Everything is OK; the presence of sshd ensures that data are being encrypted via SSH.  \n B. The sendmail and sshd servers are OK, but the FTP protocol used by proftpd is  insecure and should never be used.  \n C. The sendmail server should be replaced by Postfix or qmail for improved security, but  sshd and proftpd are fine.  \n D. Because sendmail and proftpd both use unencrypted text-mode data transfers,  neither is appropriate on a network-connected computer.  \n E. No conclusion can be drawn without further information; the listed servers may or  may not be appropriate or authentic.  ",
+            "question": "What is the effect of the following SQL command, assuming the various names and  data exist?  mysql> UPDATE stars SET magnitude=2.25 WHERE starname='Mintaka';   \n A. It returns database entries from the stars table for all stars with magnitude of 2.25  and starname of Mintaka.  \n B. It sets the value of the stars field in the magnitude set to Mintaka, using a precision  of 2.25.  \n C. It sets the value of the magnitude field to 2.25 for any item in the stars table with the  starname value of Mintaka.  \n D. It combines the stars and magnitude=2.25 tables, returning all items for which the  starname is Mintaka.  \n E. It updates the stars database, creating a new entry with a starname value of Mintaka  and a magnitude of 2.25.            ",
             "answer": "C",
             "explanation": "The UPDATE command modifies existing database table entries, and in this case it does so as option C describes. Option B also describes an update operation, but in a confused and incorrect way. Options A and D both describe database retrieval operations, but UPDATE doesn\u2019t retrieve data. Option E mistakenly identifies stars as a database name, but it\u2019s a table name, and it mistakenly identifies the operation as adding a new entry (INSERT in SQL) rather than as modifying an existing entry (UPDATE in SQL).  \n"
         }
@@ -4546,117 +4540,123 @@
     "Chapter 10: Securing Your System": [
         {
             "id": "1",
-            "question": "As part of a security audit, you plan to use Nmap to check all of the computers on your  network for unnecessary servers. Which of the following tasks should you do prior to  running your Nmap check?  \n A. Back up /etc/passwd on the target systems to eliminate the possibility of it being  damaged.  \n B. Obtain the root passwords to the target systems so that you can properly configure  them to accept the Nmap probes.  \n C. Obtain written permission from your boss to perform the Nmap sweep.  \n D. Configure /etc/sudoers on the computer you intend to use for the sweep, to give  yourself the ability to run Nmap.  \n E. Disable any firewall between the computer that\u2019s running Nmap and the servers you  intend to scan.  ",
+            "question": "Typing lsof -i | grep LISTEN as root produces three lines of output, corresponding  to the sendmail, sshd, and proftpd servers. What can you conclude about the security of  this system?  \n A. Everything is OK; the presence of sshd ensures that data are being encrypted via SSH.  \n B. The sendmail and sshd servers are OK, but the FTP protocol used by proftpd is  insecure and should never be used.  \n C. The sendmail server should be replaced by Postfix or qmail for improved security, but  sshd and proftpd are fine.  \n D. Because sendmail and proftpd both use unencrypted text-mode data transfers,  neither is appropriate on a network-connected computer.  \n E. No conclusion can be drawn without further information; the listed servers may or  may not be appropriate or authentic.  ",
             "answer": "E",
             "explanation": "The server names alone are insufficient to determine whether they\u2019re legitimate. The computer in question may or may not need to run any of these servers, and their presence may or may not be intentional, accidental, or the sign of an intrusion. Thus, option E is correct. Contrary to option A, the mere presence of an SSH server does not ensure security. Although, as option B asserts, FTP is not a secure protocol, it\u2019s still useful in some situations, so the mere presence of an FTP server is not, by itself, grounds for suspicion. Similarly, in option C, although some administrators prefer Postfix or qmail to sendmail for security reasons, sendmail isn\u2019t necessarily bad, and the names alone don\u2019t guarantee that the sshd and proftpd servers are legitimate. As option D states, sendmail and proftpd both use unencrypted text-mode transfers, but this is appropriate in some situations, so option D is incorrect.  \n"
         },
         {
             "id": "2",
-            "question": "Your login server is using PAM, and you want to limit users\u2019 access to system resources.  Which configuration file will you need to edit?  \n A. /etc/limits.conf  \n B. /etc/pam/limits.conf  \n C. /etc/security/limits.conf  \n D. /etc/security/pam/limits.conf  \n E. /usr/local/limits.conf  ",
+            "question": "As part of a security audit, you plan to use Nmap to check all of the computers on your  network for unnecessary servers. Which of the following tasks should you do prior to  running your Nmap check?  \n A. Back up /etc/passwd on the target systems to eliminate the possibility of it being  damaged.  \n B. Obtain the root passwords to the target systems so that you can properly configure  them to accept the Nmap probes.  \n C. Obtain written permission from your boss to perform the Nmap sweep.  \n D. Configure /etc/sudoers on the computer you intend to use for the sweep, to give  yourself the ability to run Nmap.  \n E. Disable any firewall between the computer that\u2019s running Nmap and the servers you  intend to scan.  ",
             "answer": "C",
             "explanation": "Although Nmap and other port scanners are useful security tools, troublemakers also use them, and many organizations have policies restricting their use. Thus, you should always obtain permission to use such tools prior to using them, as option C specifies. A port scanner can\u2019t cause damage to /etc/passwd, so there\u2019s no need to back it up, contrary to option A. A port scanner also doesn\u2019t need the root password on a target system to operate, so you don\u2019t need this information, making option B incorrect. (In fact, asking for the root password could be seen as extremely suspicious!) Although you could use sudo to run Nmap, there\u2019s no need to do so to perform a TCP scan, and you can perform a UDP scan by running Nmap as root in other ways (such as via a direct login or by using su). Thus, option D isn\u2019t strictly necessary, although you might want to tweak /etc/sudoers as a matter of system policy. Because a firewall is part of your network\u2019s security, you probably want it running when you perform a network scan, contrary to option E. Furthermore, it would be safer to leave the firewall running and scan from behind it if you want to test the security of the network in case of a firewall breach.  \n"
         },
         {
             "id": "3",
-            "question": "Which of the following tools might you use to check for open ports on a local computer?  (Select three.)  \n A. Nmap  \n B. netstat  \n C. lsof           \n D. portmap  \n E. services  ",
+            "question": "Your login server is using PAM, and you want to limit users\u2019 access to system resources.  Which configuration file will you need to edit?  \n A. /etc/limits.conf  \n B. /etc/pam/limits.conf  \n C. /etc/security/limits.conf  \n D. /etc/security/pam/limits.conf  \n E. /usr/local/limits.conf  ",
             "answer": "C",
             "explanation": "The /etc/security/limits.conf (option C) file holds the configuration settings that allow you to limit users\u2019 access. The other options listed don\u2019t give the correct path to this file.  \n"
         },
         {
             "id": "4",
-            "question": "Which of the following commands will locate all of the program files on a computer on  which the SUID bit is set?  \n A. find / -type SUID  \n B. find / -perm +4000 -type f  \n C. find / -perm +SUID -type f  \n D. find / -type +4000  \n E. find / -suid  ",
-            "answer": "ABC",
+            "question": "Which of the following tools might you use to check for open ports on a local computer?  (Select three.)  \n A. Nmap  \n B. netstat  \n C. lsof           \n D. portmap  \n E. services  ",
+            "answer": "A, B, C",
             "explanation": "Nmap (option A) is usually used to perform scans of remote computers, but it can scan the computer on which it\u2019s run as well. The netstat (option B) and lsof (option C) utilities can both identify programs that are listening for connections (that is, open ports) on the local computer. The Network File System (NFS) and some other \u25a0 servers use the portmap program (option D), but it\u2019s not used to identify open ports. There is no standard Linux services program (option E), although the /etc/services file holds a mapping of port numbers to common service names.  \n"
         },
         {
             "id": "5",
-            "question": "The /etc/sudoers file on a computer includes the following line. What is its effect?  %admin ALL=(ALL) ALL   \n A. Members of the admin group may run all programs with root privileges by using sudo.  \n B. Users in the admin user alias, defined earlier in the file, may run all programs with  root privileges by using sudo.  \n C. The admin user alias is defined to include all users on the system.  \n D. The admin command alias is defined to include all commands.  \n E. The user admin may run all programs on the computer as root by using sudo.  ",
+            "question": "Which of the following commands will locate all of the program files on a computer on  which the SUID bit is set?  \n A. find / -type SUID  \n B. find / -perm +4000 -type f  \n C. find / -perm +SUID -type f  \n D. find / -type +4000  \n E. find / -suid  ",
             "answer": "B",
             "explanation": "The -perm option to find locates files with the specified permissions, and +4000 is a permission code that matches SUID files. The -type f option restricts matches to files in order to avoid false alarms on directories. Option B uses these features correctly. Options A, C, and D use these features incorrectly. Option E specifies a fictitious -suid parameter to find.  \n"
         },
         {
             "id": "6",
-            "question": "Which command would you type, as root, to discover all the open network connections on  a Linux computer?  \n A. lsof -c a  \n B. netstat -ap  \n C. ifconfig eth0  \n D. nmap -sT localhost  \n E. top -net  ",
+            "question": "The /etc/sudoers file on a computer includes the following line. What is its effect?  %admin ALL=(ALL) ALL   \n A. Members of the admin group may run all programs with root privileges by using sudo.  \n B. Users in the admin user alias, defined earlier in the file, may run all programs with  root privileges by using sudo.  \n C. The admin user alias is defined to include all users on the system.  \n D. The admin command alias is defined to include all commands.  \n E. The user admin may run all programs on the computer as root by using sudo.  ",
             "answer": "A",
             "explanation": "Option A correctly describes the meaning of the specified line. A percent sign (%) identifies a Linux group name, and the remainder of the line tells sudoers to enable users of that group to run all programs as root by using sudo. The remaining options all misinterpret one or more elements of this configuration file entry.  \n"
         },
         {
             "id": "7",
-            "question": "A server/computer combination appears in both hosts.allow and hosts.deny. What\u2019s the  result of this configuration when TCP wrappers runs?  \n A. TCP wrappers refuses to run and logs an error in /var/log/messages.  \n B. The system\u2019s administrator is paged to decide whether to allow access.  \n C. hosts.deny takes precedence; the client is denied access to the server.  \n D. hosts.allow takes precedence; the client is granted access to the server.  \n E. The client is granted access to the server if no other client is currently  accessing it.  ",
+            "question": "Which command would you type, as root, to discover all the open network connections on  a Linux computer?  \n A. lsof -c a  \n B. netstat -ap  \n C. ifconfig eth0  \n D. nmap -sT localhost  \n E. top -net  ",
             "answer": "B",
             "explanation": "The netstat command can do what is described in the question. The -ap options to the command are good choices to discover all the open network connections, so option B is correct. Although lsof can also accomplish the job, the -c a option is incorrect; this option restricts output to processes whose names begin with a. Thus, option A is incorrect. Option C\u2019s ifconfig command doesn\u2019t display open network connections, so it\u2019s incorrect. Although option D\u2019s nmap command will locate ports that are open on the localhost interface, it doesn\u2019t locate all open connections, nor does it locate connections on anything but the localhost interface. Option E\u2019s top command displays a list of processes sorted by CPU use, not open network connections (-net is an invalid option to top as well).  \n"
         },
         {
             "id": "8",
-            "question": "When is the bind option of xinetd most useful?  \n A. When you want to run two servers on one port  \n B. When you want to specify computers by name rather than IP address  \n C. When xinetd is running on a system with two network interfaces           \n D. When resolving conflicts between different servers  \n E. When xinetd manages a DNS server program  ",
+            "question": "A server/computer combination appears in both hosts.allow and hosts.deny. What\u2019s the  result of this configuration when TCP wrappers runs?  \n A. TCP wrappers refuses to run and logs an error in /var/log/messages.  \n B. The system\u2019s administrator is paged to decide whether to allow access.  \n C. hosts.deny takes precedence; the client is denied access to the server.  \n D. hosts.allow takes precedence; the client is granted access to the server.  \n E. The client is granted access to the server if no other client is currently  accessing it.  ",
             "answer": "D",
             "explanation": "Option D is correct. TCP wrappers uses this feature to allow you to override broad denials by adding more specific access permissions to hosts.allow, as when setting a default deny policy (ALL : ALL) in hosts.deny.  \n"
         },
         {
             "id": "9",
-            "question": "You\u2019ve discovered that the Waiter program (a network server) is running inappropriately  on your computer. You therefore locate its startup script and shut it down by removing that  script. How can you further reduce the risk that outsiders will abuse the Waiter program?  (Select two.)  \n A. By blocking the Waiter program\u2019s port using a firewall rule  \n B. By reading the Waiter program\u2019s documentation to learn how to run it in  stealth mode  \n C. By tunneling the Waiter program\u2019s port through SSH  \n D. By uninstalling the Waiter package  \n E. By uninstalling any clients associated with Waiter from the server computer  ",
+            "question": "When is the bind option of xinetd most useful?  \n A. When you want to run two servers on one port  \n B. When you want to specify computers by name rather than IP address  \n C. When xinetd is running on a system with two network interfaces           \n D. When resolving conflicts between different servers  \n E. When xinetd manages a DNS server program  ",
             "answer": "C",
             "explanation": "The bind option of xinetd lets you tie a server to just one network interface rather than link to them all, so option C is correct. It has nothing to do with running multiple servers on one port (option A), specifying computers by hostname (option B), resolving conflicts between servers (option D), or the Berkeley Internet Name Domain (BIND) or any other DNS server (option E).  \n"
         },
         {
             "id": "10",
-            "question": "You want to use xinetd access controls to limit who may access a server that\u2019s launched via  xinetd. Specifically, only users on the 192.168.7.0/24 network block should be able to use  that server. How may you do this?  \n A. Enter hosts_allowed = 192.168.7.0/24 in the /etc/xinetd.conf  configuration file for the server in question.  \n B. Enter only_from = 192.168.7.0/24 in the /etc/xinetd.conf configuration file  for the server in question.  \n C. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.allow file.  \n D. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.deny file.  \n E. Type iptables -L 192.168.7.0 to enable only users of 192.168.7.0/24 to access  the server.  ",
-            "answer": "AD",
+            "question": "You\u2019ve discovered that the Waiter program (a network server) is running inappropriately  on your computer. You therefore locate its startup script and shut it down by removing that  script. How can you further reduce the risk that outsiders will abuse the Waiter program?  (Select two.)  \n A. By blocking the Waiter program\u2019s port using a firewall rule  \n B. By reading the Waiter program\u2019s documentation to learn how to run it in  stealth mode  \n C. By tunneling the Waiter program\u2019s port through SSH  \n D. By uninstalling the Waiter package  \n E. By uninstalling any clients associated with Waiter from the server computer  ",
+            "answer": "A, D",
             "explanation": "Using a firewall rule to block Waiter\u2019s port, as in option A, can increase security by providing redundancy; if Waiter is accidentally run in the future, the firewall rule will block access to its port. Uninstalling the program, as in option D, improves security by reducing the risk that the program will be accidentally run in the future. Most programs don\u2019t have a \u201cstealth\u201d mode, so option B is incorrect. (Furthermore, reading the documentation isn\u2019t enough; to improve security, you must change some configuration.) Tunneling Waiter\u2019s connections might have some benefit in some situations, but this configuration requires setup on both client and server computers and by itself leaves the server\u2019s port open, so option C is incorrect. Clients associated with the server program, installed on the server computer, pose little or no risk of abuse of the associated server; the clients on other computers are most likely to be used to abuse a server program, and you can\u2019t control that. Thus option E is incorrect.  \n"
         },
         {
             "id": "11",
-            "question": "Of the following, which is the best password?  \n A. Odysseus  \n B. iA71Oci^My~~~~~~  \n C. pickettomato  \n D. Denver2Colorado  \n E. 123456  ",
+            "question": "You want to use xinetd access controls to limit who may access a server that\u2019s launched via  xinetd. Specifically, only users on the 192.168.7.0/24 network block should be able to use  that server. How may you do this?  \n A. Enter hosts_allowed = 192.168.7.0/24 in the /etc/xinetd.conf  configuration file for the server in question.  \n B. Enter only_from = 192.168.7.0/24 in the /etc/xinetd.conf configuration file  for the server in question.  \n C. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.allow file.  \n D. Enter server : 192.168.7., where server is the server\u2019s name, in the /etc/  hosts.deny file.  \n E. Type iptables -L 192.168.7.0 to enable only users of 192.168.7.0/24 to access  the server.  ",
             "answer": "B",
             "explanation": "Option B correctly describes how to accomplish this goal. Option A is incorrect because the hosts_allowed option isn\u2019t a legal xinetd configuration file option. Option C correctly describes how to configure the described restriction using TCP wrappers, which is generally used with inetd, but it\u2019s not the way this is done using xinetd. Option D is also a TCP wrappers description, but it reverses the meaning. Option E\u2019s iptables utility configures a firewall. Although a firewall rule could be a useful redundant measure, the question specifies an xinetd configuration, and option E\u2019s use of iptables is incorrect.  \n"
         },
         {
             "id": "12",
-            "question": "Which of the following types of attacks involves sending bogus email to lure unsuspecting  individuals into divulging sensitive financial or other information?  \n A. Phishing  \n B. Script kiddies  \n C. Spoofing  \n D. Ensnaring  \n E. Hacking          ",
+            "question": "Of the following, which is the best password?  \n A. Odysseus  \n B. iA71Oci^My~~~~~~  \n C. pickettomato  \n D. Denver2Colorado  \n E. 123456  ",
             "answer": "B",
             "explanation": "Ideally, passwords should be completely random but still memorable. Option B\u2019s password was generated from a personally meaningful acronym and then modified to change the case of some letters, add random numbers and symbols, and extend its length using a repeated character. This creates a password that\u2019s close to random but still memorable. Option A uses a well-known mythological figure, who is likely to be in a dictionary. Option C uses two common words, which is arguably better than option A, but not by much. Option D uses two closely related words separated by a single number, which is also a poor choice for a password. Option E uses a sequential series of numbers, which is a poor (but sadly common) password choice.  \n"
         },
         {
             "id": "13",
-            "question": "Ordinary users report being unable to log onto a computer, but root has no problems doing  so. What might you check to explain this situation?  \n A. A misbehaving syslogd daemon  \n B. A login process that\u2019s running as root  \n C. The presence of an /etc/nologin file  \n D. The presence of an SUID bit on /bin/login  \n E. Inappropriate use of shadow passwords  ",
+            "question": "Which of the following types of attacks involves sending bogus email to lure unsuspecting  individuals into divulging sensitive financial or other information?  \n A. Phishing  \n B. Script kiddies  \n C. Spoofing  \n D. Ensnaring  \n E. Hacking          ",
             "answer": "A",
             "explanation": "Phishing (option A) involves sending bogus email or setting up fake websites that lure unsuspecting individuals into divulging sensitive financial information or other sensitive information. Script kiddies (option B) are intruders who use root kits. Spoofing (option C) involves pretending that data is coming from one computer when it\u2019s coming from another. Ensnaring (option D) isn\u2019t a type of attack. Hacking (option E) refers to either lawful use of a computer for programming or other advanced tasks or breaking into computers.  \n"
         },
         {
             "id": "14",
-            "question": "Which servers might you consider retiring after activating an SSH server? (Select two.)  \n A. SMTP  \n B. Telnet  \n C. FTP  \n D. NTP  \n E. Samba  ",
+            "question": "Ordinary users report being unable to log onto a computer, but root has no problems doing  so. What might you check to explain this situation?  \n A. A misbehaving syslogd daemon  \n B. A login process that\u2019s running as root  \n C. The presence of an /etc/nologin file  \n D. The presence of an SUID bit on /bin/login  \n E. Inappropriate use of shadow passwords  ",
             "answer": "C",
             "explanation": "The /etc/nologin file, if present, prevents logins from ordinary users; only root may log in. You might set this file when performing maintenance and then forget to remove it, thus explaining the symptoms in the question. Thus, option C is correct. The syslogd daemon mentioned in option A records system messages, and it is unlikely to produce the specified symptoms. The login process ordinarily runs as root and is normally SUID root, so options B and D are also incorrect. Shadow passwords, as in option E, are used on almost all modern Linux systems and are not likely to cause these symptoms.  \n"
         },
         {
             "id": "15",
-            "question": "You find that the ssh_host_dsa_key file in /etc/ssh has 0666 (-rw-rw-rw-) permissions.  Your SSH server has been in operation for several months. Should you be concerned?  \n A. Yes  \n B. No  \n C. Only if the ssh_host_dsa_key.pub file is also world-readable  \n D. Only if you\u2019re launching SSH from a super server  \n E. Only if you\u2019re using a laptop computer  ",
-            "answer": "BC",
+            "question": "Which servers might you consider retiring after activating an SSH server? (Select two.)  \n A. SMTP  \n B. Telnet  \n C. FTP  \n D. NTP  \n E. Samba  ",
+            "answer": "B, C",
             "explanation": "SSH is most directly a replacement for Telnet (option B), but SSH also includes file-transfer features that enable it to replace FTP (option C) in many situations. SSH is not a direct replacement for the Simple Mail Transfer Protocol (SMTP, option A), the Network Time Protocol (NTP, option D), or Samba (option E).  \n"
         },
         {
             "id": "16",
-            "question": "For best SSH server security, how should you set the Protocol option in /etc/ssh/  sshd_config?  \n A. Protocol 1  \n B. Protocol 2  \n C. Protocol 1,2  \n D. Protocol 2,1  \n E. Protocol *  ",
+            "question": "You find that the ssh_host_dsa_key file in /etc/ssh has 0666 (-rw-rw-rw-) permissions.  Your SSH server has been in operation for several months. Should you be concerned?  \n A. Yes  \n B. No  \n C. Only if the ssh_host_dsa_key.pub file is also world-readable  \n D. Only if you\u2019re launching SSH from a super server  \n E. Only if you\u2019re using a laptop computer  ",
             "answer": "A ",
             "explanation": "The ssh_host_dsa_key file holds one of three critical private keys for SSH. The fact that this key is readable (and writeable!) to the entire world is disturbing, so option A is correct. In principle, a troublemaker who has acquired this file might be able to redirect traffic and masquerade as your system, duping users into delivering passwords and other sensitive data. Because of this, option B (no) is an incorrect response, and \u25a0 the conditions imposed by options C, D, and E are all irrelevant, making all of these options incorrect.  \n"
         },
         {
             "id": "17",
-            "question": "Why is it unwise to allow root to log on directly using SSH?  \n A. Disallowing direct root access means that the SSH server may be run by a non-root  user, improving security.  \n B. The root password should never be sent over a network connection; allowing root  logins in this way is inviting disaster.  \n C. SSH stores all login information, including passwords, in a publicly readable file.  \n D. When logged on using SSH, root\u2019s commands can be easily intercepted and duplicated  by undesirable elements.  \n E. Somebody with the root password but no other password can then break into  the computer.          ",
+            "question": "For best SSH server security, how should you set the Protocol option in /etc/ssh/  sshd_config?  \n A. Protocol 1  \n B. Protocol 2  \n C. Protocol 1,2  \n D. Protocol 2,1  \n E. Protocol *  ",
             "answer": "B",
             "explanation": "SSH protocol level 2 is more secure than protocol level 1; thus option B (specifying acceptance of level 2 only) is the safest approach. Option A is the least safe approach because it precludes the use of the safer level 2. Options C and D are exactly equivalent in practice; both support both protocol levels. Option E is invalid.  \n"
         },
         {
             "id": "18",
-            "question": "You\u2019ve downloaded a GPG public key from a website into the file fredkey.pub. What must  you do with this key to use it?  \n A. Type inspect-gpg fredkey.pub.  \n B. Type gpg --readkey fredkey.pub.  \n C. Type import-gpg fredkey.pub.  \n D. Type gpg --import fredkey.pub.  \n E. Type gpg-import fredkey.pub.  ",
+            "question": "Why is it unwise to allow root to log on directly using SSH?  \n A. Disallowing direct root access means that the SSH server may be run by a non-root  user, improving security.  \n B. The root password should never be sent over a network connection; allowing root  logins in this way is inviting disaster.  \n C. SSH stores all login information, including passwords, in a publicly readable file.  \n D. When logged on using SSH, root\u2019s commands can be easily intercepted and duplicated  by undesirable elements.  \n E. Somebody with the root password but no other password can then break into  the computer.          ",
             "answer": "E",
             "explanation": "Allowing only normal users to log in via SSH effectively requires two passwords for any remote root maintenance, improving security, so option E is correct. Whether or not you permit root logins, the SSH server must normally run as root, since SSH uses port 22, a privileged port. Thus, option A is incorrect. SSH encrypts all connections, so it\u2019s unlikely that the password, or commands issued during an SSH session, will be intercepted, so option B isn\u2019t a major concern. (Nonetheless, some administrators prefer not to take even this small risk.) SSH doesn\u2019t store passwords in a file, so option C is incorrect. Because SSH employs encryption, option D is incorrect (this option better describes Telnet than SSH).  \n"
         },
         {
             "id": "19",
-            "question": "You want to send an encrypted message to an email correspondent. You both have GPG.  What do you need to exchange before you can send your encrypted message?  \n A. Your correspondent must obtain your GPG public key.  \n B. Your correspondent must obtain your GPG private key.  \n C. You must exchange private keys with your correspondent.  \n D. You must obtain your correspondent\u2019s GPG private key.  \n E. You must obtain your correspondent\u2019s GPG public key.      ",
+            "question": "You\u2019ve downloaded a GPG public key from a website into the file fredkey.pub. What must  you do with this key to use it?  \n A. Type inspect-gpg fredkey.pub.  \n B. Type gpg --readkey fredkey.pub.  \n C. Type import-gpg fredkey.pub.  \n D. Type gpg --import fredkey.pub.  \n E. Type gpg-import fredkey.pub.  ",
             "answer": "D",
             "explanation": "Option D provides the correct command to import fredkey.pub prior to use. The inspect-gpg, import-gpg, and gpg-import commands of options A, C, and E are fictitious, and there is no --readkey option to gpg, as option B suggests.  \n"
+        },
+        {
+            "id": "20",
+            "question": "You want to send an encrypted message to an email correspondent. You both have GPG.  What do you need to exchange before you can send your encrypted message?  \n A. Your correspondent must obtain your GPG public key.  \n B. Your correspondent must obtain your GPG private key.  \n C. You must exchange private keys with your correspondent.  \n D. You must obtain your correspondent\u2019s GPG private key.  \n E. You must obtain your correspondent\u2019s GPG public key.      ",
+            "answer": "E",
+            "explanation": "The usual method of sending encrypted messages with GPG entails the sender using the recipient\u2019s public key to encrypt the message. Thus, option E is correct. Option A would be correct if your correspondent needed to send you an encrypted message, but the question only specifies you sending the encrypted message. Options B, C, and D all entail delivery of private keys, which is inadvisable at best, because private keys in the wrong hands permit the holder to impersonate the person who owns the keys. \n"
         }
     ],
     "Exam-Topics 101 - Paywall breached (w/ explanations)": [

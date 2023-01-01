@@ -1,6 +1,6 @@
 import re
 from functions_briefmenow import *
-
+#modified on 1/1/23, modified regex to take out any matching of an IP adress
 def extraction_answers(txt_source,txt_cible, patterns_to_remove):
     f = open(txt_source, "r", encoding="utf8")
     linelist = f.readlines()
@@ -9,7 +9,7 @@ def extraction_answers(txt_source,txt_cible, patterns_to_remove):
     i = 0
     for line in linelist:
         i += 1
-        line = re.sub(r'(^[1-9][0-9]?\.)', r'£\1', line)
+        line = re.sub(r'(^([ ]+)?([1-9][0-9]?\.[^0-9]))', r'£\1', line)
         line = re.sub(r'\"', r'\\"', line)
         for patternos in range(0,len(patterns_to_remove)): 
             pattern = patterns_to_remove[int(patternos)]
@@ -64,7 +64,7 @@ def extraction_questions(txt_source,txt_cible, patterns_to_remove=[r"(.+)?Assess
     for line in linelist:
         i += 1
         line = re.sub(r'([A-B-C-D-E]\.)', r"§\1", line)
-        line = re.sub(r'^([ ]+)?([1-9][0-9]?\. )', r"£\2", line)
+        line = re.sub(r'^([ ]+)?([1-9][0-9]?\.[ ]?)', r"£\2", line)
         line = re.sub(r'\"', r'\\"', line)
         for patternos in range(0,len(patterns_to_remove)): 
             pattern = patterns_to_remove[int(patternos)]
@@ -105,14 +105,14 @@ def formattage_3_questions(clean_text_questions):
         templist_questions.append(formattage_2nd_questions(liste,x))
     return templist_questions
 
-def pre_insertion(liste_questions, templist_answers, x, nom_questionnaire):
+def pre_insertion(liste_questions, templist_answers, x, nom_questionnaire, filename):
     y = {
                 "id": str(templist_answers[0]),
                 "question": str(re.sub("§", r"\n ", liste_questions[int(x)])),
                 "answer": str(templist_answers[1]),
                 "explanation": str(templist_answers[2]),
             }
-    insertion_json(y, 'auto_christine.json', nom_questionnaire)
+    insertion_json(y, filename, nom_questionnaire)
 
 def tous_ensemble_assessment(clean_text_questions, clean_text_answers, nom_questionnaire="questionnairetest"):
     liste_questions = formattage_3_questions(clean_text_questions)
@@ -123,7 +123,7 @@ def tous_ensemble_assessment(clean_text_questions, clean_text_answers, nom_quest
         pre_insertion(liste_questions, templist_answers, x, nom_questionnaire)
     print("finito")
 
-def tous_ensemble_general(clean_text_questions, clean_text_answers, noms_questionnaires):
+def tous_ensemble_general(clean_text_questions, clean_text_answers, noms_questionnaires, filename):
     liste_questions = formattage_3_questions(clean_text_questions)
     liste_answers = formattage_1ststep(clean_text_answers)
     x = 0
@@ -132,7 +132,7 @@ def tous_ensemble_general(clean_text_questions, clean_text_answers, noms_questio
         templist_answers = formattage_2ndstep_answer(liste_answers,x)
         if templist_answers[0]== "1":
                 chapitre_actuel += 1
-        pre_insertion(liste_questions, templist_answers, x, noms_questionnaires[int(chapitre_actuel)])
+        pre_insertion(liste_questions, templist_answers, x, noms_questionnaires[int(chapitre_actuel)], filename)
     print("finito")
 
     def formattage_insertion(clean_txt,noms_questionnaires, warning="RAS"):
@@ -194,11 +194,11 @@ def formattage_exam_essentials(txtsource, jsoncible):
             for occurence3 in range(0,len(liste_paragraphe_summary)):
                 liste_paragraphe_summary[occurence3] = re.sub(r"\n", " ", liste_paragraphe_summary[occurence3])
                 liste_paragraphe_summary[occurence3] = re.sub(r"§", r"\n", liste_paragraphe_summary[occurence3])
-        y = {
+        """y = {
                 "id": chapter_names,
                 "question": str(re.sub("§", r"\n ", liste_questions[int(x)])),
                 "answer": str(templist_answers[1]),
                 "explanation": str(templist_answers[2]),
             }
-            #APPEND TO data["exam essentials]["nb du chapitre"]
+            #APPEND TO data["exam essentials]["nb du chapitre"]"""
 

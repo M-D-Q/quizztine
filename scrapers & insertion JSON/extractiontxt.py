@@ -7,9 +7,9 @@ from functions_txt import *
 #formattage_insertion_assessment("sources\\answersassessment1.txt")
 
 
-###### BOF, ne supprime pas les lignes vide
+######  ne supprime pas les lignes vide
 #patterns_to_remove = [r"(.+)?[5-9][0-9][0-9]$", r"^(Appendix|Answers)", r"((Chapter [1-2]?[0-9]:).+)$", r"(\\n ? ?)|(\\n ? ?)", r"  [ ]*",]
-#extraction_answers("sources\\answersLPIC1cropped.txt","sources\\answersLPIC1cropped_cleaned.txt", patterns_to_remove)
+#extraction_answers("sources\\answersLPIC1cropped.txt","sources\\TOASTanswersLPIC1cropped_cleaned.txt", patterns_to_remove)
 
 
 
@@ -34,13 +34,13 @@ doc_cible_questions = "sources\\questionsLPIC1_cropped_cleaned.txt"
 # retirer les trucs indésirables, mettre les livres sterling au num des question, concatener tous avec un espace entre lines concaténées
 # split aux livres sterling
 # suppr les doubles espaces. remplacer les lettre de réponse par '\n'+lettre de réponse
-doc_cible_answers = "sources\\answersLPIC1cropped_cleaned.txt"
+doc_cible_answers = "sources\\TOASTanswersLPIC1cropped_cleaned.txt"
 chapter_names = ["Chapter 1: Exploring Linux Command-Line Tools", "Chapter 2: Managing Software", "Chapter 3: Configuring Hardware", "Chapter 4: Managing Files",
 "Chapter 5: Booting Linux and Editing Files", "Chapter 6: Configuring the X Window System, Localization, and Printing", "Chapter 7: Administering the System",
 "Chapter 8: Configuring Basic Networking", "Chapter 9: Writing Scripts, Configuring Email, and Using Databases", "Chapter 10: Securing Your System" ]
 #print(formattage_1ststep("sources\\answersLPIC1cropped_cleaned.txt"))
 
-tous_ensemble_general(doc_cible_questions, doc_cible_answers, chapter_names)
+tous_ensemble_general(doc_cible_questions, doc_cible_answers, chapter_names, 'toast.json')
 
 """patterns_to_remove = [r"(.+)?Assessment Test(.+)?", r"  [ ]*", r"^(.+)?flast.+$", r"\n"]
 
