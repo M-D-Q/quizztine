@@ -6,9 +6,9 @@ from selenium.webdriver import *
 from selenium.webdriver.chrome.options import Options
 from functions_briefmenow import *
 
-nom_questionnaire = "Exam-Topics 102-500 - Paywall breached"
+nom_questionnaire = "Exam-Topics AZ-104"
 liste_des_patterns = [r"<span.+>",r"</span>",r"(\n)|(\\n)", r"  [ ]*"]
-f3 = open("sources\\102-500.txt.txt", "r", encoding="utf8")
+f3 = open("az104.txt.txt", "r", encoding="utf8")
 liste_url = f3.readlines()
 f3.close
 
@@ -40,18 +40,29 @@ for url in liste_url:
         question.append(browser.find_element(By.XPATH, value=xpath_question).text)
         question.append(browser.find_element(By.XPATH, value=xpath1).get_attribute('innerHTML'))
         question.append(browser.find_element(By.XPATH, value=xpath2).get_attribute('innerHTML'))
-        question.append(browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML'))
-        question.append(browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML'))
         browser.find_element(By.CSS_SELECTOR, "body > div.sec-spacer.pt-50 > div > div:nth-child(3) > div > div.discussion-header-container > div.question-body.mt-3.pt-3.border-top > a.btn.btn-primary.reveal-solution").click()
         answer = browser.find_element(By.XPATH, value=xpath_correct_answer).text
-        
+        try : 
+            question.append(browser.find_element(By.XPATH, value=xpath3).get_attribute('innerHTML'))
+            
+        except : 
+            print("oopsie, pas de rép C")
+            question.append("")
+            
+        try : 
+            question.append(browser.find_element(By.XPATH, value=xpath4).get_attribute('innerHTML'))
+            
+        except : 
+            print("oopsie, pas de rép D")
+            question.append("")
+            
         try : 
             question.append(browser.find_element(By.XPATH, value=xpath5).get_attribute('innerHTML'))
-            i+=1
+            
         except : 
             print("oopsie, pas de rép E")
             question.append("")
-            i+=1
+            
         
         nettoyage_regex(liste_des_patterns, question)
         print(f"""{question[0]}
@@ -77,6 +88,7 @@ for url in liste_url:
                             "explanation": "A REMPLIR",
                             "url": url
                         }
+    i+=1
     insertion_json(y, 'auto_christine.json', str(nom_questionnaire))
     print(f"Procédure numéro : {liste_url.index(url)}")
 
