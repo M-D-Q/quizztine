@@ -3,9 +3,9 @@
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 97,
         "Exam-Topics 101 - Paywall breached - Input": 100,
         "Questionnaire_Shuffle": 60,
-        "Exam-Topics 102-500 - Paywall breached - Input": 100,
+        "Exam-Topics 102-500 - Paywall breached - Input": 95,
         "Chapter 6: Configuring the X Window System, Localization, and Printing": 40,
-        "Exam-Topics 102-500 - Paywall breached": 87
+        "Exam-Topics 102-500 - Paywall breached": 98
     },
     "Exam Essentials": [
         {
@@ -5929,17 +5929,10 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/39219-exam-102-500-topic-1-question-10-discussion"
         },
         {
-            "id": 15,
-            "question": "Which of the following changes may occur as a consequence of using the command ip? (Choose three.) \nA.Network interfaces may become active or inactive. \nB.New name servers may be added to the resolver configuration. \nC.The system's host name may change. \nD.IP addresses may change. \nE.The routing table may change.",
-            "answer": "ADE",
-            "explanation": "The correct answers are: \nA. Network interfaces may become active or inactive. \nD. IP addresses may change. \nE. The routing table may change. \n\nThe ip command is used to manipulate the networking settings of a Linux system, such as its network interfaces, IP addresses, and routing table. When you use the ip command, you can make the following changes: \n\n Network interfaces may become active or inactive: You can use the ip command to enable or disable network interfaces, depending on your needs. For example, you can use the ip link set dev eth0 down command to disable the eth0 interface, or the ip link set dev eth0 up command to enable it. \n IP addresses may change: You can use the ip command to add or remove IP addresses from a network interface. \nFor example, you can use the ip addr add 192.168.1.100/24 dev eth0 command to add the IP address 192.168.1.100/24 to the eth0 interface, or the ip addr del 192.168.1.100/24 dev eth0 command to remove it. \n The routing table may change: You can use the ip command to add, delete, or modify entries in the system's routing table. \nFor example, you can use the ip route add default via 192.168.1.1 command to add a default route through the router at IP address 192.168.1.1, or the ip route del default via 192.168.1.1 command to delete it. \n",
-            "url": "https://www.examtopics.com/discussions/lpi/view/37599-exam-102-500-topic-1-question-11-discussion"
-        },
-        {
             "id": 16,
             "question": "How many IP addresses can be used for unique hosts inside the IPv4 subnet 192.168.2.128/26? \nA.6 \nB.14 \nC.30 \nD.62 \nE.126",
             "answer": "D",
-            "explanation": "The correct answer is: D. 62 \n \nTo determine the number of IP addresses that can be used for unique hosts inside a subnet, you need to use the formula: \n2^(32-prefix length) - 2. In this case, the prefix length is 26, so the formula becomes: \n2^(32-26) - 2, which simplifies to: \n2^6 - 2, which is equal to: \n64 - 2, which is equal to: \n62. However, the subnet mask includes the network and broadcast addresses, which cannot be used for unique hosts. Therefore, the actual number of IP addresses that can be used for unique hosts is one less than the number calculated using the formula, which is: \n62 - 1, which is equal to: \n61.\n\n\nSite pour calculer : https://www.adminsub.net/ipv4-subnet-calculator/192.168.2.128/26",
+            "explanation": "The correct answer is: D. 62 \n \nTo determine the number of IP addresses that can be used for unique hosts inside a subnet, you need to use the formula: \n2^(32-prefix length) - 2. In this case, the prefix length is 26, so the formula becomes: \n2^(32-26) - 2, which simplifies to: \n2^6 - 2, which is equal to: \n64 - 2, which is equal to: \n62.\n\nSite pour calculer : https://www.adminsub.net/ipv4-subnet-calculator/192.168.2.128/26",
             "url": "https://www.examtopics.com/discussions/lpi/view/35400-exam-102-500-topic-1-question-12-discussion"
         },
         {
@@ -5999,25 +5992,11 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/66382-exam-102-500-topic-1-question-22-discussion"
         },
         {
-            "id": 28,
-            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.-z \nB.-eq \nC.-d \nD.-f \nE.-lt",
-            "answer": "CD",
-            "explanation": "C. -d\nThe -d operator tests whether a file is a directory. If the file is a directory, the test command returns a zero exit status (true). If the file is not a directory, it returns a non-zero exit status (false).\nD. -f\nThe -f operator tests whether a file is a regular file (not a directory or special file). If the file is a regular file, the test command returns a zero exit status (true). If the file is not a regular file, it returns a non-zero exit status (false).\nThe test command is a utility in Unix-like systems that is used to evaluate expressions and perform comparisons. The following comparison operators work on elements in the file system: -d and -f. The other comparison operators listed, such as -z, -eq, and -lt, are used for different purposes and are not specifically used to compare elements in the file system.",
-            "url": "https://www.examtopics.com/discussions/lpi/view/37605-exam-102-500-topic-2-question-22-discussion"
-        },
-        {
             "id": 29,
             "question": "Which of the following fields are available in the standard format of both the global /etc/crontab file as well as in user-specific crontab files? (Choose two.) \nA.Year \nB.Minute \nC.Username \nD.Effective group ID \nE.Command",
             "answer": "BE",
             "explanation": "B. Minute\nThe Minute field specifies the minute of the hour when the command should be run.\nE. Command\nThe Command field specifies the command to be run.\nThe standard format for crontab files includes the following fields: Minute, Hour, Day of the month, Month, Day of the week, and Command. The global /etc/crontab file and user-specific crontab files both use this standard format, with the additional field of 'username' in the global file specifying the user under which the command should be run. The other fields listed, such as Year and Effective group ID, are not part of the standard crontab format.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14243-exam-102-500-topic-1-question-23-discussion"
-        },
-        {
-            "id": 30,
-            "question": "Which of the following commands should be executed when starting a login shell in order to change the language of messages for an internationalized program toPortuguese (pt)? \nA.export LANGUAGE='pt' \nB.export LC_MESSAGES='pt' \nC.export UI_MESSAGES='pt' \nD.export MESSAGE='pt' \nE.export ALL_MESSAGES='pt'",
-            "answer": "B",
-            "explanation": "B. export LC_MESSAGES='pt'\nThe LC_MESSAGES environment variable specifies the language to be used for messages in internationalized programs. To change the language of messages to Portuguese (pt), the export command should be used to set the value of LC_MESSAGES to 'pt'. The other options listed, such as LANGUAGE, UI_MESSAGES, MESSAGE, and ALL_MESSAGES, are not valid environment variables for setting the language of messages in internationalized programs.",
-            "url": "https://www.examtopics.com/discussions/lpi/view/80191-exam-102-500-topic-1-question-24-discussion"
         },
         {
             "id": 31,
@@ -6029,23 +6008,16 @@
         {
             "id": 32,
             "question": "Which of the following steps prevents a user from obtaining an interactive login session? \nA.Setting the UID for the user to 0. \nB.Running the command chsh -s /bin/false with the user name. \nC.Removing the user from the group staff. \nD.Adding the user to /etc/noaccess. \nE.Creating a .nologin file in the user's home directory.",
-            "answer": "E",
-            "explanation": "E. Creating a .nologin file in the user's home directory.\nThe .nologin file is a special file that can be placed in a user's home directory to prevent the user from obtaining an interactive login session. When the user attempts to log in, the system will check for the presence of the .nologin file and, if it exists, will display the contents of the file to the user and then terminate the login session. The other options listed, such as setting the UID to 0, running the chsh command with /bin/false, removing the user from the group staff, and adding the user to /etc/noaccess, do not prevent a user from obtaining an interactive login session.",
+            "answer": "B",
+            "explanation": "B. Running the command chsh -s /bin/false with the user name is the correct answer.\n\nThis command changes the user's login shell to /bin/false, which is a program that does nothing and immediately exits. When a user logs in, their login shell is run, so setting the login shell to /bin/false will prevent the user from obtaining an interactive login session.\n\nA. Setting the UID for the user to 0.\n\nThis would not prevent a user from obtaining an interactive login session. The UID 0 is reserved for the superuser (also known as the root user), and setting a user's UID to 0 would give them superuser privileges.\n\nC. Removing the user from the group staff.\n\nThis would not prevent a user from obtaining an interactive login session. The staff group is usually used to grant users certain privileges, such as the ability to access certain directories or use certain utilities, but it does not affect the user's ability to log in.\n\nD. Adding the user to /etc/noaccess.\n\nThere is no file called /etc/noaccess on a typical Unix-like system, so this option is incorrect.\n\nE. Creating a .nologin file in the user's home directory.\n\nThis would not prevent a user from obtaining an interactive login session. When a user attempts to log in, the system checks for the presence of a file called .nologin in the user's home directory. If the file exists, the system displays the contents of the file to the user and then exits, but the user is still able to log in. The .nologin file is typically used to inform users that the system is undergoing maintenance and they should try logging in again later.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14532-exam-102-500-topic-1-question-26-discussion"
         },
         {
             "id": 34,
             "question": "Which of the following statements about systemd-journald are true? (Choose three.) \nA.It is incompatible with syslog and cannot be installed on a system using regular syslog. \nB.It only processes messages of systemd and not messages of any other tools. \nC.It can pass log messages to syslog for further processing. \nD.It maintains metadata such as _UID or _PID for each message. \nE.It supports syslog facilities such as kern, user, and auth.",
             "answer": "CDE",
-            "explanation": "The correct answers are: \n\nC. It can pass log messages to syslog for further processing. \nD. It maintains metadata such as _UID or _PID for each message. \nE. It supports syslog facilities such as kern, user, and auth. \n\nExplanation: \n\nA. It is not true that systemd-journald is incompatible with syslog and cannot be installed on a system using regular syslog. In fact, systemd-journald can be used alongside syslog and can even pass log messages to syslog for further processing. \n\nB. It is not true that systemd-journald only processes messages of systemd and not messages of any other tools. In fact, systemd-journald can process log messages from any application or system service that uses the syslog or journal APIs. \n\nC. It is true that systemd-journald can pass log messages to syslog for further processing. This can be useful if the system is already using syslog and you want to use systemd-journald to store log messages in the journal, but still have them processed by syslog. \n\nD. It is true that systemd-journald maintains metadata such as _UID or _PID for each message. This metadata can be used to identify the user or process that generated the log message, as well as other information such as the message's priority or source. \n\nE. It is true that systemd-journald supports syslog facilities such as kern, user, and auth. These facilities are used to categorize log messages based on their source and purpose, and can be used to filter or route log messages as needed.",
+            "explanation": "C. D. and E. are corrcet.\n\nC. It can pass log messages to syslog for further processing: This is true because systemd-journald has the capability to forward log messages to syslog if needed.\n\nD. It maintains metadata such as _UID or _PID for each message: This is true because systemd-journald maintains various metadata for each log message, including the user ID (_UID) and process ID (_PID) of the process that generated the message.\n\nE. It supports syslog facilities such as kern, user, and auth: This is true because systemd-journald supports syslog facilities, which are categories of log messages. Some examples of syslog facilities include \"kern\" (for kernel messages), \"user\" (for user-level messages), and \"auth\" (for messages related to authentication).\n\nHere are some explanations for the false statements:\n\nA. It is incompatible with syslog and cannot be installed on a system using regular syslog: This is false because systemd-journald is not incompatible with syslog, and it can be installed on a system that uses regular syslog. In fact, as mentioned earlier, it has the capability to forward log messages to syslog if needed.\n\nB. It only processes messages of systemd and not messages of any other tools: This is false because systemd-journald processes log messages from various sources, not just systemd. It can process log messages from other tools and services as well.",
             "url": "https://www.examtopics.com/discussions/lpi/view/57651-exam-102-500-topic-1-question-28-discussion"
-        },
-        {
-            "id": 36,
-            "question": "Which option in the chrony configuration file changes the initial interval of polls to a NTP server in order to speed up the initial synchronization? \nA.iburst \nB.quickstart \nC.fast \nD.fsync \nE.flood",
-            "answer": "A",
-            "explanation": "The option in the chrony configuration file that changes the initial interval of polls to a NTP server in order to speed up the initial synchronization is 'iburst'. This option causes chrony to send a burst of six packets at the start of each poll interval, rather than the normal one packet per interval, which can help speed up the initial synchronization process.\n\nHere is an example of how you would use the 'iburst' option in a chrony configuration file:\n\n'server ntp.example.com iburst'\n\nThis would configure chrony to use the NTP server at 'ntp.example.com' and send a burst of six packets at the start of each poll interval in order to speed up the initial synchronization process.\n\nNote that the other options you listed ('quickstart', 'fast', 'fsync', and 'flood') are not recognized options in the chrony configuration file.",
-            "url": "https://www.examtopics.com/discussions/lpi/view/37604-exam-102-500-topic-1-question-30-discussion"
         },
         {
             "id": 37,
@@ -6088,13 +6060,6 @@
             "answer": "D",
             "explanation": "The command that displays all environment and shell variables is env.\n\nenv is a command that displays the current environment variables and their values. Environment variables are variables that are set by the operating system or by the user and are used to store information such as the paths to directories and programs, the current working directory, and the user's login name.\n\nThe other options you listed (getargs, lsenv, ls, lsshell) are not valid commands in most shells.",
             "url": "https://www.examtopics.com/discussions/lpi/view/14244-exam-102-500-topic-1-question-39-discussion"
-        },
-        {
-            "id": 46,
-            "question": "Which of the following comparison operators for test work on elements in the file system? (Choose two.) \nA.-z \nB.-eq \nC.-d \nD.-f \nE.-lt",
-            "answer": "CD",
-            "explanation": "The comparison operators for test that work on elements in the file system are -d and -f.\n\ntest is a command that is used to evaluate an expression and return a true or false value based on the result. It is commonly used in shell scripts to perform tests and make decisions based on the results.\n\n- -d is a comparison operator for test that tests whether a file is a directory. If the file is a directory, the test returns a true value.\n\n- -f is a comparison operator for test that tests whether a file is a regular file (not a directory or a special file such as a device or a named pipe). If the file is a regular file, the test returns a true value.\n\nThe other options you listed (-z, -eq, -lt) are not related to elements in the file system and are not comparison operators for test. -z tests whether a string is empty, -eq tests whether two integers are equal, and -lt tests whether one integer is less than another.",
-            "url": "https://www.examtopics.com/discussions/lpi/view/80214-exam-102-500-topic-1-question-40-discussion"
         },
         {
             "id": 47,
@@ -6175,7 +6140,7 @@
         },
         {
             "id": 59,
-            "question": "Which of the following commands can identify the PID od a process which opened a TCP port? \nA.ptrace \nB.strace \nC.debug \nD.lsof \nE.nessus",
+            "question": "Which of the following commands can identify the PID of a process which opened a TCP port? \nA.ptrace \nB.strace \nC.debug \nD.lsof \nE.nessus",
             "answer": "D",
             "explanation": "The correct answer is D: lsof.\n\nlsof is a command that stands for List Open Files. It can be used to list all the open files on a system, and it can also be used to find the process ID (PID) of a process that has opened a particular file or network socket. To find the PID of a process that has opened a TCP port, you can use the -i option followed by the port number and protocol. For example:\n\nCopy code\nlsof -i TCP:80\nThis will list all the processes that have opened a TCP connection on port 80 (which is the default port for HTTP). The output will include the PID of each process in the second column.\n\nThe other commands you listed do not pertain to finding the PID of a process that has opened a TCP port:\n\nA: ptrace is a system call that allows a process (called the tracer) to control another process (called the tracee) and observe its execution. It is not related to finding the PID of a process that has opened a TCP port.\nB: strace is a command that allows you to trace system calls and signals of a process. It is similar to ptrace, but it is easier to use and has more features. It is not related to finding the PID of a process that has opened a TCP port.\nC: debug is a command or utility that allows you to debug programs. It is not related to finding the PID of a process that has opened a TCP port.\nE: nessus is a security scanning tool that can be used to identify vulnerabilities on a system. It is not related to finding the PID of a process that has opened a TCP port.",
             "url": "https://www.examtopics.com/discussions/lpi/view/37943-exam-102-500-topic-1-question-53-discussion"
@@ -6237,17 +6202,10 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/57832-exam-102-500-topic-1-question-63-discussion"
         },
         {
-            "id": 71,
-            "question": "Which of the following commands puts the output of the command date into the shell variable mydate? \nA.mydate=\"date\" \nB.mydate=\"exec date\" \nC.mydate=\"$((date))\" \nD.mydate=\"$(date)\" \nE.mydate=\"${date}\"",
-            "answer": "D",
-            "explanation": "D. mydate=\"$(date)\"\n\nThe command mydate=\"$(date)\" puts the output of the command date into the shell variable mydate. The $(...) notation is used to run a command and capture its output.\n\nOption A is incorrect, as the assignment mydate=\"date\" sets the value of mydate to the string \"date\", rather than the output of the date command. Option B is incorrect, as the exec command is used to execute a command and replace the current process with the command, rather than capturing its output. Option C is incorrect, as the $((...)) notation is used for arithmetic expansion, rather than command substitution. Option E is incorrect, as the ${...} notation is used for variable expansion, rather than command substitution.",
-            "url": "https://www.examtopics.com/discussions/lpi/view/52381-exam-102-500-topic-1-question-64-discussion"
-        },
-        {
             "id": 72,
             "question": "Which of the following are syslog facilities? (Choose two.) \nA.local5 \nB.accounting \nC.mail \nD.postmaster \nE.remote",
             "answer": "AC",
-            "explanation": "A. local5\nC. mail\n\nThe syslog facilities are used to categorize messages logged by the syslog system. Some common syslog facilities include local0 through local7, mail, cron, auth, and daemon.\n\nOption A is correct, as local5 is a syslog facility. Option B is incorrect, as accounting is not a syslog facility. Option C is correct, as mail is a syslog facility. Option D is incorrect, as postmaster is not a syslog facility. Option E is incorrect, as remote is not a syslog facility.",
+            "explanation": "A and C are syslog facilities.\n\nSyslog is a standard for logging system messages. It is commonly used on Unix and Linux systems, as well as many other operating systems. Syslog messages contain a priority level and a facility, which specifies the source of the message. The syslog facilities include:\n\nlocal0 through local7: These facilities are reserved for local use and can be used by applications and system processes to log messages.\n - kern: This facility is used to log messages generated by the kernel.\n - user: This facility is used to log messages generated by user processes.\n - mail: This facility is used to log messages related to email systems.\n - daemon: This facility is used to log messages generated by system daemons.\n - auth: This facility is used to log messages related to authentication and authorization.\n - syslog: This facility is used to log messages generated by the syslog daemon itself.\n - lpr: This facility is used to log messages related to printing.\n - news: This facility is used to log messages related to news systems.\n - uucp: This facility is used to log messages related to the Unix-to-Unix Copy Protocol (UUCP).\n - B and D are not syslog facilities. accounting is not a syslog facility, and postmaster is not a syslog facility either. E is also not a syslog facility.",
             "url": "https://www.examtopics.com/discussions/lpi/view/69968-exam-102-500-topic-1-question-65-discussion"
         },
         {
@@ -6414,7 +6372,7 @@
         {
             "id": 100,
             "question": "Which of the commands below might have produced the following output?\n https://www.examtopics.com/assets/media/exam-media/04361/0003900001.png \nA.dig -t mx www.example.org \nB.dig www.example.org \nC.dig -t ns www.example.org \nD.dig -t a www.example.org \nE.dig -t soa www.example.org",
-            "answer": "B",
+            "answer": "C",
             "explanation": "the command that might have produced the output shown in the image is:\nC. dig -t ns www.example.org\n\nThe \"dig\" command is a tool for querying DNS name servers. The \"-t\" option specifies the type of query to be performed, and the \"ns\" option specifies that the query should be for a name server (NS) record. The command \"dig -t ns www.example.org\" would perform a DNS query to retrieve the name server records associated with the domain name \"www.example.org.\"\n\nOption A, \"dig -t mx www.example.org,\" would perform a DNS query for a mail exchange (MX) record, which is used to route email for a domain. Option B, \"dig www.example.org,\" would perform a DNS query for all available resource record types for the domain name \"www.example.org.\" Option D, \"dig -t a www.example.org,\" would perform a DNS query for an IPv4 address (A) record. Option E, \"dig -t soa www.example.org,\" would perform a DNS query for a start of authority (SOA) record, which specifies information about the DNS zone and the name servers responsible for the zone.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30109-exam-102-500-topic-1-question-93-discussion"
         },
@@ -6449,7 +6407,7 @@
         {
             "id": 106,
             "question": "Which of the following commands display the number of bytes transmitted and received via the eth0 network interface? (Choose two.) \nA.route -v via eth0 \nB.ip stats show dev eth0 \nC.netstat -s -i eth0 \nD.ifconfig eth0 \nE.ip -s link show eth0",
-            "answer": "CD",
+            "answer": "DE",
             "explanation": "Option D: ifconfig eth0\nThe \"ifconfig\" command displays various information about network interfaces, including the number of bytes transmitted and received. When run with just the interface name as an argument (e.g. \"ifconfig eth0\"), it will show the current status and statistics of that interface.\n\nOption E: ip -s link show eth0\nThe \"ip\" command is a powerful tool for displaying and modifying various aspects of the network configuration. The \"-s\" option tells it to show statistics, and the \"link\" subcommand tells it to show information about the specified link (i.e. network interface). When combined with the interface name (e.g. \"ip -s link show eth0\"), it will display detailed statistics about that interface, including the number of bytes transmitted and received.\n\nOption A (route -v via eth0) is not correct, as the \"route\" command does not have a \"-v\" option and does not display interface statistics. Option B (ip stats show dev eth0) is not correct, as the \"ip\" command does not have a \"stats\" subcommand. Option C (netstat -s -i eth0) is not correct, as the \"netstat\" command does not have a \"-i\" option and does not display interface statistics.",
             "url": "https://www.examtopics.com/discussions/lpi/view/30454-exam-102-500-topic-1-question-99-discussion"
         },
@@ -6470,8 +6428,8 @@
         {
             "id": 110,
             "question": "What is true about NetworkManager on a Linux system that uses its distribution's mechanisms to configure network interfaces? (Choose two.) \nA.NetworkManager reconfigures all network interfaces to use DHCP unless they are specifically managed by NetworkManager. \nB.NetworkManager must be explicitly enabled for each interface it should manage. \nC.NetworkManager by default does not change interfaces which are already configured. \nD.NetworkManager disables all interfaces which were not configured by NetworkManager. \nE.NetworkManager can be configured to use the distribution's network interface configuration.",
-            "answer": "BC",
-            "explanation": "The correct answers to this question are B (NetworkManager must be explicitly enabled for each interface it should manage) and C (NetworkManager by default does not change interfaces which are already configured).\nBy default, NetworkManager does not manage network interfaces that are listed in the /etc/network/interfaces file, as this file is used by other configuration methods such as the traditional Linux networking scripts. NetworkManager will only manage interfaces that are not listed in this file, unless it is explicitly configured to do so.\nTo configure NetworkManager to manage a specific interface, you can use the \"nmcli\" command-line tool to enable NetworkManager on the interface. For example, you can use the following command to enable NetworkManager on the \"eth0\" interface:\nnmcli dev set eth0 managed yes\nOnce NetworkManager is enabled on an interface, it will automatically configure the interface according to the settings that are defined in the NetworkManager configuration files. By default, NetworkManager does not change the configuration of interfaces that are already configured, unless it is specifically configured to do so.\nOption A (NetworkManager reconfigures all network interfaces to use DHCP unless they are specifically managed by NetworkManager) is not correct, as NetworkManager does not automatically reconfigure interfaces to use DHCP unless it is specifically configured to do so. Option D (NetworkManager disables all interfaces which were not configured by NetworkManager) is not correct, as NetworkManager does not automatically disable interfaces that are not managed by it. Option E (NetworkManager can be configured to use the distribution's network interface configuration) is not correct, as NetworkManager does not automatically use the distribution's built-in mechanisms to manage network interfaces.",
+            "answer": "CE",
+            "explanation": "C. NetworkManager by default does not change interfaces which are already configured.\nThis is true because NetworkManager is designed to work alongside and integrate with the distribution's existing network configuration mechanisms. It will not modify or overwrite the configuration of interfaces that are already configured through the distribution's mechanisms. Instead, it will respect and use the existing configuration.\n\nE. NetworkManager can be configured to use the distribution's network interface configuration.\nThis is also true. NetworkManager can be configured to use the distribution's network interface configuration by setting the managed=false option for the interface in the NetworkManager configuration file. This tells NetworkManager to leave the interface alone and not attempt to manage it.\n\nA. NetworkManager reconfigures all network interfaces to use DHCP unless they are specifically managed by NetworkManager.\nThis is not true. NetworkManager does not automatically reconfigure all interfaces to use DHCP. It respects and uses the existing configuration of the interfaces, whether they are using DHCP or not.\n\nB. NetworkManager must be explicitly enabled for each interface it should manage.\nThis is not true. By default, NetworkManager will attempt to manage all network interfaces on the system unless they are specifically excluded through the configuration mentioned in proposition E.\n\nD. NetworkManager disables all interfaces which were not configured by NetworkManager.\nThis is not true. NetworkManager does not disable interfaces that it is not managing. It simply does not manage or make any changes to them, leaving them to be managed by the distribution's network configuration mechanisms.",
             "url": "https://www.examtopics.com/discussions/lpi/view/74949-exam-102-500-topic-1-question-103-discussion"
         },
         {
@@ -6773,4 +6731,4 @@
             "url": "https://www.examtopics.com/discussions/lpi/view/29996-exam-102-500-topic-1-question-118-discussion"
         }
     ]
-}
+}}
