@@ -3,9 +3,9 @@
         "Exam-Topics 101 - Paywall breached - Version Large (w/ explanations)": 97,
         "Exam-Topics 101 - Paywall breached - Input": 100,
         "Questionnaire_Shuffle": 60,
-        "Exam-Topics 102-500 - Paywall breached - Input": 95,
+        "Exam-Topics 102-500 - Paywall breached - Input": 100,
         "Chapter 6: Configuring the X Window System, Localization, and Printing": 40,
-        "Exam-Topics 102-500 - Paywall breached": 98
+        "Exam-Topics 102-500 - Paywall breached": 100
     },
     "Exam Essentials": [
         {
@@ -6288,8 +6288,8 @@
         {
             "id": 85,
             "question": "What is true regarding the statement beginning with #! that is found in the first line of script? (Choose two.) \nA.It prevents the scripts from being executed until the ! is removed. \nB.it triggers the installation of the script's interpreter. \nC.It specifies the path and the arguments of the interpreter used to run the script. \nD.It defines the character encoding of the script. \nE.It is a comment that is ignored by the script interpreter.",
-            "answer": "BC",
-            "explanation": "The correct answers are B. it triggers the installation of the script's interpreter and C. It specifies the path and the arguments of the interpreter used to run the script.\nThe statement beginning with #! that is found in the first line of a script is known as the shebang or hashbang. It is used to specify the path and arguments of the interpreter that should be used to run the script.\nFor example, a shebang that begins with #!/bin/bash specifies that the script should be run using the Bash shell, which is a Unix-like command-line shell. The shebang must be the first line of the script, and it must be followed by a newline character.\nThe shebang does not prevent the script from being executed. Instead, it triggers the installation of the script's interpreter, if necessary, and specifies how the script should be run.\nThe shebang does not define the character encoding of the script. Character encoding is the way in which characters are represented in a computer and is typically specified using the encoding attribute of the HTML <meta> tag or the charset parameter in the HTTP Content-Type header.\nThe shebang is not a comment and is not ignored by the script interpreter. Instead, it is a special instruction that is used to specify the interpreter that should be used to run the script.",
+            "answer": "CE",
+            "explanation": "The correct answers are C and E.\n\n The statement beginning with #! that is found in the first line of a script is known as the shebang or hashbang. It is used to specify the path and arguments of the interpreter that should be used to run the script.\nFor example, a shebang that begins with #!/bin/bash specifies that the script should be run using the Bash shell, which is a Unix-like command-line shell. The shebang must be the first line of the script, and it must be followed by a newline character.\n Starting with # it is also a comment and is ignored by the interpreter\n\nThe shebang does not prevent the script from being executed..\nThe shebang does not define the character encoding of the script. Character encoding is the way in which characters are represented in a computer and is typically specified using the encoding attribute of the HTML <meta> tag or the charset parameter in the HTTP Content-Type header.\n",
             "url": "https://www.examtopics.com/discussions/lpi/view/33764-exam-102-500-topic-1-question-78-discussion"
         },
         {
@@ -6978,4 +6978,4 @@
             "url": "https://www.examtopics.com/discussions/microsoft/view/59109-exam-az-104-topic-1-question-7-discussion/\n"
         }
     ]
-}}
+}
