@@ -6184,7 +6184,7 @@
             "id": 67,
             "question": "What is the systemd journal stored? \nA./var/jlog/ and /var/jlogd/ \nB./proc/log/ and /proc/klog/ \nC./run/log/journal/ or /var/log/journal/ \nD./var/log/syslog.bin or /var/log/syslog.jrn \nE./etc/systemd/journal/ or /usr/lib/systemd/journal/",
             "answer": "C",
-            "explanation": "C. /run/log/journal/ or /var/log/journal/\n\nThe systemd journal is a system log service that stores log data in a binary format. By default, the journal is stored in one of the following locations:\n\n- /run/log/journal/ (on systems where this directory is available)\n- /var/log/journal/ (on systems where /run/log/journal/ is not available)\n\nOption A is incorrect, as the directories /var/jlog/ and /var/jlogd/ do not exist on most systems. Option B is incorrect, as the directories /proc/log/ and /proc/klog/ do not exist on most systems. Option D is incorrect, as the files /var/log/syslog.bin and /var/log/syslog.jrn do not exist on most systems. Option E is incorrect, as the directories /etc/systemd/journal/ and /usr/lib/systemd/journal/ do not contain log data.",
+            "explanation": "C. /run/log/journal/ or /var/log/journal\nThe systemd journal is a system log service that stores log data in a binary format. By default, the journal is stored in one of the following locations:\n\n- /run/log/journal/ (on systems where this directory is available)\n- /var/log/journal/ (on systems where /run/log/journal/ is not available)\n\nOption A is incorrect, as the directories /var/jlog/ and /var/jlogd/ do not exist on most systems. Option B is incorrect, as the directories /proc/log/ and /proc/klog/ do not exist on most systems. Option D is incorrect, as the files /var/log/syslog.bin and /var/log/syslog.jrn do not exist on most systems. Option E is incorrect, as the directories /etc/systemd/journal/ and /usr/lib/systemd/journal/ do not contain log data.",
             "url": "https://www.examtopics.com/discussions/lpi/view/59444-exam-102-500-topic-1-question-61-discussion"
         },
         {
@@ -6737,245 +6737,245 @@
             "question": "Your company has serval departments. Each department has a number of virtual machines (VMs).The company has an Azure subscription that contains a resource group named RG1.All VMs are located in RG1.You want to associate each VM with its respective department.What should you do? \nA.Create Azure Management Groups for each department. \nB.Create a resource group for each department. \nC.Assign tags to the virtual machines.Most Voted \nD.Modify the settings of the virtual machines. \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/56828-exam-az-104-topic-1-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/56828-exam-az-104-topic-1-question-1-discussion"
         },
         {
             "id": 6,
             "question": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.You need to deploy a YAML file to AKS1.Solution: From Azure CLI, you run az aks.Does this meet the goal? \nA.Yes \nB.NoMost Voted \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/63248-exam-az-104-topic-4-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/63248-exam-az-104-topic-4-question-1-discussion"
         },
         {
             "id": 9,
             "question": "You need to implement a backup solution for App1 after the application is moved.What should you create first? \nA.a recovery plan \nB.an Azure Backup Server \nC.a backup policy \nD.a Recovery Services vault \n",
             "answer": "D",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/29475-exam-az-104-topic-10-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/29475-exam-az-104-topic-10-question-1-discussion"
         },
         {
             "id": 12,
             "question": "You have an Azure subscription that has a Recovery Services vault named Vault1. The subscription contains the virtual machines shown in the following table:You plan to schedule backups to occur every night at 23:00.Which virtual machines can you back up by using Azure Backup? \nA.VM1 and VM3 only \nB.VM1, VM2, VM3 and VM4Most Voted \nC.VM1 and VM2 only \nD.VM1 only \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/39044-exam-az-104-topic-6-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/39044-exam-az-104-topic-6-question-1-discussion"
         },
         {
             "id": 15,
             "question": "You have an Azure subscription named Subscription1 that contains the storage accounts shown in the following table:You plan to use the Azure Import/Export service to export data from Subscription1.You need to identify which storage account can be used to export the data.What should you identify? \nA.storage1 \nB.storage2 \nC.storage3 \nD.storage4Most Voted \n",
             "answer": "D",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/51301-exam-az-104-topic-3-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/51301-exam-az-104-topic-3-question-1-discussion"
         },
         {
             "id": 18,
             "question": "You need to ensure that VM1 can communicate with VM4. The solution must minimize the administrative effort.What should you do? \nA.Create an NSG and associate the NSG to VM1 and VM4. \nB.Establish peering between VNET1 and VNET3. \nC.Assign VM4 an IP address of 10.0.1.5/24. \nD.Create a user-defined route from VNET1 to VNET3. \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/63246-exam-az-104-topic-13-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/63246-exam-az-104-topic-13-question-1-discussion"
         },
         {
             "id": 21,
             "question": "You discover that VM3 does NOT meet the technical requirements.You need to verify whether the issue relates to the NSGs.What should you use? \nA.Diagram in VNet1 \nB.Diagnostic settings in Azure Monitor \nC.Diagnose and solve problems in Traffic Manager profiles \nD.The security recommendations in Azure Advisor \nE.IP flow verify in Azure Network Watcher",
             "answer": "E",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/57055-exam-az-104-topic-12-question-1-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/57055-exam-az-104-topic-12-question-1-discussion"
         },
         {
             "id": 24,
             "question": "Your company has three offices. The offices are located in Miami, Los Angeles, and New York. Each office contains datacenter.You have an Azure subscription that contains resources in the East US and West US Azure regions. Each region contains a virtual network. The virtual networks are peered.You need to connect the datacenters to the subscription. The solution must minimize network latency between the datacenters.What should you create? \nA.three Azure Application Gateways and one On-premises data gateway \nB.three virtual hubs and one virtual WANMost Voted \nC.three virtual WANs and one virtual hub \nD.three On-premises data gateways and one Azure Application Gateway \n",
             "answer": "",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/28532-exam-az-104-topic-5-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/28532-exam-az-104-topic-5-question-2-discussion"
         },
         {
             "id": 27,
             "question": "You need to ensure that you can add VM1 and VM2 to the backend pool of LB1.What should you do first? \nA.Redeploy VM1 and VM2 to the same availability zone. \nB.Connect VM2 to VNET1/Subnet1. \nC.Create a new NSG and associate the NSG to VNET1/Subnet1. \nD.Redeploy VM1 and VM2 to the same availability set.Most Voted \n",
             "answer": "",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/79967-exam-az-104-topic-15-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/79967-exam-az-104-topic-15-question-2-discussion"
         },
         {
             "id": 30,
             "question": "You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant named contoso.com and an Azure Kubernetes Service (AKS) cluster named AKS1.An administrator reports that she is unable to grant access to AKS1 to the users in contoso.com.You need to ensure that access to AKS1 can be granted to the contoso.com users.What should you do first? \nA.From contoso.com, modify the Organization relationships settings. \nB.From contoso.com, create an OAuth 2.0 authorization endpoint.Most Voted \nC.Recreate AKS1. \nD.From AKS1, create a namespace. \n",
             "answer": "",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/75852-exam-az-104-topic-2-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/75852-exam-az-104-topic-2-question-2-discussion"
         },
         {
             "id": 33,
             "question": "You need to recommend a solution to automate the configuration for the finance department users. The solution must meet the technical requirements.What should you include in the recommendation? \nA.Azure AD B2C \nB.dynamic groups and conditional access policiesMost Voted \nC.Azure AD Identity Protection \nD.an Azure logic app and the Microsoft Identity Management (MIM) client \n",
             "answer": "",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/57018-exam-az-104-topic-16-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/57018-exam-az-104-topic-16-question-2-discussion"
         },
         {
             "id": 36,
             "question": "You need to ensure that you can grant Group4 Azure RBAC read only permissions to all the Azure file shares.What should you do? \nA.On storage2, enable identity-based access for the file shares.Most Voted \nB.Recreate storage2 and set Hierarchical namespace to Enabled. \nC.On storage1 and storage4, change the Account kind type to StorageV2 (general purpose v2). \nD.Create a shared access signature (SAS) for storage1, storage2, and storage4. \n",
             "answer": "",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/79686-exam-az-104-topic-9-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/79686-exam-az-104-topic-9-question-2-discussion"
         },
         {
             "id": 39,
             "question": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.You need to deploy a YAML file to AKS1.Solution: From Azure CLI, you run the kubectl client.Does this meet the goal? \nA.YesMost Voted \nB.No \n \n \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/63251-exam-az-104-topic-4-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/63251-exam-az-104-topic-4-question-2-discussion"
         },
         {
             "id": 42,
             "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.Your company has an Azure Active Directory (Azure AD) subscription.You want to implement an Azure AD conditional access policy.The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.Solution: You access the multi-factor authentication page to alter the user settings.Does the solution meet the goal? \nA.Yes \nB.NoMost Voted \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/57044-exam-az-104-topic-1-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/57044-exam-az-104-topic-1-question-2-discussion"
         },
         {
             "id": 45,
             "question": "You need to meet the user requirement for Admin1.What should you do? \nA.From the Azure Active Directory blade, modify the Groups \nB.From the Azure Active Directory blade, modify the Properties \nC.From the Subscriptions blade, select the subscription, and then modify the Access control (IAM) settingsMost Voted \nD.From the Subscriptions blade, select the subscription, and then modify the PropertiesMost Voted \n",
             "answer": "D",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/41444-exam-az-104-topic-7-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/41444-exam-az-104-topic-7-question-2-discussion"
         },
         {
             "id": 48,
             "question": "You need to move the blueprint files to Azure.What should you do? \nA.Generate an access key. Map a drive, and then copy the files by using File Explorer. \nB.Use Azure Storage Explorer to copy the files. \nC.Use the Azure Import/Export service. \nD.Generate a shared access signature (SAS). Map a drive, and then copy the files by using File Explorer. \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/29793-exam-az-104-topic-10-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/29793-exam-az-104-topic-10-question-2-discussion"
         },
         {
             "id": 51,
             "question": "You are planning the move of App1 to Azure.You create a network security group (NSG).You need to recommend a solution to provide users with access to App1.What should you recommend? \nA.Create an incoming security rule for port 443 from the Internet. Associate the NSG to the subnet that contains the web servers.Most Voted \nB.Create an outgoing security rule for port 443 from the Internet. Associate the NSG to the subnet that contains the web servers. \nC.Create an incoming security rule for port 443 from the Internet. Associate the NSG to all the subnets. \nD.Create an outgoing security rule for port 443 from the Internet. Associate the NSG to all the subnets. \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/41639-exam-az-104-topic-14-question-2-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/41639-exam-az-104-topic-14-question-2-discussion"
         },
         {
             "id": 54,
             "question": "You have a Microsoft 365 tenant and an Azure Active Directory (Azure AD) tenant named contoso.com.You plan to grant three users named User1, User2, and User3 access to a temporary Microsoft SharePoint document library named Library1.You need to create groups for the users. The solution must ensure that the groups are deleted automatically after 180 days.Which two groups should you create? Each correct answer presents a complete solution.NOTE: Each correct selection is worth one point. \nA.a Microsoft 365 group that uses the Assigned membership typeMost Voted \nB.a Security group that uses the Assigned membership type \nC.a Microsoft 365 group that uses the Dynamic User membership typeMost Voted \nD.a Security group that uses the Dynamic User membership type \nE.a Security group that uses the Dynamic Device membership type",
             "answer": "AC",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/75853-exam-az-104-topic-2-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/75853-exam-az-104-topic-2-question-3-discussion"
         },
         {
             "id": 57,
             "question": "You need to add VM1 and VM2 to the backend pool of LB1.What should you do first? \nA.Connect VM2 to VNET1/Subnet1. \nB.Redeploy VM1 and VM2 to the same availability zone. \nC.Redeploy VM1 and VM2 to the same availability set.Most Voted \nD.Create a new NSG and associate the NSG to VNET1/Subnet1. \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/79846-exam-az-104-topic-15-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/79846-exam-az-104-topic-15-question-3-discussion"
         },
         {
             "id": 60,
             "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.Your company has an Azure Active Directory (Azure AD) subscription.You want to implement an Azure AD conditional access policy.The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.Solution: You access the Azure portal to alter the session control of the Azure AD conditional access policy.Does the solution meet the goal? \nA.Yes \nB.NoMost Voted \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/57111-exam-az-104-topic-1-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/57111-exam-az-104-topic-1-question-3-discussion"
         },
         {
             "id": 63,
             "question": "You need to identify which storage account to use for the flow logging of IP traffic from VM5. The solution must meet the retention requirements.Which storage account should you identify? \nA.storage1 \nB.storage2Most Voted \nC.storage3 \nD.storage4 \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/79839-exam-az-104-topic-11-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/79839-exam-az-104-topic-11-question-3-discussion"
         },
         {
             "id": 66,
             "question": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.You need to deploy a YAML file to AKS1.Solution: From Azure CLI, you run azcopy.Does this meet the goal? \nA.Yes \nB.No \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/56867-exam-az-104-topic-4-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/56867-exam-az-104-topic-4-question-3-discussion"
         },
         {
             "id": 69,
             "question": "You have Azure subscription that includes data in following locations:You plan to export data by using Azure import/export job named Export1.You need to identify the data that can be exported by using Export1.Which data should you identify? \nA.DB1 \nB.container1Most Voted \nC.share1 \nD.Table1 \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/38360-exam-az-104-topic-3-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/38360-exam-az-104-topic-3-question-3-discussion"
         },
         {
             "id": 72,
             "question": "You have the Azure virtual machines shown in the following table:You have a Recovery Services vault that protects VM1 and VM2.You need to protect VM3 and VM4 by using Recovery Services.What should you do first? \nA.Create a new Recovery Services vaultMost Voted \nB.Create a storage account \nC.Configure the extensions for VM3 and VM4 \nD.Create a new backup policy \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/39690-exam-az-104-topic-6-question-3-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/39690-exam-az-104-topic-6-question-3-discussion"
         },
         {
             "id": 75,
             "question": "You have an Azure subscription that contains the resources shown in the following table.LB1 is configured as shown in the following table.You plan to create new inbound NAT rules that meet the following requirements:\u2711 Provide Remote Desktop access to VM1 from the internet by using port 3389.\u2711 Provide Remote Desktop access to VM2 from the internet by using port 3389.What should you create on LB1 before you can create the new inbound NAT rules? \nA.a frontend IP addressMost Voted \nB.a load balancing ruleMost Voted \nC.a health probe \nD.a backend pool \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/56448-exam-az-104-topic-5-question-4-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/56448-exam-az-104-topic-5-question-4-discussion"
         },
         {
             "id": 78,
             "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.Your company has an Azure Active Directory (Azure AD) subscription.You want to implement an Azure AD conditional access policy.The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.Solution: You access the Azure portal to alter the grant control of the Azure AD conditional access policy.Does the solution meet the goal? \nA.YesMost Voted \nB.No \n \n \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/56829-exam-az-104-topic-1-question-4-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/56829-exam-az-104-topic-1-question-4-discussion"
         },
         {
             "id": 81,
             "question": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.You have an Azure virtual machine named VM1 that runs Windows Server 2016.You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.Solution: You create an Azure storage account and configure shared access signatures (SASs). You install the Microsoft Monitoring Agent on VM1. You create an alert in Azure Monitor and specify the storage account as the source.Does that meet the goal? \nA.Yes \nB.NoMost Voted \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/63106-exam-az-104-topic-4-question-4-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/63106-exam-az-104-topic-4-question-4-discussion"
         },
         {
             "id": 84,
             "question": "You are planning to deploy an Ubuntu Server virtual machine to your company's Azure subscription.You are required to implement a custom deployment that includes adding a particular trusted root certification authority (CA).Which of the following should you use to create the virtual machine? \nA.The New-AzureRmVm cmdlet. \nB.The New-AzVM cmdlet. \nC.The Create-AzVM cmdlet. \nD.The az vm create command.Most Voted \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/62817-exam-az-104-topic-1-question-5-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/62817-exam-az-104-topic-1-question-5-discussion"
         },
         {
             "id": 87,
             "question": "You have an Azure subscription that contains the identities shown in the following table.User1, Principal1, and Group1 are assigned the Monitoring Reader role.An action group named AG1 has the Email Azure Resource Manager Role notification type and is configured to email the Monitoring Reader role.You create an alert rule named Alert1 that uses AG1.You need to identity who will receive an email notification when Alert1 is triggered.Who should you identify? \nA.User1 and Principal1 only \nB.User1, User2, Principal1, and Principal2 \nC.User1 onlyMost Voted \nD.User1 and User2 onlyMost Voted \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/51348-exam-az-104-topic-6-question-5-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/51348-exam-az-104-topic-6-question-5-discussion"
         },
         {
             "id": 90,
             "question": "You have an Azure subscription that contains the resources in the following table.Store1 contains a file share named data. Data contains 5,000 files.You need to synchronize the files in the file share named data to an on-premises server named Server1.Which three actions should you perform? Each correct answer presents part of the solution.NOTE: Each correct selection is worth one point. \nA.Create a container instance \nB.Register Server1Most Voted \nC.Install the Azure File Sync agent on Server1Most Voted \nD.Download an automation script \nE.Create a sync groupMost Voted",
             "answer": "BCE",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/38353-exam-az-104-topic-3-question-6-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/38353-exam-az-104-topic-3-question-6-discussion"
         },
         {
             "id": 93,
             "question": "You have an Azure policy as shown in the following exhibit:What is the effect of the policy? \nA.You are prevented from creating Azure SQL servers anywhere in Subscription 1. \nB.You can create Azure SQL servers in ContosoRG1 only.Most Voted \nC.You are prevented from creating Azure SQL Servers in ContosoRG1 only. \nD.You can create Azure SQL servers in any resource group within Subscription 1. \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/38132-exam-az-104-topic-2-question-6-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/38132-exam-az-104-topic-2-question-6-discussion"
         },
         {
             "id": 96,
             "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.Your company makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.To achieve this, the Per Enabled User setting must be set for the usage model.Solution: You reconfigure the existing usage model via the Azure portal.Does the solution meet the goal? \nA.Yes \nB.NoMost Voted \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/57782-exam-az-104-topic-1-question-6-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/57782-exam-az-104-topic-1-question-6-discussion"
         },
         {
             "id": 99,
             "question": "You download an Azure Resource Manager template based on an existing virtual machine. The template will be used to deploy 100 virtual machines.You need to modify the template to reference an administrative password. You must prevent the password from being stored in plain text.What should you create to store the password? \nA.an Azure Key Vault and an access policyMost Voted \nB.an Azure Storage account and an access policy \nC.a Recovery Services vault and a backup policy \nD.Azure Active Directory (AD) Identity Protection and an Azure policy \n",
             "answer": "A",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/38288-exam-az-104-topic-4-question-6-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/38288-exam-az-104-topic-4-question-6-discussion"
         },
         {
             "id": 102,
             "question": "You have the Azure virtual networks shown in the following table.To which virtual networks can you establish a peering connection from VNet1? \nA.VNet2 andVNet3 only \nB.VNet2 only \nC.VNet3 and VNet4 onlyMost Voted \nD.VNet2, VNet3, and VNet4 \n",
             "answer": "C",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/38429-exam-az-104-topic-5-question-7-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/38429-exam-az-104-topic-5-question-7-discussion"
         },
         {
             "id": 105,
             "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.Your company's Azure solution makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.To achieve this, the Per Enabled User setting must be set for the usage model.Solution: You reconfigure the existing usage model via the Azure CLI.Does the solution meet the goal? \nA.Yes \nB.No \n \n \n",
             "answer": "B",
             "explanation": "A REMPLIR",
-            "url": "https://www.examtopics.com/discussions/microsoft/view/59109-exam-az-104-topic-1-question-7-discussion/\n"
+            "url": "https://www.examtopics.com/discussions/microsoft/view/59109-exam-az-104-topic-1-question-7-discussion"
         }
     ]
 }
