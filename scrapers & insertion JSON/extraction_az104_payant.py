@@ -42,13 +42,24 @@ browser.find_element(By.CSS_SELECTOR, ".btn-primary:nth-child(1)").click()
 #maintenant, recup le texte d'une question
 def recup_question_inputable(card_exam_question_card):
     titre_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-header").text
+    titre_question = titre_question.split(r'\n',0)
+    topic_question = card_exam_question_card.find_element(By.CLASS_NAME, value="question-title-topic").text
     text_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-text").get_attribute('innerHTML')
     options_question = card_exam_question_card.find_element(By.CLASS_NAME,value="question-choices-container").get_attribute('innerHTML')
     inputable_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").text
     if len(inputable_answer) <= 1 :
         inputable_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')
     answer_and_explanation = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')+" \n <br>"+card_exam_question_card.find_element(By.CLASS_NAME,value="answer-description").get_attribute('innerHTML')
-    liste_html = [titre_question, text_question, options_question, inputable_answer, answer_and_explanation]
+    #### UN PEU DE REGEX - je veux vérifier si la 'Correct Answer' est aussi la 'most voted'
+    capture_group = r'"voted_answers": "([A-E]{1,5})"'
+    match = re.search(capture_group,inputable_answer)
+    if match:
+        voted_answers = match.group(1)
+        if re.search(r'"is_most_voted": true',inputable_answer) and inputable_answer == voted_answers:
+            trustworthy = "true"
+        else :
+            trustworthy = "false"
+    liste_html = [titre_question, text_question, options_question, inputable_answer, answer_and_explanation, topic_question, trustworthy]
     return liste_html
     #c'est reglé je crois -----WARNING DES FOIS YA RIEN QUI SORT POUR LE INPUTABLE ANSWER : visiblement le '.text' ne fait pas toujours le taf, faudra peut etre juste prendre le inner html et laver ça au regex.
 
@@ -94,7 +105,8 @@ for item in liste_contenu_inputables :
                                 options_html=item[3],
                                 answer=item[4],
                                 answer_html=item[5],
-                                master_questionnaire=new_questionnaire.id)
+                                master_questionnaire=new_questionnaire.id,
+                                truthworthiness=item[7])
     db.session.add(new_question)
 db.session.commit()
 """
