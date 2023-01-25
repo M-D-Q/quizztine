@@ -5,7 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import *
 from selenium.webdriver.chrome.options import Options
 from functions_briefmenow import *
-from time import sleep 
+
+import re
 #setup webdriver
 chrome_options = Options()
 
@@ -20,8 +21,7 @@ browser.get(base_url)
 #login
 username = "sliman.derrouiche@hotmail.fr"
 password = "CAP2023"
-#browser.find_element(By.NAME, "email").send_keys("sliman.derrouiche@hotmail.fr")
-#browser.find_element(By.NAME, "password").send_keys("CAP2023")
+
 browser.find_element(By.XPATH, "/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/div/input").send_keys(username)
 browser.find_element(By.XPATH,"/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/div[1]/input").send_keys(password)
 browser.find_element(By.XPATH,"/html/body/div[2]/div/div/div/div/div[2]/div/form/button").click()
@@ -37,27 +37,37 @@ def recup_question_inputable(card_exam_question_card):
     text_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-text").get_attribute('innerHTML')
     options_question = card_exam_question_card.find_element(By.CLASS_NAME,value="question-choices-container").get_attribute('innerHTML')
     inputable_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").text
+    if len(inputable_answer) <= 1 :
+        inputable_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')
     answer_and_explanation = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')+" \n <br>"+card_exam_question_card.find_element(By.CLASS_NAME,value="answer-description").get_attribute('innerHTML')
     liste_html = [titre_question, text_question, options_question, inputable_answer, answer_and_explanation]
     return liste_html
-    #WARNING DES FOIS YA RIEN QUI SORT POUR LE INPUTABLE ANSWER : visiblement le '.text' ne fait pas toujours le taf, faudra peut etre juste prendre le inner html et laver ça au regex.
+    #c'est reglé je crois -----WARNING DES FOIS YA RIEN QUI SORT POUR LE INPUTABLE ANSWER : visiblement le '.text' ne fait pas toujours le taf, faudra peut etre juste prendre le inner html et laver ça au regex.
 
 def recup_question_non_inputable(card_exam_question_card):
-    pass
+    titre_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-header").text
+    return titre_question
 
 # En fait il faut commencer par itérer par toute les questions. 
-all_questions = browser.find_elements(By.CLASS_NAME, value="exam-question-card")
-liste_contenu_inputables = [] #ce sera une liste de liste contenants tt les colonnes
-for element_miaou in all_questions :
-    je_check_juste_un_truc = element_miaou.find_element(By.CLASS_NAME,value="correct-answer")
 
-    if je_check_juste_un_truc.find_elements(By.TAG_NAME,value="img"):
-        print("voici une où la réponse est une image")
-        recup_question_non_inputable(element_miaou)
-    else :
-        print("et là c'est une lettre")
-        liste_contenu_inputables.append(recup_question_inputable(element_miaou))
-        print(liste_contenu_inputables)
+def miaou(browser):
+    all_questions = browser.find_elements(By.CLASS_NAME, value="exam-question-card")
+    liste_contenu_inputables = [] #ce sera une liste de liste contenants tt les colonnes
+    liste_question_non_inputables = [] #pour juste stocker le nom (num + topic) des questions sans input possible
+    for element_miaou in all_questions :
+        je_check_juste_un_truc = element_miaou.find_element(By.CLASS_NAME,value="correct-answer")
+
+        if je_check_juste_un_truc.find_elements(By.TAG_NAME,value="img"):
+            print("voici une où la réponse est une image")
+            liste_question_non_inputables.append(recup_question_non_inputable(element_miaou))
+            print(liste_contenu_inputables)
+
+        else :
+            print("et là c'est une lettre")
+            liste_contenu_inputables.append(recup_question_inputable(element_miaou))
+            print(liste_contenu_inputables[-1])
+
+miaou(browser)
 
 #trouver un moyen d'exporter la liste au cas où ça merde
 ####Miaou
