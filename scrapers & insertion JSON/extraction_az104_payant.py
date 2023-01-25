@@ -81,14 +81,3 @@ for item in liste_contenu_inputables :
 db.session.commit()
 """
 
-
-
-
-
-#nom du questionnaire pour ajout dans le JSON (string)
-
-
-#Liste des patterns regex à supprimer des textes extraits (list)
-
-#chemin vers le conteneur à question
-#body > div.sec-spacer > div > div:nth-child(3) > div > div.questions-container
