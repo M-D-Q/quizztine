@@ -32,54 +32,54 @@ browser.find_element(By.ID, "QuestionCount").click()
 browser.find_element(By.CSS_SELECTOR, ".btn-primary:nth-child(1)").click()
 
 #maintenant, recup le texte d'une question
-def recup_question_noimage(card_exam_question_card):
-    text_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-text").text
-    print(text_question)
-    options_question = card_exam_question_card.find_element(By.CLASS_NAME,value="question-choices-container")
-    options = options_question.find_elements(By.TAG_NAME,value="li")
-    for option in options:
-        print(option.text)
-    right_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')
-    print("right answer ====="+right_answer)
-    explanation = card_exam_question_card.find_element(By.CLASS_NAME,value="answer-description").get_attribute('innerHTML')
-    print("explanation ====="+explanation)
+def recup_question_inputable(card_exam_question_card):
+    titre_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-header").text
+    text_question = card_exam_question_card.find_element(By.CLASS_NAME,value="card-text").get_attribute('innerHTML')
+    options_question = card_exam_question_card.find_element(By.CLASS_NAME,value="question-choices-container").get_attribute('innerHTML')
+    inputable_answer = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").text
+    answer_and_explanation = card_exam_question_card.find_element(By.CLASS_NAME,value="correct-answer").get_attribute('innerHTML')+" \n <br>"+card_exam_question_card.find_element(By.CLASS_NAME,value="answer-description").get_attribute('innerHTML')
+    liste_html = [titre_question, text_question, options_question, inputable_answer, answer_and_explanation]
+    return liste_html
+    #WARNING DES FOIS YA RIEN QUI SORT POUR LE INPUTABLE ANSWER : visiblement le '.text' ne fait pas toujours le taf, faudra peut etre juste prendre le inner html et laver ça au regex.
 
-# NO NEED titre sujet 1 : /html/body/div[3]/div/div[3]/div/div[1]/div[1]/div/h2
-#numero question + topic : /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[1]
-# txt question /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/p[1]
-# option A /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/div/ul/li[1] ||| document.querySelector("body > div.sec-spacer > div > div:nth-child(3) > div > div.questions-container > div:nth-child(2) > div.card-body.question-body > div > ul > li:nth-child(1)")
-           #/html/body/div[3]/div/div[3]/div/div[1]/div[3]/div[2]/div/ul/li[1]       document.querySelector("body > div.sec-spacer > div > div:nth-child(3) > div > div.questions-container > div:nth-child(3) > div.card-body.question-body > div > ul > li:nth-child(1)")
-            #/html/body/div[3]/div/div[3]/div/div[1]/div[359]/div[2]/div/ul/li[1]
-            #/html/body/div[3]/div/div[3]/div/div[1]/div[464]/div[2]/div/ul/li[1]
-            #/html/body/div[3]/div/div[3]/div/div[1]/div[21]
-            #document.querySelector("body > div.sec-spacer > div > div:nth-child(3) > div > div.questions-container > div:nth-child(21)")
-#B /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/div/ul/li[2]
-#C /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/div/ul/li[3]
-#D /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/div/ul/li[4]
-#ANSWER : /html/body/div[3]/div/div[3]/div/div[1]/div[2]/div[2]/p[2]/span[1]/span
+def recup_question_non_inputable(card_exam_question_card):
+    pass
 
 # En fait il faut commencer par itérer par toute les questions. 
 all_questions = browser.find_elements(By.CLASS_NAME, value="exam-question-card")
-
+liste_contenu_inputables = [] #ce sera une liste de liste contenants tt les colonnes
 for element_miaou in all_questions :
-    if element_miaou.find_elements(By.TAG_NAME,value="img"):
-        print("celle là à une image")
+    je_check_juste_un_truc = element_miaou.find_element(By.CLASS_NAME,value="correct-answer")
+
+    if je_check_juste_un_truc.find_elements(By.TAG_NAME,value="img"):
+        print("voici une où la réponse est une image")
+        recup_question_non_inputable(element_miaou)
     else :
-        print("pas d'image")
-        recup_question_noimage(element_miaou)
+        print("et là c'est une lettre")
+        liste_contenu_inputables.append(recup_question_inputable(element_miaou))
+        print(liste_contenu_inputables)
 
-#putain faut juste recup les text et 
+#trouver un moyen d'exporter la liste au cas où ça merde
+####Miaou
 
-#buttons & shit for custom view:
-    
-    #BOUTON CUSTOM VIEW# body > div.sec-spacer > div > div:nth-child(2) > div > a OU /html/body/div[3]/div/div[2]/div/a
-    #Not needed probably # CHECK show range 1-455 # #question-range-checkbox OU /html/body/div[3]/div/div/div[2]/div/div/div[2]/form/div[2]/input ||CLICK
-    #SLIDER DE PAGES # /html/body/div[3]/div/div/div[2]/div/div/div[2]/form/div[1]/input  # #QuestionCount # document.querySelector("#QuestionCount")
-    # pour le slider de page, son id = QuestionCount, on peut essayer : 
-    # driver.findElement(By.id("invoice_supplier_id")).sendKeys("value"‌​, "new value");     https://stackoverflow.com/questions/35127108/how-to-set-value-to-input-web-element-using-selenium
-    #SET SESSION SETTINGS # body > div.sec-spacer > div > div > div:nth-child(2) > div > div > div.card-body > form > span > button.btn.btn-primary #OU# /html/body/div[3]/div/div/div[2]/div/div/div[2]/form/span/button[1]
-    pass
-
+#insérer dans la ddb : bon exemple d'insertion toute faite
+"""
+questionnaire_name = "AZ-104 Everything"
+new_questionnaire = Questionnaires(name=questionnaire_name)
+db.session.add(new_questionnaire)
+db.session.commit()
+    # Iterate through the questions in the list
+for item in liste_contenu_inputables :
+    # Create a new instance of the Questions model and add it to the session
+    new_question = QuestionsHTML(question_name=item[1],
+                                question_html=item[2],
+                                options_html=item[3],
+                                answer=item[4],
+                                answer_html=item[5],
+                                master_questionnaire=new_questionnaire.id)
+    db.session.add(new_question)
+db.session.commit()
+"""
 
 
 
