@@ -7,6 +7,13 @@ from selenium.webdriver.chrome.options import Options
 from functions_briefmenow import *
 
 import re
+
+
+pattern_1 = r'<span class="badge badge-success most-voted-answer-badge".+</span>'
+pattern_2 = r'<div class="voted-answers-tally d-none">.+</div>'
+capture_group = r'"voted_answers": "([A-E]{1,5})"'
+
+
 #setup webdriver
 chrome_options = Options()
 
