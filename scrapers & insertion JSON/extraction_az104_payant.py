@@ -15,6 +15,7 @@ browser.implicitly_wait(3)
 browser.maximize_window()
 
 #get l'url de base :
+local_url = "file:///quizztine/sources/AZ-104 Exam – Free Actual Q&As, Page 1 _ ExamTopics.html"
 base_url = "https://www.examtopics.com/exams/microsoft/az-104/custom-view/"
 browser.get(base_url)
 
